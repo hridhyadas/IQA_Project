@@ -552,7 +552,7 @@ $(document).ready(function () {
 					const $tr = $(this);
 
 					const textHtml = $tr.find('td, th').slice(0, 2).map(function () {
-						return `<span>${$(this).text().trim()}</span>`;
+						return `<span>${$(this).html().trim()}</span>`;
 					}).get().join('');
 
 					const $newTr = $(`
@@ -588,24 +588,20 @@ $(document).ready(function () {
 		tableResponsive();
 	});
 
-	$('table .expand-header').each(function () {
-		const $expandHeader = $(this);
+	$(document).on('click', 'table .expand-header .expand-btn', function () {
+		const $expandHeader = $(this).closest('.expand-header');
 		const $expandTr = $expandHeader.prev('tr');
 
-		$expandHeader.find('.expand-btn').on('click', function () {
-			$('tbody tr:not(.expand-header)').slideUp(200);
-			$('table .expand-header').removeClass('open');
-			if ($expandTr.is(':visible')) {
-				$expandTr.slideUp(200);
-				$expandHeader.removeClass('open');
-				console.log('hide');
-			} else {
-				$expandTr.slideDown(300);
-				$expandHeader.addClass('open');
-				console.log('show');
-			}
-		});
+		if ($expandTr.is(':visible')) {
+			$expandTr.slideUp(200);
+			$expandHeader.removeClass('open');
+		} else {
+			$expandHeader.closest('tbody').find('tr:not(.expand-header)').slideUp(200);
+			$expandHeader.closest('tbody').find('.expand-header').not($expandHeader).removeClass('open');
 
+			$expandTr.slideDown(300);
+			$expandHeader.addClass('open');
+		}
 	});
 
 	function customSelect() {

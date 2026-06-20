@@ -48,6 +48,21 @@ body.tablet .side-bar {
   flex-direction: column;
   height: 100%;
   border-radius: 0 !important;
+  overflow-y: auto;
+}
+
+.side-bar-body::-webkit-scrollbar {
+  width: 5px;
+}
+.side-bar-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.side-bar-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+.side-bar-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .side-menu .nav-item .nav-link {
@@ -2556,4 +2571,302 @@ body.tablet:not(.open-menu) .side-bar-close::before {
     object-position: bottom right;
     opacity: 0.85;
   }
+}
+
+/* ==========================================================================
+   8. Responsive Academy List Screen (Center's List) Overrides
+   ========================================================================== */
+.custom-table-footer {
+  background-color: #E9EBF3 !important; /* light grayish purple/blue from the screenshot */
+  padding: 16px 30px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 44px;
+  border-bottom-right-radius: 44px;
+  border-top: none !important;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.custom-pagination-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-pagination-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #21236A;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #21236A !important;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.custom-pagination-arrow.disabled {
+  border-color: #BCBFC5;
+  color: #BCBFC5 !important;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+.custom-pagination-pages {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.custom-pagination-pages a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #21236A !important;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  padding: 0 !important; /* reset default padding */
+}
+
+.custom-pagination-pages a.active {
+  background-color: #21236A !important;
+  color: #FFFFFF !important;
+}
+
+/* Custom Search Wrapper */
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon-btn {
+  position: absolute;
+  left: 15px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.search-input-custom {
+  border: 1px solid #DCDDDE;
+  border-radius: 8px;
+  padding: 10px 16px 10px 42px !important;
+  font-size: 14px;
+  color: #2C2D30;
+  background-color: #FAFAFA;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  height: auto;
+  min-height: 40px;
+}
+
+.search-input-custom:focus {
+  background-color: #FFFFFF;
+  border-color: #21236A;
+  box-shadow: 0 0 0 3px rgba(33, 35, 106, 0.1);
+  outline: none;
+}
+
+/* Custom Dropdown Filter */
+.filter-select-custom {
+  border: 1px solid #DCDDDE;
+  border-radius: 8px;
+  padding: 10px 36px 10px 16px !important;
+  font-size: 14px;
+  color: #2C2D30;
+  background-color: #FAFAFA;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23676A72'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px;
+  height: auto;
+  min-height: 40px;
+}
+
+/* Academy row logo circle */
+.academy-logo-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid #BCBFC5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.academy-logo-circle.logo-blue {
+  border-color: #21236A;
+}
+
+.academy-logo-circle img {
+  width: 18px;
+  height: 18px;
+}
+
+.text-dark-blue {
+  color: #21236A;
+}
+
+.badge-exam {
+  background-color: #E2E7F3;
+  color: #21236A;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+/* Mobile responsive styling enhancements */
+@media (max-width: 767px) {
+  .custom-table-card {
+    border-radius: 20px !important;
+  }
+  .custom-table-footer {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 16px 20px !important;
+    justify-content: center;
+  }
+  .table tbody .expand-header span {
+    border-right: none !important;
+  }
+  .table tbody td::before,
+  .table tbody th::before {
+    content: attr(data-label) " :" !important;
+    color: #8E9198 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+  }
+}
+
+/* Figma-exact Sidebar Redesign Overrides */
+.side-menu .nav-item.dropdown > .dropdown-toggle {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  padding: 10px 16px !important;
+  margin: 8px 24px 4px 24px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: capitalize !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 8px !important;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.side-menu .nav-item.dropdown > .dropdown-toggle:hover {
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Hide default Bootstrap dropdown toggle arrow indicator */
+.side-menu .dropdown-toggle::after {
+  display: none !important;
+}
+
+/* Custom Toggle Chevron icon positioning and behavior */
+.side-menu .nav-item.dropdown .toggle-chevron {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.side-menu .nav-item.dropdown > .dropdown-toggle:hover .toggle-chevron {
+  color: #FFFFFF;
+}
+
+/* Toggle rotation on expand/collapse */
+.side-menu .nav-item.dropdown.open .toggle-chevron,
+.side-menu .nav-item.dropdown.show .toggle-chevron {
+  transform: rotate(180deg);
+}
+
+/* Sidebar Dropdown Menu (Submenu Container) */
+.side-bar .dropdown-menu {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: static !important;
+  display: block !important; /* jQuery controls show/hide via slideUp/slideDown */
+  width: auto !important;
+  box-shadow: none !important;
+  float: none !important;
+}
+
+/* Submenu Link container items */
+.side-bar .dropdown-menu li {
+  margin: 2px 24px !important;
+}
+
+/* Nested Submenu links */
+.side-bar .dropdown-menu .dropdown-item {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  padding: 10px 16px 10px 28px !important; /* Indent slightly under header */
+  display: flex !important;
+  align-items: center;
+  border-radius: 8px !important;
+  transition: background-color 0.2s, color 0.2s;
+  background-color: transparent !important;
+  border: none !important;
+  white-space: nowrap;
+}
+
+.side-bar .dropdown-menu .dropdown-item:hover {
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Active nested item highlight styling */
+.side-bar .dropdown-menu li.active > .dropdown-item,
+.side-bar .dropdown-menu .dropdown-item.active {
+  background-color: #DF001B !important;
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+}
+
+.side-bar .dropdown-menu li.active > .dropdown-item .menu-icon img,
+.side-bar .dropdown-menu .dropdown-item.active .menu-icon img {
+  filter: brightness(0) invert(1);
+}
+
+/* Figma Badges */
+.side-menu .badge-live {
+  background-color: #E10A1A !important;
+  color: #FFFFFF !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  margin-left: auto;
+  line-height: 1;
+}
+
+.side-menu .badge-pending {
+  background-color: #D29E1B !important;
+  color: #FFFFFF !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  margin-left: auto;
+  line-height: 1;
 }

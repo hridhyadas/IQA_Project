@@ -1,0 +1,1334 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <title>IQA - Center's List</title>
+
+  <!-- Figma-exact Custom Styling -->
+  <style>
+    /* Global Page Overrides */
+    body {
+      background-color: #ECEFF6 !important;
+      font-family: "Inter", sans-serif;
+    }
+
+    .content-wrapper {
+      background-color: #ECEFF6 !important;
+      padding: 40px !important;
+    }
+
+    /* Desktop Top User Info */
+    .desktop-profile-widget {
+      font-family: "Inter", sans-serif;
+      margin-bottom: 24px;
+    }
+    
+    .desktop-profile-name {
+      color: #1D2465;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 2px;
+    }
+
+    .desktop-profile-role {
+      color: #7F8498;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    /* Header Banner Styling */
+    .custom-header-banner {
+      background-color: #21236A !important;
+      border-radius: 20px !important;
+      padding: 24px 28px !important;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+
+    .custom-header-circle-bg {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.04);
+      right: 35px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 8px solid rgba(255, 255, 255, 0.02);
+      pointer-events: none;
+    }
+
+    /* Center's List Main Card */
+    .figma-card {
+      background-color: #FFFFFF !important;
+      border-radius: 44px !important;
+      box-shadow: 0px 8px 30px rgba(29, 36, 101, 0.03) !important;
+      border: none !important;
+      overflow: hidden;
+    }
+
+    .figma-card-body {
+      padding: 40px !important;
+    }
+
+    .figma-card-title {
+      color: #1D2465;
+      font-weight: 700;
+      font-size: 28px;
+      margin-bottom: 4px;
+    }
+
+    .figma-card-subtitle {
+      color: #7F8498;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Action Buttons */
+    .btn-figma-export {
+      border: 1.5px solid #21236A !important;
+      color: #21236A !important;
+      background-color: #FFFFFF !important;
+      border-radius: 12px !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      padding: 10px 24px !important;
+      transition: all 0.2s ease;
+    }
+
+    .btn-figma-export:hover {
+      background-color: #F0F2FA !important;
+    }
+
+    .btn-figma-add {
+      background-color: #21236A !important;
+      color: #FFFFFF !important;
+      border: none !important;
+      border-radius: 12px !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      padding: 10px 24px !important;
+      transition: all 0.2s ease;
+    }
+
+    .btn-figma-add:hover {
+      background-color: #171952 !important;
+    }
+
+    /* Filters Section */
+    .search-input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .search-icon-btn {
+      position: absolute;
+      left: 16px;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .search-input-custom {
+      border: 1.5px solid #DCDDDE !important;
+      border-radius: 12px !important;
+      padding: 12px 16px 12px 46px !important;
+      font-size: 14px !important;
+      color: #2C2D30 !important;
+      background-color: #FFFFFF !important;
+      box-shadow: none !important;
+      height: 48px !important;
+      width: 100%;
+    }
+
+    .search-input-custom:focus {
+      border-color: #21236A !important;
+      background-color: #FFFFFF !important;
+    }
+
+    .filter-select-custom {
+      border: 1.5px solid #DCDDDE !important;
+      border-radius: 12px !important;
+      padding: 12px 38px 12px 16px !important;
+      font-size: 14px !important;
+      color: #2C2D30 !important;
+      background-color: #FFFFFF !important;
+      box-shadow: none !important;
+      appearance: none !important;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2321236A'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E") !important;
+      background-repeat: no-repeat !important;
+      background-position: right 16px center !important;
+      background-size: 12px !important;
+      height: 48px !important;
+      width: 100%;
+    }
+
+    .filter-select-custom:focus {
+      border-color: #21236A !important;
+    }
+
+    /* Table Custom Styles */
+    .figma-table-container {
+      margin-top: 24px;
+    }
+
+    .figma-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 0;
+    }
+
+    .figma-table thead tr {
+      background-color: #21236A !important;
+    }
+
+    .figma-table thead th {
+      color: #FFFFFF !important;
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      padding: 18px 20px !important;
+      border: none !important;
+      vertical-align: middle;
+    }
+
+    /* Round the outer corners of table header */
+    .figma-table thead th:first-child {
+      border-top-left-radius: 14px;
+      border-bottom-left-radius: 14px;
+    }
+
+    .figma-table thead th:last-child {
+      border-top-right-radius: 14px;
+      border-bottom-right-radius: 14px;
+    }
+
+    .figma-table tbody tr {
+      transition: background-color 0.2s ease;
+    }
+
+    .figma-table tbody tr:nth-child(odd) {
+      background-color: #FFFFFF !important;
+    }
+
+    .figma-table tbody tr:nth-child(even) {
+      background-color: #F8F9FB !important;
+    }
+
+    .figma-table tbody td {
+      padding: 16px 20px !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      color: #21236A !important;
+      border-bottom: 1px solid #EAEAEF !important;
+      vertical-align: middle;
+    }
+
+    .figma-table tbody tr:last-child td {
+      border-bottom: none !important;
+    }
+
+    /* Logo circle container */
+    .academy-logo-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid #BCBFC5;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #FFFFFF;
+      flex-shrink: 0;
+    }
+
+    .academy-logo-circle.logo-blue {
+      border-color: #21236A;
+    }
+
+    .academy-logo-circle img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .academy-name-main {
+      font-weight: 700;
+      color: #21236A;
+      display: block;
+      font-size: 14px;
+    }
+
+    .academy-code-sub {
+      font-size: 12px;
+      color: #7F8498;
+      margin: 2px 0 0 0;
+      font-weight: 500;
+    }
+
+    /* Badges */
+    .badge-exam-custom {
+      background-color: #E2E7F3;
+      color: #21236A;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    /* Custom Action Buttons */
+    .action-btn-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid #E2E3E8;
+      background-color: #FFFFFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #21236A;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.02);
+    }
+
+    .action-btn-circle:hover {
+      background-color: #F0F2FA;
+      border-color: #BCBFC5;
+    }
+
+    .action-btn-circle img {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* Custom Table Footer (Pagination) */
+    .figma-table-footer {
+      background-color: #E9EBF3 !important;
+      padding: 20px 40px !important;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom-left-radius: 44px;
+      border-bottom-right-radius: 44px;
+      border-top: none !important;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .select-page-show {
+      border: 1.5px solid #DCDDDE;
+      border-radius: 8px;
+      background-color: #FFFFFF;
+      padding: 4px 28px 4px 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #21236A;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2321236A'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      background-size: 10px;
+      height: 32px;
+    }
+
+    .pagination-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pagination-arrow-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid #21236A;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #21236A;
+      background-color: transparent;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .pagination-arrow-circle.disabled {
+      border-color: #BCBFC5;
+      color: #BCBFC5;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+
+    .pagination-pages-list {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .pagination-page-item {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #21236A !important;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .pagination-page-item.active {
+      background-color: #21236A !important;
+      color: #FFFFFF !important;
+    }
+
+    .pagination-records-info {
+      font-size: 13px;
+      color: #7F8498;
+      font-weight: 500;
+    }
+
+    /* Mobile hamburger button overrides to clear side-bar-close styles */
+    .mobile-hamburger-btn {
+      position: relative !important;
+      width: 48px !important;
+      height: 48px !important;
+      background-color: #21236A !important;
+      background-image: none !important;
+      border: none !important;
+      border-radius: 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      left: auto !important;
+      top: auto !important;
+      box-shadow: 0px 4px 10px rgba(33, 35, 106, 0.15) !important;
+      margin-right: 0 !important;
+    }
+
+    /* Custom Hamburger Icon lines */
+    .custom-hamburger-icon {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 5px !important;
+      align-items: flex-start !important;
+      width: 20px !important;
+    }
+
+    .custom-hamburger-icon .line {
+      display: block !important;
+      height: 2px !important;
+      background-color: #FFFFFF !important;
+      border-radius: 2px !important;
+    }
+
+    .custom-hamburger-icon .line-1 {
+      width: 20px !important;
+    }
+
+    .custom-hamburger-icon .line-2 {
+      width: 14px !important;
+    }
+
+    .custom-hamburger-icon .line-3 {
+      width: 8px !important;
+    }
+
+    /* Mobile Overrides (Viewport < 768px) */
+    @media (max-width: 767px) {
+      .content-wrapper {
+        padding: 20px !important;
+      }
+
+      .figma-card {
+        border-radius: 24px !important;
+      }
+
+      .figma-card-body {
+        padding: 20px !important;
+      }
+
+      .figma-card-title {
+        font-size: 24px;
+      }
+
+      .figma-table-footer {
+        border-bottom-left-radius: 24px;
+        border-bottom-right-radius: 24px;
+        padding: 16px 20px !important;
+        justify-content: center;
+      }
+
+      /* Force header-top to align left and remove default border/padding on mobile */
+      .header-top {
+        justify-content: flex-start !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 24px !important;
+      }
+
+      /* Style standard table header to show `#` and `Name` on mobile */
+      .figma-table thead {
+        display: block !important;
+        background-color: #21236A !important;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        margin-bottom: 12px;
+        overflow: hidden;
+        border: none !important;
+      }
+
+      .figma-table thead tr {
+        display: flex !important;
+        width: 100% !important;
+        padding: 12px 16px !important;
+        align-items: center;
+        margin: 0 !important;
+        border: none !important;
+      }
+
+      /* Hide the dynamically added .thead-tr from main.js on mobile */
+      .figma-table thead tr.thead-tr {
+        display: none !important;
+      }
+
+      .figma-table thead th {
+        display: none !important;
+        color: #FFFFFF !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        padding: 0 !important;
+        border: none !important;
+        background-color: transparent !important;
+        position: relative;
+      }
+
+      /* Show only `#` and `Name` columns */
+      .figma-table thead th:nth-child(1) {
+        display: inline-block !important;
+        width: 50px !important;
+        flex-shrink: 0;
+      }
+
+      .figma-table thead th:nth-child(2) {
+        display: inline-block !important;
+        flex-grow: 1 !important;
+      }
+
+      /* Align double sort arrows next to header text */
+      .figma-table thead th .sorting-arrow {
+        position: relative !important;
+        display: inline-flex !important;
+        flex-direction: column !important;
+        top: auto !important;
+        vertical-align: middle !important;
+        margin-left: 6px !important;
+      }
+
+      .figma-table thead th .sorting-arrow .up,
+      .figma-table thead th .sorting-arrow .down {
+        margin-left: 0 !important;
+        display: inline-block !important;
+        width: 8px !important;
+        height: 5px !important;
+      }
+
+      .figma-table, .figma-table tbody {
+        display: block !important;
+        border: none !important;
+      }
+
+      /* Each table row acts as a block */
+      .figma-table tbody tr {
+        display: block; /* removed !important to allow jQuery inline styles to take effect */
+        margin-bottom: 12px !important;
+        border: 1.5px solid #EAEAEF !important;
+        border-radius: 16px !important;
+        overflow: hidden !important;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.02) !important;
+      }
+
+      /* Alternating card row header backgrounds */
+      /* Card 2, 4 (indexes 4, 8) are light blue-grey */
+      .figma-table tbody tr.expand-header:nth-child(4n) {
+        background-color: #E9EBF3 !important;
+      }
+
+      /* Card 1, 3, 5 (indexes 2, 6, 10) are white */
+      .figma-table tbody tr.expand-header:nth-child(4n+2) {
+        background-color: #FFFFFF !important;
+      }
+
+      /* expand-header collapsed row header wrapper */
+      .figma-table tbody tr.expand-header td {
+        padding: 0 !important;
+        border: none !important;
+        display: block !important;
+        width: 100% !important;
+        background-color: transparent !important;
+      }
+
+      .figma-table tbody tr.expand-header .expand-content {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        min-height: 60px !important;
+        padding: 12px 16px !important;
+      }
+
+      /* Format index block */
+      .figma-table tbody tr.expand-header .expand-content > span:first-child {
+        font-weight: 700;
+        color: #7F8498;
+        font-size: 14px;
+        width: 25px;
+        display: inline-block;
+        flex-shrink: 0;
+      }
+
+      /* Format Logo + Name block */
+      .figma-table tbody tr.expand-header .expand-content > span:nth-child(2) {
+        flex-grow: 1;
+        display: inline-flex;
+        align-items: center;
+        color: #21236A;
+        font-weight: 700;
+        font-size: 14px;
+      }
+
+      /* Format circular expand button with double diagonal arrows */
+      .figma-table tbody tr.expand-header .expand-content > span.expand-btn {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 1.5px solid #BCBFC5;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        flex-shrink: 0;
+        background-color: #FFFFFF;
+      }
+
+      /* Diagonal expand icon inside circular button */
+      .figma-table tbody tr.expand-header .expand-content > span.expand-btn::after {
+        content: "\f140" !important; /* Bootstrap Icon bi-arrows-angle-expand */
+        font-family: "bootstrap-icons" !important;
+        color: #21236A !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        background: none !important;
+        display: inline-block !important;
+        transform: none !important;
+        width: auto !important;
+        height: auto !important;
+      }
+
+      /* Hide the collapsed card header row when the card is open/expanded */
+      .figma-table tbody tr.expand-header.open {
+        display: none !important;
+      }
+
+      /* The actual details sheet (visible row when expanded) */
+      .figma-table tbody tr:not(.expand-header) {
+        border-top: 1.5px solid #EAEAEF !important;
+        margin-top: 0 !important;
+        padding: 16px 20px !important;
+      }
+
+      /* Alternating row details card backgrounds to match their header cards */
+      /* Odd card details (indexes 1, 5) are white */
+      .figma-table tbody tr:not(.expand-header):nth-child(4n+1) {
+        background-color: #FFFFFF !important;
+      }
+
+      /* Even card details (indexes 3, 7) are light blue-grey */
+      .figma-table tbody tr:not(.expand-header):nth-child(4n+3) {
+        background-color: #E9EBF3 !important;
+      }
+
+      .figma-table tbody tr:not(.expand-header) td {
+        display: flex !important;
+        padding: 10px 0 !important;
+        border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+        border-top: none !important;
+        font-size: 14px !important;
+        color: #21236A !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+      }
+
+      .figma-table tbody tr:not(.expand-header) td:last-child {
+        border-bottom: none !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+
+      /* Set labels in expand details sheets */
+      .figma-table tbody tr:not(.expand-header) td::before {
+        content: attr(data-label) " :" !important;
+        color: #8E9198 !important;
+        font-weight: 500 !important;
+        width: 120px !important;
+        flex-shrink: 0 !important;
+        font-size: 14px !important;
+        text-align: left !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Preloader start -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div><!-- Preloader end -->
+
+  <div class="wrapper d-flex flex-column">
+    <!-- Side bar start -->
+    <div class="side-bar-wrapper">
+      <div class="side-bar">
+        <div class="side-bar-header">
+          <div class="side-bar-close"></div>
+          <a class="navbar-brand" href="#">
+            <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" />
+          </a>
+        </div>
+        <div class="side-bar-body">
+          <div class="side-menu">
+            <ul class="nav">
+
+              <!-- Menu item start -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
+                  <span class="menu-label me-auto">Dashboard</span>
+                </a>
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown open">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Exam Managment</span>
+                  <i class="bi bi-chevron-down toggle-chevron"></i>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu show" style="display: block;">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
+                      <span class="menu-label">Exam List</span>
+                      <span class="badge badge-live">1 Live</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Report</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Valuation</span>
+                      <span class="badge badge-pending">3 Pending</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
+                      <span class="menu-label">Question Bank</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown open">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Student</span>
+                  <i class="bi bi-chevron-down toggle-chevron"></i>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu show" style="display: block;">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
+                      <span class="menu-label">Student List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown open">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Center’s Management</span>
+                  <i class="bi bi-chevron-down toggle-chevron"></i>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu show" style="display: block;">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
+                      <span class="menu-label">Create</span>
+                    </a>
+                  </li>
+                  <li class="active">
+                    <a class="dropdown-item" href="academy-list.html">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
+                      <span class="menu-label">List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown open">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Settings</span>
+                  <i class="bi bi-chevron-down toggle-chevron"></i>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu show" style="display: block;">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                      <span class="menu-label">Apply for qualification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span>
+                      <span class="menu-label">Location</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                      <span class="menu-label">Courses</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+            </ul>
+          </div>
+          
+          <!-- Standalone Log Out at the bottom -->
+          <div class="side-bar-logout-container mt-auto">
+            <a href="#" class="btn-sidebar-logout">
+              <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""></span>
+              <span>Log Out</span>
+            </a>
+          </div>
+
+          <div class="side-bar-user d-none">
+            <div class="user-icon">
+              <img src="img/avatar-icon.jpg" alt="">
+            </div>
+            <div class="user-details ms-2">
+              <h4 class="user-name">James Mitchell</h4>
+              <p class="user-sub">Super Administrator</p>
+            </div>
+            <a href="#" class="btn btn-primary ms-auto"><img src="img/sign-out-icon.svg" alt=""></a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- Side bar end -->
+
+    <!-- Content wrapper start -->
+    <div class="content-wrapper">
+
+      <!-- Mobile Hamburger / Header Area (d-md-none) -->
+      <div class="header-top d-md-none mb-3 d-flex align-items-center">
+        <div class="side-bar-close mobile-hamburger-btn">
+          <div class="custom-hamburger-icon">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop User profile widget (d-none d-md-flex) -->
+      <div class="d-none d-md-flex justify-content-end desktop-profile-widget" style="margin-top: -24px;">
+        <div class="text-end">
+          <h6 class="mb-0 desktop-profile-name">Name</h6>
+          <p class="mb-0 desktop-profile-role">Super Administrator</p>
+        </div>
+      </div>
+
+      <!-- Dark Blue Header Banner Card -->
+      <div class="custom-header-banner">
+        <div class="custom-header-circle-bg"></div>
+        <div class="position-relative" style="z-index: 2;">
+          <h4 class="text-white mb-1 fw-bold d-none d-md-block" style="font-size: 24px;">Academy List</h4>
+          <h4 class="text-white mb-1 fw-bold d-md-none" style="font-size: 20px;">Academy Details</h4>
+          <nav>
+            <ol class="breadcrumb mb-0" style="background: transparent; padding: 0;">
+              <li class="breadcrumb-item"><a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">Home</a></li>
+              <li class="breadcrumb-item"><a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none;">Academy</a></li>
+              <li class="breadcrumb-item active" style="color: #FFFFFF; font-weight: 500;">Academy List</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Center's List Figma-style Card -->
+      <div class="card figma-card">
+        <div class="card-body figma-card-body">
+          
+          <!-- Card Title & Action Buttons -->
+          <div class="d-md-flex justify-content-between align-items-center mb-4">
+            <div>
+              <h2 class="figma-card-title">Center’s List</h2>
+              <p class="figma-card-subtitle mb-0">1424 Center’s found. 10 of are showing.</p>
+            </div>
+            <div class="d-flex gap-2 mt-3 mt-md-0">
+              <a href="#" class="btn btn-figma-export d-inline-flex align-items-center gap-2">
+                <img src="img/table-icon/table-export.svg" alt="">
+                Export
+              </a>
+              <a href="#" class="btn btn-figma-add d-inline-flex align-items-center gap-2">
+                <i class="bi bi-plus-lg"></i>
+                Add Center
+              </a>
+            </div>
+          </div>
+
+          <!-- Filters: Search bar and Membership Dropdown -->
+          <div class="row g-2 align-items-center mb-4">
+            <div class="col-md-4 col-7">
+              <div class="search-input-wrapper">
+                <span class="search-icon-btn"><img src="img/table-icon/table-search.svg" alt=""></span>
+                <input type="text" class="form-control search-input-custom" placeholder="Search Here">
+              </div>
+            </div>
+            <div class="col-md-3 col-5">
+              <select class="form-select filter-select-custom">
+                <option value="all">Membership : All</option>
+                <option value="active">Membership : Active</option>
+                <option value="inactive">Membership : Inactive</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Table Container -->
+          <div class="figma-table-container">
+            <div class="table-responsive">
+              <table class="table figma-table align-middle" id="academyTable">
+                <thead>
+                  <tr>
+                    <th style="width: 70px;"># <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
+                    <th>Name <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
+                    <th>Phone <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
+                    <th>Email <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
+                    <th class="text-center" style="width: 100px;">Exam <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
+                    <th>Students <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
+                    <th class="text-center" style="width: 150px;">Action <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Row 1 -->
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="academy-logo-circle logo-blue me-2">
+                          <img src="img/table-icon/table-building.svg" alt="">
+                        </div>
+                        <div>
+                          <span class="academy-name-main">Ballsy Group Foundation ...</span>
+                          <p class="academy-code-sub d-none d-md-block">Code: 1001</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>(202) 555-0143</td>
+                    <td>olivia.johnson@example.com</td>
+                    <td class="text-center">
+                      <span class="badge-exam-custom">8</span>
+                    </td>
+                    <td>12 Students</td>
+                    <td class="text-center">
+                      <div class="d-flex gap-2 justify-content-center">
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 2 -->
+                  <tr>
+                    <td>2</td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="academy-logo-circle me-2">
+                          <img src="img/table-icon/table-building.svg" alt="">
+                        </div>
+                        <div>
+                          <span class="academy-name-main">Quantum Physics Institute</span>
+                          <p class="academy-code-sub d-none d-md-block">Code: 1002</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>(202) 555-0143</td>
+                    <td>olivia.johnson@example.com</td>
+                    <td class="text-center">
+                      <span class="badge-exam-custom">8</span>
+                    </td>
+                    <td>12 Students</td>
+                    <td class="text-center">
+                      <div class="d-flex gap-2 justify-content-center">
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 3 -->
+                  <tr>
+                    <td>3</td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="academy-logo-circle logo-blue me-2">
+                          <img src="img/table-icon/table-building.svg" alt="">
+                        </div>
+                        <div>
+                          <span class="academy-name-main">Stellar Science Academy</span>
+                          <p class="academy-code-sub d-none d-md-block">Code: 1003</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>(202) 555-0143</td>
+                    <td>olivia.johnson@example.com</td>
+                    <td class="text-center">
+                      <span class="badge-exam-custom">8</span>
+                    </td>
+                    <td>12 Students</td>
+                    <td class="text-center">
+                      <div class="d-flex gap-2 justify-content-center">
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 4 -->
+                  <tr>
+                    <td>4</td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="academy-logo-circle me-2">
+                          <img src="img/table-icon/table-building.svg" alt="">
+                        </div>
+                        <div>
+                          <span class="academy-name-main">Prime Scholars Academy</span>
+                          <p class="academy-code-sub d-none d-md-block">Code: 1004</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>(202) 555-0143</td>
+                    <td>olivia.johnson@example.com</td>
+                    <td class="text-center">
+                      <span class="badge-exam-custom">8</span>
+                    </td>
+                    <td>12 Students</td>
+                    <td class="text-center">
+                      <div class="d-flex gap-2 justify-content-center">
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 5 -->
+                  <tr>
+                    <td>5</td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="academy-logo-circle logo-blue me-2">
+                          <img src="img/table-icon/table-building.svg" alt="">
+                        </div>
+                        <div>
+                          <span class="academy-name-main">Excel Core Academy</span>
+                          <p class="academy-code-sub d-none d-md-block">Code: 1005</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>(202) 555-0143</td>
+                    <td>olivia.johnson@example.com</td>
+                    <td class="text-center">
+                      <span class="badge-exam-custom">8</span>
+                    </td>
+                    <td>12 Students</td>
+                    <td class="text-center">
+                      <div class="d-flex gap-2 justify-content-center">
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 6 -->
+                  <tr>
+                    <td>6</td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="academy-logo-circle me-2">
+                          <img src="img/table-icon/table-building.svg" alt="">
+                        </div>
+                        <div>
+                          <span class="academy-name-main">Nexus Learning Hub</span>
+                          <p class="academy-code-sub d-none d-md-block">Code: 1006</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>(202) 555-0143</td>
+                    <td>olivia.johnson@example.com</td>
+                    <td class="text-center">
+                      <span class="badge-exam-custom">8</span>
+                    </td>
+                    <td>12 Students</td>
+                    <td class="text-center">
+                      <div class="d-flex gap-2 justify-content-center">
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 7 -->
+                  <tr>
+                    <td>7</td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="academy-logo-circle me-2">
+                          <img src="img/table-icon/table-building.svg" alt="">
+                        </div>
+                        <div>
+                          <span class="academy-name-main">Summit Science Centre</span>
+                          <p class="academy-code-sub d-none d-md-block">Code: 1007</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>(202) 555-0143</td>
+                    <td>olivia.johnson@example.com</td>
+                    <td class="text-center">
+                      <span class="badge-exam-custom">8</span>
+                    </td>
+                    <td>12 Students</td>
+                    <td class="text-center">
+                      <div class="d-flex gap-2 justify-content-center">
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 8 -->
+                  <tr>
+                    <td>8</td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="academy-logo-circle logo-blue me-2">
+                          <img src="img/table-icon/table-building.svg" alt="">
+                        </div>
+                        <div>
+                          <span class="academy-name-main">Elite Equation Academy</span>
+                          <p class="academy-code-sub d-none d-md-block">Code: 1008</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>(202) 555-0143</td>
+                    <td>olivia.johnson@example.com</td>
+                    <td class="text-center">
+                      <span class="badge-exam-custom">8</span>
+                    </td>
+                    <td>12 Students</td>
+                    <td class="text-center">
+                      <div class="d-flex gap-2 justify-content-center">
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 9 -->
+                  <tr>
+                    <td>9</td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="academy-logo-circle me-2">
+                          <img src="img/table-icon/table-building.svg" alt="">
+                        </div>
+                        <div>
+                          <span class="academy-name-main">Pioneer Physics Lab</span>
+                          <p class="academy-code-sub d-none d-md-block">Code: 1009</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>(202) 555-0143</td>
+                    <td>olivia.johnson@example.com</td>
+                    <td class="text-center">
+                      <span class="badge-exam-custom">8</span>
+                    </td>
+                    <td>12 Students</td>
+                    <td class="text-center">
+                      <div class="d-flex gap-2 justify-content-center">
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Row 10 -->
+                  <tr>
+                    <td>10</td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <div class="academy-logo-circle logo-blue me-2">
+                          <img src="img/table-icon/table-building.svg" alt="">
+                        </div>
+                        <div>
+                          <span class="academy-name-main">Horizon Academic Institute</span>
+                          <p class="academy-code-sub d-none d-md-block">Code: 1010</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td>(202) 555-0143</td>
+                    <td>olivia.johnson@example.com</td>
+                    <td class="text-center">
+                      <span class="badge-exam-custom">8</span>
+                    </td>
+                    <td>12 Students</td>
+                    <td class="text-center">
+                      <div class="d-flex gap-2 justify-content-center">
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
+                        <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
+                      </div>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Custom Table Footer / Pagination -->
+            <div class="figma-table-footer">
+              <div class="d-flex align-items-center">
+                <label class="mb-0 text-muted" style="font-size: 13px; font-weight: 500;">
+                  Show
+                  <select class="select-page-show mx-1">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                  per page
+                </label>
+              </div>
+              <div class="pagination-wrapper">
+                <a href="#" class="pagination-arrow-circle disabled"><i class="bi bi-chevron-left"></i></a>
+                <div class="pagination-pages-list">
+                  <a href="#" class="pagination-page-item active">1</a>
+                  <a href="#" class="pagination-page-item">2</a>
+                  <a href="#" class="pagination-page-item">3</a>
+                  <a href="#" class="pagination-page-item">4</a>
+                  <a href="#" class="pagination-page-item">5</a>
+                </div>
+                <a href="#" class="pagination-arrow-circle"><i class="bi bi-chevron-right"></i></a>
+                <span class="pagination-records-info ms-2">1-10 of 52</span>
+              </div>
+            </div>
+
+          </div><!-- Table Container end -->
+
+        </div>
+      </div><!-- Center's List Card end -->
+
+    </div><!-- Content wrapper end -->
+  </div>
+
+
+  <!-- JS -->
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/daterangepicker.js"></script>
+  <script src="js/chart.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+
+  <!-- Page specific overrides for mobile label and responsive formatting -->
+  <script>
+    $(document).ready(function() {
+      // Overwrite first column data-label from '#' to 'Sl'
+      function overrideMobileLabel() {
+        $('#academyTable tbody tr:not(.expand-header) td:first-child, #academyTable tbody tr:not(.expand-header) th:first-child').attr('data-label', 'Sl');
+        
+        // Dynamic mobile Collapse Table link insertion
+        $('#academyTable tbody tr:not(.expand-header) td:last-child').each(function() {
+          if (!$(this).find('.btn-collapse-row-wrapper').length) {
+            $(this).append(`
+              <div class="btn-collapse-row-wrapper d-md-none text-start mt-3 w-100">
+                <a href="#" class="btn-collapse-row text-danger fw-bold" style="text-decoration: none; font-size: 14px;">Collapse Table</a>
+              </div>
+            `);
+          }
+        });
+      }
+      
+      // Run on load and after standard responsive function runs
+      setTimeout(overrideMobileLabel, 50);
+      
+      // Re-run on window resize to capture rebuilt elements
+      $(window).on('resize', function() {
+        setTimeout(overrideMobileLabel, 100);
+      });
+
+      // Handle click on Collapse Table link
+      $(document).on('click', '.btn-collapse-row', function(e) {
+        e.preventDefault();
+        const $tr = $(this).closest('tr');
+        const $expandHeader = $tr.next('.expand-header');
+        $tr.slideUp(200);
+        $expandHeader.removeClass('open');
+      });
+    });
+  </script>
+
+</body>
+
+</html>

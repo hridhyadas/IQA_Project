@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <title>IQA</title>
+</head>
+
+<body>
+
+  <!-- Preloader start -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div><!-- Preloader end -->
+
+  <div class="wrapper d-flex flex-column">
+    <!-- Side bar start -->
+    <div class="side-bar-wrapper">
+      <div class="side-bar">
+        <div class="side-bar-header">
+          <div class="side-bar-close"></div>
+          <a class="navbar-brand" href="#">
+            <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" />
+          </a>
+        </div>
+        <div class="side-bar-body">
+          <div class="side-menu">
+            <ul class="nav">
+
+              <!-- Menu item start -->
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
+                  <span class="menu-label me-auto">Dashboards</span>
+                </a>
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Exam Managment</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
+                      <span class="menu-label">Exam List</span>
+                      <span class="badge bg-primary">1 Live</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Report</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Valuation</span>
+                      <span class="badge bg-primary">1 Live</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
+                      <span class="menu-label">Question Bank</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Student</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
+                      <span class="menu-label">Student List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Center’s Management</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
+                      <span class="menu-label">Create</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
+                      <span class="menu-label">List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Settings</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li class="active">
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                      <span class="menu-label">Apply for qualification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span>
+                      <span class="menu-label">Location</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                      <span class="menu-label">Courses</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""></span>
+                      <span class="menu-label">Log Out</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+            </ul>
+          </div>
+          <div class="side-bar-user">
+            <div class="user-icon">
+              <img src="img/avatar-icon.jpg" alt="">
+            </div>
+            <div class="user-details ms-2">
+              <h4 class="user-name">James Mitchell</h4>
+              <p class="user-sub">Super Administrator</p>
+            </div>
+            <a href="#" class="btn btn-primary ms-auto"><img src="img/sign-out-icon.svg" alt=""></a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- Side bar end -->
+
+    <!-- Content wrapper start -->
+    <div class="content-wrapper">
+
+      <!-- Header start -->
+      <header class="light-header">
+        <div class="container-fluid">
+          <div class="header-top d-md-none mb-3">
+            <div class="side-bar-close"></div>
+            <a class="navbar-brand" href="#">
+              <img class="large-logo" src="img/logo2.png" />
+            </a>
+          </div>
+          <!-- Header main start -->
+          <div class="header-main d-md-flex justify-content-between align-items-center">
+            <h4 class="text-white mb-0 fw-normal">Academy List</h4>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Academy</a></li>
+                <li class="breadcrumb-item active">Academy List</li>
+              </ol>
+            </nav>
+          </div><!-- Header main end -->
+        </div>
+      </header><!-- Header end -->
+
+      <!-- Content start -->
+      <div class="content">
+        <div class="container-fluid">
+
+          <div class="row gx-2 gy-3 mb-4 d-flex mt-md-3">
+
+            <div class="col">
+              <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-1" type="button" role="tab">Overview</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-2" type="button" role="tab">Questions</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-3" type="button" role="tab">Valuation</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-4" type="button" role="tab">Students</button>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-12 col-md-5 align-items-center d-flex gap-2">
+              <a class="btn btn-outline" href="#">Edit</a>
+            </div>
+
+          </div>
+
+          <h4 class="d-flex align-items-center mb-1">Center’s List <span class="badge alert-success ms-2">Success</span></h4>
+          <ul class="list-group list-group-3 mb-4">
+            <li class="list-group-item">
+              <span class="list-label">Title :</span>
+              <span class="list-content">Facebook Ads Fundamentals – Level 1</span>
+            </li>
+            <li class="list-group-item">
+              <span class="list-label">Conducted at :</span>
+              <span class="list-content">12 Aug 2025 10 : 00 AM to 12 :00 PM</span>
+            </li>
+            <li class="list-group-item">
+              <span class="list-label">Exam Link :</span>
+              <span class="list-content"><a href="#">https://devaluate.com/exam-esawe123</a></span>
+            </li>
+          </ul>
+
+          <ul class="list-group list-group-4 mb-4">
+            <li class="list-group-item">
+              <h4 class="mb-0">20</h4>
+              <p class="mb-0 text-primary text-nowrap">Total Questions</p>
+            <li class="list-group-item">
+              <h4 class="mb-0">20</h4>
+              <p class="mb-0 text-primary text-nowrap">Student Pass Score</p>
+            </li>
+            <li class="list-group-item">
+              <h4 class="mb-0">100</h4>
+              <p class="mb-0 text-primary text-nowrap">Total Score</p>
+            </li>
+          </ul>
+
+          <div class="row">
+            <div class="col-lg-9">
+
+              <div class="card-item-3 d-flex flex-column mb-4">
+                <div class="card-header bg-primary border-0">
+                  <h5 class="card-title text-white">Exam Info</h5>
+                </div>
+                <div class="card-body p-0">
+
+                  <div class="border-top py-3 px-4">
+                    <div class="row">
+                      <div class="col-12 d-flex align-items-start">
+                        <img src="img/exam-title-icon.png" alt="">
+                        <div class="ms-3">
+                          <p class="mb-0 text-primary">Exam Ttile</p>
+                          <p class="mb-0 text-dark">Facebook Ads Fundamentals – Level 1</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="border-top py-3 px-4">
+                    <div class="row">
+                      <div class="col-12 d-flex align-items-start">
+                        <div>
+                          <p class="mb-0 text-primary">Exam Description</p>
+                          <p class="mb-0 text-dark">This exam evaluates the candidate's basic understanding of Facebook Ads Manager, campaign objectives, budgeting, and audience targeting for performance marketing.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="border-top py-3 px-4">
+                    <div class="row">
+                      <div class="col-8 d-flex align-items-start">
+                        <img class="me-3" src="img/academy-box-icon.png" alt="">
+                        <div>
+                          <p class="mb-0 text-primary">Academy name</p>
+                          <p class="mb-0 text-dark">TILS-The Institute of Languages and Skills...</p>
+                        </div>
+                      </div>
+
+                      <div class="col-4 d-flex align-items-start">
+                        <img class="me-3" src="img/course-box-icon.png" alt="">
+                        <div>
+                          <p class="mb-0 text-primary">Course</p>
+                          <p class="mb-0 text-dark">Digital Marketing</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="border-top py-3 px-4">
+                    <div class="row">
+                      <div class="col-8 d-flex align-items-start">
+                        <img class="me-3" src="img/ex-schedule-box-icon.png" alt="">
+                        <div>
+                          <p class="mb-0 text-primary">Exam Schedule</p>
+                          <p class="mb-0 text-dark">20 Dec 2025 10:00 AM to 12:00 PM</p>
+                        </div>
+                      </div>
+
+                      <div class="col-4 d-flex align-items-start">
+                        <img class="me-3" src="img/duration-box-icon.png" alt="">
+                        <div>
+                          <p class="mb-0 text-primary">Duration</p>
+                          <p class="mb-0 text-dark">3 Hour</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="card-item-3 d-flex flex-column mb-4">
+                <div class="card-header bg-primary border-0">
+                  <h5 class="card-title text-white">Exam Info</h5>
+                </div>
+                <div class="card-body p-0">
+                  <div class="border-top py-3 px-4">
+                    <div class="row">
+                      <div class="col-8 d-flex align-items-start">
+                        <img class="me-3" src="img/ques-box-icon.png" alt="">
+                        <div>
+                          <p class="mb-0 text-primary">Total Questions</p>
+                          <p class="mb-0 text-dark">20</p>
+                        </div>
+                      </div>
+
+                      <div class="col-4 d-flex align-items-start">
+                        <img class="me-3" src="img/ques-box-icon.png" alt="">
+                        <div>
+                          <p class="mb-0 text-primary">Question Type</p>
+                          <p class="mb-0 text-dark">Both</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="border-top py-3 px-4">
+                    <div class="row">
+                      <div class="col-4 d-flex align-items-start">
+                        <img class="me-3" src="img/score-box-icon.png" alt="">
+                        <div>
+                          <p class="mb-0 text-primary">Score (MCQ)</p>
+                          <p class="mb-0 text-dark">1/ Question</p>
+                        </div>
+                      </div>
+
+                      <div class="col-4 d-flex align-items-start">
+                        <img class="me-3" src="img/score-box-icon.png" alt="">
+                        <div>
+                          <p class="mb-0 text-primary">Score (Short Answer)</p>
+                          <p class="mb-0 text-dark">2/ Question</p>
+                        </div>
+                      </div>
+
+                      <div class="col-4 d-flex align-items-start">
+                        <img class="me-3" src="img/neg-score-box-icon.png" alt="">
+                        <div>
+                          <p class="mb-0 text-primary">Negative score</p>
+                          <p class="mb-0 text-dark">0.5 /Question</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="border-top py-3 px-4">
+                    <div class="row">
+                      <div class="col-8">
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked>
+                          <label class="form-check-label" for="inlineCheckbox1">Randomise Question Poll MCQ</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                          <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                          <label class="form-check-label" for="inlineCheckbox2">Randomise Answer Poll MCQ</label>
+                        </div>
+                      </div>
+
+                      <div class="col-4 d-flex align-items-start">
+                        <a href="#" class="btn btn-outline-primary btn-sm">View All Questions</a>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3">
+
+            </div>
+          </div>
+
+        </div>
+      </div><!-- Content end -->
+
+    </div><!-- Content wrapper end -->
+  </div>
+
+
+  <!-- JS -->
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/daterangepicker.js"></script>
+  <script src="js/chart.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

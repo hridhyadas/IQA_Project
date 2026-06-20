@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom.css?v=6">
+
+  <title>IQA - Verify your Identity</title>
+</head>
+
+<body class="verification-page-body">
+
+  <!-- Preloader start -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div><!-- Preloader end -->
+
+  <div class="verification-wrapper">
+    <div class="verification-card">
+
+      <!-- Left side: background image panel with logo, form, and mobile illustration -->
+      <div class="verification-left-panel">
+
+        <!-- Logo -->
+        <div class="verification-logo-container">
+          <img src="img/logo2.png?v=3" alt="IQA Logo" class="verification-logo" />
+        </div>
+
+        <!-- Verification Form -->
+        <div class="verification-form-container">
+          <div class="verification-form-header text-center">
+            <h5 class="verification-title">Verify your Identity</h5>
+            <p class="verification-subtitle">To Participate exam student need to verify their identity</p>
+          </div>
+
+          <form class="verification-form">
+            <!-- Name -->
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" placeholder="Enter you Name" required>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="your email" required>
+            </div>
+
+            <!-- Code & Mobile -->
+            <div class="row mb-3">
+              <div class="col-4">
+                <label class="form-label">Code</label>
+                <input type="text" class="form-control text-center" value="+1" required>
+              </div>
+              <div class="col-8">
+                <label class="form-label">Mobile</label>
+                <input type="tel" class="form-control" placeholder="Phone with Country code" required>
+              </div>
+            </div>
+
+            <!-- DOB -->
+            <div class="mb-3">
+              <label class="form-label">DOB</label>
+              <input type="text" class="form-control" placeholder="DD-MM-YYYY" required>
+            </div>
+
+            <!-- Terms Checkbox -->
+            <div class="mb-3 d-flex justify-content-center align-items-center">
+              <div class="form-check p-0 d-flex align-items-center gap-2">
+                <input type="checkbox" class="form-check-input m-0" id="termsCheckbox" required>
+                <label class="form-check-label" for="termsCheckbox">I accept all terms and conditions</label>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="text-center mt-3">
+              <button type="submit" class="btn btn-verification">Verify</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Big Ben illustration: stacked on top of background on mobile -->
+        <div class="verification-mobile-illustration">
+          <img src="img/bg-login-illustration.png?v=3" alt="Big Ben Illustration" />
+        </div>
+
+      </div><!-- /.verification-left-panel -->
+
+      <!-- Right side: Banner Image (Desktop only) -->
+      <div class="verification-right-panel d-none d-lg-flex">
+        <img src="img/bg-login-illustration.png?v=3" alt="Big Ben Illustration" class="verification-banner-img" />
+      </div>
+
+    </div><!-- /.verification-card -->
+  </div><!-- /.verification-wrapper -->
+
+  <!-- JS -->
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/daterangepicker.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <title>IQA</title>
+</head>
+
+<body>
+
+  <!-- Preloader start -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div><!-- Preloader end -->
+
+  <div class="wrapper d-flex flex-column">
+    <!-- Side bar start -->
+    <div class="side-bar-wrapper">
+      <div class="side-bar">
+        <div class="side-bar-header">
+          <div class="side-bar-close"></div>
+          <a class="navbar-brand" href="#">
+            <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" />
+          </a>
+        </div>
+        <div class="side-bar-body">
+          <div class="side-menu">
+            <ul class="nav">
+
+              <!-- Menu item start -->
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
+                  <span class="menu-label me-auto">Dashboards</span>
+                </a>
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Exam Managment</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
+                      <span class="menu-label">Exam List</span>
+                      <span class="badge bg-primary">1 Live</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Report</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Valuation</span>
+                      <span class="badge bg-primary">1 Live</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
+                      <span class="menu-label">Question Bank</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Student</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
+                      <span class="menu-label">Student List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Center’s Management</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
+                      <span class="menu-label">Create</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
+                      <span class="menu-label">List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Settings</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li class="active">
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                      <span class="menu-label">Apply for qualification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span>
+                      <span class="menu-label">Location</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                      <span class="menu-label">Courses</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""></span>
+                      <span class="menu-label">Log Out</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+            </ul>
+          </div>
+          <div class="side-bar-user">
+            <div class="user-icon">
+              <img src="img/avatar-icon.jpg" alt="">
+            </div>
+            <div class="user-details ms-2">
+              <h4 class="user-name">James Mitchell</h4>
+              <p class="user-sub">Super Administrator</p>
+            </div>
+            <a href="#" class="btn btn-primary ms-auto"><img src="img/sign-out-icon.svg" alt=""></a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- Side bar end -->
+
+    <!-- Content wrapper start -->
+    <div class="content-wrapper">
+
+      <!-- Header start -->
+      <header class="light-header">
+        <div class="container-fluid">
+          <div class="header-top d-md-none mb-3">
+            <div class="side-bar-close"></div>
+            <a class="navbar-brand" href="#">
+              <img class="large-logo" src="img/logo2.png" />
+            </a>
+          </div>
+          <!-- Header main start -->
+          <div class="header-main d-md-flex justify-content-between align-items-center">
+            <h4 class="text-white mb-0 fw-normal">Academy List</h4>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Academy</a></li>
+                <li class="breadcrumb-item active">Academy List</li>
+              </ol>
+            </nav>
+          </div><!-- Header main end -->
+        </div>
+      </header><!-- Header end -->
+
+      <!-- Content start -->
+      <div class="content">
+        <div class="container-fluid">
+
+          <!-- Content header start -->
+          <div class="content-area-header">
+            <div class="my-auto">
+              <h4 class="page-title">Center’s List</h4>
+              <p class="page-sub-title">1424 Center’s found. 10 of are showing.</p>
+            </div>
+            <div class="ms-auto mt-3 mt-md-0 d-flex">
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+              <a class="btn btn-primary ms-2" href="#" data-bs-toggle="modal" data-bs-target="#editModal"><i class="bi bi-plus-lg"></i> Update</a>
+              <a class="btn btn-primary ms-2" href="#" data-bs-toggle="modal" data-bs-target="#createModal"><i class="bi bi-plus-lg"></i> Add Center</a>
+            </div>
+          </div><!-- Content header end -->
+
+          <div class="row">
+            <div class="col-md-12">
+
+              <!--Table start-->
+              <div class="table-1 mb-4">
+
+                <!--Table header start-->
+                <div class="table-header">
+
+                  <!--Header item start-->
+                  <div class="table-header-item">
+                    <div class="table-title">
+                      <h4 class="mb-0">Patient List</h4>
+                    </div>
+                  </div><!--Header item end-->
+
+                  <!--Header item start-->
+                  <div class="table-header-item">
+                    <form action="">
+                      <div class="table-search">
+                        <input type="search" class="" placeholder="Search">
+                        <button class="btn btn-outline-light ms-2" type="button">Search </button>
+                      </div>
+                    </form>
+                  </div><!--Header item end-->
+
+                  <!--Header item start-->
+                  <div class="table-header-item">
+                    <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-2"><i class="bi bi-plus-lg"></i> Modal 2</a>
+                    <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-3"><i class="bi bi-plus-lg"></i> Modal 3</a>
+                    <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-4"><i class="bi bi-plus-lg"></i> Modal 4</a>
+                    <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-5"><i class="bi bi-plus-lg"></i> Modal 5</a>
+                    <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#modal-6"><i class="bi bi-plus-lg"></i> Modal 6</a>
+                  </div><!--Header item end-->
+
+                </div><!--Table header end-->
+
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <td class="slno">#</td>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                        <td>Booking</td>
+                        <td>Amount</td>
+                        <td class="action">Action</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <th>
+                          <div class="d-flex align-items-center">
+                            <div class="me-2 user-icon">
+                              <img src="img/avatar-icon.jpg" alt="">
+                            </div>
+                            <div>
+                              Jhnon Doe
+                              <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                            </div>
+                          </div>
+                        </th>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div>
+                              Jhnon Doe
+                              <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>@+1 2345 678 923</td>
+                        <td>1</td>
+                        <td>$120</td>
+                        <td class="action">
+                          <ul class="table-action-list">
+                            <li><a class="table-action-item" href="#"><img src="img/table-icon/table-view.svg"></a></li>
+                            <li><a class="table-action-item" href="#" data-bs-toggle="modal" data-bs-target="#editModal"><img src="img/table-icon/table-edit.svg"></a></li>
+                            <li><a class="table-action-item" href="#"><img src="img/table-icon/table-delete.svg"></a></li>
+                            <li><a class="table-action-item" href="#"><img src="img/table-icon/table-building.svg"></a></li>
+                            <li>
+                              <div class="dropdown">
+                                <span class="table-action-item"><img src="img/table-icon/table-more.svg"></span>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">View</a></li>
+                                  <li><a class="dropdown-item" href="#">Edit</a></li>
+                                  <li><a class="dropdown-item" href="#">Delete <img class="ms-auto" src="img/table-icon/table-info.svg"></a></li>
+                                </ul>
+                              </div>
+                            </li>
+                          </ul>
+
+                        </td>
+                      </tr>
+
+
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-footer">
+                  <div class="dataTables_length">
+                    <label>
+                      Show
+                      <select>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                      per page
+                    </label>
+                  </div>
+                  <div class="table-footer-paginate">
+                    <div class="dataTables_info">1-10 of 52</div>
+
+                    <div class="dataTables_paginate">
+                      <a class="paginate_button previous disabled">Previous</a>
+                      <span>
+                        <a class="paginate_button current">1</a>
+                        <a class="paginate_button">2</a>
+                        <a class="paginate_button">3</a>
+                        <a class="paginate_button">4</a>
+                      </span>
+                      <a class="paginate_button next">Next</a>
+                    </div>
+
+                  </div>
+                </div>
+              </div><!--Table end-->
+
+            </div>
+          </div>
+
+        </div>
+      </div><!-- Content end -->
+
+    </div><!-- Content wrapper end -->
+
+  </div>
+
+  <!--Modal start-->
+  <div class="modal fade" id="createModal" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <form class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h3 class="mb-4">Add Students</h3>
+          <div class="row g-3 mb-4">
+            <div class="col-md-12">
+              <label class="form-label">Center Name</label>
+              <select class="form-select">
+                <option selected="">Select</option>
+                <option>1</option>
+                <option>2</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="card-item-3 d-flex flex-column h-100 mb-4">
+            <div class="card-header">
+              <h5 class="card-title">Basic Details</h5>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Name</label>
+                  <input type="text" class="form-control" placeholder="Enter here" value="">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Password</label>
+                  <div class="form-control-password">
+                    <input type="password" class="form-control" placeholder="*****">
+                    <span class="eye-icon"></span>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">DOB</label>
+                  <input type="text" class="form-control form-calendar dob" placeholder="DD/ MM/ YYYY" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Date with Time</label>
+                  <input type="text" class="form-control form-calendar time" placeholder="DD/ MM/ YYYY, 00:00 AM" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" placeholder="Enter here" value="">
+                </div>
+                <div class="col-md-6">
+                  <div class="row g-3">
+                    <div class="col-4">
+                      <label class="form-label">Code</label>
+                      <select class="form-select">
+                        <option selected="">Select</option>
+                        <option>1</option>
+                        <option>2</option>
+                      </select>
+                    </div>
+                    <div class="col-8">
+                      <label class="form-label">Phone</label>
+                      <input type="text" class="form-control" placeholder="Enter here" value="">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <label class="form-label">Address</label>
+                  <textarea class="form-control" rows="5" placeholder="Enter here"></textarea>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Label</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Label</label>
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Label</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">2</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="card-item-3 d-flex flex-column h-100 mb-4">
+            <div class="card-header">
+              <h5 class="card-title">Course Details</h5>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label">Course</label>
+                  <select class="form-select">
+                    <option selected="">Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <div class="row g-3">
+                    <div class="col-6">
+                      <label class="form-label">Time From</label>
+                      <input type="text" class="form-control" placeholder="00:00 AM" />
+                    </div>
+                    <div class="col-6">
+                      <label class="form-label">Time To</label>
+                      <input type="text" class="form-control" placeholder="00:00 AM" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <label class="form-label">Select Courses (Multiple)</label>
+                  <div class="multi-select-dropdown">
+                    <div class="multi-select form-control">
+                      <input type="text" class="multi-select-input" placeholder="Select Options" readonly />
+                      <span class="select-placeholder" style="display: none;">Select Courses</span>
+                    </div>
+                    <div class="multi-select-list">
+                      <div class="multi-select-filter">
+                        <input type="text" class="form-control" placeholder="Search" />
+                      </div>
+                      <div class="multi-select-item selected" data-id="1" data-value="One">One</div>
+                      <div class="multi-select-item" data-id="2" data-value="Two">Two</div>
+                      <div class="multi-select-item selected" data-id="3" data-value="Three">Three</div>
+                      <div class="multi-select-item" data-id="4" data-value="Four">Four</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-item-3 d-flex flex-column h-100 mb-4">
+            <div class="card-header">
+              <h5 class="card-title">Student Photo</h5>
+            </div>
+            <div class="card-body">
+              <div class="row g-3 upload-block">
+                <div class="col-md-6">
+                  <div class="upload-area">
+                    <img src="img/image-uploader-icon.svg">
+                    <h6 class="mb-1 mt-2">Choose a file or drag & drop here.</h6>
+                    <p class="mb-0 text-small">JPEG, PNG, up to 2 MB.</p>
+                    <span class="btn btn-primary btn-sm mt-3">Browse File</span>
+                  </div>
+                  <input type="file" class="file-input" accept="image/*">
+                </div>
+                <div class="col-md-6">
+                  <div class="upload-info">
+                    <img class="preview" src="#">
+                    <div class="upload-info-content">
+                      <div class="d-flex align-items-center">
+                        <p class="file-name"></p>
+                        <p class="image-info"></p>
+                        <span class="clear"><img src="img/close-icon.svg" alt=""></span>
+                      </div>
+                      <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 45%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-outline btn-sm" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Save</button>
+        </div>
+      </form>
+    </div>
+  </div><!--Modal end-->
+
+  <!--Modal start-->
+  <div class="modal fade" id="editModal" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <form class="modal-content">
+        <div class="modal-header d-flex">
+          <h5 class="modal-title">Update Student</h5>
+          <h5 class="mb-0 text-primary">Wallet Balance : $170</h5>
+        </div>
+        <div class="modal-body">
+          <div class="card-item-3 d-flex flex-column h-100 mb-4">
+            <div class="card-header">
+              <h5 class="card-title">Course Status</h5>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-12">
+                  <label class="form-label">Center Name</label>
+                  <select class="form-select">
+                    <option selected="">Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Certificate Number</label>
+                  <input type="text" class="form-control" placeholder="32124456" value="">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Status</label>
+                  <select class="form-select">
+                    <option>Select</option>
+                    <option selected>Completed</option>
+                    <option>2</option>
+                  </select>
+                </div>
+                <div class="col-md-12">
+                  <button type="" class="btn btn-outline btn-sm">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-item-3 d-flex flex-column h-100 mb-4">
+            <div class="card-header">
+              <h5 class="card-title">Wallet Details</h5>
+              <h5 class="card-title"><a href="#" class="text-primary">Edit</a></h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-2">
+                <li class="list-group-item">
+                  <span class="list-label">Certificate Number</span>
+                  <span class="list-content">32123445</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="list-label">Status</span>
+                  <span class="list-content">Completed</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="list-label">Amount Charged</span>
+                  <span class="list-content">$20</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="list-label">Center Wallet Balance</span>
+                  <span class="list-content">$120</span>
+                </li>
+                <li class="list-group-item">
+                  <span class="list-label">Transaction Date</span>
+                  <span class="list-content">18 June, 2025 10:00 AM</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card-item-3 d-flex flex-column h-100 mb-4">
+            <div class="card-header">
+              <h5 class="card-title">Basic Details</h5>
+              <h5 class="card-title">Status: <span class="badge bg-outline-success">Completed</span></h5>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label class="form-label">Certificate Number</label>
+                  <select class="form-select">
+                    <option selected="">Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Created On</label>
+                  <input type="text" class="form-control form-calendar time" placeholder="10 Jan, 2026  04:00 AM" />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Status</label>
+                  <select class="form-select">
+                    <option selected="">Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Name</label>
+                  <input type="text" class="form-control" placeholder="" value="Sreelakshmi">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">DOB</label>
+                  <input type="text" class="form-control form-calendar dob" placeholder="" value="08 Jan, 1998" />
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Fathers’ Name</label>
+                  <input type="text" class="form-control" placeholder="" value="Parameshwar P">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Duration</label>
+                  <select class="form-select">
+                    <option selected="">Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label">Email</label>
+                  <input type="email" class="form-control" placeholder="" value="sree200212@gmail.com">
+                </div>
+                <div class="col-md-2">
+                  <label class="form-label">Code</label>
+                  <select class="form-select">
+                    <option="">Select</option>
+                      <option selected>+91</option>
+                      <option>2</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Phone</label>
+                  <input type="text" class="form-control" placeholder="" value="9846 866 085">
+                </div>
+
+                <div class="col-md-12">
+                  <label class="form-label">Address</label>
+                  <textarea class="form-control" rows="3" placeholder="">Sree Kokilam, Kacheripadi, Mg Road, Ernakulam, 699092</textarea>
+                </div>
+                <div class="col-md-12">
+                  <label class="form-label">Course</label>
+                  <input type="text" class="form-control" placeholder="" value="Advanced Computer Automations " />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-item-3 d-flex flex-column h-100 mb-4">
+            <div class="card-header">
+              <h5 class="card-title">Profile Picture</h5>
+            </div>
+            <div class="card-body">
+              <div class="row g-3 upload-block">
+                <div class="col-md-12">
+                  <div class="upload-area">
+                    <div class="uploaded-img">
+                      <img src="img/img-2.jpg" alt="">
+                    </div>
+                    <span class="btn btn-primary btn-sm mt-3">Change</span>
+                  </div>
+                  <input type="file" class="file-input" accept="image/*">
+                </div>
+                <div class="col-md-6">
+                  <div class="upload-info">
+                    <img class="preview" src="#">
+                    <div class="upload-info-content">
+                      <div class="d-flex align-items-center">
+                        <p class="file-name"></p>
+                        <p class="image-info"></p>
+                        <span class="clear"><img src="img/close-icon.svg" alt=""></span>
+                      </div>
+                      <div class="progress">
+                        <div class="progress-bar bg-primary" role="progressbar" style="width: 45%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer justify-content-center">
+          <button type="button" class="btn btn-outline btn-sm" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Update</button>
+        </div>
+      </form>
+    </div>
+  </div><!--Modal end-->
+
+  <!--Modal start-->
+  <div class="modal fade" id="modal-2" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <form class="modal-content">
+        <div class="modal-body p-4">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="text-center mb-2">Add Score</h5>
+          <p class="text-small text-center mb-0">Short answer max score per question is 2</p>
+
+          <div class="row mt-3 g-3">
+            <div class="col-md-12">
+              <label class="form-label">Label</label>
+              <input type="text" class="form-control" placeholder="Enter" value="">
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Label</label>
+              <input type="text" class="form-control" placeholder="Enter" value="">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Label</label>
+              <input type="text" class="form-control" placeholder="Enter" value="">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Label</label>
+              <input type="text" class="form-control" placeholder="Enter" value="">
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Label</label>
+              <select class="form-select">
+                <option selected="">Select</option>
+                <option>1</option>
+                <option>2</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mt-4 d-flex justify-content-center">
+            <button type="submit" class="btn btn-secondary btn-sm">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div><!--Modal end-->
+
+  <!--Modal start-->
+  <div class="modal fade" id="modal-3" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <form class="modal-content">
+        <div class="modal-body p-4">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="mb-3 text-center">
+            <img src="img/ai-icon.png" alt="">
+          </div>
+
+          <h5 class="text-center mb-2">Generate Questions using AI</h5>
+          <p class="text-small text-center mb-0">Select below options to create questions and answers</p>
+
+          <div class="row mt-3 g-3">
+            <div class="col-md-12">
+              <label class="form-label">Label</label>
+              <input type="text" class="form-control" placeholder="Enter" value="">
+            </div>
+            <div class="col-md-12">
+              <label class="form-label">Label</label>
+              <input type="text" class="form-control" placeholder="Enter" value="">
+            </div>
+          </div>
+          <div class="mt-4 d-flex justify-content-center">
+            <button type="submit" class="btn btn-secondary btn-sm w-100">Generate</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div><!--Modal end-->
+
+  <!--Modal start-->
+  <div class="modal fade" id="modal-4" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <form class="modal-content">
+        <div class="modal-body p-4">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="mb-3 text-center">
+            <img src="img/success-icon.png" alt="">
+          </div>
+
+          <h5 class="text-center mb-2">Your Exam Is Completed</h5>
+          <p class="text-small text-center mb-0">Select below options to create questions and answers</p>
+
+          <div class="mt-4 d-flex justify-content-center">
+            <button type="submit" class="btn btn-secondary btn-sm">Go to Home</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div><!--Modal end-->
+
+  <!--Modal start-->
+  <div class="modal fade" id="modal-5" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-4">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="text-center mb-2">Select Question Type</h5>
+          <p class="text-small text-center mb-0">Select below options to create questions and answers</p>
+
+          <div class="row mt-3 g-3">
+            <div class="col-md-6">
+              <button type="button" class="btn btn-light btn-sm w-100">Multiple Choice</button>
+            </div>
+            <div class="col-md-6">
+              <button type="button" class="btn btn-light btn-sm w-100">True/False</button>
+            </div>
+            <div class="col-md-12">
+              <button type="button" class="btn btn-light btn-sm w-100">Generate Using AI</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div><!--Modal end-->
+
+  <!--Modal start-->
+  <div class="modal fade" id="modal-6" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body p-4">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <h5 class="text-center mb-2">Select Question From Question bank</h5>
+          <p class="text-small text-center mb-0">Select below options to create questions and answers</p>
+
+          <div class="row mt-3 g-2 mb-4 text-center">
+            <div class="col-lg-6 offset-xl-1">
+              <input type="text" class="form-control w-100" placeholder="Enter" value="">
+            </div>
+            <div class="col-lg-4 d-flex gap-2">
+              <div class="dropdown">
+                <button class="btn btn-outline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+
+              <div class="dropdown">
+                <button class="btn btn-outline dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-12 mt-3">
+              <p>Total 200 Questions 3 Questions are selected</p>
+              <button type="button" class="btn btn-primary btn-sm">Add Selected Quesions</button>
+            </div>
+          </div>
+
+
+
+          <div class="d-flex flex-column gap-3">
+            <label class="card-form-check-2">
+              <input class="form-check-input" type="checkbox" name="select-q" checked="">
+              <div class="card-body">
+                <p class="mb-1 text-dark">Q1 : What distinguishes "end" as a noun versus a verb in English dictionary definitions?</p>
+                <p class="mb-0">Answer: Descriptive</p>
+                <span class="checked-icon">
+                  <i class="bi bi-check"></i>
+                </span>
+              </div>
+            </label>
+
+            <label class="card-form-check-2">
+              <input class="form-check-input" type="checkbox" name="select-q">
+              <div class="card-body">
+                <p class="mb-1 text-dark">Q1 : What distinguishes "end" as a noun versus a verb in English dictionary definitions?</p>
+                <p class="mb-0">a. True | <span class="text-success">b. False</span></p>
+                <span class="checked-icon">
+                  <i class="bi bi-check"></i>
+                </span>
+              </div>
+            </label>
+
+            <div class="text-center mt-2">
+              <a class="link text-small" href="#">View More</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div><!--Modal end-->
+
+  <!-- JS -->
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/daterangepicker.js"></script>
+  <script src="js/chart.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,2543 @@
+/* Custom Styles for IQA Exam Portal Redesign - Dashboard-Superadmin (Web and Mobile) */
+
+:root {
+  --bs-primary: #DF001B;
+  --bs-primary-hover: #c90018;
+  --bs-secondary: #21236A;
+  --bs-secondary-hover: #171952;
+  --bs-light: #676A72;
+  --bs-bg: #F0F1F1;
+  --bs-dark: #1D2465;
+  --bs-success: #0BC33F;
+  --bs-success-bg: #E1FCE9;
+  --bs-live-bg: #FFEAEE;
+  --bs-live-color: #ED143B;
+  --bs-warning: #C9A757;
+  --font-1: "Inter", sans-serif;
+  --menu-open: 305px;
+  --menu-close: 82px;
+}
+
+body {
+  font-family: var(--font-1);
+  background-color: var(--bs-bg);
+}
+
+/* 1. Sidebar Redesign */
+/* 1. Sidebar Redesign and Responsive States */
+body.desktop .side-bar-wrapper,
+body.tablet .side-bar-wrapper {
+  width: var(--menu-open);
+  background-color: #21236A !important;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  padding: 0 !important;
+}
+
+body.desktop .side-bar,
+body.tablet .side-bar {
+  background-color: #21236A !important;
+  border: none !important;
+  height: 100% !important;
+  border-radius: 0 !important;
+}
+
+.side-bar-body {
+  background-color: #21236A !important;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 0 !important;
+}
+
+.side-menu .nav-item .nav-link {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  border-radius: 8px;
+  margin: 2px 24px;
+  /* Align horizontally inside menu */
+  padding: 10px 16px !important;
+  display: flex !important;
+  align-items: center;
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.side-menu .nav-item .nav-link:hover {
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.side-menu .nav-item.active>.nav-link {
+  background-color: #DF001B !important;
+  color: #FFFFFF !important;
+}
+
+.side-menu .nav-item .menu-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  margin-right: 12px;
+}
+
+.side-menu .nav-item .menu-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Sidebar Search Bar */
+.sidebar-search-container {
+  padding: 10px 24px;
+  transition: opacity 0.2s ease, padding 0.3s ease;
+}
+
+.sidebar-search-box {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-search-box input {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.sidebar-search-box input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.sidebar-search-shortcut {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.side-menu .menu-label {
+  font-family: var(--font-1);
+  transition: opacity 0.2s ease;
+}
+
+.side-bar .dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+  border: none !important;
+  padding-left: 15px !important;
+}
+
+.side-bar .dropdown-item {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 13px !important;
+  padding: 8px 12px !important;
+}
+
+.side-bar .dropdown-item:hover,
+.side-bar .dropdown-item.active {
+  color: #FFFFFF !important;
+  background-color: transparent !important;
+  font-weight: 500;
+}
+
+/* Sidebar Section Headers */
+.side-menu-section-title {
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-size: 11px !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 16px 24px 8px !important;
+  margin: 0;
+  list-style: none;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+/* Sidebar User Info */
+body.desktop .side-bar-user,
+body.tablet .side-bar-user {
+  display: none !important;
+}
+
+/* Sidebar Log Out Button */
+.side-bar-logout-container {
+  padding: 24px;
+  margin-top: auto;
+  transition: padding 0.3s ease;
+}
+
+.btn-sidebar-logout {
+  width: 100%;
+  background-color: transparent !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  padding: 12px !important;
+  border-radius: 12px !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  border: none !important;
+}
+
+.btn-sidebar-logout:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+}
+
+.btn-sidebar-logout img {
+  filter: brightness(0) invert(1);
+}
+
+.btn-sidebar-logout span {
+  transition: opacity 0.2s ease;
+}
+
+/* ==========================================================================
+   SIDEBAR COLLAPSE / EXPAND TRANSITIONS & OVERRIDES (DESKTOP & TABLET)
+   ========================================================================== */
+
+/* Collapsed Sidebar Wrapper */
+body.desktop.close-menu .side-bar-wrapper,
+body.tablet:not(.open-menu) .side-bar-wrapper {
+  width: var(--menu-close) !important;
+}
+
+/* Collapsed Content Wrapper Adjustment */
+body.desktop.close-menu .content-wrapper,
+body.tablet:not(.open-menu) .content-wrapper {
+  width: calc(100% - var(--menu-close)) !important;
+  margin-left: var(--menu-close) !important;
+}
+
+/* Collapsed Inner Elements - Mute / Hide Text */
+body.desktop.close-menu .side-bar-wrapper .sidebar-search-shortcut,
+body.desktop.close-menu .side-bar-wrapper .sidebar-search-box input,
+body.desktop.close-menu .side-bar-wrapper .side-menu-section-title,
+body.desktop.close-menu .side-bar-wrapper .side-menu .nav-item .menu-label,
+body.desktop.close-menu .side-bar-wrapper .side-menu .nav-item .badge,
+body.desktop.close-menu .side-bar-wrapper .btn-sidebar-logout span,
+body.tablet:not(.open-menu) .side-bar-wrapper .sidebar-search-shortcut,
+body.tablet:not(.open-menu) .side-bar-wrapper .sidebar-search-box input,
+body.tablet:not(.open-menu) .side-bar-wrapper .side-menu-section-title,
+body.tablet:not(.open-menu) .side-bar-wrapper .side-menu .nav-item .menu-label,
+body.tablet:not(.open-menu) .side-bar-wrapper .side-menu .nav-item .badge,
+body.tablet:not(.open-menu) .side-bar-wrapper .btn-sidebar-logout span {
+  opacity: 0 !important;
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+}
+
+/* Collapsed Search Box adjusts to icon button style */
+body.desktop.close-menu .side-bar-wrapper .sidebar-search-container,
+body.tablet:not(.open-menu) .side-bar-wrapper .sidebar-search-container {
+  padding: 10px 13px !important;
+}
+
+body.desktop.close-menu .side-bar-wrapper .sidebar-search-box,
+body.tablet:not(.open-menu) .side-bar-wrapper .sidebar-search-box {
+  padding: 8px 0 !important;
+  justify-content: center;
+  background: transparent !important;
+}
+
+body.desktop.close-menu .side-bar-wrapper .sidebar-search-box::before,
+body.tablet:not(.open-menu) .side-bar-wrapper .sidebar-search-box::before {
+  content: "\f52a";
+  /* Bootstrap Icon Search code */
+  font-family: "bootstrap-icons" !important;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+}
+
+/* Collapsed Nav Links center icons and align margin */
+body.desktop.close-menu .side-bar-wrapper .side-menu .nav-item .nav-link,
+body.tablet:not(.open-menu) .side-bar-wrapper .side-menu .nav-item .nav-link {
+  margin: 2px 13px !important;
+  padding: 10px 0 !important;
+  justify-content: center !important;
+}
+
+body.desktop.close-menu .side-bar-wrapper .side-menu .nav-item .menu-icon,
+body.tablet:not(.open-menu) .side-bar-wrapper .side-menu .nav-item .menu-icon {
+  margin-right: 0 !important;
+}
+
+/* Collapsed Logout button fits inside collapsed bar */
+body.desktop.close-menu .side-bar-wrapper .side-bar-logout-container,
+body.tablet:not(.open-menu) .side-bar-wrapper .side-bar-logout-container {
+  padding: 15px 13px !important;
+}
+
+body.desktop.close-menu .side-bar-wrapper .btn-sidebar-logout,
+body.tablet:not(.open-menu) .side-bar-wrapper .btn-sidebar-logout {
+  padding: 10px 0 !important;
+  border-radius: 8px !important;
+  justify-content: center !important;
+  width: 44px !important;
+  height: 44px !important;
+  margin: 0 auto !important;
+}
+
+/* --- Expanded Hover Expand States --- */
+body.desktop.expand-menu .side-bar-wrapper,
+body.tablet.open-menu .side-bar-wrapper {
+  width: var(--menu-open) !important;
+}
+
+body.desktop.expand-menu .content-wrapper,
+body.tablet.open-menu .content-wrapper {
+  width: calc(100% - var(--menu-open)) !important;
+  margin-left: var(--menu-open) !important;
+}
+
+body.desktop.expand-menu .side-bar-wrapper .sidebar-search-shortcut,
+body.desktop.expand-menu .side-bar-wrapper .sidebar-search-box input,
+body.desktop.expand-menu .side-bar-wrapper .side-menu-section-title,
+body.desktop.expand-menu .side-bar-wrapper .side-menu .nav-item .menu-label,
+body.desktop.expand-menu .side-bar-wrapper .side-menu .nav-item .badge,
+body.desktop.expand-menu .side-bar-wrapper .btn-sidebar-logout span,
+body.tablet.open-menu .side-bar-wrapper .sidebar-search-shortcut,
+body.tablet.open-menu .side-bar-wrapper .sidebar-search-box input,
+body.tablet.open-menu .side-bar-wrapper .side-menu-section-title,
+body.tablet.open-menu .side-bar-wrapper .side-menu .nav-item .menu-label,
+body.tablet.open-menu .side-bar-wrapper .side-menu .nav-item .badge,
+body.tablet.open-menu .side-bar-wrapper .btn-sidebar-logout span {
+  opacity: 1 !important;
+  pointer-events: auto;
+  transition: opacity 0.25s ease 0.1s;
+}
+
+body.desktop.expand-menu .side-bar-wrapper .sidebar-search-container,
+body.tablet.open-menu .side-bar-wrapper .sidebar-search-container {
+  padding: 10px 24px !important;
+}
+
+body.desktop.expand-menu .side-bar-wrapper .sidebar-search-box,
+body.tablet.open-menu .side-bar-wrapper .sidebar-search-box {
+  padding: 8px 12px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.desktop.expand-menu .side-bar-wrapper .sidebar-search-box::before,
+body.tablet.open-menu .side-bar-wrapper .sidebar-search-box::before {
+  display: none !important;
+}
+
+body.desktop.expand-menu .side-bar-wrapper .side-menu .nav-item .nav-link,
+body.tablet.open-menu .side-bar-wrapper .side-menu .nav-item .nav-link {
+  margin: 2px 24px !important;
+  padding: 10px 16px !important;
+  justify-content: flex-start !important;
+}
+
+body.desktop.expand-menu .side-bar-wrapper .side-menu .nav-item .menu-icon,
+body.tablet.open-menu .side-bar-wrapper .side-menu .nav-item .menu-icon {
+  margin-right: 12px !important;
+}
+
+body.desktop.expand-menu .side-bar-wrapper .side-bar-logout-container,
+body.tablet.open-menu .side-bar-wrapper .side-bar-logout-container {
+  padding: 24px !important;
+}
+
+body.desktop.expand-menu .side-bar-wrapper .btn-sidebar-logout,
+body.tablet.open-menu .side-bar-wrapper .btn-sidebar-logout {
+  width: 100% !important;
+  padding: 12px !important;
+  border-radius: 12px !important;
+  justify-content: center !important;
+}
+
+/* 2. Content Layout Wrapper Default styling */
+body.desktop .content-wrapper,
+body.tablet .content-wrapper {
+  background-color: #F0F1F1 !important;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.desktop .content-wrapper {
+  width: calc(100% - var(--menu-open));
+  margin-left: var(--menu-open);
+  padding: 40px !important;
+}
+
+/* Premium Outer Panel Styling */
+.dashboard-main-panel {
+  background: #F0F1F1;
+  width: 100%;
+}
+
+/* 3. Header Redesign (Logo left, Profile right) */
+.light-header {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin-bottom: 40px !important;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.header-logo-img {
+  width: 303px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.header-profile-widget {
+  display: flex;
+  align-items: center;
+  background: #FFFFFF;
+  padding: 10px 24px;
+  border-radius: 44px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.header-profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 16px;
+}
+
+.header-profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-profile-name {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1D2465;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.header-profile-role {
+  font-size: 14px;
+  color: #676A72;
+  margin: 4px 0 0 0;
+}
+
+/* 4. KPI Card System */
+.kpi-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  height: 100%;
+}
+
+.kpi-card {
+  position: relative;
+  padding-top: 40px;
+  /* Offset for the overlapping badge */
+  width: 100%;
+}
+
+.kpi-card-body {
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 165px;
+}
+
+.kpi-value {
+  font-size: 48px;
+  font-weight: 600;
+  color: #1D2465;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.kpi-footer {
+  width: 100%;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.kpi-icon-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+}
+
+.kpi-icon-badge img,
+.kpi-icon-badge svg {
+  width: 42px;
+  height: 42px;
+  filter: brightness(0) invert(1);
+  /* Ensure white icons */
+}
+
+/* Brand Colors for KPIs */
+.color-academics {
+  background-color: #7485CE !important;
+}
+
+.color-enrolled {
+  background-color: #3C4689 !important;
+}
+
+.color-conducted {
+  background-color: #1D2465 !important;
+}
+
+.color-courses {
+  background-color: #DF001B !important;
+}
+
+/* 5. Questions Quadrant Widget */
+.quadrant-card {
+  background: #FFFFFF;
+  border-radius: 44px;
+  padding: 40px;
+  height: 475px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.quadrant-grid {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.grid-line-h {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 50%;
+  height: 1px;
+  background-color: #21236A;
+}
+
+.grid-line-h::before,
+.grid-line-h::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #21236A;
+  transform: translateY(-50%);
+}
+
+.grid-line-h::before {
+  left: 0;
+}
+
+.grid-line-h::after {
+  right: 0;
+}
+
+.grid-line-v {
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 50%;
+  width: 1px;
+  background-color: #21236A;
+}
+
+.grid-line-v::before,
+.grid-line-v::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #21236A;
+  transform: translateX(-50%);
+}
+
+.grid-line-v::before {
+  top: 0;
+}
+
+.grid-line-v::after {
+  bottom: 0;
+}
+
+.grid-diamond {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 42px;
+  height: 42px;
+  background-color: #DF001B;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 4px;
+  z-index: 5;
+}
+
+.quadrant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.quad-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #21236A;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.quad-badge {
+  background-color: #F0F2FA !important;
+  color: #21236A !important;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 6px;
+  min-width: 44px;
+  text-align: center;
+  border: 1px solid #DCDDDE;
+}
+
+/* 6. Recent Exam List Table Redesign */
+.custom-table-card {
+  background: #FFFFFF;
+  border-radius: 44px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03);
+  border: none !important;
+}
+
+.custom-table-header {
+  background-color: #D4D7E6 !important;
+  color: #21236A !important;
+  padding: 18px 30px !important;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+}
+
+.recent-exams-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0;
+}
+
+.recent-exams-table thead tr {
+  background-color: #21236A !important;
+  color: #FFFFFF !important;
+}
+
+.recent-exams-table thead th,
+.recent-exams-table thead td {
+  padding: 14px 20px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  vertical-align: middle;
+}
+
+.recent-exams-table tbody tr:nth-child(odd) {
+  background-color: #FFFFFF !important;
+}
+
+.recent-exams-table tbody tr:nth-child(even) {
+  background-color: #F8F9FB !important;
+}
+
+.recent-exams-table tbody td,
+.recent-exams-table tbody th {
+  padding: 14px 20px !important;
+  font-size: 13px !important;
+  font-weight: 400;
+  border-bottom: 1px solid #EAEAEF !important;
+  color: #21236A !important;
+  vertical-align: middle;
+}
+
+/* Alternate row text rules for dark row readability */
+.recent-exams-table tbody tr td,
+.recent-exams-table tbody tr th,
+.recent-exams-table tbody tr p,
+.recent-exams-table tbody tr .text-small {
+  color: #21236A !important;
+}
+
+.recent-exams-table tbody tr .text-small {
+  opacity: 0.6;
+}
+
+/* Action list icons inversion in dark rows */
+.table-action-item i {
+  color: #21236A !important;
+}
+
+.table-action-list {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.table-action-item {
+  width: 32px !important;
+  height: 32px !important;
+  background-color: #FFFFFF !important;
+  border-radius: 50% !important;
+  border: 1px solid #E2E3E8 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.03) !important;
+  transition: all 0.2s ease !important;
+}
+
+.table-action-item img {
+  width: 16px;
+  height: 16px;
+}
+
+.table-action-item:hover {
+  background-color: #F4F5F7 !important;
+  border-color: #C3C4CA !important;
+}
+
+/* Pagination Footer Redesign */
+.custom-table-footer {
+  background-color: #D4D7E6 !important;
+  color: #21236A !important;
+  padding: 16px 30px !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none !important;
+}
+
+.custom-table-footer select {
+  background-color: #FAFAFA;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #2C2D30;
+  margin: 0 6px;
+  font-size: 11px;
+}
+
+.custom-pagination-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-pagination-pages {
+  display: flex;
+  gap: 8px;
+}
+
+.custom-pagination-pages a {
+  color: #C9A757 !important;
+  /* gold */
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+
+.custom-pagination-pages a.active {
+  color: #FFFFFF !important;
+  font-weight: 600;
+}
+
+/* Badges styling */
+.badge-scheduled {
+  background-color: #E1FCE9 !important;
+  color: #0BC33F !important;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 12px !important;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-scheduled::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #0BC33F;
+}
+
+.badge-live {
+  background-color: #FFEAEE !important;
+  color: #ED143B !important;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 12px !important;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-live::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #ED143B;
+}
+
+/* 7. Top Academies Widget Redesign */
+.top-academies-card {
+  background: #FFFFFF;
+  border-radius: 44px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03);
+  height: 459px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top-academies-header {
+  background-color: #D4D7E6 !important;
+  color: #21236A !important;
+  padding: 18px 30px !important;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+}
+
+.top-academies-body {
+  padding: 24px 30px !important;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.academy-row-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.academy-row-left {
+  display: flex;
+  align-items: center;
+}
+
+.academy-icon-box {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background-color: #F0F2FA !important;
+  border: 1px solid #E2E3E8 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-right: 12px !important;
+}
+
+.academy-icon-box img {
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain;
+}
+
+.academy-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1D2465;
+  margin: 0;
+}
+
+.academy-students {
+  font-size: 12px;
+  color: #676A72;
+  margin: 2px 0 0 0;
+}
+
+.top-academies-footer {
+  padding: 12px 30px !important;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #F1F1F4;
+}
+
+.btn-view-all {
+  color: #1D2465 !important;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.btn-view-all:hover {
+  text-decoration: underline;
+}
+
+/* 8. Bottom Row: Bar Chart, Live Circle, Exams List Redesign */
+.student-added-card {
+  background-color: #1D2465 !important;
+  border-radius: 44px;
+  padding: 30px 40px;
+  color: #FFFFFF;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03);
+  height: 300px;
+  display: flex !important;
+  flex-direction: row;
+}
+
+.chart-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-right: 24px;
+  border-right: 1px dashed rgba(255, 255, 255, 0.15);
+}
+
+.btn-group-chart-filter {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-group-chart-filter .btn {
+  font-size: 13px !important;
+  font-weight: 500;
+  padding: 6px 20px !important;
+  border-radius: 100px !important;
+  border: none !important;
+}
+
+.btn-chart-active {
+  background-color: #DF001B !important;
+  color: #FFFFFF !important;
+}
+
+.btn-chart-inactive {
+  background-color: #F0F1F1 !important;
+  color: #1D2465 !important;
+}
+
+/* Custom capsule bar chart styling */
+.custom-capsule-chart {
+  display: flex;
+  height: 170px;
+  position: relative;
+  margin-top: 10px;
+}
+
+.chart-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-right: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+  height: 140px;
+  font-weight: 500;
+  width: 30px;
+}
+
+.chart-area-wrapper {
+  flex-grow: 1;
+  position: relative;
+  height: 100%;
+}
+
+.chart-grid-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.chart-grid-lines .grid-line {
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+}
+
+.chart-columns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.chart-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+}
+
+.pill-stack {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 3px;
+  margin-bottom: 8px;
+  height: 140px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.chart-pill {
+  width: 22px;
+  height: 8px;
+  border-radius: 100px;
+}
+
+.chart-pill.pill-red {
+  background-color: #DF001B;
+}
+
+.chart-pill.pill-white {
+  background-color: #FFFFFF;
+}
+
+.chart-pill.pill-empty {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.column-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 11px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Live Exams counter in the card */
+.live-exams-side-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  flex-shrink: 0;
+  padding-left: 24px;
+}
+
+.live-exams-val {
+  font-size: 80px;
+  font-weight: 700;
+  color: #DF001B !important;
+  line-height: 1;
+}
+
+.live-exams-txt {
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-top: 12px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Exams Overview Card styling (Right card) */
+.exams-overview-card {
+  background: #FFFFFF;
+  border-radius: 44px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.03);
+  border: none !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}
+
+.exams-overview-header-tag {
+  background-color: #E2E3E8;
+  padding: 6px 18px;
+  border-radius: 100px;
+  margin: 24px 24px 0 24px;
+  display: inline-block;
+  width: fit-content;
+}
+
+.exams-overview-header-tag span {
+  color: #21236A;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.exams-overview-body-new {
+  padding: 16px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.exam-row-item-new {
+  display: flex;
+  align-items: center;
+}
+
+.exam-row-pill-icon {
+  width: 14px;
+  height: 8px;
+  border-radius: 100px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.exam-row-pill-icon.color-scheduled {
+  background-color: #DF001B;
+}
+
+.exam-row-pill-icon.color-live {
+  background-color: #21236A;
+}
+
+.exam-row-pill-icon.color-completed {
+  background-color: #1D2465;
+}
+
+.exam-row-pill-icon.color-pending {
+  background-color: #798EC8;
+}
+
+.exam-row-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #E2E3E8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  color: #676A72;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.exam-row-stats {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.exam-row-num {
+  font-size: 20px;
+  font-weight: 700;
+  color: #21236A;
+}
+
+.exam-row-lbl {
+  font-size: 11px;
+  color: #676A72;
+  font-weight: 500;
+}
+
+/* 8.5 Tablet view layout wrapper override */
+body.tablet .content-wrapper {
+  padding: 24px !important;
+}
+
+body.tablet.open-menu .content-wrapper {
+  margin-left: var(--menu-open) !important;
+  width: calc(100% - var(--menu-open)) !important;
+}
+
+/* 8.6 Stack columns on viewports <= 1249px */
+@media (max-width: 1249px) {
+
+  /* Row 2 layout overrides */
+  .r2-layout {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .r2-layout>.col-lg-7,
+  .r2-layout>.col-lg-5 {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .quadrant-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 350px !important;
+    padding: 30px !important;
+  }
+
+  /* Row 3 layout overrides */
+  .r3-layout {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .r3-layout>.col-lg-8,
+  .r3-layout>.col-lg-4 {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .top-academies-card {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Row 4 layout overrides */
+  .r4-layout {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+
+  .r4-layout>.col-lg-9,
+  .r4-layout>.col-lg-3 {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .student-added-card {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 300px !important;
+  }
+
+  .exams-overview-card {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .exams-overview-body-new {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    justify-content: space-between !important;
+    padding: 24px !important;
+  }
+
+  .exam-row-item-new {
+    flex: 1 0 20% !important;
+    min-width: 180px !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+/* 9. Mobile View Overrides */
+@media (max-width: 991px) {
+
+  body.mobile .content-wrapper,
+  body.tablet .content-wrapper {
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 16px !important;
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .header-logo-img {
+    width: 180px;
+    height: 57px;
+  }
+
+  .header-profile-widget {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px;
+    border-radius: 24px;
+  }
+
+  .header-profile-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .header-profile-name {
+    font-size: 18px;
+  }
+
+  /* Cards & layout panels on mobile */
+  .kpi-grid-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .kpi-card {
+    padding-top: 25px;
+  }
+
+  .kpi-card-body {
+    border-radius: 24px;
+    height: 137px;
+  }
+
+  .kpi-icon-badge {
+    width: 50px;
+    height: 50px;
+  }
+
+  .kpi-icon-badge img,
+  .kpi-icon-badge svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .kpi-value {
+    font-size: 30px;
+  }
+
+  .quadrant-card {
+    border-radius: 24px;
+    height: 355px;
+    padding: 20px;
+  }
+
+  .quad-title {
+    font-size: 20px;
+  }
+
+  .custom-table-card,
+  .top-academies-card,
+  .exams-overview-card,
+  .student-added-card {
+    border-radius: 24px !important;
+    height: auto !important;
+    margin-bottom: 16px;
+  }
+
+  .student-added-card {
+    padding: 20px !important;
+    flex-direction: column !important;
+  }
+
+  .chart-section-wrapper {
+    border-right: none !important;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+    padding-right: 0 !important;
+    padding-bottom: 24px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .live-exams-side-wrapper {
+    width: 100% !important;
+    padding-left: 0 !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    padding-top: 10px;
+  }
+
+  .live-exams-val {
+    font-size: 60px !important;
+  }
+
+  .live-exams-txt {
+    margin-top: 0 !important;
+  }
+
+  /* Vertical stacking for exams overview items on mobile */
+  .exams-overview-body-new {
+    flex-direction: column !important;
+    gap: 16px !important;
+  }
+
+  .exam-row-item-new {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   DESKTOP PIXEL PERFECT OVERRIDES (width >= 1550px)
+   ========================================================================== */
+
+/* Quadrant Title wrap prevention */
+.quad-title {
+  white-space: nowrap !important;
+}
+
+/* Sidebar header logo hiding & button styling on desktop & tablet */
+body.desktop .side-bar-header,
+body.tablet .side-bar-header {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 80px !important;
+  position: relative !important;
+}
+
+body.desktop .side-bar-header .navbar-brand,
+body.tablet .side-bar-header .navbar-brand {
+  display: none !important;
+}
+
+body.desktop .side-bar-close,
+body.tablet .side-bar-close {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 28px !important;
+  height: 28px !important;
+  background-color: #FFFFFF !important;
+  background-image: none !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 50% !important;
+  top: 40px !important;
+  transform: translateY(-50%) !important;
+  right: -14px !important;
+  left: auto !important;
+  z-index: 1070 !important;
+  cursor: pointer !important;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.3s ease;
+}
+
+body.desktop .side-bar-close::before,
+body.tablet .side-bar-close::before {
+  content: "\f27f" !important;
+  /* chevron-left */
+  font-family: "bootstrap-icons" !important;
+  font-size: 14px !important;
+  color: #21236A !important;
+  font-weight: 900 !important;
+}
+
+body.desktop.close-menu .side-bar-close::before,
+body.tablet.close-menu .side-bar-close::before,
+body.tablet:not(.open-menu) .side-bar-close::before {
+  content: "\f285" !important;
+  /* chevron-right */
+}
+
+@media (min-width: 1550px) {
+
+  /* Restrict dashboard main panel size to Figma content width */
+  .dashboard-main-panel {
+    max-width: 1174px !important;
+    width: 1174px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Row 2 layout overrides */
+  .r2-layout {
+    display: flex !important;
+    gap: 0 !important;
+  }
+
+  .r2-layout>.col-lg-7 {
+    width: 635px !important;
+    flex: 0 0 635px !important;
+    max-width: 635px !important;
+    padding-right: 0 !important;
+  }
+
+  .r2-layout>.col-lg-5 {
+    width: 475px !important;
+    flex: 0 0 475px !important;
+    max-width: 475px !important;
+    margin-left: 64px !important;
+    /* Figma gap */
+    padding-left: 0 !important;
+  }
+
+  /* KPI Grid container override */
+  .kpi-grid-container {
+    display: grid !important;
+    grid-template-columns: 299px 299px !important;
+    column-gap: 36px !important;
+    row-gap: 66px !important;
+    justify-content: start !important;
+    height: auto !important;
+  }
+
+  .kpi-card {
+    width: 299px !important;
+    height: 205px !important;
+    padding-top: 40px !important;
+  }
+
+  .kpi-card-body {
+    height: 165px !important;
+  }
+
+  /* Quadrant Card override */
+  .quadrant-card {
+    width: 475px !important;
+    height: 475px !important;
+  }
+
+  /* Row 3 layout overrides */
+  .r3-layout {
+    display: flex !important;
+    gap: 0 !important;
+  }
+
+  .r3-layout>.col-lg-8 {
+    width: 849px !important;
+    flex: 0 0 849px !important;
+    max-width: 849px !important;
+    padding-right: 0 !important;
+  }
+
+  .r3-layout>.col-lg-4 {
+    width: 305px !important;
+    flex: 0 0 305px !important;
+    max-width: 305px !important;
+    margin-left: 20px !important;
+    /* Figma gap */
+    padding-left: 0 !important;
+  }
+
+  .top-academies-card {
+    width: 305px !important;
+    height: 459px !important;
+  }
+
+  /* Row 4 layout overrides */
+  .r4-layout {
+    display: flex !important;
+    gap: 0 !important;
+  }
+
+  .r4-layout>.col-lg-9 {
+    width: 948px !important;
+    flex: 0 0 948px !important;
+    max-width: 948px !important;
+    padding-right: 0 !important;
+  }
+
+  .r4-layout>.col-lg-3 {
+    width: 206px !important;
+    flex: 0 0 206px !important;
+    max-width: 206px !important;
+    margin-left: 20px !important;
+    /* Figma gap */
+    padding-left: 0 !important;
+  }
+
+  .student-added-card {
+    width: 948px !important;
+    height: 300px !important;
+  }
+
+  .exams-overview-card {
+    width: 206px !important;
+    height: 300px !important;
+  }
+}
+
+/* ==========================================================================
+   LOGIN SCREEN REDESIGN STYLES
+   ========================================================================== */
+
+/* Page background */
+.login-page-body {
+  background-color: #FFFFFF !important;
+  /* Outer canvas is white */
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.login-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 1594px;
+  max-height: 1052px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 1554px;
+  height: 100%;
+  max-height: 1012px;
+  background-color: #F3F4F4;
+  border-radius: 44px;
+  /* Matches dashboard card border radius */
+  overflow: hidden;
+  /* Clips illustration and bg inside card bounds */
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Left Panel — fills all remaining space, bg-login-web.png as background */
+.login-left-panel {
+  flex: 1 1 0%;
+  min-width: 0;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 1;
+  background-image: url(../img/bg-login-web.png?v=3);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Hide original background polygon elements since we now use the actual design image asset */
+.login-polygon {
+  display: none !important;
+}
+
+/* Logo — positioned absolutely on desktop so the form can be centered perfectly */
+.login-logo-container {
+  position: absolute;
+  top: 40px;
+  left: 180px;
+  z-index: 3;
+}
+
+.login-logo {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Form Container — fills remaining height and centers content vertically */
+.login-form-container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 360px;
+  max-width: calc(100% - 80px);
+  align-self: center;
+  box-sizing: border-box;
+  padding: 20px 0;
+  z-index: 2;
+  position: relative;
+}
+
+@media (min-width: 1200px) {
+  .login-form-container {
+    align-self: flex-start;
+    margin-left: 357px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .login-form-container {
+    align-self: flex-start;
+    margin-left: 542px;
+  }
+}
+
+/* Header styles */
+.login-form-header {
+  margin-bottom: 24px;
+}
+
+.login-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #2C2D30;
+  margin-bottom: 6px;
+}
+
+.login-subtitle {
+  font-size: 13px;
+  color: #676A72;
+  margin: 0;
+}
+
+.login-link {
+  color: #21236A !important;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* Input Fields styling */
+.login-form .form-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: #2C2D30;
+  margin-bottom: 8px;
+}
+
+.login-form .form-control {
+  height: 40px;
+  border: 1.5px solid #21236A !important;
+  /* Premium dark blue border from Figma/mockup */
+  border-radius: 8px;
+  font-size: 13px;
+  color: #2C2D30;
+  background-color: #FFFFFF;
+}
+
+.login-form .form-control:focus {
+  border-color: #21236A;
+  box-shadow: 0 0 0 2px rgba(33, 35, 106, 0.1);
+}
+
+.login-form .form-control::placeholder {
+  color: #8E9198;
+}
+
+/* Links */
+.forgot-password-link {
+  font-size: 13px;
+  color: #1379F0 !important;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox */
+.login-form .form-check-input {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #21236A;
+  /* Matching blue border */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-form .form-check-input:checked {
+  background-color: #21236A;
+  border-color: #21236A;
+}
+
+.login-form .form-check-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #393B40;
+  cursor: pointer;
+  line-height: 18px;
+}
+
+/* Submit Button */
+.btn-login {
+  width: 106px;
+  height: 42px;
+  background-color: #21236A !important;
+  color: #FFFFFF !important;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.btn-login:hover {
+  background-color: #171952 !important;
+}
+
+/* Right Panel (Banner Photo) — fixed width column on desktop */
+.login-right-panel {
+  width: 395px;
+  flex: 0 0 395px;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: #F3F4F4;
+}
+
+.login-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* Mobile illustration — hidden by default on desktop */
+.login-mobile-illustration {
+  display: none !important;
+}
+
+/* ==========================================================================
+   MOBILE VIEW overrides FOR LOGIN (width < 992px)
+   ========================================================================== */
+@media (max-width: 991px) {
+  .login-page-body {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF !important;
+  }
+
+  .login-wrapper {
+    max-height: none;
+    padding: 0;
+  }
+
+  .login-card {
+    width: 100%;
+    max-width: 402px;
+    height: auto;
+    min-height: 780px;
+    max-height: 100vh;
+    border-radius: 24px;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .login-left-panel {
+    width: 100%;
+    flex: 1 1 auto;
+    padding: 40px 24px 120px 24px;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../img/bg-login-mobile.png?v=3) !important;
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  /* Logo positioned on top of the form on mobile */
+  .login-logo-container {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 36px;
+    z-index: 2;
+  }
+
+  .login-logo {
+    width: 180px;
+    height: auto;
+  }
+
+  /* Form Container */
+  .login-form-container {
+    width: 310px;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+    padding-bottom: 60px;
+    /* Leave space so illustration doesn't overlap the button */
+  }
+
+  /* Hide right panel photo on mobile */
+  .login-right-panel {
+    display: none;
+  }
+
+  /* Mobile Big Ben Illustration — absolute bottom-right, clipped by overflow:hidden on parent */
+  .login-mobile-illustration {
+    display: block !important;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 280px;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .login-mobile-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom right;
+    opacity: 0.85;
+  }
+}
+
+/* ==========================================================================
+   STUDENT VERIFICATION SCREEN REDESIGN STYLES
+   ========================================================================== */
+
+/* Page background */
+.verification-page-body {
+  background-color: #FFFFFF !important;
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.verification-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 1594px;
+  max-height: 1052px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.verification-card {
+  width: 100%;
+  max-width: 1554px;
+  height: 100%;
+  max-height: 1012px;
+  background-color: #F3F4F4;
+  border-radius: 44px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Left Panel */
+.verification-left-panel {
+  flex: 1 1 0%;
+  min-width: 0;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 1;
+  background-image: url(../img/bg-login-web.png?v=3);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Logo container */
+.verification-logo-container {
+  position: absolute;
+  top: 40px;
+  left: 100px;
+  z-index: 3;
+}
+
+@media (max-width: 1250px) {
+  .verification-logo-container {
+    left: 40px;
+    top: 30px;
+  }
+  .verification-logo {
+    width: 180px;
+  }
+}
+
+.verification-logo {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Form Container - Centered and responsive */
+.verification-form-container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 440px;
+  max-width: calc(100% - 80px);
+  align-self: center;
+  box-sizing: border-box;
+  padding: 10px 0;
+  z-index: 2;
+  position: relative;
+}
+
+@media (min-width: 1200px) {
+  .verification-form-container {
+    align-self: flex-start;
+    margin-left: 357px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .verification-form-container {
+    align-self: flex-start;
+    margin-left: 542px;
+  }
+}
+
+/* Header styles */
+.verification-form-header {
+  margin-bottom: 20px;
+}
+
+.verification-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.verification-subtitle {
+  font-size: 13px;
+  color: #676A72;
+  margin: 0;
+}
+
+/* Input Fields styling */
+.verification-form .form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2C2D30;
+  margin-bottom: 4px;
+}
+
+.verification-form .form-control {
+  height: 44px;
+  border: 1px solid #E2E3E8 !important;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #2C2D30;
+  background-color: #FFFFFF;
+  padding: 10px 14px;
+}
+
+.verification-form .form-control:focus {
+  border-color: #21236A !important;
+  box-shadow: 0 0 0 2px rgba(33, 35, 106, 0.1);
+}
+
+.verification-form .form-control::placeholder {
+  color: #8E9198;
+}
+
+/* Checkbox */
+.verification-form .form-check-input {
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #21236A;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.verification-form .form-check-input:checked {
+  background-color: #21236A;
+  border-color: #21236A;
+}
+
+.verification-form .form-check-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #676A72;
+  cursor: pointer;
+  line-height: 18px;
+}
+
+/* Verify Button */
+.btn-verification {
+  width: 100%;
+  height: 46px;
+  background-color: #21236A !important;
+  color: #FFFFFF !important;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.2s;
+}
+
+.btn-verification:hover {
+  background-color: #171952 !important;
+}
+
+/* Right Panel (Banner Photo) */
+.verification-right-panel {
+  width: 395px;
+  flex: 0 0 395px;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: #F3F4F4;
+}
+
+.verification-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* Mobile illustration */
+.verification-mobile-illustration {
+  display: none !important;
+}
+
+/* ==========================================================================
+   MOBILE VIEW overrides FOR VERIFICATION (width < 992px)
+   ========================================================================== */
+@media (max-width: 991px) {
+  .verification-page-body {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF !important;
+  }
+
+  .verification-wrapper {
+    max-height: none;
+    padding: 0;
+  }
+
+  .verification-card {
+    width: 100%;
+    max-width: 402px;
+    height: auto;
+    min-height: 780px;
+    max-height: 100vh;
+    border-radius: 24px;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .verification-left-panel {
+    width: 100%;
+    flex: 1 1 auto;
+    padding: 40px 24px 120px 24px;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../img/bg-login-mobile.png?v=3) !important;
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  .verification-logo-container {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 36px;
+    z-index: 2;
+  }
+
+  .verification-logo {
+    width: 180px;
+    height: auto;
+  }
+
+  .verification-form-container {
+    width: 310px;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+    padding-bottom: 60px;
+  }
+
+  .verification-right-panel {
+    display: none;
+  }
+
+  .verification-mobile-illustration {
+    display: block !important;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 280px;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .verification-mobile-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom right;
+    opacity: 0.85;
+  }
+}
+
+/* ==========================================================================
+   STUDENT IMAGE VERIFICATION SCREEN STYLES
+   ========================================================================== */
+
+/* Page background */
+.student-img-ver-page-body {
+  background-color: #FFFFFF !important;
+  font-family: "Inter", sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.student-img-ver-wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 1594px;
+  max-height: 1052px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.student-img-ver-card {
+  width: 100%;
+  max-width: 1554px;
+  height: 100%;
+  max-height: 1012px;
+  background-color: #F3F4F4;
+  border-radius: 44px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.05);
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Left Panel */
+.student-img-ver-left-panel {
+  flex: 1 1 0%;
+  min-width: 0;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 1;
+  background-image: url(../img/bg-login-web.png?v=3);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Logo container */
+.student-img-ver-logo-container {
+  position: absolute;
+  top: 40px;
+  left: 100px;
+  z-index: 3;
+}
+
+@media (max-width: 1250px) {
+  .student-img-ver-logo-container {
+    left: 40px;
+    top: 30px;
+  }
+  .student-img-ver-logo {
+    width: 180px;
+  }
+}
+
+.student-img-ver-logo {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Form Container - Centered and responsive */
+.student-img-ver-form-container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 440px;
+  max-width: calc(100% - 80px);
+  align-self: center;
+  box-sizing: border-box;
+  padding: 10px 0;
+  z-index: 2;
+  position: relative;
+}
+
+@media (min-width: 1200px) {
+  .student-img-ver-form-container {
+    align-self: flex-start;
+    margin-left: 357px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .student-img-ver-form-container {
+    align-self: flex-start;
+    margin-left: 542px;
+  }
+}
+
+/* Header styles */
+.student-img-ver-form-header {
+  margin-bottom: 24px;
+}
+
+.student-img-ver-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.student-img-ver-subtitle {
+  font-size: 13px;
+  color: #676A72;
+  margin: 0;
+}
+
+/* Image preview container */
+.student-img-ver-preview-container {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1.55 / 1;
+  border: 2.5px solid #21236A;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.student-img-ver-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Submit Button */
+.btn-student-img-ver {
+  width: 100%;
+  height: 46px;
+  background-color: #21236A !important;
+  color: #FFFFFF !important;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  transition: background-color 0.2s;
+  margin-top: 30px;
+}
+
+.btn-student-img-ver:hover {
+  background-color: #171952 !important;
+}
+
+/* Right Panel (Banner Photo) */
+.student-img-ver-right-panel {
+  width: 395px;
+  flex: 0 0 395px;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: #F3F4F4;
+}
+
+.student-img-ver-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* Mobile illustration */
+.student-img-ver-mobile-illustration {
+  display: none !important;
+}
+
+/* MOBILE VIEW overrides FOR VERIFICATION */
+@media (max-width: 991px) {
+  .student-img-ver-page-body {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF !important;
+  }
+
+  .student-img-ver-wrapper {
+    max-height: none;
+    padding: 0;
+  }
+
+  .student-img-ver-card {
+    width: 100%;
+    max-width: 402px;
+    height: auto;
+    min-height: 600px;
+    max-height: 100vh;
+    border-radius: 24px;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .student-img-ver-left-panel {
+    width: 100%;
+    flex: 1 1 auto;
+    padding: 40px 24px 80px 24px;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../img/bg-login-mobile.png?v=3) !important;
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+  }
+
+  .student-img-ver-logo-container {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 36px;
+    z-index: 2;
+  }
+
+  .student-img-ver-logo {
+    width: 180px;
+    height: auto;
+  }
+
+  .student-img-ver-form-container {
+    width: 310px;
+    max-width: 100%;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+    padding-bottom: 40px;
+  }
+
+  .student-img-ver-right-panel {
+    display: none;
+  }
+
+  .student-img-ver-mobile-illustration {
+    display: block !important;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 280px;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .student-img-ver-mobile-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: bottom right;
+    opacity: 0.85;
+  }
+}

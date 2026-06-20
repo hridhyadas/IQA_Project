@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+
+  <title>IQA</title>
+</head>
+
+<body>
+
+  <!-- Preloader start -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div><!-- Preloader end -->
+
+  <div class="wrapper d-flex flex-column">
+    <!-- Side bar start -->
+    <div class="side-bar-wrapper">
+      <div class="side-bar">
+        <div class="side-bar-header">
+          <div class="side-bar-close"></div>
+        </div>
+        <div class="side-bar-body">
+          <div class="side-menu">
+            <ul class="nav">
+
+              <!-- Menu item start -->
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <span class="menu-icon">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                      <path
+                        d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h-3A1.5 1.5 0 0 1 1 10.5v3A1.5 1.5 0 0 1 2.5 15h3A1.5 1.5 0 0 1 7 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z" />
+                    </svg>
+                  </span>
+                  <span class="menu-label me-auto">Dashboard</span>
+                </a>
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Exam Managment</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                      <span class="d-flex align-items-center">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
+                        <span class="menu-label">Exam List</span>
+                      </span>
+                      <span class="badge"
+                        style="background-color: var(--theme-red); color: #fff; font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px;">1
+                        Live</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Report</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                      <span class="d-flex align-items-center">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                        <span class="menu-label">Exam Valuation</span>
+                      </span>
+                      <span class="badge"
+                        style="background-color: #FFC107; color: var(--theme-dark-navy); font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px;">3
+                        Pending</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
+                      <span class="menu-label">Question Bank</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Student</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
+                      <span class="menu-label">Student List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Center’s Management</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
+                      <span class="menu-label">Create</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
+                      <span class="menu-label">List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Settings</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                      <span class="menu-label">Apply for qualification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span>
+                      <span class="menu-label">Location</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                      <span class="menu-label">Courses</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+            </ul>
+          </div>
+          <div class="side-bar-user w-100">
+            <a href="#" class="nav-link-logout">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8a1.5 1.5 0 0 1 1.636 1.056c.038.1.054.21.054.32v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4.5 13v-2a.5.5 0 0 1 1 0v2z" />
+                <path fill-rule="evenodd"
+                  d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
+              </svg>
+              <span>Log Out</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- Side bar end -->
+
+    <!-- Content start -->
+    <div class="content-wrapper">
+
+      <!-- Top Header start -->
+      <div class="container-fluid">
+        <div class="main-header-bar">
+          <div class="logo-container">
+            <img src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
+          </div>
+          <div class="user-profile-header">
+            <img src="img/user.png" alt="User Profile Image" />
+            <div class="user-info">
+              <h5>Name</h5>
+              <p>Super Administrator</p>
+            </div>
+          </div>
+        </div>
+      </div><!-- Top Header end -->
+
+      <!-- Content block start -->
+      <div class="content">
+        <div class="container-fluid">
+
+          <!-- Top Row: Stat Cards & Question Diagram -->
+          <div class="row g-4 mb-4">
+
+            <!-- Stat Cards Left Side -->
+            <div class="col-md-8">
+              <div class="row g-4">
+
+                <!-- Card 1: Academics -->
+                <div class="col-sm-6">
+                  <div class="custom-stat-card">
+                    <div class="stat-card-icon bg-academics-blue">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path
+                          d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H6v-1.5c0-1.99 4-3 6-3s6 1.01 6 3V18z" />
+                      </svg>
+                    </div>
+                    <div class="stat-card-number">450</div>
+                    <div class="stat-card-footer bg-academics-blue">Academics</div>
+                  </div>
+                </div>
+
+                <!-- Card 2: Enrolled Students -->
+                <div class="col-sm-6">
+                  <div class="custom-stat-card">
+                    <div class="stat-card-icon bg-enrolled-navy">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="4" r="2" opacity="0.9" />
+                        <circle cx="17.65" cy="6.35" r="2" opacity="0.8" />
+                        <circle cx="20" cy="12" r="2" opacity="0.7" />
+                        <circle cx="17.65" cy="17.65" r="2" opacity="0.6" />
+                        <circle cx="12" cy="20" r="2" opacity="0.5" />
+                        <circle cx="6.35" cy="17.65" r="2" opacity="0.4" />
+                        <circle cx="4" cy="12" r="2" opacity="0.3" />
+                        <circle cx="6.35" cy="6.35" r="2" opacity="0.2" />
+                      </svg>
+                    </div>
+                    <div class="stat-card-number">450</div>
+                    <div class="stat-card-footer bg-enrolled-navy">Enrolled Students</div>
+                  </div>
+                </div>
+
+                <!-- Card 3: Exam Conducted -->
+                <div class="col-sm-6">
+                  <div class="custom-stat-card">
+                    <div class="stat-card-icon bg-conducted-dark">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                          d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v5m0-5V5a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v6m0-6V7a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v9m0-6v3a6 6 0 0 0 6 6h2a6 6 0 0 0 6-6V11a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2z"
+                          fill="white" />
+                      </svg>
+                    </div>
+                    <div class="stat-card-number">450</div>
+                    <div class="stat-card-footer bg-conducted-dark">Exam Conducted</div>
+                  </div>
+                </div>
+
+                <!-- Card 4: Courses -->
+                <div class="col-sm-6">
+                  <div class="custom-stat-card">
+                    <div class="stat-card-icon bg-courses-red">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="m9 11 2 2 4-4" />
+                      </svg>
+                    </div>
+                    <div class="stat-card-number">450</div>
+                    <div class="stat-card-footer bg-courses-red">Courses</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Question type cross diagram card right side -->
+            <div class="col-md-4">
+              <div class="card border-0 rounded-4 position-relative d-flex align-items-center justify-content-center"
+                style="min-height: 350px; height: calc(100% - 30px); margin-top: 30px; background-color: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.02);">
+                <!-- SVG Cross diagram -->
+                <svg class="chart-cross" viewBox="0 0 200 200"
+                  style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none;">
+                  <!-- Vertical Line -->
+                  <line x1="100" y1="20" x2="100" y2="180" stroke="var(--theme-navy-blue)" stroke-width="1.5" />
+                  <!-- Horizontal Line -->
+                  <line x1="20" y1="100" x2="180" y2="100" stroke="var(--theme-navy-blue)" stroke-width="1.5" />
+                  <!-- End Dots -->
+                  <circle cx="100" cy="20" r="4.5" fill="var(--theme-navy-blue)" />
+                  <circle cx="100" cy="180" r="4.5" fill="var(--theme-navy-blue)" />
+                  <circle cx="20" cy="100" r="4.5" fill="var(--theme-navy-blue)" />
+                  <circle cx="180" cy="100" r="4.5" fill="var(--theme-navy-blue)" />
+                  <!-- Center Diamond -->
+                  <polygon points="100,88 112,100 100,112 88,100" fill="var(--theme-red)" />
+                </svg>
+
+                <!-- Labels Grid overlay -->
+                <div class="w-100 h-100 position-relative d-flex flex-column justify-content-between p-4"
+                  style="z-index: 2; min-height: 350px;">
+                  <!-- Top Row -->
+                  <div class="d-flex justify-content-between align-items-start" style="padding-top: 15px;">
+                    <!-- Top Left Label -->
+                    <div class="text-center" style="width: 45%;">
+                      <div
+                        style="font-size: 16px; font-weight: 700; color: var(--theme-navy-blue); margin-bottom: 6px;">AI
+                        Generated</div>
+                      <span class="custom-badge-capsule">116</span>
+                    </div>
+                    <!-- Top Right Label -->
+                    <div class="text-center" style="width: 45%;">
+                      <div
+                        style="font-size: 16px; font-weight: 700; color: var(--theme-navy-blue); margin-bottom: 6px;">
+                        MCQ</div>
+                      <span class="custom-badge-capsule">100</span>
+                    </div>
+                  </div>
+
+                  <!-- Bottom Row -->
+                  <div class="d-flex justify-content-between align-items-end" style="padding-bottom: 15px;">
+                    <!-- Bottom Left Label -->
+                    <div class="text-center" style="width: 45%;">
+                      <div
+                        style="font-size: 16px; font-weight: 700; color: var(--theme-navy-blue); margin-bottom: 6px;">
+                        Yes/No</div>
+                      <span class="custom-badge-capsule">120</span>
+                    </div>
+                    <!-- Bottom Right Label -->
+                    <div class="text-center" style="width: 45%;">
+                      <div
+                        style="font-size: 16px; font-weight: 700; color: var(--theme-navy-blue); margin-bottom: 6px;">
+                        Short Answer</div>
+                      <span class="custom-badge-capsule">99</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- Top Row end -->
+
+          <!-- Middle Row: Recent Exam List Table & Top Academies -->
+          <div class="row g-4 mb-4">
+
+            <!-- Recent Exam List Table Column -->
+            <div class="col-md-8">
+              <div class="custom-table-container">
+                <!-- Header -->
+                <div class="panel-header-custom">
+                  <h5>Recent Exam List</h5>
+                </div>
+
+                <!-- Table -->
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th style="width: 60px;">#</th>
+                        <th class="sort-header">Name</th>
+                        <th class="sort-header">Schedule</th>
+                        <th class="sort-header">Status</th>
+                        <th class="sort-header text-center" style="width: 150px;">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          <strong>18, Aug 2026</strong>
+                          <div class="text-muted" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM | 2h
+                          </div>
+                        </td>
+                        <td>
+                          <strong>Quarterly Performance Assessm..</strong>
+                          <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1001</div>
+                        </td>
+                        <td>
+                          <span class="badge-custom-success">Scheduled</span>
+                        </td>
+                        <td class="text-center">
+                          <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle" title="Edit"><i class="bi bi-link-45deg"></i></a>
+                          <a class="btn-action-circle" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>2</td>
+                        <td>
+                          <strong>18, Aug 2026</strong>
+                          <div class="text-muted" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM | 2h
+                          </div>
+                        </td>
+                        <td>
+                          <strong>Core Concepts Evaluation (CCE)</strong>
+                          <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1002</div>
+                        </td>
+                        <td>
+                          <span class="badge-custom-danger">Live</span>
+                        </td>
+                        <td class="text-center">
+                          <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle" title="Edit"><i class="bi bi-link-45deg"></i></a>
+                          <a class="btn-action-circle" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>3</td>
+                        <td>
+                          <strong>18, Aug 2026</strong>
+                          <div class="text-muted" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM | 2h
+                          </div>
+                        </td>
+                        <td>
+                          <strong>Skill Proficiency Test (SPT)</strong>
+                          <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1003</div>
+                        </td>
+                        <td>
+                          <span class="badge-custom-success">Scheduled</span>
+                        </td>
+                        <td class="text-center">
+                          <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle" title="Edit"><i class="bi bi-link-45deg"></i></a>
+                          <a class="btn-action-circle" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>4</td>
+                        <td>
+                          <strong>18, Aug 2026</strong>
+                          <div class="text-muted" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM | 2h
+                          </div>
+                        </td>
+                        <td>
+                          <strong>Subject Mastery Examination (SME)</strong>
+                          <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1004</div>
+                        </td>
+                        <td>
+                          <span class="badge-custom-success">Scheduled</span>
+                        </td>
+                        <td class="text-center">
+                          <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle" title="Edit"><i class="bi bi-link-45deg"></i></a>
+                          <a class="btn-action-circle" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td>5</td>
+                        <td>
+                          <strong>18, Aug 2026</strong>
+                          <div class="text-muted" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM | 2h
+                          </div>
+                        </td>
+                        <td>
+                          <strong>Final Competency Exam (FCE)</strong>
+                          <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1005</div>
+                        </td>
+                        <td>
+                          <span class="badge-custom-success">Scheduled</span>
+                        </td>
+                        <td class="text-center">
+                          <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle" title="Edit"><i class="bi bi-link-45deg"></i></a>
+                          <a class="btn-action-circle" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <!-- Footer pagination -->
+                <div class="table-footer-custom">
+                  <div>
+                    <label style="font-size: 12px; font-weight: 500; margin-bottom: 0;">
+                      Show
+                      <select class="table-show-select mx-1">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                      per page
+                    </label>
+                  </div>
+                  <div class="custom-pagination">
+                    <span style="font-size: 12px; color: var(--theme-text-gray); margin-right: 12px;">1-10 of 52</span>
+                    <a href="#" class="pagination-btn disabled"><i class="bi bi-chevron-left"></i></a>
+                    <a href="#" class="pagination-btn active">1</a>
+                    <a href="#" class="pagination-btn">2</a>
+                    <a href="#" class="pagination-btn">3</a>
+                    <a href="#" class="pagination-btn">4</a>
+                    <a href="#" class="pagination-btn">5</a>
+                    <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div><!-- Recent Exam List end -->
+
+            <!-- Top Academies Column -->
+            <div class="col-md-4">
+              <div class="custom-table-container">
+                <!-- Header -->
+                <div class="panel-header-custom">
+                  <h5>Top Academies</h5>
+                </div>
+
+                <!-- Content list -->
+                <div>
+                  <div class="academy-item">
+                    <div class="academy-icon-circle">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                          d="M1 4v10a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1zm8.5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-3 .5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm6-3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                      </svg>
+                    </div>
+                    <div class="academy-details">
+                      <h6>Academy Name</h6>
+                      <p>200 students</p>
+                    </div>
+                    <a class="academy-action"><i class="bi bi-three-dots-vertical"></i></a>
+                  </div>
+
+                  <div class="academy-item">
+                    <div class="academy-icon-circle">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                          d="M1 4v10a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1zm8.5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-3 .5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm6-3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                      </svg>
+                    </div>
+                    <div class="academy-details">
+                      <h6>Esther Howard</h6>
+                      <p>290 students</p>
+                    </div>
+                    <a class="academy-action"><i class="bi bi-three-dots-vertical"></i></a>
+                  </div>
+
+                  <div class="academy-item">
+                    <div class="academy-icon-circle">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                          d="M1 4v10a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1zm8.5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-3 .5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm6-3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                      </svg>
+                    </div>
+                    <div class="academy-details">
+                      <h6>Cody Fisher Academy</h6>
+                      <p>340 students</p>
+                    </div>
+                    <a class="academy-action"><i class="bi bi-three-dots-vertical"></i></a>
+                  </div>
+
+                  <div class="academy-item">
+                    <div class="academy-icon-circle">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                          d="M1 4v10a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1zm8.5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-3 .5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm6-3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                      </svg>
+                    </div>
+                    <div class="academy-details">
+                      <h6>Hogwarts Academy</h6>
+                      <p>349 students</p>
+                    </div>
+                    <a class="academy-action"><i class="bi bi-three-dots-vertical"></i></a>
+                  </div>
+
+                  <div class="academy-item">
+                    <div class="academy-icon-circle">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                          d="M1 4v10a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1zm8.5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-3 .5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm6-3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                      </svg>
+                    </div>
+                    <div class="academy-details">
+                      <h6>Arlene McCoy Academy</h6>
+                      <p>100 students</p>
+                    </div>
+                    <a class="academy-action"><i class="bi bi-three-dots-vertical"></i></a>
+                  </div>
+
+                  <div class="academy-item">
+                    <div class="academy-icon-circle">
+                      <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+                        <path
+                          d="M1 4v10a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1zm8.5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-3 .5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm6-3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                      </svg>
+                    </div>
+                    <div class="academy-details">
+                      <h6>Arlene McCoy Academy</h6>
+                      <p>100 students</p>
+                    </div>
+                    <a class="academy-action"><i class="bi bi-three-dots-vertical"></i></a>
+                  </div>
+                </div>
+
+                <div style="padding: 16px; text-align: center; border-top: 1px solid #EEF1F6;">
+                  <a href="#" class="btn-view-all">View All</a>
+                </div>
+              </div>
+            </div><!-- Top Academies end -->
+
+          </div><!-- Middle Row end -->
+
+          <!-- Bottom Row: Student Added custom stacked pill bar chart & Exams panel -->
+          <div class="row g-4 mb-4">
+
+            <!-- Student Added Stacked Pill Bar Chart Column -->
+            <div class="col-md-8">
+              <div class="student-added-card">
+                <div class="chart-header-custom">
+                  <h5>Student Added</h5>
+                  <div class="toggle-group-capsule">
+                    <button class="toggle-btn-capsule active">Month</button>
+                    <button class="toggle-btn-capsule inactive">Week</button>
+                    <button class="toggle-btn-capsule inactive">Day</button>
+                  </div>
+                </div>
+
+                <div class="row align-items-center">
+                  <!-- Custom Stacked Bar Chart -->
+                  <div class="col-md-9 pe-4">
+                    <div class="custom-bar-chart">
+                      <!-- Y Axis Labels -->
+                      <div class="y-axis-labels">
+                        <span>40k</span>
+                        <span>30k</span>
+                        <span>20k</span>
+                        <span>10k</span>
+                        <span>0</span>
+                      </div>
+
+                      <!-- Chart Bars Stack Container -->
+                      <div class="chart-bars-container">
+                        <div class="chart-grid-lines">
+                          <div class="chart-line"></div>
+                          <div class="chart-line"></div>
+                          <div class="chart-line"></div>
+                          <div class="chart-line"></div>
+                          <div class="chart-line"></div>
+                        </div>
+
+                        <!-- Jan: 3 red, 7 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                          </div>
+                          <span class="bar-label">Jan</span>
+                        </div>
+
+                        <!-- Feb: 0 red, 10 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                          </div>
+                          <span class="bar-label">Feb</span>
+                        </div>
+
+                        <!-- Mar: 3 red, 7 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                          </div>
+                          <span class="bar-label">Mar</span>
+                        </div>
+
+                        <!-- Apr: 2 red, 8 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                          </div>
+                          <span class="bar-label">Apr</span>
+                        </div>
+
+                        <!-- May: 2 red, 8 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                          </div>
+                          <span class="bar-label">May</span>
+                        </div>
+
+                        <!-- Jun: 2 red, 8 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                          </div>
+                          <span class="bar-label">Jun</span>
+                        </div>
+
+                        <!-- Jul: 2 red, 8 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                          </div>
+                          <span class="bar-label">Jul</span>
+                        </div>
+
+                        <!-- Aug: 2 red, 8 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                          </div>
+                          <span class="bar-label">Aug</span>
+                        </div>
+
+                        <!-- Sep: 2 red, 8 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                          </div>
+                          <span class="bar-label">Sep</span>
+                        </div>
+
+                        <!-- Oct: 2 red, 8 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                          </div>
+                          <span class="bar-label">Oct</span>
+                        </div>
+
+                        <!-- Nov: 2 red, 8 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                          </div>
+                          <span class="bar-label">Nov</span>
+                        </div>
+
+                        <!-- Dec: 0 red, 10 white -->
+                        <div class="custom-bar-col">
+                          <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                          </div>
+                          <span class="bar-label">Dec</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Highlight panel on the right side of dark card -->
+                  <div class="col-md-3">
+                    <div class="chart-highlight-panel">
+                      <div class="highlight-number">55</div>
+                      <div class="highlight-label">Live Exams</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- Student Added end -->
+
+            <!-- Exams Summary Column -->
+            <div class="col-md-4">
+              <div class="custom-table-container h-100" style="background-color: #fff;">
+                <!-- Header -->
+                <div class="panel-header-custom">
+                  <h5>Exams</h5>
+                </div>
+
+                <!-- Content list -->
+                <div>
+                  <div class="exam-summary-item">
+                    <span class="exam-color-bar bg-exam-red"></span>
+                    <div class="exam-icon-circle ms-3">
+                      <i class="bi bi-calendar3"></i>
+                    </div>
+                    <div class="exam-details ms-3">
+                      <h3>10</h3>
+                      <p>Scheduled</p>
+                    </div>
+                  </div>
+
+                  <div class="exam-summary-item">
+                    <span class="exam-color-bar bg-exam-navy"></span>
+                    <div class="exam-icon-circle ms-3">
+                      <i class="bi bi-broadcast"></i>
+                    </div>
+                    <div class="exam-details ms-3">
+                      <h3>06</h3>
+                      <p>Live Exam</p>
+                    </div>
+                  </div>
+
+                  <div class="exam-summary-item">
+                    <span class="exam-color-bar bg-exam-dark"></span>
+                    <div class="exam-icon-circle ms-3">
+                      <i class="bi bi-shield-check"></i>
+                    </div>
+                    <div class="exam-details ms-3">
+                      <h3>20</h3>
+                      <p>Exam Completed</p>
+                    </div>
+                  </div>
+
+                  <div class="exam-summary-item">
+                    <span class="exam-color-bar bg-exam-blue"></span>
+                    <div class="exam-icon-circle ms-3">
+                      <i class="bi bi-hourglass-split"></i>
+                    </div>
+                    <div class="exam-details ms-3">
+                      <h3>12</h3>
+                      <p>Valuation Pending</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- Exams Summary end -->
+
+          </div><!-- Bottom Row end -->
+
+        </div>
+      </div><!-- Content block end -->
+
+    </div><!-- Content end -->
+  </div>
+
+
+  <!-- JS -->
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/daterangepicker.js"></script>
+  <script src="js/chart.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.chart-container.bar').each(function () {
+        const $container = $(this);
+        const labels = JSON.parse($container.attr('data-labels'));
+        const values = JSON.parse($container.attr('data-values'));
+        const borderColor = $container.attr('data-border-color');
+        const gradientStart = $container.attr('data-gradient-start');
+        const gradientEnd = $container.attr('data-gradient-end');
+
+        const canvas = $container.find('canvas')[0];
+        const ctx = canvas.getContext('2d');
+
+        const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+        gradient.addColorStop(0, gradientStart);
+        gradient.addColorStop(1, gradientEnd);
+
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              data: values,
+              backgroundColor: gradient,
+              borderColor: borderColor,
+              borderWidth: 0,
+              borderRadius: 100,
+              tension: 0.4,
+              fill: true,
+              pointRadius: 5,
+              barThickness: 10,
+              pointHoverRadius: 7
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                enabled: true,
+                backgroundColor: '#fff',
+                titleColor: '#071437',
+                titleFont: { size: 13, weight: 'normal' },
+                bodyColor: '#071437',
+                bodyFont: { size: 15, weight: 'bold' },
+                borderColor: '#F1F1F4',
+                borderWidth: 1,
+                cornerRadius: 8,
+                padding: 12,
+                displayColors: false,
+                caretSize: 8,
+                caretPadding: 5,
+                shadowOffsetX: 4,
+                shadowOffsetY: 4,
+                shadowBlur: 10,
+                shadowColor: 'rgba(0,0,0,0.3)',
+                callbacks: {
+                  title: function (items) {
+                    return `${items[0].label}`;
+                  },
+                  label: function (item) {
+                    return `${item.raw}`;
+                  }
+                }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  stepSize: 5000,
+                  callback: function (value) {
+                    return value === 0 ? '0' : `${value / 1000}k`;
+                  }
+                }
+              },
+              x: {
+                grid: {
+                  display: false
+                }
+              }
+            }
+          }
+        });
+      });
+
+      $('.chart-container.doughnut').each(function () {
+        const $container = $(this);
+        const labels = JSON.parse($container.attr('data-labels'));
+        const values = JSON.parse($container.attr('data-values'));
+        const backgroundColor = JSON.parse($container.attr('data-bg-color'));
+
+        const canvas = $container.find('canvas')[0];
+        const ctx = canvas.getContext('2d');
+
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: labels,
+            datasets: [{
+              data: values,
+              backgroundColor: backgroundColor,
+              spacing: 10,
+              borderWidth: 0,
+              borderRadius: 10,
+              tension: 0.4,
+              fill: true,
+            }]
+          },
+          options: {
+            responsive: true,
+            cutout: '75%',
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: true,
+                position: 'bottom',
+                align: 'center',
+                onClick: null,
+                labels: {
+                  boxWidth: 20,
+                  boxHeight: 20,
+                  color: '#000',
+                  pointStyle: 'rectRounded',
+                  padding: 20,
+                  usePointStyle: true,
+
+                  font: {
+                    size: 14,
+                    family: 'Arial',
+                    style: 'normal',
+                    weight: 'normal',
+                    lineHeight: 1.2
+                  },
+                },
+              },
+              tooltip: {
+                enabled: true,
+                backgroundColor: '#323133',
+                titleColor: '#fff',
+                titleFont: { size: 13, weight: 'normal' },
+                bodyColor: '#fff',
+                bodyFont: { size: 15, weight: 'bold' },
+                borderColor: '#323133',
+                borderWidth: 1,
+                cornerRadius: 8,
+                padding: 12,
+                displayColors: false,
+                caretSize: 8,
+                caretPadding: 5,
+                shadowOffsetX: 4,
+                shadowOffsetY: 4,
+                shadowBlur: 10,
+                shadowColor: 'rgba(0,0,0,0.3)',
+                callbacks: {
+                  title: function (items) {
+                    return `${items[0].label}`;
+                  },
+                  label: function (item) {
+                    return `${item.raw}`;
+                  }
+                }
+              }
+            },
+
+          }
+        });
+      });
+      // Toggler for Month/Week/Day capsule buttons
+      $('.toggle-btn-capsule').on('click', function () {
+        $('.toggle-btn-capsule').removeClass('active').addClass('inactive');
+        $(this).removeClass('inactive').addClass('active');
+      });
+    });
+  </script>
+
+</body>
+
+</html>

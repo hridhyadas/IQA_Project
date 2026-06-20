@@ -1,0 +1,49 @@
+- [FRAME] '1-login' (ID: 4:8679) (402x874) at (17270,719) | fills=#FFFFFF (opacity: 1.00)
+  - [FRAME] 'bg-mob' (ID: 4:8680) (402x874) at (17270,719) | fills=#F3F4F4 (opacity: 1.00)
+    - [REGULAR_POLYGON] 'Polygon 2' (ID: 4:8681) (1245x1033) at (16560,859) | fills=#CBCDCF (opacity: 1.00)
+    - [GROUP] 'Group 125' (ID: 4:8682) (1496x1482) at (16422,220)
+      - [REGULAR_POLYGON] 'Polygon 3' (ID: 4:8683) (1496x1482) at (16421,220) | fills=#D8D9DA (opacity: 1.00)
+      - [REGULAR_POLYGON] 'Polygon 4' (ID: 4:8684) (140x436) at (17229,937) | fills=#BDC0C2 (opacity: 1.00)
+    - [RECTANGLE] 'dsasdas324 1' (ID: 4:8685) (121x310) at (17550,1283)
+    - [FRAME] 'Frame 1130' (ID: 4:8686) (300x466) at (17321,907)
+      - [RECTANGLE] 'as32234 1' (ID: 4:8687) (220x70) at (17361,907)
+      - [FRAME] 'Frame 945' (ID: 4:8688) (300x333) at (17321,1040)
+        - [FRAME] 'item' (ID: 4:8689) (300x37) at (17321,1040)
+          - [TEXT] 'Sign in' (ID: 4:8690) (300x13) at (17321,1040) | fills=#2C2D30 (opacity: 1.00) | text='Sign in' | font=Inter 500 18px
+          - [FRAME] 'item' (ID: 4:8691) (300x14) at (17321,1063)
+            - [TEXT] 'Enter your Details' (ID: 4:8692) (109x14) at (17392,1063) | fills=#676A72 (opacity: 1.00) | text='Enter your Details' | font=Inter 400 13px
+            - [TEXT] 'Sign in' (ID: 4:8693) (42x14) at (17507,1063) | fills=#21236A (opacity: 1.00) | text='Sign in' | font=Inter 400 13px
+        - [FRAME] 'Frame 304' (ID: 4:8694) (300x272) at (17321,1101)
+          - [FRAME] 'Frame 302' (ID: 4:8695) (300x198) at (17321,1101)
+            - [FRAME] 'Frame 941' (ID: 4:8696) (300x66) at (17321,1101)
+              - [TEXT] 'Email' (ID: 4:8697) (300x14) at (17321,1101) | fills=#2C2D30 (opacity: 1.00) | text='Email' | font=Inter 400 13px
+              - [FRAME] 'Frame 299' (ID: 4:8698) (300x40) at (17321,1127) | fills=#FFFFFF (opacity: 1.00)
+                - [INSTANCE] 'vuesax/outline/user' (ID: 4:8699) (24x24) at (17346,1135) | fills=#FFFFFF (opacity: 1.00)
+                  - [GROUP] 'vuesax/outline/user' (ID: I4:8699;2185:44943) (24x24) at (17346,1135)
+                    - [GROUP] 'user' (ID: I4:8699;2185:44944) (24x24) at (17346,1135)
+                      - [VECTOR] 'Vector' (ID: I4:8699;2185:44945) (11x11) at (17352,1136) | fills=#21236A (opacity: 1.00)
+                      - [VECTOR] 'Vector' (ID: I4:8699;2185:44946) (18x8) at (17348,1149) | fills=#21236A (opacity: 1.00)
+                      - [VECTOR] 'Vector' (ID: I4:8699;2185:44947) (24x24) at (17346,1135)
+                - [TEXT] 'Search - Large' (ID: 4:8700) (136x14) at (17380,1140) | fills=#8E9198 (opacity: 1.00) | text='username@gmail.com' | font=Inter 400 13px
+            - [FRAME] 'Frame 943' (ID: 4:8701) (300x100) at (17321,1199)
+              - [FRAME] 'Frame 941' (ID: 4:8702) (300x66) at (17321,1199)
+                - [FRAME] 'item' (ID: 4:8703) (300x14) at (17321,1199)
+                  - [TEXT] 'Password' (ID: 4:8704) (189x14) at (17321,1199) | fills=#2C2D30 (opacity: 1.00) | text='Password' | font=Inter 400 13px
+                  - [TEXT] 'Forgot Password?' (ID: 4:8705) (111x14) at (17510,1199) | fills=#1379F0 (opacity: 1.00) | text='Forgot Password?' | font=Inter 400 13px
+                - [FRAME] 'Frame 300' (ID: 4:8706) (300x40) at (17321,1225) | fills=#FFFFFF (opacity: 1.00)
+                  - [INSTANCE] 'vuesax/outline/lock' (ID: 4:8707) (24x24) at (17346,1233) | fills=#FFFFFF (opacity: 1.00)
+                    - [GROUP] 'vuesax/outline/lock' (ID: I4:8707;2185:44950) (24x24) at (17346,1233)
+                      - [GROUP] 'lock' (ID: I4:8707;2185:44951) (24x24) at (17346,1233)
+                        - [VECTOR] 'Vector' (ID: I4:8707;2185:44952) (13x9) at (17351,1234) | fills=#21236A (opacity: 1.00)
+                        - [VECTOR] 'Vector' (ID: I4:8707;2185:44953) (21x13) at (17347,1242) | fills=#21236A (opacity: 1.00)
+                        - [VECTOR] 'Vector' (ID: I4:8707;2185:44954) (2x1) at (17353,1248) | fills=#21236A (opacity: 1.00)
+                        - [VECTOR] 'Vector' (ID: I4:8707;2185:44955) (2x2) at (17357,1247) | fills=#21236A (opacity: 1.00)
+                        - [VECTOR] 'Vector' (ID: I4:8707;2185:44956) (2x2) at (17361,1247) | fills=#21236A (opacity: 1.00)
+                        - [VECTOR] 'Vector' (ID: I4:8707;2185:44957) (24x24) at (17346,1233)
+                  - [TEXT] 'Search - Large' (ID: 4:8708) (130x14) at (17380,1238) | fills=#8E9198 (opacity: 1.00) | text='********************' | font=Inter 400 13px
+              - [FRAME] 'Frame 514' (ID: 4:8709) (300x18) at (17321,1281)
+                - [INSTANCE] 'Checkbox' (ID: 4:8710) (112x18) at (17321,1281)
+                  - [FRAME] 'Checkbox' (ID: I4:8710;29813:4539) (18x18) at (17321,1281) | fills=#FDFDFD (opacity: 1.00)
+                  - [TEXT] 'Default' (ID: I4:8710;29813:4540) (89x14) at (17345,1283) | fills=#393B40 (opacity: 1.00) | text='Remember me' | font=Inter 500 13px
+          - [FRAME] 'Frame 487' (ID: 4:8711) (106x42) at (17418,1331) | fills=#21236A (opacity: 1.00)
+            - [TEXT] 'Sign In' (ID: 4:8712) (42x14) at (17450,1345) | fills=#FFFFFF (opacity: 1.00) | text='Sign In' | font=Inter 500 13px

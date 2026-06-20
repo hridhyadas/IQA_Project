@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom.css">
+
+  <title>IQA</title>
+</head>
+
+<body>
+
+  <!-- Preloader start -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div><!-- Preloader end -->
+
+  <div class="wrapper d-flex flex-column">
+    <!-- Side bar start -->
+    <div class="side-bar-wrapper">
+      <div class="side-bar">
+        <div class="side-bar-header">
+          <div class="side-bar-close"></div>
+          <a class="navbar-brand" href="#">
+            <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" />
+          </a>
+        </div>
+        <div class="side-bar-body">
+          <div class="side-menu">
+            <ul class="nav">
+
+              <!-- Menu item start -->
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
+                  <span class="menu-label me-auto">Dashboards</span>
+                </a>
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Exam Managment</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
+                      <span class="menu-label">Exam List</span>
+                      <span class="badge bg-primary">1 Live</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Report</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Valuation</span>
+                      <span class="badge bg-primary">1 Live</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
+                      <span class="menu-label">Question Bank</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Student</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
+                      <span class="menu-label">Student List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Center’s Management</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
+                      <span class="menu-label">Create</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
+                      <span class="menu-label">List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Settings</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li class="active">
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                      <span class="menu-label">Apply for qualification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span>
+                      <span class="menu-label">Location</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                      <span class="menu-label">Courses</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""></span>
+                      <span class="menu-label">Log Out</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+            </ul>
+          </div>
+          <div class="side-bar-user">
+            <div class="user-icon">
+              <img src="img/avatar-icon.jpg" alt="">
+            </div>
+            <div class="user-details ms-2">
+              <h4 class="user-name">James Mitchell</h4>
+              <p class="user-sub">Super Administrator</p>
+            </div>
+            <a href="#" class="btn btn-primary ms-auto"><img src="img/sign-out-icon.svg" alt=""></a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- Side bar end -->
+
+    <!-- Content wrapper start -->
+    <div class="content-wrapper">
+
+      <!-- Header start -->
+      <header class="light-header">
+        <div class="container-fluid">
+          <div class="header-top d-md-none mb-3">
+            <div class="side-bar-close"></div>
+            <a class="navbar-brand" href="#">
+              <img class="large-logo" src="img/logo2.png" />
+            </a>
+          </div>
+          <!-- Header main start -->
+          <div class="header-main d-md-flex justify-content-between align-items-center">
+            <h4 class="text-white mb-0 fw-normal">Academy List</h4>
+            <nav>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Academy</a></li>
+                <li class="breadcrumb-item active">Academy List</li>
+              </ol>
+            </nav>
+          </div><!-- Header main end -->
+        </div>
+      </header><!-- Header end -->
+
+      <!-- Content start -->
+      <div class="content">
+        <div class="container-fluid">
+
+          <!-- Content header start -->
+          <div class="content-area-header">
+            <div class="my-auto">
+              <h4 class="page-title">Center’s List</h4>
+              <p class="page-sub-title">1424 Center’s found. 10 of are showing.</p>
+            </div>
+            <div class="ms-auto mt-3 mt-md-0 d-flex">
+              <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </div>
+              <a class="btn btn-primary ms-2" href="#" data-bs-toggle="modal" data-bs-target="#createModal"><i class="bi bi-plus-lg"></i> Add Center</a>
+            </div>
+          </div><!-- Content header end -->
+
+          <div class="row">
+            <div class="col-md-12">
+
+              <!--Table start-->
+              <div class="table-1 mb-4">
+
+                <!--Table header start-->
+                <div class="table-header">
+
+                  <!--Header item  start-->
+                  <div class="table-header-item">
+                    <div class="table-search">
+                      <input type="search" class="" placeholder="Search">
+                    </div>
+                    <div class="date-filter d-inline-block">
+                      <button type="button" class="btn btn-outline-light dropdown-toggle" id="dateFilter">Date</button>
+                      <input type="text" name="date">
+                    </div>
+                    <div class="dropdown">
+                      <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </div>
+                  </div><!--Header item end-->
+
+                  <!--Header item start-->
+                  <div class="table-header-item">
+                    <div class="dropdown">
+                      <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </div>
+                  </div><!--Header item end-->
+
+                  <!--Header item start-->
+                  <div class="table-header-item">
+                    <div class="dropdown">
+                      <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown button
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      </ul>
+                    </div>
+                  </div><!--Header item end-->
+
+                </div><!--Table header end-->
+
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <td class="slno sorting"># <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                        <td class="sorting">Center Name <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                        <td class="sorting">Type <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                        <td class="sorting">Amount <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                        <td class="sorting">Balance <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                        <td class="sorting">Particulars <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                        <td class="sorting">Comments <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                        <td class="sorting">Date & Time <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <th>Eben UK Resources</th>
+                        <td><span class="badge bg-outline-danger">Debit</span></td>
+                        <td>$10</td>
+                        <td>$100</td>
+                        <td>Assessment Fees</td>
+                        <td>--</td>
+                        <td>18 Aug, 2025, 12:08:50</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <th>Eben UK Resources</th>
+                        <td><span class="badge bg-outline-success">Credit</span></td>
+                        <td>$10</td>
+                        <td>$100</td>
+                        <td>Assessment Fees</td>
+                        <td>--</td>
+                        <td>18 Aug, 2025, 12:08:50</td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-footer">
+                  <div class="dataTables_length">
+                    <label>
+                      Show
+                      <select>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                      per page
+                    </label>
+                  </div>
+                  <div class="table-footer-paginate">
+                    <div class="dataTables_info">1-10 of 52</div>
+
+                    <div class="dataTables_paginate">
+                      <a class="paginate_button previous disabled">Previous</a>
+                      <span>
+                        <a class="paginate_button current">1</a>
+                        <a class="paginate_button">2</a>
+                        <a class="paginate_button">3</a>
+                        <a class="paginate_button">4</a>
+                      </span>
+                      <a class="paginate_button next">Next</a>
+                    </div>
+
+                  </div>
+                </div>
+              </div><!--Table end-->
+
+              <!--Table start-->
+              <div class="table-1 mb-4">
+
+                <!--Table header start-->
+                <div class="table-header">
+
+                  <!--Header item start-->
+                  <div class="table-header-item">
+                    <div class="table-title">
+                      <h4 class="mb-0">Patient List</h4>
+                    </div>
+                  </div><!--Header item end-->
+
+                  <!--Header item start-->
+                  <div class="table-header-item">
+                    <form action="">
+                      <div class="table-search">
+                        <input type="search" class="" placeholder="Search">
+                        <button class="btn btn-outline-light ms-2" type="button">Search </button>
+                      </div>
+                    </form>
+                  </div><!--Header item end-->
+
+                  <!--Header item start-->
+                  <div class="table-header-item">
+                    <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#createModal"><i class="bi bi-plus-lg"></i> Add Center</a>
+                  </div><!--Header item end-->
+
+                </div><!--Table header end-->
+
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <td class="slno">#</td>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                        <td>Booking</td>
+                        <td>Amount</td>
+                        <td class="action">Action</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <th>
+                          <div class="d-flex align-items-center">
+                            <div class="me-2 user-icon">
+                              <img src="img/avatar-icon.jpg" alt="">
+                            </div>
+                            <div>
+                              Jhnon Doe
+                              <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                            </div>
+                          </div>
+                        </th>
+                        <td>
+                          <div class="d-flex align-items-center">
+                            <div>
+                              Jhnon Doe
+                              <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                            </div>
+                          </div>
+                        </td>
+                        <td>@+1 2345 678 923</td>
+                        <td>1</td>
+                        <td>$120</td>
+                        <td class="action">
+                          <ul class="table-action-list">
+                            <li><a class="table-action-item" href="#"><img src="img/table-icon/table-view.svg"></a></li>
+                            <li><a class="table-action-item" href="#"><img src="img/table-icon/table-edit.svg"></a></li>
+                            <li><a class="table-action-item" href="#"><img src="img/table-icon/table-delete.svg"></a></li>
+                            <li><a class="table-action-item" href="#"><img src="img/table-icon/table-building.svg"></a></li>
+                            <li>
+                              <div class="dropdown">
+                                <span class="table-action-item"><img src="img/table-icon/table-more.svg"></span>
+                                <ul class="dropdown-menu">
+                                  <li><a class="dropdown-item" href="#">View</a></li>
+                                  <li><a class="dropdown-item" href="#">Edit</a></li>
+                                  <li><a class="dropdown-item" href="#">Delete <img class="ms-auto" src="img/table-icon/table-info.svg"></a></li>
+                                </ul>
+                              </div>
+                            </li>
+                          </ul>
+
+                        </td>
+                      </tr>
+
+
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-footer">
+                  <div class="dataTables_length">
+                    <label>
+                      Show
+                      <select>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                      per page
+                    </label>
+                  </div>
+                  <div class="table-footer-paginate">
+                    <div class="dataTables_info">1-10 of 52</div>
+
+                    <div class="dataTables_paginate">
+                      <a class="paginate_button previous disabled">Previous</a>
+                      <span>
+                        <a class="paginate_button current">1</a>
+                        <a class="paginate_button">2</a>
+                        <a class="paginate_button">3</a>
+                        <a class="paginate_button">4</a>
+                      </span>
+                      <a class="paginate_button next">Next</a>
+                    </div>
+
+                  </div>
+                </div>
+              </div><!--Table end-->
+
+              <!--Table start-->
+              <div class="table-1 mb-4">
+
+                <!--Table header start-->
+                <div class="table-header">
+                  <!--Header item start-->
+                  <div class="table-header-item">
+                    <form action="">
+                      <div class="table-search">
+                        <input type="search" class="" placeholder="Search">
+                        <button class="btn btn-outline-light ms-2" type="button">Search </button>
+                      </div>
+                    </form>
+                  </div><!--Header item end-->
+
+                </div><!--Table header end-->
+
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <td class="slno sorting">#</td>
+                        <td class="sorting">ID & Date <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                        <td class="sorting">Name & Email<span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                        <td>Link</td>
+                        <td>Status</td>
+                        <td>Status</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <th>
+                          AA-1001
+                          <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                        </th>
+                        <td>
+                          <span class="fw-medium">Esther Howard</span>
+                          <p class="mb-0 text-small">username@gmail.com</p>
+                        </td>
+                        <td><a class="" href="#" target="_blank">Link</a></td>
+                        <td><span class="badge alert-success">Success</span></td>
+                        <td><span class="badge rounded-pill alert-success">Success</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>1</td>
+                        <th>
+                          AA-1001
+                          <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                        </th>
+                        <td>
+                          <span class="fw-medium">Esther Howard</span>
+                          <p class="mb-0 text-small">username@gmail.com</p>
+                        </td>
+                        <td><a href="#" class="btn-link text-success">Link</a></td>
+                        <td><span class="badge alert-warning">Warning</span></td>
+                        <td><span class="badge rounded-pill alert-warning">Warning</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>1</td>
+                        <th>
+                          AA-1001
+                          <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                        </th>
+                        <td>
+                          <span class="fw-medium">Esther Howard</span>
+                          <p class="mb-0 text-small">username@gmail.com</p>
+                        </td>
+                        <td><a class="text-danger" href="#">Link</a></td>
+                        <td><span class="badge alert-info">Info</span></td>
+                        <td><span class="badge rounded-pill alert-info">Info</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>1</td>
+                        <th>
+                          AA-1001
+                          <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                        </th>
+                        <td>
+                          <span class="fw-medium">Esther Howard</span>
+                          <p class="mb-0 text-small">username@gmail.com</p>
+                        </td>
+                        <td><a class="text-danger text-small" href="#">Link</a></td>
+                        <td><span class="badge alert-danger">Danger</span></td>
+                        <td><span class="badge rounded-pill alert-danger">Danger</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>1</td>
+                        <th>
+                          AA-1001
+                          <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                        </th>
+                        <td>
+                          <span class="fw-medium">Esther Howard</span>
+                          <p class="mb-0 text-small">username@gmail.com</p>
+                        </td>
+                        <td align="center"><a href="#" class="">Link <img class="ms-1" src="img/table-icon/table-edit.svg" alt=""></a></td>
+                        <td><span class="badge alert-light">Light</span></td>
+                        <td><span class="badge rounded-pill alert-light">Light</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>1</td>
+                        <th>
+                          AA-1001
+                          <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                        </th>
+                        <td>
+                          <span class="fw-medium">Esther Howard</span>
+                          <p class="mb-0 text-small">username@gmail.com</p>
+                        </td>
+                        <td align="center"><a href="#" class="">Link <img class="ms-1" src="img/table-icon/table-edit.svg" alt=""></a></td>
+                        <td><span class="badge alert-dark">Light</span></td>
+                        <td><span class="badge rounded-pill alert-dark">Dark</span></td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+                <div class="table-footer">
+                  <div class="dataTables_length">
+                    <label>
+                      Show
+                      <select>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                      per page
+                    </label>
+                  </div>
+                  <div class="table-footer-paginate">
+                    <div class="dataTables_info">1-10 of 52</div>
+
+                    <div class="dataTables_paginate">
+                      <a class="paginate_button previous disabled">Previous</a>
+                      <span>
+                        <a class="paginate_button current">1</a>
+                        <a class="paginate_button">2</a>
+                        <a class="paginate_button">3</a>
+                        <a class="paginate_button">4</a>
+                      </span>
+                      <a class="paginate_button next">Next</a>
+                    </div>
+
+                  </div>
+                </div>
+              </div><!--Table end-->
+
+              <!--Table start-->
+              <div class="table-1 mb-4">
+
+                <!--Table header start-->
+                <div class="table-header justify-content-md-center">
+
+                  <!--Header item start-->
+                  <div class="table-header-item">
+                    <form action="">
+                      <div class="table-search">
+                        <input type="search" class="" placeholder="Search">
+                        <button class="btn btn-outline-light ms-2" type="button">Search </button>
+                      </div>
+                    </form>
+                  </div><!--Header item end-->
+
+                </div><!--Table header end-->
+
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <td class="slno sorting">#</td>
+                        <td class="sorting">ID & Date <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                        <td class="sorting">Name & Email<span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                        <td>Collection Date</td>
+                        <td>Addon</td>
+                        <td>Status</td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                  <div class="no-data-table">No data available</div>
+                </div>
+                <div class="table-footer">
+                  <div class="dataTables_length">
+                    <label>
+                      Show
+                      <select>
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select>
+                      per page
+                    </label>
+                  </div>
+                  <div class="table-footer-paginate">
+                    <div class="dataTables_info">1-10 of 52</div>
+
+                    <div class="dataTables_paginate">
+                      <a class="paginate_button previous disabled">Previous</a>
+                      <span>
+                        <a class="paginate_button current">1</a>
+                        <a class="paginate_button">2</a>
+                        <a class="paginate_button">3</a>
+                        <a class="paginate_button">4</a>
+                      </span>
+                      <a class="paginate_button next">Next</a>
+                    </div>
+
+                  </div>
+                </div>
+              </div><!--Table end-->
+
+              <div class="card-item-3 mb-4">
+                <div class="card-header">
+                  <h5 class="card-title">Exam List</h5>
+                  <a href="#">Add New</a>
+                </div>
+                <div class="card-body p-0">
+                  <!--Table start-->
+                  <div class="table-1">
+
+                    <!--Table header start-->
+                    <div class="table-header">
+
+                      <!--Header item start-->
+                      <div class="table-header-item">
+                        <form action="">
+                          <div class="table-search">
+                            <input type="search" class="" placeholder="Search">
+                            <button class="btn btn-outline-light ms-2" type="button">Search </button>
+                          </div>
+                        </form>
+                      </div><!--Header item end-->
+
+                    </div><!--Table header end-->
+
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <td class="slno sorting">#</td>
+                            <td class="sorting">ID & Date <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                            <td class="sorting">Name & Email<span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></td>
+                            <td>Collection Date</td>
+                            <td>Addon</td>
+                            <td>Status</td>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <th>
+                              AA-1001
+                              <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                            </th>
+                            <td>
+                              <span class="fw-medium">Esther Howard</span>
+                              <p class="mb-0 text-small">username@gmail.com</p>
+                            </td>
+                            <td><a class="" href="#" target="_blank">Link</a></td>
+                            <td><span class="badge alert-success">Success</span></td>
+                            <td><span class="badge rounded-pill alert-success">Success</span></td>
+                          </tr>
+
+                          <tr>
+                            <td>1</td>
+                            <th>
+                              AA-1001
+                              <p class="mb-0 text-small">23.10.2024 12:00 AM</p>
+                            </th>
+                            <td>
+                              <span class="fw-medium">Esther Howard</span>
+                              <p class="mb-0 text-small">username@gmail.com</p>
+                            </td>
+                            <td><a href="#" class="btn-link text-success">Link</a></td>
+                            <td><span class="badge alert-warning">Warning</span></td>
+                            <td><span class="badge rounded-pill alert-warning">Warning</span></td>
+                          </tr>
+
+
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="table-footer">
+                      <div class="dataTables_length">
+                        <label>
+                          Show
+                          <select>
+                            <option value="10">10</option>
+                            <option value="25">25</option>
+                            <option value="50">50</option>
+                            <option value="100">100</option>
+                          </select>
+                          per page
+                        </label>
+                      </div>
+                      <div class="table-footer-paginate">
+                        <div class="dataTables_info">1-10 of 52</div>
+
+                        <div class="dataTables_paginate">
+                          <a class="paginate_button previous disabled">Previous</a>
+                          <span>
+                            <a class="paginate_button current">1</a>
+                            <a class="paginate_button">2</a>
+                            <a class="paginate_button">3</a>
+                            <a class="paginate_button">4</a>
+                          </span>
+                          <a class="paginate_button next">Next</a>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div><!--Table end-->
+                </div>
+              </div>
+
+              <div class="card-item-3">
+                <div class="card-header">
+                  <h5 class="card-title">KPI’s</h5>
+                </div>
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <p class="mb-2">Total Courses</p>
+                      <p class="mb-0 fw-semi-bold text-dark">10</p>
+                    </div>
+                    <div class="col">
+                      <p class="mb-2">Total Students</p>
+                      <p class="mb-0 fw-semi-bold text-dark">120</p>
+                    </div>
+                    <div class="col">
+                      <p class="mb-2">Total Exams</p>
+                      <p class="mb-0 fw-semi-bold text-dark">8</p>
+                    </div>
+                    <div class="col">
+                      <p class="mb-2">Avg. Pass %</p>
+                      <p class="mb-0 fw-semi-bold text-dark">38%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div><!-- Content end -->
+
+    </div><!-- Content wrapper end -->
+  </div>
+
+
+  <!-- JS -->
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/daterangepicker.js"></script>
+  <script src="js/chart.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

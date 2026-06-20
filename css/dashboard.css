@@ -18,6 +18,7 @@ body {
 
 .content-wrapper {
   background-color: var(--theme-body-bg) !important;
+  height: auto !important;
 }
 
 @media (max-width: 991.98px) {
@@ -439,40 +440,66 @@ body {
 }
 
 .pagination-btn {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
   color: #5C6A8E;
   text-decoration: none;
   transition: all 0.2s;
+  cursor: pointer;
 }
 
-.pagination-btn.active {
-  background-color: var(--theme-navy-blue);
-  color: #fff !important;
+.pagination-btn-arrow {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #D9DFEC !important;
+  background-color: #ffffff !important;
+  color: #5C6A8E !important;
+  padding: 0 !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
 }
 
-.pagination-btn:hover:not(.active):not(.disabled) {
-  background-color: var(--theme-bg-gray);
-  color: var(--theme-dark-navy);
+.pagination-btn-arrow:hover:not(.disabled) {
+  background-color: var(--theme-navy-blue) !important;
+  color: #ffffff !important;
+  border-color: var(--theme-navy-blue) !important;
 }
 
-.pagination-btn.disabled {
-  opacity: 0.4;
+.pagination-btn-arrow.disabled {
+  opacity: 0.45;
   cursor: not-allowed;
+}
+
+.pagination-btn-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 0;
+  background-color: transparent !important;
+  color: #5C6A8E !important;
+  padding: 0 !important;
+  font-weight: 550;
+}
+
+.pagination-btn-num:hover:not(.active) {
+  color: var(--theme-navy-blue) !important;
+}
+
+.pagination-btn-num.active {
+  border-radius: 50% !important;
+  background-color: var(--theme-navy-blue) !important;
+  color: #ffffff !important;
+  font-weight: 700;
 }
 
 /* Academy row style */
 .academy-item {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
-  border-bottom: 1px solid #EEF1F6;
+  padding: 14px 20px;
+  border-bottom: none !important;
 }
 
 .academy-item:last-child {
@@ -633,7 +660,7 @@ body {
 .chart-line {
   height: 1px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(181, 145, 95, 0.45) !important;
 }
 
 .custom-bar-col {
@@ -654,8 +681,8 @@ body {
 }
 
 .pill-segment {
-  width: 13px;
-  height: 7px;
+  width: 24px;
+  height: 8px;
   border-radius: 4px;
 }
 
@@ -1060,7 +1087,7 @@ body {
     padding: 20px 0 20px 20px !important;
     width: var(--menu-open) !important;
   }
-  
+
   body.desktop .side-bar-body {
     background-color: var(--theme-navy-blue) !important;
     border-radius: 16px !important;
@@ -1070,11 +1097,11 @@ body {
   }
 
   body.desktop .content-wrapper {
-    background-color: #f5f6fa !important;
+    background-color: #F0F1F1 !important;
     border-radius: 16px;
     margin: 20px 20px 20px 0;
     padding: 24px;
-    min-height: calc(100vh - 40px);
+    min-height: calc(100vh - -1020px);
     width: calc(100% - var(--menu-open) - 40px) !important;
     margin-left: calc(var(--menu-open) + 20px) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
@@ -1107,7 +1134,7 @@ body {
   }
 
   body.tablet .content-wrapper {
-    background-color: #f5f6fa !important;
+    background-color: #F0F1F1 !important;
     border-radius: 16px;
     margin: 20px 20px 20px 0;
     padding: 24px;
@@ -1152,7 +1179,7 @@ body {
   background-color: rgba(255, 255, 255, 0.08) !important;
 }
 
-.side-bar .side-menu .nav-item.active > a {
+.side-bar .side-menu .nav-item.active>a {
   background-color: var(--courses-color) !important;
   border-color: var(--courses-color) !important;
   color: #ffffff !important;
@@ -1174,10 +1201,21 @@ body {
 }
 
 /* Colors matching mockup precisely */
-.bg-academics-blue { background-color: var(--academics-color) !important; }
-.bg-enrolled-navy { background-color: var(--theme-navy-blue) !important; }
-.bg-conducted-dark { background-color: var(--conducted-color) !important; }
-.bg-courses-red { background-color: var(--courses-color) !important; }
+.bg-academics-blue {
+  background-color: var(--academics-color) !important;
+}
+
+.bg-enrolled-navy {
+  background-color: var(--theme-navy-blue) !important;
+}
+
+.bg-conducted-dark {
+  background-color: var(--conducted-color) !important;
+}
+
+.bg-courses-red {
+  background-color: var(--courses-color) !important;
+}
 
 /* Student Added Card Chart Toggle Group */
 .toggle-group-capsule {
@@ -1206,8 +1244,9 @@ body {
 }
 
 .toggle-btn-capsule.inactive {
-  background-color: transparent !important;
+  background-color: #EEF1F6 !important;
   color: #5c6a8e !important;
+  margin: 0 2px;
 }
 
 /* Table Styling Overrides */
@@ -1228,20 +1267,37 @@ body {
   letter-spacing: 0.5px;
 }
 
+.custom-table-container table thead th:first-child {
+  border-top-left-radius: 12px !important;
+}
+
+.custom-table-container table thead th:last-child {
+  border-top-right-radius: 12px !important;
+}
+
+.sort-icon {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 11px;
+  opacity: 0.75;
+  color: #ffffff;
+  vertical-align: middle;
+}
+
 .custom-table-container table tbody td {
-  padding: 16px;
+  padding: 14px 16px;
   font-size: 13px;
   vertical-align: middle;
-  border-bottom: 1px solid #EEF1F6 !important;
+  border: none !important;
   color: var(--theme-dark-navy);
 }
 
-.custom-table-container table tbody tr:last-child td {
-  border-bottom: none !important;
+.custom-table-container table tbody tr:nth-of-type(odd) {
+  background-color: #ffffff !important;
 }
 
 .custom-table-container table tbody tr:nth-of-type(even) {
-  background-color: #FAFCFE;
+  background-color: #EEF1F6 !important;
 }
 
 /* Exams Panel Custom Summary List */
@@ -1249,7 +1305,7 @@ body {
   display: flex;
   align-items: center;
   padding: 16px 20px;
-  border-bottom: 1px solid #EEF1F6;
+  border-bottom: none !important;
   position: relative;
 }
 
@@ -1258,9 +1314,9 @@ body {
 }
 
 .exam-color-bar {
-  width: 6px;
-  height: 24px;
-  border-radius: 3px;
+  width: 24px;
+  height: 12px;
+  border-radius: 6px;
   flex-shrink: 0;
 }
 
@@ -1332,4 +1388,79 @@ body {
     padding: 12px;
     border-radius: 12px;
   }
+}
+
+/* Recent Exam List Custom Separate Capsule Row Styling */
+.recent-exam-table-container {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.recent-exam-table-container .panel-header-custom {
+  background-color: rgba(33, 35, 106, 0.1) !important;
+  border-radius: 12px !important;
+  margin-bottom: 16px !important;
+  border: none !important;
+}
+
+.recent-exam-table-container table {
+  border-collapse: separate !important;
+  border-spacing: 0 10px !important;
+  background-color: transparent !important;
+}
+
+.recent-exam-table-container table thead th {
+  background-color: var(--enrolled-color) !important;
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 14px 16px;
+  border: none !important;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.recent-exam-table-container table thead th:first-child {
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+}
+
+.recent-exam-table-container table thead th:last-child {
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+.recent-exam-table-container table tbody td {
+  padding: 14px 16px;
+  font-size: 13px;
+  vertical-align: middle;
+  border: none !important;
+  color: var(--theme-dark-navy);
+}
+
+.recent-exam-table-container table tbody td:first-child {
+  border-top-left-radius: 12px !important;
+  border-bottom-left-radius: 12px !important;
+}
+
+.recent-exam-table-container table tbody td:last-child {
+  border-top-right-radius: 12px !important;
+  border-bottom-right-radius: 12px !important;
+}
+
+.recent-exam-table-container table tbody tr:nth-of-type(odd) td {
+  background-color: #F3F4F4 !important;
+}
+
+.recent-exam-table-container table tbody tr:nth-of-type(even) td {
+  background-color: rgba(33, 35, 106, 0.1) !important;
+}
+
+.recent-exam-table-container .table-footer-custom {
+  background-color: rgba(33, 35, 106, 0.1) !important;
+  border-radius: 12px !important;
+  margin-top: 16px !important;
+  border: none !important;
 }

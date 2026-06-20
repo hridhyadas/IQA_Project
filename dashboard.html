@@ -346,7 +346,7 @@
 
             <!-- Recent Exam List Table Column -->
             <div class="col-md-8">
-              <div class="custom-table-container">
+              <div class="custom-table-container recent-exam-table-container">
                 <!-- Header -->
                 <div class="panel-header-custom">
                   <h5>Recent Exam List</h5>
@@ -357,11 +357,11 @@
                   <table class="table">
                     <thead>
                       <tr>
-                        <th style="width: 60px;">#</th>
-                        <th class="sort-header">Name</th>
-                        <th class="sort-header">Schedule</th>
-                        <th class="sort-header">Status</th>
-                        <th class="sort-header text-center" style="width: 150px;">Action</th>
+                        <th style="width: 60px;"># <span class="sort-icon"><i class="bi bi-chevron-expand"></i></span></th>
+                        <th class="sort-header">Name <span class="sort-icon"><i class="bi bi-chevron-expand"></i></span></th>
+                        <th class="sort-header">Schedule <span class="sort-icon"><i class="bi bi-chevron-expand"></i></span></th>
+                        <th class="sort-header">Status <span class="sort-icon"><i class="bi bi-chevron-expand"></i></span></th>
+                        <th class="sort-header text-center" style="width: 150px;">Action <span class="sort-icon"><i class="bi bi-chevron-expand"></i></span></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -381,7 +381,7 @@
                         </td>
                         <td class="text-center">
                           <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
-                          <a class="btn-action-circle" title="Edit"><i class="bi bi-link-45deg"></i></a>
+                          <a class="btn-action-circle" title="Edit"><i class="bi bi-pencil-square"></i></a>
                           <a class="btn-action-circle" title="More"><i class="bi bi-three-dots-vertical"></i></a>
                         </td>
                       </tr>
@@ -402,7 +402,7 @@
                         </td>
                         <td class="text-center">
                           <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
-                          <a class="btn-action-circle" title="Edit"><i class="bi bi-link-45deg"></i></a>
+                          <a class="btn-action-circle" title="Edit"><i class="bi bi-pencil-square"></i></a>
                           <a class="btn-action-circle" title="More"><i class="bi bi-three-dots-vertical"></i></a>
                         </td>
                       </tr>
@@ -423,7 +423,7 @@
                         </td>
                         <td class="text-center">
                           <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
-                          <a class="btn-action-circle" title="Edit"><i class="bi bi-link-45deg"></i></a>
+                          <a class="btn-action-circle" title="Edit"><i class="bi bi-pencil-square"></i></a>
                           <a class="btn-action-circle" title="More"><i class="bi bi-three-dots-vertical"></i></a>
                         </td>
                       </tr>
@@ -444,7 +444,7 @@
                         </td>
                         <td class="text-center">
                           <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
-                          <a class="btn-action-circle" title="Edit"><i class="bi bi-link-45deg"></i></a>
+                          <a class="btn-action-circle" title="Edit"><i class="bi bi-pencil-square"></i></a>
                           <a class="btn-action-circle" title="More"><i class="bi bi-three-dots-vertical"></i></a>
                         </td>
                       </tr>
@@ -465,7 +465,7 @@
                         </td>
                         <td class="text-center">
                           <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
-                          <a class="btn-action-circle" title="Edit"><i class="bi bi-link-45deg"></i></a>
+                          <a class="btn-action-circle" title="Edit"><i class="bi bi-pencil-square"></i></a>
                           <a class="btn-action-circle" title="More"><i class="bi bi-three-dots-vertical"></i></a>
                         </td>
                       </tr>
@@ -488,14 +488,14 @@
                     </label>
                   </div>
                   <div class="custom-pagination">
-                    <span style="font-size: 12px; color: var(--theme-text-gray); margin-right: 12px;">1-10 of 52</span>
-                    <a href="#" class="pagination-btn disabled"><i class="bi bi-chevron-left"></i></a>
-                    <a href="#" class="pagination-btn active">1</a>
-                    <a href="#" class="pagination-btn">2</a>
-                    <a href="#" class="pagination-btn">3</a>
-                    <a href="#" class="pagination-btn">4</a>
-                    <a href="#" class="pagination-btn">5</a>
-                    <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
+                    <a href="#" class="pagination-btn pagination-btn-arrow disabled"><i class="bi bi-chevron-left"></i></a>
+                    <a href="#" class="pagination-btn pagination-btn-num active">1</a>
+                    <a href="#" class="pagination-btn pagination-btn-num">2</a>
+                    <a href="#" class="pagination-btn pagination-btn-num">3</a>
+                    <a href="#" class="pagination-btn pagination-btn-num">4</a>
+                    <a href="#" class="pagination-btn pagination-btn-num">5</a>
+                    <a href="#" class="pagination-btn pagination-btn-arrow"><i class="bi bi-chevron-right"></i></a>
+                    <span style="font-size: 12px; color: var(--theme-text-gray); margin-left: 12px; font-weight: 500;">1-10 of 52</span>
                   </div>
                 </div>
               </div>
@@ -528,8 +528,7 @@
                   <div class="academy-item">
                     <div class="academy-icon-circle">
                       <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                        <path
-                          d="M1 4v10a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V9a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v5a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1zm8.5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-3 .5a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm0 2a.5.5 0 1 1 0-1 .5.5 0 0 1 0 1zm6-3a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z" />
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
                       </svg>
                     </div>
                     <div class="academy-details">
@@ -576,7 +575,7 @@
                     </div>
                     <div class="academy-details">
                       <h6>Arlene McCoy Academy</h6>
-                      <p>100 students</p>
+                      <p>100 stidents</p>
                     </div>
                     <a class="academy-action"><i class="bi bi-three-dots-vertical"></i></a>
                   </div>
@@ -590,7 +589,7 @@
                     </div>
                     <div class="academy-details">
                       <h6>Arlene McCoy Academy</h6>
-                      <p>100 students</p>
+                      <p>100 stidents</p>
                     </div>
                     <a class="academy-action"><i class="bi bi-three-dots-vertical"></i></a>
                   </div>
@@ -642,16 +641,10 @@
                           <div class="chart-line"></div>
                         </div>
 
-                        <!-- Jan: 3 red, 7 white -->
+                        <!-- Jan: 4 red -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
@@ -659,11 +652,9 @@
                           <span class="bar-label">Jan</span>
                         </div>
 
-                        <!-- Feb: 0 red, 10 white -->
+                        <!-- Feb: 8 white -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
@@ -676,16 +667,10 @@
                           <span class="bar-label">Feb</span>
                         </div>
 
-                        <!-- Mar: 3 red, 7 white -->
+                        <!-- Mar: 4 red -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
@@ -693,7 +678,7 @@
                           <span class="bar-label">Mar</span>
                         </div>
 
-                        <!-- Apr: 2 red, 8 white -->
+                        <!-- Apr: 8 white -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
                             <div class="pill-segment bg-white-stack"></div>
@@ -704,30 +689,22 @@
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment active-red"></div>
-                            <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Apr</span>
                         </div>
 
-                        <!-- May: 2 red, 8 white -->
+                        <!-- May: 4 red -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">May</span>
                         </div>
 
-                        <!-- Jun: 2 red, 8 white -->
+                        <!-- Jun: 8 white -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
                             <div class="pill-segment bg-white-stack"></div>
@@ -738,30 +715,22 @@
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment active-red"></div>
-                            <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Jun</span>
                         </div>
 
-                        <!-- Jul: 2 red, 8 white -->
+                        <!-- Jul: 4 red -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Jul</span>
                         </div>
 
-                        <!-- Aug: 2 red, 8 white -->
+                        <!-- Aug: 8 white -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
                             <div class="pill-segment bg-white-stack"></div>
@@ -772,30 +741,22 @@
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment active-red"></div>
-                            <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Aug</span>
                         </div>
 
-                        <!-- Sep: 2 red, 8 white -->
+                        <!-- Sep: 4 red -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Sep</span>
                         </div>
 
-                        <!-- Oct: 2 red, 8 white -->
+                        <!-- Oct: 8 white -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
                             <div class="pill-segment bg-white-stack"></div>
@@ -806,34 +767,24 @@
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment active-red"></div>
-                            <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Oct</span>
                         </div>
 
-                        <!-- Nov: 2 red, 8 white -->
+                        <!-- Nov: 4 red -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Nov</span>
                         </div>
 
-                        <!-- Dec: 0 red, 10 white -->
+                        <!-- Dec: 8 white -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
-                            <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
@@ -895,7 +846,7 @@
                   <div class="exam-summary-item">
                     <span class="exam-color-bar bg-exam-dark"></span>
                     <div class="exam-icon-circle ms-3">
-                      <i class="bi bi-shield-check"></i>
+                      <i class="bi bi-clipboard-check"></i>
                     </div>
                     <div class="exam-details ms-3">
                       <h3>20</h3>
@@ -906,7 +857,7 @@
                   <div class="exam-summary-item">
                     <span class="exam-color-bar bg-exam-blue"></span>
                     <div class="exam-icon-circle ms-3">
-                      <i class="bi bi-hourglass-split"></i>
+                      <i class="bi bi-arrow-repeat"></i>
                     </div>
                     <div class="exam-details ms-3">
                       <h3>12</h3>

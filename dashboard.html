@@ -247,8 +247,10 @@
       }
 
       /* Prevent data-label pseudoelements from displaying in card grid */
-      .recent-exams-table-container table.table td::before,
-      .recent-exams-table-container table.table td::after {
+      .recent-exams-table-container table.table tbody tr td::before,
+      .recent-exams-table-container table.table tbody tr td::after,
+      .recent-exams-table-container table.table tbody tr th::before,
+      .recent-exams-table-container table.table tbody tr th::after {
         content: none !important;
         display: none !important;
       }
@@ -272,7 +274,7 @@
 
       /* The date part (e.g. "18, Aug 2026") */
       .recent-exams-table-container table.table td:nth-child(3) strong {
-        font-size: 11.5px !important;
+        font-size: 11px !important;
         font-weight: 500 !important;
         color: #78829D !important;
         white-space: nowrap !important;
@@ -285,13 +287,13 @@
         content: " \2022 ";
         color: #78829D !important;
         font-weight: 400 !important;
-        margin: 0 2px !important;
+        margin: 0 4px !important;
       }
 
       /* The time range div (e.g. "10.00 AM to 12.00 AM | 2h") */
       .recent-exams-table-container table.table td:nth-child(3) .text-muted,
       .recent-exams-table-container table.table td:nth-child(3) div {
-        font-size: 11.5px !important;
+        font-size: 11px !important;
         color: #78829D !important;
         margin-top: 0 !important;
         white-space: nowrap !important;
@@ -327,8 +329,8 @@
       .recent-exams-table-container table.table td:nth-child(2) strong {
         grid-area: name !important;
         display: block !important;
-        font-size: 14.5px !important;
-        font-weight: 700 !important;
+        font-size: 13.5px !important;
+        font-weight: 600 !important;
         color: #1D2465 !important;
         white-space: normal !important;
         line-height: 1.35 !important;
@@ -342,7 +344,7 @@
         grid-area: code !important;
         display: flex !important;
         align-items: center !important;
-        font-size: 12px !important;
+        font-size: 11px !important;
         color: #78829D !important;
         margin-top: 0 !important;
         white-space: nowrap !important;
@@ -377,30 +379,82 @@
         padding: 4px 10px !important;
       }
 
-      /* ── Pagination footer ── */
+      /* ── Pagination footer ── single-row Figma layout ── */
       .recent-exams-table-container .table-footer-custom {
         background-color: #EEF1F6 !important;
-        border-radius: 12px !important;
+        border-radius: 10px !important;
         border: none !important;
-        padding: 12px 16px !important;
+        padding: 8px 10px !important;
         margin-top: 12px !important;
         display: flex !important;
         flex-direction: row !important;
         justify-content: space-between !important;
         align-items: center !important;
-        flex-wrap: wrap !important;
-        gap: 12px !important;
+        flex-wrap: nowrap !important;   /* ← single row: no wrapping */
+        gap: 6px !important;
+        overflow: hidden !important;
+      }
+
+      /* "Show X per page" label */
+      .recent-exams-table-container .table-footer-custom label {
+        font-size: 10px !important;
+        white-space: nowrap !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
+        gap: 0 !important;
+        margin-bottom: 0 !important;
+      }
+
+      /* The dropdown select inside the label */
+      .recent-exams-table-container .table-footer-custom .table-show-select {
+        height: 22px !important;
+        font-size: 10px !important;
+        padding: 0 18px 0 6px !important;
+        border-radius: 5px !important;
       }
 
       .recent-exams-table-container .table-footer-custom>div {
         width: auto !important;
         display: flex !important;
+        flex-shrink: 0 !important;
       }
 
+      /* Pagination links row – no wrap, tight gap */
       .recent-exams-table-container .custom-pagination {
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        gap: 6px !important;
+        flex-wrap: nowrap !important;   /* ← keep all on one line */
+        justify-content: flex-end !important;
+        align-items: center !important;
+        gap: 2px !important;
+        display: flex !important;
+      }
+
+      /* Smaller page number buttons */
+      .recent-exams-table-container .custom-pagination .pagination-btn {
+        width: 22px !important;
+        height: 22px !important;
+        font-size: 10px !important;
+        font-weight: 600 !important;
+        border-radius: 50% !important;
+        margin: 0 !important;
+      }
+
+      /* Chevron arrow buttons – rounded square, compact */
+      .recent-exams-table-container .custom-pagination a.pagination-btn:first-of-type,
+      .recent-exams-table-container .custom-pagination a.pagination-btn:last-of-type {
+        width: 20px !important;
+        height: 20px !important;
+        font-size: 9px !important;
+        border-radius: 4px !important;
+        border-width: 1.5px !important;
+      }
+
+      /* "1-10 of 52" text */
+      .recent-exams-table-container .custom-pagination span {
+        font-size: 9px !important;
+        margin-left: 4px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
       }
 
       /* KPI Cards mobile adjustments */

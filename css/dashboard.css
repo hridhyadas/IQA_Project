@@ -1893,8 +1893,10 @@ body {
     background: transparent !important;
   }
 
-  .recent-exams-table-container td::before,
-  .recent-exams-table-container td::after {
+  .recent-exams-table-container table.table tbody tr td::before,
+  .recent-exams-table-container table.table tbody tr td::after,
+  .recent-exams-table-container table.table tbody tr th::before,
+  .recent-exams-table-container table.table tbody tr th::after {
     content: none !important;
     display: none !important;
   }
@@ -1915,7 +1917,7 @@ body {
   .recent-exams-table-container td:nth-child(3) strong {
     font-weight: 400 !important;
     color: #5C6A8E;
-    font-size: 13px;
+    font-size: 11px !important;
   }
 
   .recent-exams-table-container td:nth-child(3) strong::after {
@@ -1925,7 +1927,7 @@ body {
   }
 
   .recent-exams-table-container td:nth-child(3) div {
-    font-size: 13px !important;
+    font-size: 11px !important;
     color: #5C6A8E !important;
     margin-top: 0 !important;
   }
@@ -1964,14 +1966,14 @@ body {
   }
 
   .recent-exams-table-container td:nth-child(2) strong {
-    font-size: 15px !important;
+    font-size: 13.5px !important;
     font-weight: 600 !important;
     color: var(--theme-dark-navy) !important;
     line-height: 1.2 !important;
   }
 
   .recent-exams-table-container td:nth-child(2) div {
-    font-size: 13px !important;
+    font-size: 11px !important;
     color: #8A99AD !important;
     margin-top: 0 !important;
   }
@@ -1988,15 +1990,15 @@ body {
   /* Footer */
   .recent-exams-table-container .table-footer-custom {
     background-color: #E2E4E9 !important;
-    border-radius: 12px !important;
-    margin-top: 16px;
-    padding: 16px 20px !important;
+    border-radius: 10px !important;
+    margin-top: 12px;
+    padding: 8px 10px !important;
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;  /* ← single row, no wrapping */
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
+    gap: 6px;
     border: none !important;
   }
 }

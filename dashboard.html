@@ -15,6 +15,390 @@
   <link rel="stylesheet" href="css/daterangepicker.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/dashboard.css">
+  <style>
+    /* Extracted Sidebar Redesign Styles to prevent affecting other Dashboard elements */
+    :root {
+      --menu-open: 305px;
+      --menu-close: 82px;
+    }
+    
+    body.desktop .side-bar-wrapper,
+    body.tablet .side-bar-wrapper {
+      width: var(--menu-open);
+      background-color: #21236A !important;
+      transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      padding: 0 !important;
+    }
+
+    body.desktop .side-bar,
+    body.tablet .side-bar {
+      background-color: #21236A !important;
+      border: none !important;
+      height: 100% !important;
+      border-radius: 0 !important;
+    }
+
+    .side-bar-body {
+      background-color: #21236A !important;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border-radius: 0 !important;
+      overflow-y: auto;
+    }
+
+    .side-bar-body::-webkit-scrollbar {
+      width: 5px;
+    }
+    .side-bar-body::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .side-bar-body::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+    .side-bar-body::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .side-menu .nav-item .nav-link {
+      color: rgba(255, 255, 255, 0.7) !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      border-radius: 8px;
+      margin: 2px 24px;
+      padding: 10px 16px !important;
+      display: flex !important;
+      align-items: center;
+      white-space: nowrap;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .side-menu .nav-item .nav-link:hover {
+      color: #FFFFFF !important;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .side-menu .nav-item.active>.nav-link {
+      background-color: #DF001B !important;
+      color: #FFFFFF !important;
+    }
+
+    .side-menu .nav-item .menu-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 20px;
+      margin-right: 12px;
+    }
+
+    .side-menu .nav-item .menu-icon img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .side-menu .menu-label {
+      font-family: var(--font-1);
+      transition: opacity 0.2s ease;
+    }
+
+    .side-bar .dropdown-menu {
+      background-color: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      position: static !important;
+      display: block !important;
+      width: auto !important;
+      box-shadow: none !important;
+      float: none !important;
+    }
+
+    .side-bar .dropdown-menu li {
+      margin: 2px 24px !important;
+    }
+
+    .side-bar .dropdown-menu .dropdown-item {
+      color: rgba(255, 255, 255, 0.8) !important;
+      font-size: 13px !important;
+      font-weight: 500 !important;
+      padding: 10px 16px 10px 28px !important;
+      display: flex !important;
+      align-items: center;
+      border-radius: 8px !important;
+      transition: background-color 0.2s, color 0.2s;
+      background-color: transparent !important;
+      border: none !important;
+      white-space: nowrap;
+    }
+
+    .side-bar .dropdown-menu .dropdown-item:hover {
+      color: #FFFFFF !important;
+      background-color: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .side-bar .dropdown-menu li.active > .dropdown-item,
+    .side-bar .dropdown-menu .dropdown-item.active {
+      background-color: #DF001B !important;
+      color: #FFFFFF !important;
+      font-weight: 600 !important;
+    }
+
+    .side-bar .dropdown-menu li.active > .dropdown-item .menu-icon img,
+    .side-bar .dropdown-menu .dropdown-item.active .menu-icon img {
+      filter: brightness(0) invert(1);
+    }
+
+    .side-menu .nav-item.dropdown > .dropdown-toggle:hover {
+      color: #FFFFFF !important;
+      background-color: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .side-menu .dropdown-toggle::after {
+      display: none !important;
+    }
+
+    .side-menu .nav-item.dropdown .toggle-chevron {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      transition: transform 0.2s ease;
+      line-height: 1;
+    }
+
+    .side-menu .nav-item.dropdown > .dropdown-toggle:hover .toggle-chevron {
+      color: #FFFFFF;
+    }
+
+    .side-menu .nav-item.dropdown.open .toggle-chevron,
+    .side-menu .nav-item.dropdown.show .toggle-chevron {
+      transform: rotate(180deg);
+    }
+
+    .side-bar-logout-container {
+      padding: 24px;
+      margin-top: auto;
+      transition: padding 0.3s ease;
+    }
+
+    .btn-sidebar-logout {
+      width: 100%;
+      background-color: transparent !important;
+      color: #FFFFFF !important;
+      font-size: 16px !important;
+      font-weight: 500 !important;
+      padding: 12px !important;
+      border-radius: 12px !important;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      border: none !important;
+    }
+
+    .btn-sidebar-logout:hover {
+      background-color: rgba(255, 255, 255, 0.08) !important;
+      color: #FFFFFF !important;
+    }
+
+    .btn-sidebar-logout img {
+      filter: brightness(0) invert(1);
+    }
+
+    .btn-sidebar-logout span {
+      transition: opacity 0.2s ease;
+    }
+
+    .side-menu .badge-live {
+      background-color: #E10A1A !important;
+      color: #FFFFFF !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      padding: 3px 6px !important;
+      border-radius: 4px !important;
+      margin-left: auto;
+      line-height: 1;
+    }
+
+    .side-menu .badge-pending {
+      background-color: #D29E1B !important;
+      color: #FFFFFF !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      padding: 3px 6px !important;
+      border-radius: 4px !important;
+      margin-left: auto;
+      line-height: 1;
+    }
+
+    /* Collapse / Expand transitions for sidebar responsiveness */
+    body.desktop.close-menu .side-bar-wrapper,
+    body.tablet:not(.open-menu) .side-bar-wrapper {
+      width: var(--menu-close) !important;
+    }
+
+    body.desktop.close-menu .content-wrapper {
+      width: calc(100% - var(--menu-close) - 40px) !important;
+      margin-left: calc(var(--menu-close) + 20px) !important;
+    }
+
+    body.tablet:not(.open-menu) .content-wrapper {
+      width: calc(100% - var(--menu-close)) !important;
+      margin-left: var(--menu-close) !important;
+    }
+
+    body.desktop.close-menu .side-bar-wrapper .sidebar-search-shortcut,
+    body.desktop.close-menu .side-bar-wrapper .sidebar-search-box input,
+    body.desktop.close-menu .side-bar-wrapper .side-menu-section-title,
+    body.desktop.close-menu .side-bar-wrapper .side-menu .nav-item .menu-label,
+    body.desktop.close-menu .side-bar-wrapper .side-menu .nav-item .badge,
+    body.desktop.close-menu .side-bar-wrapper .btn-sidebar-logout span,
+    body.tablet:not(.open-menu) .side-bar-wrapper .sidebar-search-shortcut,
+    body.tablet:not(.open-menu) .side-bar-wrapper .sidebar-search-box input,
+    body.tablet:not(.open-menu) .side-bar-wrapper .side-menu-section-title,
+    body.tablet:not(.open-menu) .side-bar-wrapper .side-menu .nav-item .menu-label,
+    body.tablet:not(.open-menu) .side-bar-wrapper .side-menu .nav-item .badge,
+    body.tablet:not(.open-menu) .side-bar-wrapper .btn-sidebar-logout span {
+      opacity: 0 !important;
+      pointer-events: none;
+      transition: opacity 0.1s ease;
+    }
+
+    body.desktop.close-menu .side-bar-wrapper .side-menu .nav-item .nav-link,
+    body.tablet:not(.open-menu) .side-bar-wrapper .side-menu .nav-item .nav-link {
+      margin: 2px 13px !important;
+      padding: 10px 0 !important;
+      justify-content: center !important;
+    }
+
+    body.desktop.close-menu .side-bar-wrapper .side-menu .nav-item .menu-icon,
+    body.tablet:not(.open-menu) .side-bar-wrapper .side-menu .nav-item .menu-icon {
+      margin-right: 0 !important;
+    }
+
+    body.desktop.expand-menu .side-bar-wrapper,
+    body.tablet.open-menu .side-bar-wrapper {
+      width: var(--menu-open) !important;
+    }
+
+    body.desktop.expand-menu .side-bar-wrapper .sidebar-search-shortcut,
+    body.desktop.expand-menu .side-bar-wrapper .sidebar-search-box input,
+    body.desktop.expand-menu .side-bar-wrapper .side-menu-section-title,
+    body.desktop.expand-menu .side-bar-wrapper .side-menu .nav-item .menu-label,
+    body.desktop.expand-menu .side-bar-wrapper .side-menu .nav-item .badge,
+    body.desktop.expand-menu .side-bar-wrapper .btn-sidebar-logout span,
+    body.tablet.open-menu .side-bar-wrapper .sidebar-search-shortcut,
+    body.tablet.open-menu .side-bar-wrapper .sidebar-search-box input,
+    body.tablet.open-menu .side-bar-wrapper .side-menu-section-title,
+    body.tablet.open-menu .side-bar-wrapper .side-menu .nav-item .menu-label,
+    body.tablet.open-menu .side-bar-wrapper .side-menu .nav-item .badge,
+    body.tablet.open-menu .side-bar-wrapper .btn-sidebar-logout span {
+      opacity: 1 !important;
+      pointer-events: auto;
+      transition: opacity 0.3s ease 0.1s;
+    }
+
+    body.desktop.expand-menu .side-bar-wrapper .side-menu .nav-item .nav-link,
+    body.tablet.open-menu .side-bar-wrapper .side-menu .nav-item .nav-link {
+      margin: 2px 24px !important;
+      padding: 10px 16px !important;
+      justify-content: flex-start !important;
+    }
+
+    body.desktop.expand-menu .side-bar-wrapper .side-menu .nav-item .menu-icon,
+    body.tablet.open-menu .side-bar-wrapper .side-menu .nav-item .menu-icon {
+      margin-right: 12px !important;
+    }
+
+    body.mobile .side-bar-wrapper {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 280px !important;
+      height: 100%;
+      z-index: 1070;
+      transition: left 0.3s ease;
+      padding: 0 !important;
+    }
+
+    body.mobile.open-menu .side-bar-wrapper {
+      left: 0;
+    }
+
+    body.mobile .side-bar-wrapper .side-bar-close {
+      display: block !important;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    /* Hide close button in desktop and tablet view to keep sidebar fixed */
+    @media (min-width: 768px) {
+      .side-bar-header .side-bar-close {
+        display: none !important;
+      }
+    }
+
+    /* Mobile hamburger button overrides to clear side-bar-close styles */
+    .mobile-hamburger-btn {
+      position: relative !important;
+      width: 48px !important;
+      height: 48px !important;
+      background-color: #21236A !important;
+      background-image: none !important;
+      border: none !important;
+      border-radius: 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      left: auto !important;
+      top: auto !important;
+      box-shadow: 0px 4px 10px rgba(33, 35, 106, 0.15) !important;
+      margin-right: 0 !important;
+    }
+
+    /* Custom Hamburger Icon lines */
+    .custom-hamburger-icon {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 5px !important;
+      align-items: flex-start !important;
+      width: 20px !important;
+    }
+
+    .custom-hamburger-icon .line {
+      display: block !important;
+      height: 2px !important;
+      background-color: #FFFFFF !important;
+      border-radius: 2px !important;
+    }
+
+    .custom-hamburger-icon .line-1 {
+      width: 20px !important;
+    }
+
+    .custom-hamburger-icon .line-2 {
+      width: 14px !important;
+    }
+
+    .custom-hamburger-icon .line-3 {
+      width: 8px !important;
+    }
+
+    /* Mobile Overrides (Viewport < 768px) */
+    @media (max-width: 767px) {
+      .header-top {
+        justify-content: flex-start !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 24px !important;
+      }
+    }
+  </style>
 
   <title>IQA</title>
 </head>
@@ -32,6 +416,10 @@
       <div class="side-bar">
         <div class="side-bar-header">
           <div class="side-bar-close"></div>
+          <a class="navbar-brand" href="#">
+            <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" />
+          </a>
         </div>
         <div class="side-bar-body">
           <div class="side-menu">
@@ -40,32 +428,26 @@
               <!-- Menu item start -->
               <li class="nav-item active">
                 <a class="nav-link" href="#">
-                  <span class="menu-icon">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                      <path
-                        d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h-3A1.5 1.5 0 0 1 1 10.5v3A1.5 1.5 0 0 1 2.5 15h3A1.5 1.5 0 0 1 7 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z" />
-                    </svg>
-                  </span>
+                  <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
                   <span class="menu-label me-auto">Dashboard</span>
                 </a>
               </li><!-- Menu item end -->
 
               <!-- Menu item start -->
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown open">
                 <a class="nav-link dropdown-toggle" href="#">
                   <span class="menu-label me-auto">Exam Managment</span>
+                  <i class="bi bi-chevron-down toggle-chevron"></i>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu show" style="display: block;">
                   <li>
                     <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
                       <span class="d-flex align-items-center">
                         <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
                         <span class="menu-label">Exam List</span>
                       </span>
-                      <span class="badge"
-                        style="background-color: var(--theme-red); color: #fff; font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px;">1
-                        Live</span>
+                      <span class="badge badge-live">1 Live</span>
                     </a>
                   </li>
                   <li>
@@ -80,9 +462,7 @@
                         <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
                         <span class="menu-label">Exam Valuation</span>
                       </span>
-                      <span class="badge"
-                        style="background-color: #FFC107; color: var(--theme-dark-navy); font-size: 10px; font-weight: 600; padding: 2px 6px; border-radius: 4px;">3
-                        Pending</span>
+                      <span class="badge badge-pending">3 Pending</span>
                     </a>
                   </li>
                   <li>
@@ -95,12 +475,13 @@
               </li><!-- Menu item end -->
 
               <!-- Menu item start -->
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown open">
                 <a class="nav-link dropdown-toggle" href="#">
                   <span class="menu-label me-auto">Student</span>
+                  <i class="bi bi-chevron-down toggle-chevron"></i>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu show" style="display: block;">
                   <li>
                     <a class="dropdown-item" href="#">
                       <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
@@ -111,12 +492,13 @@
               </li><!-- Menu item end -->
 
               <!-- Menu item start -->
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown open">
                 <a class="nav-link dropdown-toggle" href="#">
                   <span class="menu-label me-auto">Center’s Management</span>
+                  <i class="bi bi-chevron-down toggle-chevron"></i>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu show" style="display: block;">
                   <li>
                     <a class="dropdown-item" href="#">
                       <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
@@ -124,7 +506,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="academy-list.html">
                       <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
                       <span class="menu-label">List</span>
                     </a>
@@ -133,12 +515,13 @@
               </li><!-- Menu item end -->
 
               <!-- Menu item start -->
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown open">
                 <a class="nav-link dropdown-toggle" href="#">
                   <span class="menu-label me-auto">Settings</span>
+                  <i class="bi bi-chevron-down toggle-chevron"></i>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu show" style="display: block;">
                   <li>
                     <a class="dropdown-item" href="#">
                       <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
@@ -162,25 +545,43 @@
 
             </ul>
           </div>
-          <div class="side-bar-user w-100">
-            <a href="#" class="nav-link-logout">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                class="bi bi-box-arrow-left" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8a1.5 1.5 0 0 1 1.636 1.056c.038.1.054.21.054.32v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 4.5 13v-2a.5.5 0 0 1 1 0v2z" />
-                <path fill-rule="evenodd"
-                  d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z" />
-              </svg>
+          
+          <!-- Standalone Log Out at the bottom -->
+          <div class="side-bar-logout-container mt-auto">
+            <a href="#" class="btn-sidebar-logout">
+              <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""></span>
               <span>Log Out</span>
             </a>
+          </div>
+
+          <div class="side-bar-user d-none">
+            <div class="user-icon">
+              <img src="img/avatar-icon.jpg" alt="">
+            </div>
+            <div class="user-details ms-2">
+              <h4 class="user-name">James Mitchell</h4>
+              <p class="user-sub">Super Administrator</p>
+            </div>
+            <a href="#" class="btn btn-primary ms-auto"><img src="img/sign-out-icon.svg" alt=""></a>
           </div>
         </div>
 
       </div>
-    </div><!-- Side bar end -->
+    </div><!-- Side bar end -->->
 
     <!-- Content start -->
     <div class="content-wrapper">
+
+      <!-- Mobile Hamburger / Header Area (d-md-none) -->
+      <div class="header-top d-md-none mb-3 d-flex align-items-center">
+        <div class="side-bar-close mobile-hamburger-btn">
+          <div class="custom-hamburger-icon">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </div>
+        </div>
+      </div>
 
       <!-- Top Header start -->
       <div class="container-fluid">

@@ -124,6 +124,361 @@
         padding: 0 !important;
         margin-bottom: 24px !important;
       }
+
+      /* ============================================
+         Responsive Recent Exam List (Mobile View)
+         Figma tile layout:
+           Row 1: [18, Aug 2026 • 10.00 AM to 12.00 AM | 2h]  [Scheduled]
+           Row 2: [Quarterly Performance Assessm.. (bold)     ]
+           Row 3: [Code: 1001                      ] [👁][✏][⋮]
+         ============================================ */
+
+      /* --- Outer container strip --- */
+      .recent-exams-table-container {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        overflow: visible !important;
+      }
+
+      /* White rounded card that wraps the whole table */
+      .recent-exams-table-container .table-responsive {
+        overflow: hidden !important;
+        border: 1px solid #D9DFEC !important;
+        border-radius: 16px !important;
+        background-color: #ffffff !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04) !important;
+      }
+
+      /* ── CRITICAL: Reset dashboard.css overrides that cause the blue gap ──
+         dashboard.css sets: border-collapse:separate + border-spacing:0 10px
+         which creates 10px gaps between rows, and the alternating blue row
+         background (rgba(33,35,106,0.1)) shows through those gaps as blue stripes.
+         We must reset these to collapse/0 for mobile tile layout. */
+      .recent-exams-table-container table.table {
+        display: block !important;
+        border: none !important;
+        border-collapse: collapse !important;   /* ← fix: was 'separate' */
+        border-spacing: 0 !important;           /* ← fix: was '0 10px'   */
+        background: transparent !important;
+        width: 100% !important;
+        margin-bottom: 0 !important;
+        table-layout: auto !important;
+      }
+
+      /* Hide column headers completely */
+      .recent-exams-table-container table.table thead {
+        display: none !important;
+        height: 0 !important;
+        visibility: hidden !important;
+        overflow: hidden !important;
+      }
+
+      .recent-exams-table-container table.table tbody {
+        display: block !important;
+        width: 100% !important;
+      }
+
+      /* ── Reset alternating row background that causes blue tint gaps ── */
+      .recent-exams-table-container table.table tbody tr:nth-of-type(odd) td,
+      .recent-exams-table-container table.table tbody tr:nth-of-type(even) td,
+      .recent-exams-table-container table.table tbody tr:nth-of-type(odd),
+      .recent-exams-table-container table.table tbody tr:nth-of-type(even) {
+        background-color: #ffffff !important;
+      }
+
+      /* ── Reset strong display/white-space override from dashboard.css ──
+         dashboard.css forces: display:inline-block + white-space:nowrap
+         which breaks exam title wrapping on mobile. */
+      .recent-exams-table-container table.table tbody td strong {
+        display: block !important;
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: unset !important;
+        max-width: 100% !important;
+      }
+
+      /* ── Each <tr> becomes a 3-row × 2-column tile ── */
+      .recent-exams-table-container table.table tr {
+        display: grid !important;
+        grid-template-areas:
+          "datetime  status"
+          "name      name"
+          "code      actions" !important;
+        grid-template-columns: 1fr auto !important;
+        grid-template-rows: auto auto auto !important;
+        row-gap: 5px !important;
+        column-gap: 10px !important;
+        background: #ffffff !important;
+        border: none !important;
+        border-left: 4px solid #1C2260 !important;
+        border-bottom: 1px solid #EAEAEF !important;
+        padding: 14px 14px 14px 12px !important;
+        margin-bottom: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      /* No divider on the last card */
+      .recent-exams-table-container table.table tr:last-child {
+        border-bottom: none !important;
+      }
+
+      /* Red left accent for Live exams */
+      .recent-exams-table-container table.table tr:has(.badge-custom-danger) {
+        border-left-color: #DF001B !important;
+      }
+
+      /* ── Reset ALL <td> defaults ── */
+      .recent-exams-table-container table.table td {
+        display: block !important;
+        padding: 0 !important;
+        border: none !important;
+        background: transparent !important;
+        width: auto !important;
+        max-width: 100% !important;
+        text-align: left !important;
+        overflow: hidden !important;
+        vertical-align: middle !important;
+      }
+
+      /* Hide the index (#) column completely */
+      .recent-exams-table-container table.table td:nth-child(1) {
+        display: none !important;
+      }
+
+      /* ─── ROW 1 LEFT: Date • Time | Duration ─── */
+      /* td:nth-child(2) holds <strong>date</strong> + <div class="text-muted">time</div> */
+      .recent-exams-table-container table.table td:nth-child(2) {
+        grid-area: datetime !important;
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        min-width: 0 !important;
+        overflow: hidden !important;
+        align-self: center !important;
+      }
+
+      /* The date part (e.g. "18, Aug 2026") */
+      .recent-exams-table-container table.table td:nth-child(2) strong {
+        font-size: 11.5px !important;
+        font-weight: 500 !important;
+        color: #78829D !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        line-height: 1.4 !important;
+      }
+
+      /* Bullet ( • ) injected between date and time via CSS */
+      .recent-exams-table-container table.table td:nth-child(2) strong::after {
+        content: " \2022 ";
+        color: #78829D !important;
+        font-weight: 400 !important;
+        margin: 0 2px !important;
+      }
+
+      /* The time range div (e.g. "10.00 AM to 12.00 AM | 2h") */
+      .recent-exams-table-container table.table td:nth-child(2) .text-muted,
+      .recent-exams-table-container table.table td:nth-child(2) div {
+        font-size: 11.5px !important;
+        color: #78829D !important;
+        margin-top: 0 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        line-height: 1.4 !important;
+        flex-shrink: 1 !important;
+        min-width: 0 !important;
+      }
+
+      /* ─── ROW 1 RIGHT: Status Badge ─── */
+      /* td:nth-child(4) holds the badge */
+      .recent-exams-table-container table.table td:nth-child(4) {
+        grid-area: status !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: flex-start !important;
+        flex-shrink: 0 !important;
+        padding-top: 1px !important;
+      }
+
+      /* ─── ROW 2 + ROW 3: Exam Name & Code ─── */
+      /* td:nth-child(3) holds:
+           <strong>Exam Name</strong>
+           <div class="text-muted">Code: XXXX</div>
+         We use display:contents so the two children each land in
+         their own named grid area (name & code). */
+      .recent-exams-table-container table.table td:nth-child(3) {
+        display: contents !important;
+      }
+
+      /* ROW 2: Exam title */
+      .recent-exams-table-container table.table td:nth-child(3) strong {
+        grid-area: name !important;
+        display: block !important;
+        font-size: 14.5px !important;
+        font-weight: 700 !important;
+        color: #1D2465 !important;
+        white-space: normal !important;
+        line-height: 1.35 !important;
+        word-break: break-word !important;
+        align-self: start !important;
+      }
+
+      /* ROW 3 LEFT: Code label */
+      .recent-exams-table-container table.table td:nth-child(3) .text-muted,
+      .recent-exams-table-container table.table td:nth-child(3) div {
+        grid-area: code !important;
+        display: flex !important;
+        align-items: center !important;
+        font-size: 12px !important;
+        color: #78829D !important;
+        margin-top: 0 !important;
+        white-space: nowrap !important;
+        align-self: center !important;
+      }
+
+      /* ─── ROW 3 RIGHT: Action Icons ─── */
+      .recent-exams-table-container table.table td:nth-child(5) {
+        grid-area: actions !important;
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+        gap: 5px !important;
+        flex-shrink: 0 !important;
+        align-self: center !important;
+      }
+
+      /* Slightly smaller action buttons on mobile */
+      .recent-exams-table-container .btn-action-circle {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 12px !important;
+        flex-shrink: 0 !important;
+      }
+
+      /* Status badges: prevent wrapping */
+      .recent-exams-table-container .badge-custom-success,
+      .recent-exams-table-container .badge-custom-danger {
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        font-size: 11px !important;
+        padding: 4px 10px !important;
+      }
+
+      /* ── Pagination footer ── */
+      .recent-exams-table-container .table-footer-custom {
+        background-color: #EEF1F6 !important;
+        border-radius: 12px !important;
+        border: none !important;
+        padding: 12px 16px !important;
+        margin-top: 12px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 12px !important;
+      }
+      .recent-exams-table-container .table-footer-custom > div {
+        width: auto !important;
+        display: flex !important;
+      }
+      .recent-exams-table-container .custom-pagination {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 6px !important;
+      }
+
+      /* KPI Cards mobile adjustments */
+      .custom-stat-card {
+        margin-top: 20px !important;
+        padding-top: 35px !important;
+      }
+      .stat-card-number {
+        font-size: 32px !important;
+        margin-bottom: 16px !important;
+      }
+      .stat-card-icon {
+        width: 44px !important;
+        height: 44px !important;
+        top: -22px !important;
+      }
+      .stat-card-icon svg {
+        width: 18px !important;
+        height: 18px !important;
+      }
+      .stat-card-footer {
+        font-size: 11px !important;
+        padding: 8px !important;
+      }
+
+      /* Student Status Card Mobile Adjustments */
+      .student-added-card {
+        padding: 16px !important;
+      }
+      .chart-header-custom {
+        margin-bottom: 20px !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: flex-start !important;
+      }
+      .chart-header-custom h5 {
+        font-size: 18px !important;
+      }
+      .toggle-btn-capsule {
+        width: 80px !important;
+        padding: 6px 0 !important;
+        font-size: 12px !important;
+      }
+      .custom-bar-chart {
+        height: 160px !important;
+      }
+      .y-axis-labels {
+        width: 30px !important;
+        padding-right: 6px !important;
+        font-size: 11px !important;
+        margin-bottom: 16px !important;
+      }
+      .chart-bars-container {
+        height: calc(100% - 16px) !important;
+        margin-bottom: 16px !important;
+      }
+      .pill-segment {
+        width: 14px !important;
+        height: 6px !important;
+        border-radius: 3px !important;
+      }
+      .pill-segment-stack {
+        gap: 4px !important;
+      }
+      .bar-label {
+        font-size: 10px !important;
+        bottom: -20px !important;
+      }
+      .chart-highlight-panel {
+        margin-top: 24px !important;
+        border-left: none !important;
+        padding-top: 16px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+      }
+      .highlight-number {
+        font-size: 54px !important;
+        margin-bottom: 10px !important;
+      }
+      .highlight-label {
+        font-size: 16px !important;
+      }
+
+      /* Exams List Card Mobile Adjustments */
+      .exam-summary-item {
+        padding: 10px 0 !important;
+      }
+      .exam-details h5 {
+        font-size: 16px !important;
+      }
     }
   </style>
 
@@ -286,7 +641,7 @@
     <div class="content-wrapper">
 
       <!-- Mobile Hamburger / Header Area (d-md-none) -->
-      <div class="header-top d-md-none mb-3 d-flex align-items-center">
+      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between">
         <div class="side-bar-close mobile-hamburger-btn">
           <div class="custom-hamburger-icon">
             <span class="line line-1"></span>
@@ -294,11 +649,14 @@
             <span class="line line-3"></span>
           </div>
         </div>
+        <div class="user-profile-header-mobile">
+          <img src="img/user.png" alt="User Profile Image" style="width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);" />
+        </div>
       </div>
 
       <!-- Top Header start -->
       <div class="container-fluid">
-        <div class="main-header-bar">
+        <div class="main-header-bar d-none d-md-flex">
           <div class="logo-container">
             <img src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
           </div>
@@ -324,7 +682,7 @@
               <div class="row g-4">
 
                 <!-- Card 1: Academics -->
-                <div class="col-sm-6">
+                <div class="col-6">
                   <div class="custom-stat-card">
                     <div class="stat-card-icon bg-academics-blue">
                       <svg width="24" height="24" viewBox="0 0 16 16" fill="white">
@@ -340,7 +698,7 @@
                 </div>
 
                 <!-- Card 2: Enrolled Students -->
-                <div class="col-sm-6">
+                <div class="col-6">
                   <div class="custom-stat-card">
                     <div class="stat-card-icon bg-enrolled-navy">
                       <svg width="24" height="24" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -355,7 +713,7 @@
                 </div>
 
                 <!-- Card 3: Exam Conducted -->
-                <div class="col-sm-6">
+                <div class="col-6">
                   <div class="custom-stat-card">
                     <div class="stat-card-icon bg-conducted-dark">
                       <svg width="24" height="24" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -370,7 +728,7 @@
                 </div>
 
                 <!-- Card 4: Courses -->
-                <div class="col-sm-6">
+                <div class="col-6">
                   <div class="custom-stat-card">
                     <div class="stat-card-icon bg-courses-red">
                       <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -473,7 +831,7 @@
 
                 <!-- Table -->
                 <div class="table-responsive">
-                  <table class="table">
+                  <table class="table responsive-applied">
                     <thead>
                       <tr>
                         <th style="width: 6%;"># <i class="bi bi-chevron-expand"></i></th>
@@ -489,11 +847,10 @@
                         <td>1</td>
                         <td>
                           <strong>18, Aug 2026</strong>
-                          <div class="text-muted nowrap" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM
-                            |2h</div>
+                          <div class="text-muted nowrap" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM | 2h</div>
                         </td>
                         <td>
-                          <strong class="nowrap">Quarterly Performance Assessm..</strong>
+                          <strong>Quarterly Performance Assessm..</strong>
                           <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1001</div>
                         </td>
                         <td>
@@ -510,11 +867,10 @@
                         <td>2</td>
                         <td>
                           <strong>18, Aug 2026</strong>
-                          <div class="text-muted nowrap" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM
-                            |2h</div>
+                          <div class="text-muted nowrap" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM | 2h</div>
                         </td>
                         <td>
-                          <strong class="nowrap">Core Concepts Evaluation (CCE)</strong>
+                          <strong>Core Concepts Evaluation (CCE)</strong>
                           <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1002</div>
                         </td>
                         <td>
@@ -531,11 +887,10 @@
                         <td>3</td>
                         <td>
                           <strong>18, Aug 2026</strong>
-                          <div class="text-muted nowrap" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM
-                            |2h</div>
+                          <div class="text-muted nowrap" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM | 2h</div>
                         </td>
                         <td>
-                          <strong class="nowrap">Skill Proficiency Test (SPT)</strong>
+                          <strong>Skill Proficiency Test (SPT)</strong>
                           <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1003</div>
                         </td>
                         <td>
@@ -552,11 +907,10 @@
                         <td>4</td>
                         <td>
                           <strong>18, Aug 2026</strong>
-                          <div class="text-muted nowrap" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM
-                            |2h</div>
+                          <div class="text-muted nowrap" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM | 2h</div>
                         </td>
                         <td>
-                          <strong class="nowrap">Subject Mastery Examination (SME)</strong>
+                          <strong>Subject Mastery Examination (SME)</strong>
                           <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1004</div>
                         </td>
                         <td>
@@ -573,11 +927,10 @@
                         <td>5</td>
                         <td>
                           <strong>18, Aug 2026</strong>
-                          <div class="text-muted nowrap" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM
-                            |2h</div>
+                          <div class="text-muted nowrap" style="font-size: 11px; margin-top: 2px;">10.00 AM to 12.00 AM | 2h</div>
                         </td>
                         <td>
-                          <strong class="nowrap">Final Competency Exam (FCE)</strong>
+                          <strong>Final Competency Exam (FCE)</strong>
                           <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1005</div>
                         </td>
                         <td>
@@ -713,7 +1066,7 @@
             <div class="col-md-9">
               <div class="student-added-card">
                 <div class="chart-header-custom">
-                  <h5>Student Added</h5>
+                  <h5>Student Status</h5>
                   <div class="toggle-group-capsule">
                     <button class="toggle-btn-capsule active">Month</button>
                     <button class="toggle-btn-capsule inactive">Week</button>

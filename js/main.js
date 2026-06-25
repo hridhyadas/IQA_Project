@@ -1,9 +1,17 @@
-$(document).ready(function () {
-	$(window).on("load", function () {
+(function () {
+	function hidePreloader() {
 		$(".preloader").fadeOut(500, function () {
 			$(".wrapper").fadeIn(500);
 		});
-	});
+	}
+	if (document.readyState === "complete") {
+		hidePreloader();
+	} else {
+		$(window).on("load", hidePreloader);
+	}
+})();
+
+$(document).ready(function () {
 
 	$(function () {
 		function closeMenu() {

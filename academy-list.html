@@ -14,7 +14,831 @@
   <link rel="stylesheet" href="css/bootstrap-icons.css">
   <link rel="stylesheet" href="css/daterangepicker.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/academy-list.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <style>
+    /* Desktop & Mobile Shared Styles for Center's List Redesign */
+
+      /* Table container wrapper background */
+      .recent-exams-table-container {
+        background-color: #ffffff !important;
+        border: 1px solid #D9DFEC !important;
+        border-radius: 16px !important;
+        padding: 24px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+      }
+
+      /* Make table separate layout with separated rows */
+      .recent-exams-table-container table.table {
+        border-collapse: separate !important;
+        border-spacing: 0 10px !important;
+        background-color: transparent !important;
+        width: 100% !important;
+      }
+
+      /* Table header formatting */
+      .recent-exams-table-container table.table thead th {
+        background-color: #21236A !important;
+        color: #ffffff !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        padding: 12px 16px !important;
+        border: none !important;
+        vertical-align: middle !important;
+        white-space: nowrap !important;
+      }
+
+      .recent-exams-table-container table.table thead th:first-child {
+        border-top-left-radius: 8px !important;
+        border-bottom-left-radius: 8px !important;
+      }
+
+      .recent-exams-table-container table.table thead th:last-child {
+        border-top-right-radius: 8px !important;
+        border-bottom-right-radius: 8px !important;
+      }
+
+      /* Row formatting: odd/even colors */
+      .recent-exams-table-container table.table tbody tr td {
+        border-top: 1px solid #EAEAEF !important;
+        border-bottom: 1px solid #EAEAEF !important;
+        padding: 0px 16px !important;
+        vertical-align: middle !important;
+        color: #21236A !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        background-clip: padding-box !important;
+      }
+
+      .recent-exams-table-container table.table tbody tr:nth-of-type(odd) td {
+        background-color: #F3F4F4 !important;
+      }
+
+      .recent-exams-table-container table.table tbody tr:nth-of-type(even) td {
+        background-color: rgba(33, 35, 106, 0.1) !important;
+        ;
+      }
+
+      /* Round outer corners of every row */
+      .recent-exams-table-container table.table tbody tr td:first-child {
+        border-left: 1px solid #EAEAEF !important;
+        border-top-left-radius: 8px !important;
+        border-bottom-left-radius: 8px !important;
+      }
+
+      .recent-exams-table-container table.table tbody tr td:last-child {
+        border-right: 1px solid #EAEAEF !important;
+        border-top-right-radius: 8px !important;
+        border-bottom-right-radius: 8px !important;
+      }
+
+      /* Vertical column lines in table head only */
+      .recent-exams-table-container table.table thead th:not(:last-child) {
+        border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+      }
+
+      /* Logo Circle Building Wrapper */
+      .center-logo-circle {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        background-color: #ffffff;
+        vertical-align: middle;
+      }
+
+      .center-logo-circle.theme-blue {
+        border: 1.5px solid #21236A !important;
+        color: #21236A !important;
+      }
+
+      .center-logo-circle.theme-grey {
+        border: 1.5px solid #D9DFEC !important;
+        color: #8E9198 !important;
+      }
+
+      .center-logo-circle svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .table-header-filter-wrapper-custom {
+        padding: 20px 24px !important;
+      }
+
+      /* Custom Filter Bar */
+      .filter-bar-custom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 8px;
+        margin-bottom: 16px;
+      }
+
+      .search-box-custom {
+        width: 280px;
+        position: relative;
+      }
+
+      .search-input-custom {
+        height: 40px !important;
+        border: 1px solid #D9DFEC !important;
+        border-radius: 8px !important;
+        padding-left: 36px !important;
+        font-size: 13px !important;
+        color: #21236A !important;
+        background-color: #ffffff !important;
+      }
+
+      .search-input-custom::placeholder {
+        color: #A0A5BA !important;
+      }
+
+      .search-icon-custom {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #8E9198;
+        font-size: 14px;
+      }
+
+      .membership-select-custom {
+        height: 40px !important;
+        border: 1px solid #D9DFEC !important;
+        border-radius: 8px !important;
+        font-size: 13px !important;
+        color: #78829D !important;
+        background-color: #ffffff !important;
+        padding: 0 30px 0 12px !important;
+        min-width: 160px;
+      }
+
+      .btn-export-custom {
+        height: 40px !important;
+        border: 1.5px solid #21236A !important;
+        border-radius: 8px !important;
+        background-color: #ffffff !important;
+        color: #21236A !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        padding: 0 16px !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+      }
+
+      .btn-export-custom:hover {
+        background-color: #21236A !important;
+        color: #ffffff !important;
+      }
+
+      .btn-add-custom {
+        height: 40px !important;
+        border: none !important;
+        border-radius: 8px !important;
+        background-color: #21236A !important;
+        color: #ffffff !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        padding: 0 16px !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+      }
+
+      .btn-add-custom:hover {
+        background-color: #171950 !important;
+      }
+
+      /* Specific column custom alignments and typography */
+      .phone-text {
+        font-weight: 600 !important;
+        color: #21236A !important;
+      }
+
+      .email-text {
+        color: #78829D !important;
+        font-weight: 400 !important;
+      }
+
+      .students-text {
+        color: #21236A !important;
+        font-weight: 500 !important;
+      }
+
+      .badge-exam-count {
+        background-color: #DBDCF3 !important;
+        color: #21236A !important;
+        font-weight: 600 !important;
+        border-radius: 4px !important;
+        padding: 4px 10px !important;
+        font-size: 12px !important;
+        display: inline-block !important;
+      }
+
+      /* Action buttons circular overrides */
+      .recent-exams-table-container .btn-action-circle {
+        background-color: #ffffff !important;
+        border: 1px solid #D9DFEC !important;
+        color: #21236A !important;
+        width: 30px !important;
+        height: 30px !important;
+        border-radius: 50% !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 2px !important;
+        transition: all 0.2s ease !important;
+        font-size: 14px !important;
+        text-decoration: none !important;
+      }
+
+      .recent-exams-table-container .btn-action-circle:hover {
+        background-color: #21236A !important;
+        border-color: #21236A !important;
+        color: #ffffff !important;
+      }
+
+      /* Pagination Footer Customization for Desktop */
+      .table-footer-custom {
+        background-color: #EEF1F6 !important;
+        border: none !important;
+        border-radius: 12px !important;
+        padding: 12px 20px !important;
+        margin-top: 16px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+
+      .table-footer-custom label {
+        color: #78829D !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+      }
+
+      .table-show-select {
+        height: 32px !important;
+        border: 1px solid #D9DFEC !important;
+        border-radius: 6px !important;
+        background-color: #ffffff !important;
+        color: #21236A !important;
+        font-size: 13px !important;
+        padding: 0 24px 0 8px !important;
+      }
+
+      .custom-pagination {
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+      }
+
+      .custom-pagination .pagination-btn {
+        width: 32px !important;
+        height: 32px !important;
+        border-radius: 50% !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #78829D !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        text-decoration: none !important;
+        transition: all 0.2s ease !important;
+        background-color: transparent !important;
+        border: none !important;
+      }
+
+      .custom-pagination .pagination-btn:hover:not(.disabled):not(.active) {
+        background-color: rgba(33, 35, 106, 0.05) !important;
+        color: #21236A !important;
+      }
+
+      .custom-pagination .pagination-btn.active {
+        background-color: #21236A !important;
+        color: #ffffff !important;
+      }
+
+      .custom-pagination .pagination-btn.disabled {
+        opacity: 0.5 !important;
+        pointer-events: none !important;
+        background-color: transparent !important;
+        border: 1px solid #D9DFEC !important;
+        border-radius: 6px !important;
+      }
+
+      /* Non-disabled chevron button borders */
+      .custom-pagination .pagination-btn:first-of-type:not(.disabled),
+      .custom-pagination .pagination-btn:last-of-type:not(.disabled) {
+        border: 1px solid #21236A !important;
+        border-radius: 6px !important;
+        color: #21236A !important;
+      }
+
+      .custom-pagination .pagination-btn:first-of-type,
+      .custom-pagination .pagination-btn:last-of-type {
+        border: 1px solid #D9DFEC !important;
+        border-radius: 6px !important;
+        width: 32px !important;
+        height: 32px !important;
+      }
+
+    .table-header-filter-wrapper-custom {
+      background-color: rgba(33, 35, 106, 0.1) !important;
+      border-radius: 12px !important;
+      padding: 16px !important;
+      margin-bottom: 20px !important;
+    }
+
+    /* Badge styling */
+    .side-menu .badge-live {
+      background-color: #E10A1A !important;
+      color: #FFFFFF !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      padding: 3px 6px !important;
+      border-radius: 4px !important;
+      margin-left: auto;
+      line-height: 1;
+    }
+
+    .side-menu .badge-pending {
+      background-color: #D29E1B !important;
+      color: #FFFFFF !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      padding: 3px 6px !important;
+      border-radius: 4px !important;
+      margin-left: auto;
+      line-height: 1;
+    }
+
+    /* Mobile Drawer Styles to support Hamburger trigger opening the sidebar */
+    body.mobile .side-bar-wrapper {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 280px !important;
+      height: 100%;
+      z-index: 1070;
+      transition: left 0.3s ease;
+      padding: 0 !important;
+    }
+
+    body.mobile.open-menu .side-bar-wrapper {
+      left: 0;
+    }
+
+    body.mobile .side-bar-wrapper .side-bar-close {
+      display: block !important;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    /* Hide close button in desktop and tablet view to keep sidebar fixed */
+    @media (min-width: 768px) {
+      .side-bar-header .side-bar-close {
+        display: none !important;
+      }
+    }
+
+    /* Mobile hamburger button overrides to clear side-bar-close styles */
+    .mobile-hamburger-btn {
+      position: relative !important;
+      width: 48px !important;
+      height: 48px !important;
+      background-color: #21236A !important;
+      background-image: none !important;
+      border: none !important;
+      border-radius: 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      left: auto !important;
+      top: auto !important;
+      box-shadow: 0px 4px 10px rgba(33, 35, 106, 0.15) !important;
+      margin-right: 0 !important;
+    }
+
+    /* Custom Hamburger Icon lines */
+    .custom-hamburger-icon {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 5px !important;
+      align-items: flex-start !important;
+      width: 20px !important;
+    }
+
+    .custom-hamburger-icon .line {
+      display: block !important;
+      height: 2px !important;
+      background-color: #FFFFFF !important;
+      border-radius: 2px !important;
+    }
+
+    .custom-hamburger-icon .line-1 {
+      width: 20px !important;
+    }
+
+    .custom-hamburger-icon .line-2 {
+      width: 14px !important;
+    }
+
+    .custom-hamburger-icon .line-3 {
+      width: 8px !important;
+    }
+
+    /* Mobile Overrides (Viewport < 768px) */
+    @media (max-width: 767px) {
+      .header-top {
+        justify-content: flex-start !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 24px !important;
+      }
+
+      /* ============================================
+         Responsive Recent Exam List (Mobile View)
+         Figma tile layout:
+           Row 1: [18, Aug 2026 • 10.00 AM to 12.00 AM | 2h]  [Scheduled]
+           Row 2: [Quarterly Performance Assessm.. (bold)     ]
+           Row 3: [Code: 1001                      ] [👁][✏][⋮]
+         ============================================ */
+
+      /* --- Responsive Mobile Table Layout --- */
+      .recent-exams-table-container {
+        background-color: #ffffff !important;
+        border: 1px solid #D9DFEC !important;
+        border-radius: 16px !important;
+        padding: 16px !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+        overflow: visible !important;
+      }
+
+      /* Force table layout instead of block/flex from style.css on mobile */
+      .recent-exams-table-container table.table {
+        display: table !important;
+        border-collapse: separate !important;
+        border-spacing: 0 10px !important;
+      }
+      .recent-exams-table-container table.table thead {
+        display: table-header-group !important;
+      }
+      .recent-exams-table-container table.table thead tr {
+        display: table-row !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+      .recent-exams-table-container table.table thead th {
+        display: table-cell !important;
+      }
+      .recent-exams-table-container table.table tbody {
+        display: table-row-group !important;
+        border: none !important;
+      }
+      .recent-exams-table-container table.table tbody tr {
+        display: table-row !important;
+        padding: 0 !important;
+      }
+      .recent-exams-table-container table.table tbody tr td {
+        display: table-cell !important;
+        border-top: 1px solid #EAEAEF !important;
+        border-bottom: 1px solid #EAEAEF !important;
+        padding: 10px 16px !important;
+        vertical-align: middle !important;
+      }
+      .recent-exams-table-container table.table tbody tr td::before {
+        display: none !important;
+      }
+
+      .table-header-filter-wrapper-custom {
+        padding: 16px !important;
+        margin-bottom: 16px !important;
+      }
+
+      .filter-bar-custom {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        gap: 12px !important;
+        margin-top: 12px !important;
+        margin-bottom: 0 !important;
+      }
+
+      /* Left section: Search & Membership select side-by-side on mobile */
+      .filter-bar-custom > div:first-child {
+        display: flex !important;
+        flex-direction: row !important;
+        width: 100% !important;
+        gap: 8px !important;
+      }
+
+      /* Search box side-by-side scale */
+      .search-box-custom {
+        flex: 1.3 !important;
+        width: auto !important;
+      }
+
+      .search-input-custom {
+        width: 100% !important;
+      }
+
+      /* Select dropdown side-by-side scale */
+      .membership-select-custom-wrapper {
+        flex: 1 !important;
+        width: auto !important;
+      }
+
+      .membership-select-custom {
+        width: 100% !important;
+        min-width: 0 !important;
+      }
+
+      /* Right section: Export & Add buttons side-by-side on mobile */
+      .filter-bar-custom > div:last-child {
+        display: flex !important;
+        width: 100% !important;
+        gap: 8px !important;
+      }
+
+      .filter-bar-custom > div:last-child button {
+        flex: 1 !important;
+        justify-content: center !important;
+        white-space: nowrap !important;
+      }
+
+      /* Hide columns 3, 4, 5, 6 (Phone, Email, Exam, Students) on mobile */
+      .recent-exams-table-container table.table thead th:nth-child(3),
+      .recent-exams-table-container table.table thead th:nth-child(4),
+      .recent-exams-table-container table.table thead th:nth-child(5),
+      .recent-exams-table-container table.table thead th:nth-child(6),
+      .recent-exams-table-container table.table tbody tr td:nth-child(3),
+      .recent-exams-table-container table.table tbody tr td:nth-child(4),
+      .recent-exams-table-container table.table tbody tr td:nth-child(5),
+      .recent-exams-table-container table.table tbody tr td:nth-child(6) {
+        display: none !important;
+      }
+
+      /* Adjust widths on mobile to keep them aligned */
+      .recent-exams-table-container table.table thead th:nth-child(1),
+      .recent-exams-table-container table.table tbody tr td:nth-child(1) {
+        width: 10% !important;
+        text-align: center !important;
+      }
+      .recent-exams-table-container table.table thead th:nth-child(2),
+      .recent-exams-table-container table.table tbody tr td:nth-child(2) {
+        width: 75% !important;
+      }
+      /* Remove border-right of column 2 (Name) on mobile */
+      .recent-exams-table-container table.table thead th:nth-child(2) {
+        border-right: none !important;
+      }
+      .recent-exams-table-container table.table thead th:nth-child(7),
+      .recent-exams-table-container table.table tbody tr td:nth-child(7) {
+        width: 15% !important;
+        text-align: center !important;
+      }
+
+      /* Light header mobile wrapper styling */
+      .light-header {
+        background-color: #21236A !important;
+        border-radius: 12px !important;
+        padding: 16px 20px !important;
+        margin-top: 12px !important;
+        margin-bottom: 20px !important;
+      }
+      .light-header .header-top {
+        display: none !important; /* hide duplicate logo/hamburger */
+      }
+      .light-header .breadcrumb-item a,
+      .light-header .breadcrumb-item {
+        color: rgba(255, 255, 255, 0.7) !important;
+        font-size: 12px !important;
+      }
+      .light-header .breadcrumb-item.active {
+        color: #ffffff !important;
+      }
+      .light-header .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255, 255, 255, 0.5) !important;
+      }
+      .light-header .header-main {
+        margin-top: 0 !important;
+      }
+
+      /* Logo center alignment in top bar on mobile */
+      .mobile-logo-centered {
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        height: 38px !important;
+        margin: 0 !important;
+      }
+
+      /* Pagination Footer Customization for Mobile */
+      .recent-exams-table-container .table-footer-custom {
+        background-color: #EEF1F6 !important;
+        border-radius: 12px !important;
+        border: none !important;
+        padding: 10px 12px !important;
+        margin-top: 12px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important;
+        gap: 4px !important;
+      }
+
+      .recent-exams-table-container .table-footer-custom>div {
+        width: auto !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+
+      .recent-exams-table-container .table-footer-custom label {
+        font-size: 11px !important;
+        white-space: nowrap !important;
+      }
+
+      .recent-exams-table-container .table-show-select {
+        height: 28px !important;
+        font-size: 11px !important;
+        padding: 0 16px 0 4px !important;
+      }
+
+      .recent-exams-table-container .custom-pagination {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 4px !important;
+        flex-wrap: nowrap !important;
+      }
+
+      .recent-exams-table-container .custom-pagination .pagination-btn {
+        width: 24px !important;
+        height: 24px !important;
+        border-radius: 50% !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 11px !important;
+        font-weight: 600 !important;
+        color: #78829D !important;
+        text-decoration: none !important;
+      }
+
+      .recent-exams-table-container .custom-pagination .pagination-btn.active {
+        background-color: #21236A !important;
+        color: #ffffff !important;
+      }
+
+      .recent-exams-table-container .custom-pagination .pagination-btn.disabled {
+        opacity: 0.5 !important;
+        border: 1px solid #D9DFEC !important;
+        border-radius: 4px !important;
+      }
+
+      .recent-exams-table-container .custom-pagination .pagination-btn:first-of-type,
+      .recent-exams-table-container .custom-pagination .pagination-btn:last-of-type {
+        width: 24px !important;
+        height: 24px !important;
+        border-radius: 4px !important;
+        border: 1px solid #D9DFEC !important;
+      }
+
+      .recent-exams-table-container .custom-pagination span {
+        font-size: 11px !important;
+        color: #78829D !important;
+        margin-left: 6px !important;
+        white-space: nowrap !important;
+      }
+
+      /* KPI Cards mobile adjustments */
+      .custom-stat-card {
+        margin-top: 20px !important;
+        padding-top: 35px !important;
+      }
+
+      .stat-card-number {
+        font-size: 32px !important;
+        margin-bottom: 16px !important;
+      }
+
+      .stat-card-icon {
+        width: 44px !important;
+        height: 44px !important;
+        top: -22px !important;
+      }
+
+      .stat-card-icon svg {
+        width: 18px !important;
+        height: 18px !important;
+      }
+
+      .stat-card-footer {
+        font-size: 11px !important;
+        padding: 8px !important;
+      }
+
+      /* Student Status Card Mobile Adjustments */
+      .student-added-card {
+        padding: 16px !important;
+      }
+
+      .chart-header-custom {
+        margin-bottom: 20px !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        align-items: flex-start !important;
+      }
+
+      .chart-header-custom h5 {
+        font-size: 18px !important;
+      }
+
+      .toggle-btn-capsule {
+        width: 80px !important;
+        padding: 6px 0 !important;
+        font-size: 12px !important;
+      }
+
+      .custom-bar-chart {
+        height: 160px !important;
+      }
+
+      .y-axis-labels {
+        width: 30px !important;
+        padding-right: 6px !important;
+        font-size: 11px !important;
+        margin-bottom: 16px !important;
+      }
+
+      .chart-bars-container {
+        height: calc(100% - 16px) !important;
+        margin-bottom: 16px !important;
+      }
+
+      .pill-segment {
+        width: 14px !important;
+        height: 6px !important;
+        border-radius: 3px !important;
+      }
+
+      .pill-segment-stack {
+        gap: 4px !important;
+      }
+
+      .bar-label {
+        font-size: 10px !important;
+        bottom: -20px !important;
+      }
+
+      .chart-highlight-panel {
+        margin-top: 24px !important;
+        border-left: none !important;
+        padding-top: 16px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+      }
+
+      .highlight-number {
+        font-size: 54px !important;
+        margin-bottom: 10px !important;
+      }
+
+      .highlight-label {
+        font-size: 16px !important;
+      }
+
+      /* Exams List Card Mobile Adjustments */
+      .exam-summary-item {
+        padding: 10px 0 !important;
+      }
+
+      .exam-details h5 {
+        font-size: 16px !important;
+      }
+    }
+
+    /* Force bootstrap d-none / d-md-none rules to win over high specificity overrides */
+    @media (max-width: 767px) {
+      .recent-exams-table-container .btn-action-circle.d-none {
+        display: none !important;
+      }
+    }
+    @media (min-width: 768px) {
+      .recent-exams-table-container .btn-action-circle.d-md-none {
+        display: none !important;
+      }
+    }
+  </style>
 
   <title>IQA</title>
 </head>
@@ -42,7 +866,7 @@
             <ul class="nav">
 
               <!-- Menu item start -->
-              <li class="nav-item">
+              <li class="nav-item active">
                 <a class="nav-link" href="#">
                   <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
                   <span class="menu-label me-auto">Dashboard</span>
@@ -106,12 +930,12 @@
               </li><!-- Menu item end -->
 
               <!-- Menu item start -->
-              <li class="nav-item dropdown open active">
+              <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#">
                   <span class="menu-label me-auto">Center’s Management</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu show" style="display: block;">
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item" href="#">
                       <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
@@ -119,7 +943,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item active" href="academy-list.html">
+                    <a class="dropdown-item" href="academy-list.html">
                       <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
                       <span class="menu-label">List</span>
                     </a>
@@ -175,7 +999,7 @@
     <div class="content-wrapper">
 
       <!-- Mobile Hamburger / Header Area (d-md-none) -->
-      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between">
+      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between position-relative">
         <div class="side-bar-close mobile-hamburger-btn">
           <div class="custom-hamburger-icon">
             <span class="line line-1"></span>
@@ -183,10 +1007,7 @@
             <span class="line line-3"></span>
           </div>
         </div>
-        <div class="user-profile-header-mobile">
-          <img src="img/user.png" alt="User Profile Image"
-            style="width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);" />
-        </div>
+        <img class="mobile-logo-centered" src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
       </div>
 
       <!-- Top Header start -->
@@ -205,6 +1026,34 @@
         </div>
       </div><!-- Top Header end -->
 
+      <header class="light-header" style="background-color: rgba(255, 255, 255, 0);">
+        <div class="container-fluid">
+          <div class="header-top d-md-none mb-3">
+            <div class="side-bar-close"></div>
+            <a class="navbar-brand" href="#">
+              <img class="large-logo" src="img/logo2.png" />
+            </a>
+          </div>
+          <!-- Header main start -->
+          <div class="header-main d-flex justify-content-between align-items-center mt-3">
+            <div>
+              <h4 class="text-white mb-0 fw-normal">Academy Details</h4>
+              <nav>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a href="#">Academy</a></li>
+                  <li class="breadcrumb-item active">Academy List</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="user-profile-header-mobile d-md-none" style="margin-bottom: 0px;">
+              <img src="img/user.png" alt="User Profile Image"
+                style="width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);" />
+            </div>
+          </div><!-- Header main end -->
+        </div>
+      </header><!-- Header end -->
+
       <!-- Content block start -->
       <div class="content">
         <div class="container-fluid">
@@ -212,84 +1061,103 @@
           <!-- Middle Row: Recent Exam List Table & Top Academies -->
           <div class="row g-4 mb-4">
 
-            <!-- Center's List Table Column -->
+            <!-- Recent Exam List Table Column -->
             <div class="col-md-12">
-              <div class="custom-table-container academy-list-table-container">
-                <!-- Header -->
-                <div class="panel-header-custom d-flex flex-column align-items-stretch gap-3">
-                  <div class="d-flex justify-content-between align-items-center">
+              <div class="custom-table-container recent-exams-table-container">
+                <div class="table-header-filter-wrapper-custom">
+                  <!-- Header -->
+                  <div class="my-auto d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
                     <div>
-                      <h5 class="mb-1" style="font-size: 18px; font-weight: 600; color: #21236A;">Center's List</h5>
-                      <span class="text-muted" style="font-size: 13px; font-weight: 500;">1424 Center's found. 10 of are showing.</span>
+                      <h4 class="page-title">Center’s List</h4>
+                      <p class="page-sub-title">1424 Center’s found. 10 of are showing.</p>
                     </div>
                   </div>
-                  
-                  <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
-                    <div class="d-flex flex-wrap gap-2 flex-grow-1" style="max-width: 500px;">
-                      <div class="search-input-wrapper flex-grow-1">
-                        <span class="search-icon-btn"><img src="img/table-icon/table-search.svg" alt=""></span>
-                        <input type="text" class="form-control search-input-custom" placeholder="Search Here">
+
+                  <!-- Filter Bar -->
+                  <div class="filter-bar-custom">
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                      <div class="search-box-custom position-relative">
+                        <i class="bi bi-search search-icon-custom"></i>
+                         <input type="text" class="form-control search-input-custom" placeholder="Search Here">
                       </div>
-                      <select class="form-select filter-select-custom" style="width: auto; min-width: 180px;">
-                        <option value="all">Membership : All</option>
-                        <option value="active">Membership : Active</option>
-                        <option value="inactive">Membership : Inactive</option>
-                      </select>
+                      <div class="membership-select-custom-wrapper">
+                        <select class="form-select membership-select-custom">
+                          <option value="all">Membership : All</option>
+                        </select>
+                      </div>
                     </div>
-                    <div class="d-flex gap-2">
-                      <a href="#" class="btn btn-figma-export d-inline-flex align-items-center gap-2">
-                        <img src="img/table-icon/table-export.svg" alt="">
+                    <div class="d-flex align-items-center gap-2">
+                      <button class="btn btn-export-custom">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.1"
+                            d="M9.97604 2H5.35713C4.28993 2 3.26644 2.42394 2.51182 3.17857C1.75719 3.93319 1.33325 4.95668 1.33325 6.02388V10.6428C1.33325 11.71 1.75719 12.7335 2.51182 13.4881C3.26644 14.2427 4.28993 14.6667 5.35713 14.6667H9.97604C11.0432 14.6667 12.0667 14.2427 12.8214 13.4881C13.576 12.7335 13.9999 11.71 13.9999 10.6428V6.02388C13.9999 4.95668 13.576 3.93319 12.8214 3.17857C12.0667 2.42394 11.0432 2 9.97604 2Z"
+                            fill="currentColor" />
+                          <path
+                            d="M11.0561 14.8999H4.13044C3.33317 14.8999 2.56845 14.5836 2.00409 14.0205C1.43973 13.4573 1.12182 12.6933 1.12012 11.896V4.97033C1.12012 4.17195 1.43728 3.40626 2.00182 2.84171C2.56637 2.27717 3.33205 1.96001 4.13044 1.96001H9.17547C9.2993 1.97401 9.41364 2.03312 9.49666 2.12605C9.57969 2.21899 9.62558 2.33925 9.62558 2.46387C9.62558 2.58849 9.57969 2.70875 9.49666 2.80168C9.41364 2.89462 9.2993 2.95373 9.17547 2.96773H4.13044C3.59932 2.96773 3.08995 3.17872 2.71439 3.55428C2.33883 3.92984 2.12784 4.43921 2.12784 4.97033V11.896C2.12954 12.426 2.34127 12.9337 2.71665 13.3079C3.09203 13.6821 3.60043 13.8922 4.13044 13.8922H11.0561C11.5861 13.8922 12.0945 13.6821 12.4699 13.3079C12.8453 12.9337 13.057 12.426 13.0587 11.896V6.76112C13.0507 6.69018 13.0578 6.61834 13.0794 6.55031C13.1011 6.48228 13.1369 6.41959 13.1844 6.36635C13.232 6.31311 13.2903 6.27051 13.3554 6.24134C13.4206 6.21217 13.4912 6.19709 13.5626 6.19709C13.634 6.19709 13.7046 6.21217 13.7697 6.24134C13.8349 6.27051 13.8932 6.31311 13.9407 6.36635C13.9883 6.41959 14.0241 6.48228 14.0457 6.55031C14.0674 6.61834 14.0745 6.69018 14.0664 6.76112V11.896C14.0647 12.6933 13.7468 13.4573 13.1825 14.0205C12.6181 14.5836 11.8534 14.8999 11.0561 14.8999ZM9.16263 7.52494L13.8739 2.8201V4.37982C13.8659 4.45077 13.8729 4.5226 13.8946 4.59063C13.9162 4.65866 13.952 4.72135 13.9996 4.7746C14.0472 4.82784 14.1054 4.87044 14.1706 4.89961C14.2358 4.92877 14.3064 4.94385 14.3777 4.94385C14.4491 4.94385 14.5197 4.92877 14.5849 4.89961C14.6501 4.87044 14.7083 4.82784 14.7559 4.7746C14.8035 4.72135 14.8392 4.65866 14.8609 4.59063C14.8826 4.5226 14.8896 4.45077 14.8816 4.37982V1.58131C14.8754 1.45565 14.8227 1.33678 14.7337 1.24781C14.6447 1.15885 14.5259 1.10613 14.4002 1.09991H11.5953C11.4714 1.11391 11.3571 1.17302 11.2741 1.26596C11.1911 1.3589 11.1452 1.47915 11.1452 1.60378C11.1452 1.7284 11.1911 1.84865 11.2741 1.94159C11.3571 2.03453 11.4714 2.09364 11.5953 2.10764H13.1614L8.45016 6.81247C8.35799 6.90816 8.3065 7.03585 8.3065 7.16871C8.3065 7.30156 8.35799 7.42925 8.45016 7.52494C8.49673 7.5721 8.5522 7.60954 8.61335 7.63509C8.6745 7.66065 8.74012 7.67381 8.8064 7.67381C8.87267 7.67381 8.93829 7.66065 8.99944 7.63509C9.06059 7.60954 9.11606 7.5721 9.16263 7.52494Z"
+                            fill="currentColor" />
+                        </svg>
                         Export
-                      </a>
-                      <a href="#" class="btn btn-figma-add d-inline-flex align-items-center gap-2">
-                        <i class="bi bi-plus-lg"></i>
-                        Add Center
-                      </a>
+                      </button>
+                      <button class="btn btn-add-custom">
+                        <i class="bi bi-plus me-1"></i> Add Center
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 <!-- Table -->
                 <div class="table-responsive">
-                  <table class="table figma-table align-middle" id="academyTable">
+                  <table class="table responsive-applied">
                     <thead>
                       <tr>
-                        <th style="width: 40px;"># <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
-                        <th style="width: 230px;">Name <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
-                        <th>Phone <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
-                        <th>Email <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
-                        <th class="text-center" style="width: 100px;">Exam <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
-                        <th>Students <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
-                        <th class="text-center" style="width: 150px;">Action <span class="sorting-arrow"><a href="#" class="up"></a><a href="#" class="down"></a></span></th>
+                        <th style="width: 5%;"># <i class="bi bi-chevron-expand"></i></th>
+                        <th class="sort-header" style="width: 25%;">Name <i class="bi bi-chevron-expand"></i></th>
+                        <th class="sort-header" style="width: 13%;">Phone <i class="bi bi-chevron-expand"></i></th>
+                        <th class="sort-header" style="width: 19%;">Email <i class="bi bi-chevron-expand"></i></th>
+                        <th class="sort-header" style="width: 7%;">Exam <i class="bi bi-chevron-expand"></i></th>
+                        <th class="sort-header" style="width: 10%;">Students <i class="bi bi-chevron-expand"></i></th>
+                        <th class="sort-header text-center" style="width: 15%;">Action <i
+                            class="bi bi-chevron-expand"></i></th>
                       </tr>
                     </thead>
                     <tbody>
+
                       <!-- Row 1 -->
                       <tr>
                         <td>1</td>
                         <td>
                           <div class="d-flex align-items-center">
-                            <div class="academy-logo-circle logo-blue me-2">
-                              <img src="img/table-icon/table-building.svg" alt="">
+                            <div class="center-logo-circle theme-blue">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M7.29871 0.833253H8.70137C9.30036 0.833233 9.79984 0.833217 10.1964 0.886528C10.6149 0.942797 10.9928 1.06658 11.2964 1.37022C11.6 1.67387 11.7238 2.05174 11.7801 2.47027C11.7953 2.58298 11.8061 2.70401 11.8139 2.83327C12.2067 2.8335 12.5389 2.83606 12.8127 2.86391C13.1283 2.89602 13.4213 2.96583 13.6853 3.14223C13.8854 3.27598 14.0573 3.44786 14.1911 3.64804C14.3675 3.91204 14.4373 4.20495 14.4694 4.5206C14.5001 4.82216 14.5001 5.19465 14.5 5.64104V14.1666H14.6667C14.9428 14.1666 15.1667 14.3904 15.1667 14.6666C15.1667 14.9427 14.9428 15.1666 14.6667 15.1666H1.33337C1.05723 15.1666 0.833374 14.9427 0.833374 14.6666C0.833374 14.3904 1.05723 14.1666 1.33337 14.1666H1.50004L1.50004 5.64102C1.50003 5.19464 1.50002 4.82215 1.5307 4.5206C1.56281 4.20495 1.63262 3.91204 1.80901 3.64804C1.94277 3.44786 2.11465 3.27598 2.31483 3.14223C2.57883 2.96583 2.87174 2.89602 3.18739 2.86391C3.46114 2.83606 3.79334 2.8335 4.18622 2.83327C4.19398 2.70401 4.20483 2.58298 4.21998 2.47027C4.27625 2.05174 4.40003 1.67387 4.70368 1.37022C5.00732 1.06658 5.38519 0.942797 5.80372 0.886528C6.20024 0.833217 6.69972 0.833233 7.29871 0.833253ZM4.16672 3.83332C3.77832 3.83375 3.50395 3.83687 3.28859 3.85877C3.05201 3.88284 2.9427 3.92539 2.8704 3.9737C2.77941 4.03449 2.70128 4.11262 2.64048 4.20361C2.59217 4.27591 2.54963 4.38523 2.52556 4.62181C2.50065 4.86674 2.50004 5.18803 2.50004 5.66659V14.1666H4.16671V9.83325H3.66671C3.39056 9.83325 3.16671 9.6094 3.16671 9.33325C3.16671 9.05711 3.39056 8.83325 3.66671 8.83325H4.16671V7.83325H3.66671C3.39056 7.83325 3.16671 7.6094 3.16671 7.33325C3.16671 7.05711 3.39056 6.83325 3.66671 6.83325H4.16671V5.83325H3.66671C3.39056 5.83325 3.16671 5.6094 3.16671 5.33325C3.16671 5.05711 3.39056 4.83325 3.66671 4.83325H4.16671L4.16671 3.96526C4.1667 3.92073 4.1667 3.87675 4.16672 3.83332ZM5.16671 14.1666H7.50004V12.6666C7.50004 12.3904 7.7239 12.1666 8.00004 12.1666C8.27618 12.1666 8.50004 12.3904 8.50004 12.6666V14.1666H10.8334V3.99992C10.8334 3.35725 10.8323 2.92554 10.789 2.60351C10.7477 2.29587 10.6762 2.16421 10.5893 2.07733C10.5024 1.99045 10.3708 1.91897 10.0631 1.87761C9.74109 1.83432 9.30938 1.83325 8.66671 1.83325H7.33337C6.6907 1.83325 6.25899 1.83432 5.93697 1.87761C5.62933 1.91897 5.49766 1.99045 5.41078 2.07733C5.32391 2.16421 5.25243 2.29587 5.21106 2.60351C5.16777 2.92554 5.16671 3.35725 5.16671 3.99992V14.1666ZM11.8334 5.83325H12.3334C12.6095 5.83325 12.8334 5.6094 12.8334 5.33325C12.8334 5.05711 12.6095 4.83325 12.3334 4.83325H11.8334L11.8334 3.96526C11.8334 3.92073 11.8334 3.87675 11.8334 3.83332C12.2218 3.83375 12.4961 3.83687 12.7115 3.85877C12.9481 3.88284 13.0574 3.92539 13.1297 3.9737C13.2207 4.03449 13.2988 4.11262 13.3596 4.20361C13.4079 4.27591 13.4505 4.38523 13.4745 4.62181C13.4994 4.86674 13.5 5.18803 13.5 5.66659V14.1666H11.8334V9.83325H12.3334C12.6095 9.83325 12.8334 9.6094 12.8334 9.33325C12.8334 9.05711 12.6095 8.83325 12.3334 8.83325H11.8334V7.83325H12.3334C12.6095 7.83325 12.8334 7.6094 12.8334 7.33325C12.8334 7.05711 12.6095 6.83325 12.3334 6.83325H11.8334V5.83325ZM8.00004 3.83325C7.5398 3.83325 7.16671 4.20635 7.16671 4.66659C7.16671 5.12682 7.5398 5.49992 8.00004 5.49992C8.46028 5.49992 8.83337 5.12682 8.83337 4.66659C8.83337 4.20635 8.46028 3.83325 8.00004 3.83325ZM6.16671 4.66659C6.16671 3.65406 6.98752 2.83325 8.00004 2.83325C9.01256 2.83325 9.83337 3.65406 9.83337 4.66659C9.83337 5.67911 9.01256 6.49992 8.00004 6.49992C6.98752 6.49992 6.16671 5.67911 6.16671 4.66659ZM6.16671 7.99992C6.16671 7.72378 6.39056 7.49992 6.66671 7.49992H9.33337C9.60952 7.49992 9.83337 7.72378 9.83337 7.99992C9.83337 8.27606 9.60952 8.49992 9.33337 8.49992H6.66671C6.39056 8.49992 6.16671 8.27606 6.16671 7.99992ZM6.16671 9.99992C6.16671 9.72378 6.39056 9.49992 6.66671 9.49992H9.33337C9.60952 9.49992 9.83337 9.72378 9.83337 9.99992C9.83337 10.2761 9.60952 10.4999 9.33337 10.4999H6.66671C6.39056 10.4999 6.16671 10.2761 6.16671 9.99992Z"
+                                  fill="currentColor" />
+                              </svg>
                             </div>
                             <div>
-                              <span class="academy-name-main">Ballsy Group Foundation ...</span>
-                              <p class="academy-code-sub d-none d-md-block">Code: 1001</p>
+                              <strong class="text-navy">Ballsy Group Foundation ...</strong>
+                              <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1001</div>
                             </div>
                           </div>
                         </td>
-                        <td>(202) 555-0143</td>
-                        <td>olivia.johnson@example.com</td>
-                        <td class="text-center">
-                          <span class="badge-exam-custom">8</span>
+                        <td>
+                          <span class="phone-text">(202) 555-0143</span>
                         </td>
-                        <td>12 Students</td>
+                        <td>
+                          <span class="email-text">olivia.johnson@example.com</span>
+                        </td>
+                        <td>
+                          <span class="badge-exam-count">8</span>
+                        </td>
+                        <td>
+                          <span class="students-text">12 Students</span>
+                        </td>
                         <td class="text-center">
-                          <div class="d-flex gap-2 justify-content-center">
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
-                          </div>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                          <a class="btn-action-circle d-inline-flex d-md-none" title="Expand"><i class="bi bi-arrows-angle-expand"></i></a>
                         </td>
                       </tr>
 
@@ -298,27 +1166,37 @@
                         <td>2</td>
                         <td>
                           <div class="d-flex align-items-center">
-                            <div class="academy-logo-circle me-2">
-                              <img src="img/table-icon/table-building.svg" alt="">
+                            <div class="center-logo-circle theme-grey">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M7.29871 0.833253H8.70137C9.30036 0.833233 9.79984 0.833217 10.1964 0.886528C10.6149 0.942797 10.9928 1.06658 11.2964 1.37022C11.6 1.67387 11.7238 2.05174 11.7801 2.47027C11.7953 2.58298 11.8061 2.70401 11.8139 2.83327C12.2067 2.8335 12.5389 2.83606 12.8127 2.86391C13.1283 2.89602 13.4213 2.96583 13.6853 3.14223C13.8854 3.27598 14.0573 3.44786 14.1911 3.64804C14.3675 3.91204 14.4373 4.20495 14.4694 4.5206C14.5001 4.82216 14.5001 5.19465 14.5 5.64104V14.1666H14.6667C14.9428 14.1666 15.1667 14.3904 15.1667 14.6666C15.1667 14.9427 14.9428 15.1666 14.6667 15.1666H1.33337C1.05723 15.1666 0.833374 14.9427 0.833374 14.6666C0.833374 14.3904 1.05723 14.1666 1.33337 14.1666H1.50004L1.50004 5.64102C1.50003 5.19464 1.50002 4.82215 1.5307 4.5206C1.56281 4.20495 1.63262 3.91204 1.80901 3.64804C1.94277 3.44786 2.11465 3.27598 2.31483 3.14223C2.57883 2.96583 2.87174 2.89602 3.18739 2.86391C3.46114 2.83606 3.79334 2.8335 4.18622 2.83327C4.19398 2.70401 4.20483 2.58298 4.21998 2.47027C4.27625 2.05174 4.40003 1.67387 4.70368 1.37022C5.00732 1.06658 5.38519 0.942797 5.80372 0.886528C6.20024 0.833217 6.69972 0.833233 7.29871 0.833253ZM4.16672 3.83332C3.77832 3.83375 3.50395 3.83687 3.28859 3.85877C3.05201 3.88284 2.9427 3.92539 2.8704 3.9737C2.77941 4.03449 2.70128 4.11262 2.64048 4.20361C2.59217 4.27591 2.54963 4.38523 2.52556 4.62181C2.50065 4.86674 2.50004 5.18803 2.50004 5.66659V14.1666H4.16671V9.83325H3.66671C3.39056 9.83325 3.16671 9.6094 3.16671 9.33325C3.16671 9.05711 3.39056 8.83325 3.66671 8.83325H4.16671V7.83325H3.66671C3.39056 7.83325 3.16671 7.6094 3.16671 7.33325C3.16671 7.05711 3.39056 6.83325 3.66671 6.83325H4.16671V5.83325H3.66671C3.39056 5.83325 3.16671 5.6094 3.16671 5.33325C3.16671 5.05711 3.39056 4.83325 3.66671 4.83325H4.16671L4.16671 3.96526C4.1667 3.92073 4.1667 3.87675 4.16672 3.83332ZM5.16671 14.1666H7.50004V12.6666C7.50004 12.3904 7.7239 12.1666 8.00004 12.1666C8.27618 12.1666 8.50004 12.3904 8.50004 12.6666V14.1666H10.8334V3.99992C10.8334 3.35725 10.8323 2.92554 10.789 2.60351C10.7477 2.29587 10.6762 2.16421 10.5893 2.07733C10.5024 1.99045 10.3708 1.91897 10.0631 1.87761C9.74109 1.83432 9.30938 1.83325 8.66671 1.83325H7.33337C6.6907 1.83325 6.25899 1.83432 5.93697 1.87761C5.62933 1.91897 5.49766 1.99045 5.41078 2.07733C5.32391 2.16421 5.25243 2.29587 5.21106 2.60351C5.16777 2.92554 5.16671 3.35725 5.16671 3.99992V14.1666ZM11.8334 5.83325H12.3334C12.6095 5.83325 12.8334 5.6094 12.8334 5.33325C12.8334 5.05711 12.6095 4.83325 12.3334 4.83325H11.8334L11.8334 3.96526C11.8334 3.92073 11.8334 3.87675 11.8334 3.83332C12.2218 3.83375 12.4961 3.83687 12.7115 3.85877C12.9481 3.88284 13.0574 3.92539 13.1297 3.9737C13.2207 4.03449 13.2988 4.11262 13.3596 4.20361C13.4079 4.27591 13.4505 4.38523 13.4745 4.62181C13.4994 4.86674 13.5 5.18803 13.5 5.66659V14.1666H11.8334V9.83325H12.3334C12.6095 9.83325 12.8334 9.6094 12.8334 9.33325C12.8334 9.05711 12.6095 8.83325 12.3334 8.83325H11.8334V7.83325H12.3334C12.6095 7.83325 12.8334 7.6094 12.8334 7.33325C12.8334 7.05711 12.6095 6.83325 12.3334 6.83325H11.8334V5.83325ZM8.00004 3.83325C7.5398 3.83325 7.16671 4.20635 7.16671 4.66659C7.16671 5.12682 7.5398 5.49992 8.00004 5.49992C8.46028 5.49992 8.83337 5.12682 8.83337 4.66659C8.83337 4.20635 8.46028 3.83325 8.00004 3.83325ZM6.16671 4.66659C6.16671 3.65406 6.98752 2.83325 8.00004 2.83325C9.01256 2.83325 9.83337 3.65406 9.83337 4.66659C9.83337 5.67911 9.01256 6.49992 8.00004 6.49992C6.98752 6.49992 6.16671 5.67911 6.16671 4.66659ZM6.16671 7.99992C6.16671 7.72378 6.39056 7.49992 6.66671 7.49992H9.33337C9.60952 7.49992 9.83337 7.72378 9.83337 7.99992C9.83337 8.27606 9.60952 8.49992 9.33337 8.49992H6.66671C6.39056 8.49992 6.16671 8.27606 6.16671 7.99992ZM6.16671 9.99992C6.16671 9.72378 6.39056 9.49992 6.66671 9.49992H9.33337C9.60952 9.49992 9.83337 9.72378 9.83337 9.99992C9.83337 10.2761 9.60952 10.4999 9.33337 10.4999H6.66671C6.39056 10.4999 6.16671 10.2761 6.16671 9.99992Z"
+                                  fill="currentColor" />
+                              </svg>
                             </div>
                             <div>
-                              <span class="academy-name-main">Quantum Physics Institute</span>
-                              <p class="academy-code-sub d-none d-md-block">Code: 1002</p>
+                              <strong class="text-navy">Quantum Physics Institute</strong>
+                              <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1002</div>
                             </div>
                           </div>
                         </td>
-                        <td>(202) 555-0143</td>
-                        <td>olivia.johnson@example.com</td>
-                        <td class="text-center">
-                          <span class="badge-exam-custom">8</span>
+                        <td>
+                          <span class="phone-text">(202) 555-0143</span>
                         </td>
-                        <td>12 Students</td>
+                        <td>
+                          <span class="email-text">olivia.johnson@example.com</span>
+                        </td>
+                        <td>
+                          <span class="badge-exam-count">8</span>
+                        </td>
+                        <td>
+                          <span class="students-text">12 Students</span>
+                        </td>
                         <td class="text-center">
-                          <div class="d-flex gap-2 justify-content-center">
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
-                          </div>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                          <a class="btn-action-circle d-inline-flex d-md-none" title="Expand"><i class="bi bi-arrows-angle-expand"></i></a>
                         </td>
                       </tr>
 
@@ -327,27 +1205,37 @@
                         <td>3</td>
                         <td>
                           <div class="d-flex align-items-center">
-                            <div class="academy-logo-circle logo-blue me-2">
-                              <img src="img/table-icon/table-building.svg" alt="">
+                            <div class="center-logo-circle theme-grey">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M7.29871 0.833253H8.70137C9.30036 0.833233 9.79984 0.833217 10.1964 0.886528C10.6149 0.942797 10.9928 1.06658 11.2964 1.37022C11.6 1.67387 11.7238 2.05174 11.7801 2.47027C11.7953 2.58298 11.8061 2.70401 11.8139 2.83327C12.2067 2.8335 12.5389 2.83606 12.8127 2.86391C13.1283 2.89602 13.4213 2.96583 13.6853 3.14223C13.8854 3.27598 14.0573 3.44786 14.1911 3.64804C14.3675 3.91204 14.4373 4.20495 14.4694 4.5206C14.5001 4.82216 14.5001 5.19465 14.5 5.64104V14.1666H14.6667C14.9428 14.1666 15.1667 14.3904 15.1667 14.6666C15.1667 14.9427 14.9428 15.1666 14.6667 15.1666H1.33337C1.05723 15.1666 0.833374 14.9427 0.833374 14.6666C0.833374 14.3904 1.05723 14.1666 1.33337 14.1666H1.50004L1.50004 5.64102C1.50003 5.19464 1.50002 4.82215 1.5307 4.5206C1.56281 4.20495 1.63262 3.91204 1.80901 3.64804C1.94277 3.44786 2.11465 3.27598 2.31483 3.14223C2.57883 2.96583 2.87174 2.89602 3.18739 2.86391C3.46114 2.83606 3.79334 2.8335 4.18622 2.83327C4.19398 2.70401 4.20483 2.58298 4.21998 2.47027C4.27625 2.05174 4.40003 1.67387 4.70368 1.37022C5.00732 1.06658 5.38519 0.942797 5.80372 0.886528C6.20024 0.833217 6.69972 0.833233 7.29871 0.833253ZM4.16672 3.83332C3.77832 3.83375 3.50395 3.83687 3.28859 3.85877C3.05201 3.88284 2.9427 3.92539 2.8704 3.9737C2.77941 4.03449 2.70128 4.11262 2.64048 4.20361C2.59217 4.27591 2.54963 4.38523 2.52556 4.62181C2.50065 4.86674 2.50004 5.18803 2.50004 5.66659V14.1666H4.16671V9.83325H3.66671C3.39056 9.83325 3.16671 9.6094 3.16671 9.33325C3.16671 9.05711 3.39056 8.83325 3.66671 8.83325H4.16671V7.83325H3.66671C3.39056 7.83325 3.16671 7.6094 3.16671 7.33325C3.16671 7.05711 3.39056 6.83325 3.66671 6.83325H4.16671V5.83325H3.66671C3.39056 5.83325 3.16671 5.6094 3.16671 5.33325C3.16671 5.05711 3.39056 4.83325 3.66671 4.83325H4.16671L4.16671 3.96526C4.1667 3.92073 4.1667 3.87675 4.16672 3.83332ZM5.16671 14.1666H7.50004V12.6666C7.50004 12.3904 7.7239 12.1666 8.00004 12.1666C8.27618 12.1666 8.50004 12.3904 8.50004 12.6666V14.1666H10.8334V3.99992C10.8334 3.35725 10.8323 2.92554 10.789 2.60351C10.7477 2.29587 10.6762 2.16421 10.5893 2.07733C10.5024 1.99045 10.3708 1.91897 10.0631 1.87761C9.74109 1.83432 9.30938 1.83325 8.66671 1.83325H7.33337C6.6907 1.83325 6.25899 1.83432 5.93697 1.87761C5.62933 1.91897 5.49766 1.99045 5.41078 2.07733C5.32391 2.16421 5.25243 2.29587 5.21106 2.60351C5.16777 2.92554 5.16671 3.35725 5.16671 3.99992V14.1666ZM11.8334 5.83325H12.3334C12.6095 5.83325 12.8334 5.6094 12.8334 5.33325C12.8334 5.05711 12.6095 4.83325 12.3334 4.83325H11.8334L11.8334 3.96526C11.8334 3.92073 11.8334 3.87675 11.8334 3.83332C12.2218 3.83375 12.4961 3.83687 12.7115 3.85877C12.9481 3.88284 13.0574 3.92539 13.1297 3.9737C13.2207 4.03449 13.2988 4.11262 13.3596 4.20361C13.4079 4.27591 13.4505 4.38523 13.4745 4.62181C13.4994 4.86674 13.5 5.18803 13.5 5.66659V14.1666H11.8334V9.83325H12.3334C12.6095 9.83325 12.8334 9.6094 12.8334 9.33325C12.8334 9.05711 12.6095 8.83325 12.3334 8.83325H11.8334V7.83325H12.3334C12.6095 7.83325 12.8334 7.6094 12.8334 7.33325C12.8334 7.05711 12.6095 6.83325 12.3334 6.83325H11.8334V5.83325ZM8.00004 3.83325C7.5398 3.83325 7.16671 4.20635 7.16671 4.66659C7.16671 5.12682 7.5398 5.49992 8.00004 5.49992C8.46028 5.49992 8.83337 5.12682 8.83337 4.66659C8.83337 4.20635 8.46028 3.83325 8.00004 3.83325ZM6.16671 4.66659C6.16671 3.65406 6.98752 2.83325 8.00004 2.83325C9.01256 2.83325 9.83337 3.65406 9.83337 4.66659C9.83337 5.67911 9.01256 6.49992 8.00004 6.49992C6.98752 6.49992 6.16671 5.67911 6.16671 4.66659ZM6.16671 7.99992C6.16671 7.72378 6.39056 7.49992 6.66671 7.49992H9.33337C9.60952 7.49992 9.83337 7.72378 9.83337 7.99992C9.83337 8.27606 9.60952 8.49992 9.33337 8.49992H6.66671C6.39056 8.49992 6.16671 8.27606 6.16671 7.99992ZM6.16671 9.99992C6.16671 9.72378 6.39056 9.49992 6.66671 9.49992H9.33337C9.60952 9.49992 9.83337 9.72378 9.83337 9.99992C9.83337 10.2761 9.60952 10.4999 9.33337 10.4999H6.66671C6.39056 10.4999 6.16671 10.2761 6.16671 9.99992Z"
+                                  fill="currentColor" />
+                              </svg>
                             </div>
                             <div>
-                              <span class="academy-name-main">Stellar Science Academy</span>
-                              <p class="academy-code-sub d-none d-md-block">Code: 1003</p>
+                              <strong class="text-navy">Stellar Science Academy</strong>
+                              <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1003</div>
                             </div>
                           </div>
                         </td>
-                        <td>(202) 555-0143</td>
-                        <td>olivia.johnson@example.com</td>
-                        <td class="text-center">
-                          <span class="badge-exam-custom">8</span>
+                        <td>
+                          <span class="phone-text">(202) 555-0143</span>
                         </td>
-                        <td>12 Students</td>
+                        <td>
+                          <span class="email-text">olivia.johnson@example.com</span>
+                        </td>
+                        <td>
+                          <span class="badge-exam-count">8</span>
+                        </td>
+                        <td>
+                          <span class="students-text">12 Students</span>
+                        </td>
                         <td class="text-center">
-                          <div class="d-flex gap-2 justify-content-center">
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
-                          </div>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                          <a class="btn-action-circle d-inline-flex d-md-none" title="Expand"><i class="bi bi-arrows-angle-expand"></i></a>
                         </td>
                       </tr>
 
@@ -356,27 +1244,37 @@
                         <td>4</td>
                         <td>
                           <div class="d-flex align-items-center">
-                            <div class="academy-logo-circle me-2">
-                              <img src="img/table-icon/table-building.svg" alt="">
+                            <div class="center-logo-circle theme-grey">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M7.29871 0.833253H8.70137C9.30036 0.833233 9.79984 0.833217 10.1964 0.886528C10.6149 0.942797 10.9928 1.06658 11.2964 1.37022C11.6 1.67387 11.7238 2.05174 11.7801 2.47027C11.7953 2.58298 11.8061 2.70401 11.8139 2.83327C12.2067 2.8335 12.5389 2.83606 12.8127 2.86391C13.1283 2.89602 13.4213 2.96583 13.6853 3.14223C13.8854 3.27598 14.0573 3.44786 14.1911 3.64804C14.3675 3.91204 14.4373 4.20495 14.4694 4.5206C14.5001 4.82216 14.5001 5.19465 14.5 5.64104V14.1666H14.6667C14.9428 14.1666 15.1667 14.3904 15.1667 14.6666C15.1667 14.9427 14.9428 15.1666 14.6667 15.1666H1.33337C1.05723 15.1666 0.833374 14.9427 0.833374 14.6666C0.833374 14.3904 1.05723 14.1666 1.33337 14.1666H1.50004L1.50004 5.64102C1.50003 5.19464 1.50002 4.82215 1.5307 4.5206C1.56281 4.20495 1.63262 3.91204 1.80901 3.64804C1.94277 3.44786 2.11465 3.27598 2.31483 3.14223C2.57883 2.96583 2.87174 2.89602 3.18739 2.86391C3.46114 2.83606 3.79334 2.8335 4.18622 2.83327C4.19398 2.70401 4.20483 2.58298 4.21998 2.47027C4.27625 2.05174 4.40003 1.67387 4.70368 1.37022C5.00732 1.06658 5.38519 0.942797 5.80372 0.886528C6.20024 0.833217 6.69972 0.833233 7.29871 0.833253ZM4.16672 3.83332C3.77832 3.83375 3.50395 3.83687 3.28859 3.85877C3.05201 3.88284 2.9427 3.92539 2.8704 3.9737C2.77941 4.03449 2.70128 4.11262 2.64048 4.20361C2.59217 4.27591 2.54963 4.38523 2.52556 4.62181C2.50065 4.86674 2.50004 5.18803 2.50004 5.66659V14.1666H4.16671V9.83325H3.66671C3.39056 9.83325 3.16671 9.6094 3.16671 9.33325C3.16671 9.05711 3.39056 8.83325 3.66671 8.83325H4.16671V7.83325H3.66671C3.39056 7.83325 3.16671 7.6094 3.16671 7.33325C3.16671 7.05711 3.39056 6.83325 3.66671 6.83325H4.16671V5.83325H3.66671C3.39056 5.83325 3.16671 5.6094 3.16671 5.33325C3.16671 5.05711 3.39056 4.83325 3.66671 4.83325H4.16671L4.16671 3.96526C4.1667 3.92073 4.1667 3.87675 4.16672 3.83332ZM5.16671 14.1666H7.50004V12.6666C7.50004 12.3904 7.7239 12.1666 8.00004 12.1666C8.27618 12.1666 8.50004 12.3904 8.50004 12.6666V14.1666H10.8334V3.99992C10.8334 3.35725 10.8323 2.92554 10.789 2.60351C10.7477 2.29587 10.6762 2.16421 10.5893 2.07733C10.5024 1.99045 10.3708 1.91897 10.0631 1.87761C9.74109 1.83432 9.30938 1.83325 8.66671 1.83325H7.33337C6.6907 1.83325 6.25899 1.83432 5.93697 1.87761C5.62933 1.91897 5.49766 1.99045 5.41078 2.07733C5.32391 2.16421 5.25243 2.29587 5.21106 2.60351C5.16777 2.92554 5.16671 3.35725 5.16671 3.99992V14.1666ZM11.8334 5.83325H12.3334C12.6095 5.83325 12.8334 5.6094 12.8334 5.33325C12.8334 5.05711 12.6095 4.83325 12.3334 4.83325H11.8334L11.8334 3.96526C11.8334 3.92073 11.8334 3.87675 11.8334 3.83332C12.2218 3.83375 12.4961 3.83687 12.7115 3.85877C12.9481 3.88284 13.0574 3.92539 13.1297 3.9737C13.2207 4.03449 13.2988 4.11262 13.3596 4.20361C13.4079 4.27591 13.4505 4.38523 13.4745 4.62181C13.4994 4.86674 13.5 5.18803 13.5 5.66659V14.1666H11.8334V9.83325H12.3334C12.6095 9.83325 12.8334 9.6094 12.8334 9.33325C12.8334 9.05711 12.6095 8.83325 12.3334 8.83325H11.8334V7.83325H12.3334C12.6095 7.83325 12.8334 7.6094 12.8334 7.33325C12.8334 7.05711 12.6095 6.83325 12.3334 6.83325H11.8334V5.83325ZM8.00004 3.83325C7.5398 3.83325 7.16671 4.20635 7.16671 4.66659C7.16671 5.12682 7.5398 5.49992 8.00004 5.49992C8.46028 5.49992 8.83337 5.12682 8.83337 4.66659C8.83337 4.20635 8.46028 3.83325 8.00004 3.83325ZM6.16671 4.66659C6.16671 3.65406 6.98752 2.83325 8.00004 2.83325C9.01256 2.83325 9.83337 3.65406 9.83337 4.66659C9.83337 5.67911 9.01256 6.49992 8.00004 6.49992C6.98752 6.49992 6.16671 5.67911 6.16671 4.66659ZM6.16671 7.99992C6.16671 7.72378 6.39056 7.49992 6.66671 7.49992H9.33337C9.60952 7.49992 9.83337 7.72378 9.83337 7.99992C9.83337 8.27606 9.60952 8.49992 9.33337 8.49992H6.66671C6.39056 8.49992 6.16671 8.27606 6.16671 7.99992ZM6.16671 9.99992C6.16671 9.72378 6.39056 9.49992 6.66671 9.49992H9.33337C9.60952 9.49992 9.83337 9.72378 9.83337 9.99992C9.83337 10.2761 9.60952 10.4999 9.33337 10.4999H6.66671C6.39056 10.4999 6.16671 10.2761 6.16671 9.99992Z"
+                                  fill="currentColor" />
+                              </svg>
                             </div>
                             <div>
-                              <span class="academy-name-main">Prime Scholars Academy</span>
-                              <p class="academy-code-sub d-none d-md-block">Code: 1004</p>
+                              <strong class="text-navy">Prime Scholars Academy</strong>
+                              <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1004</div>
                             </div>
                           </div>
                         </td>
-                        <td>(202) 555-0143</td>
-                        <td>olivia.johnson@example.com</td>
-                        <td class="text-center">
-                          <span class="badge-exam-custom">8</span>
+                        <td>
+                          <span class="phone-text">(202) 555-0143</span>
                         </td>
-                        <td>12 Students</td>
+                        <td>
+                          <span class="email-text">olivia.johnson@example.com</span>
+                        </td>
+                        <td>
+                          <span class="badge-exam-count">8</span>
+                        </td>
+                        <td>
+                          <span class="students-text">12 Students</span>
+                        </td>
                         <td class="text-center">
-                          <div class="d-flex gap-2 justify-content-center">
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
-                          </div>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                          <a class="btn-action-circle d-inline-flex d-md-none" title="Expand"><i class="bi bi-arrows-angle-expand"></i></a>
                         </td>
                       </tr>
 
@@ -385,27 +1283,37 @@
                         <td>5</td>
                         <td>
                           <div class="d-flex align-items-center">
-                            <div class="academy-logo-circle logo-blue me-2">
-                              <img src="img/table-icon/table-building.svg" alt="">
+                            <div class="center-logo-circle theme-blue">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M7.29871 0.833253H8.70137C9.30036 0.833233 9.79984 0.833217 10.1964 0.886528C10.6149 0.942797 10.9928 1.06658 11.2964 1.37022C11.6 1.67387 11.7238 2.05174 11.7801 2.47027C11.7953 2.58298 11.8061 2.70401 11.8139 2.83327C12.2067 2.8335 12.5389 2.83606 12.8127 2.86391C13.1283 2.89602 13.4213 2.96583 13.6853 3.14223C13.8854 3.27598 14.0573 3.44786 14.1911 3.64804C14.3675 3.91204 14.4373 4.20495 14.4694 4.5206C14.5001 4.82216 14.5001 5.19465 14.5 5.64104V14.1666H14.6667C14.9428 14.1666 15.1667 14.3904 15.1667 14.6666C15.1667 14.9427 14.9428 15.1666 14.6667 15.1666H1.33337C1.05723 15.1666 0.833374 14.9427 0.833374 14.6666C0.833374 14.3904 1.05723 14.1666 1.33337 14.1666H1.50004L1.50004 5.64102C1.50003 5.19464 1.50002 4.82215 1.5307 4.5206C1.56281 4.20495 1.63262 3.91204 1.80901 3.64804C1.94277 3.44786 2.11465 3.27598 2.31483 3.14223C2.57883 2.96583 2.87174 2.89602 3.18739 2.86391C3.46114 2.83606 3.79334 2.8335 4.18622 2.83327C4.19398 2.70401 4.20483 2.58298 4.21998 2.47027C4.27625 2.05174 4.40003 1.67387 4.70368 1.37022C5.00732 1.06658 5.38519 0.942797 5.80372 0.886528C6.20024 0.833217 6.69972 0.833233 7.29871 0.833253ZM4.16672 3.83332C3.77832 3.83375 3.50395 3.83687 3.28859 3.85877C3.05201 3.88284 2.9427 3.92539 2.8704 3.9737C2.77941 4.03449 2.70128 4.11262 2.64048 4.20361C2.59217 4.27591 2.54963 4.38523 2.52556 4.62181C2.50065 4.86674 2.50004 5.18803 2.50004 5.66659V14.1666H4.16671V9.83325H3.66671C3.39056 9.83325 3.16671 9.6094 3.16671 9.33325C3.16671 9.05711 3.39056 8.83325 3.66671 8.83325H4.16671V7.83325H3.66671C3.39056 7.83325 3.16671 7.6094 3.16671 7.33325C3.16671 7.05711 3.39056 6.83325 3.66671 6.83325H4.16671V5.83325H3.66671C3.39056 5.83325 3.16671 5.6094 3.16671 5.33325C3.16671 5.05711 3.39056 4.83325 3.66671 4.83325H4.16671L4.16671 3.96526C4.1667 3.92073 4.1667 3.87675 4.16672 3.83332ZM5.16671 14.1666H7.50004V12.6666C7.50004 12.3904 7.7239 12.1666 8.00004 12.1666C8.27618 12.1666 8.50004 12.3904 8.50004 12.6666V14.1666H10.8334V3.99992C10.8334 3.35725 10.8323 2.92554 10.789 2.60351C10.7477 2.29587 10.6762 2.16421 10.5893 2.07733C10.5024 1.99045 10.3708 1.91897 10.0631 1.87761C9.74109 1.83432 9.30938 1.83325 8.66671 1.83325H7.33337C6.6907 1.83325 6.25899 1.83432 5.93697 1.87761C5.62933 1.91897 5.49766 1.99045 5.41078 2.07733C5.32391 2.16421 5.25243 2.29587 5.21106 2.60351C5.16777 2.92554 5.16671 3.35725 5.16671 3.99992V14.1666ZM11.8334 5.83325H12.3334C12.6095 5.83325 12.8334 5.6094 12.8334 5.33325C12.8334 5.05711 12.6095 4.83325 12.3334 4.83325H11.8334L11.8334 3.96526C11.8334 3.92073 11.8334 3.87675 11.8334 3.83332C12.2218 3.83375 12.4961 3.83687 12.7115 3.85877C12.9481 3.88284 13.0574 3.92539 13.1297 3.9737C13.2207 4.03449 13.2988 4.11262 13.3596 4.20361C13.4079 4.27591 13.4505 4.38523 13.4745 4.62181C13.4994 4.86674 13.5 5.18803 13.5 5.66659V14.1666H11.8334V9.83325H12.3334C12.6095 9.83325 12.8334 9.6094 12.8334 9.33325C12.8334 9.05711 12.6095 8.83325 12.3334 8.83325H11.8334V7.83325H12.3334C12.6095 7.83325 12.8334 7.6094 12.8334 7.33325C12.8334 7.05711 12.6095 6.83325 12.3334 6.83325H11.8334V5.83325ZM8.00004 3.83325C7.5398 3.83325 7.16671 4.20635 7.16671 4.66659C7.16671 5.12682 7.5398 5.49992 8.00004 5.49992C8.46028 5.49992 8.83337 5.12682 8.83337 4.66659C8.83337 4.20635 8.46028 3.83325 8.00004 3.83325ZM6.16671 4.66659C6.16671 3.65406 6.98752 2.83325 8.00004 2.83325C9.01256 2.83325 9.83337 3.65406 9.83337 4.66659C9.83337 5.67911 9.01256 6.49992 8.00004 6.49992C6.98752 6.49992 6.16671 5.67911 6.16671 4.66659ZM6.16671 7.99992C6.16671 7.72378 6.39056 7.49992 6.66671 7.49992H9.33337C9.60952 7.49992 9.83337 7.72378 9.83337 7.99992C9.83337 8.27606 9.60952 8.49992 9.33337 8.49992H6.66671C6.39056 8.49992 6.16671 8.27606 6.16671 7.99992ZM6.16671 9.99992C6.16671 9.72378 6.39056 9.49992 6.66671 9.49992H9.33337C9.60952 9.49992 9.83337 9.72378 9.83337 9.99992C9.83337 10.2761 9.60952 10.4999 9.33337 10.4999H6.66671C6.39056 10.4999 6.16671 10.2761 6.16671 9.99992Z"
+                                  fill="currentColor" />
+                              </svg>
                             </div>
                             <div>
-                              <span class="academy-name-main">Excel Core Academy</span>
-                              <p class="academy-code-sub d-none d-md-block">Code: 1005</p>
+                              <strong class="text-navy">Excel Core Academy</strong>
+                              <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1005</div>
                             </div>
                           </div>
                         </td>
-                        <td>(202) 555-0143</td>
-                        <td>olivia.johnson@example.com</td>
-                        <td class="text-center">
-                          <span class="badge-exam-custom">8</span>
+                        <td>
+                          <span class="phone-text">(202) 555-0143</span>
                         </td>
-                        <td>12 Students</td>
+                        <td>
+                          <span class="email-text">olivia.johnson@example.com</span>
+                        </td>
+                        <td>
+                          <span class="badge-exam-count">8</span>
+                        </td>
+                        <td>
+                          <span class="students-text">12 Students</span>
+                        </td>
                         <td class="text-center">
-                          <div class="d-flex gap-2 justify-content-center">
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
-                          </div>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                          <a class="btn-action-circle d-inline-flex d-md-none" title="Expand"><i class="bi bi-arrows-angle-expand"></i></a>
                         </td>
                       </tr>
 
@@ -414,27 +1322,37 @@
                         <td>6</td>
                         <td>
                           <div class="d-flex align-items-center">
-                            <div class="academy-logo-circle me-2">
-                              <img src="img/table-icon/table-building.svg" alt="">
+                            <div class="center-logo-circle theme-grey">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M7.29871 0.833253H8.70137C9.30036 0.833233 9.79984 0.833217 10.1964 0.886528C10.6149 0.942797 10.9928 1.06658 11.2964 1.37022C11.6 1.67387 11.7238 2.05174 11.7801 2.47027C11.7953 2.58298 11.8061 2.70401 11.8139 2.83327C12.2067 2.8335 12.5389 2.83606 12.8127 2.86391C13.1283 2.89602 13.4213 2.96583 13.6853 3.14223C13.8854 3.27598 14.0573 3.44786 14.1911 3.64804C14.3675 3.91204 14.4373 4.20495 14.4694 4.5206C14.5001 4.82216 14.5001 5.19465 14.5 5.64104V14.1666H14.6667C14.9428 14.1666 15.1667 14.3904 15.1667 14.6666C15.1667 14.9427 14.9428 15.1666 14.6667 15.1666H1.33337C1.05723 15.1666 0.833374 14.9427 0.833374 14.6666C0.833374 14.3904 1.05723 14.1666 1.33337 14.1666H1.50004L1.50004 5.64102C1.50003 5.19464 1.50002 4.82215 1.5307 4.5206C1.56281 4.20495 1.63262 3.91204 1.80901 3.64804C1.94277 3.44786 2.11465 3.27598 2.31483 3.14223C2.57883 2.96583 2.87174 2.89602 3.18739 2.86391C3.46114 2.83606 3.79334 2.8335 4.18622 2.83327C4.19398 2.70401 4.20483 2.58298 4.21998 2.47027C4.27625 2.05174 4.40003 1.67387 4.70368 1.37022C5.00732 1.06658 5.38519 0.942797 5.80372 0.886528C6.20024 0.833217 6.69972 0.833233 7.29871 0.833253ZM4.16672 3.83332C3.77832 3.83375 3.50395 3.83687 3.28859 3.85877C3.05201 3.88284 2.9427 3.92539 2.8704 3.9737C2.77941 4.03449 2.70128 4.11262 2.64048 4.20361C2.59217 4.27591 2.54963 4.38523 2.52556 4.62181C2.50065 4.86674 2.50004 5.18803 2.50004 5.66659V14.1666H4.16671V9.83325H3.66671C3.39056 9.83325 3.16671 9.6094 3.16671 9.33325C3.16671 9.05711 3.39056 8.83325 3.66671 8.83325H4.16671V7.83325H3.66671C3.39056 7.83325 3.16671 7.6094 3.16671 7.33325C3.16671 7.05711 3.39056 6.83325 3.66671 6.83325H4.16671V5.83325H3.66671C3.39056 5.83325 3.16671 5.6094 3.16671 5.33325C3.16671 5.05711 3.39056 4.83325 3.66671 4.83325H4.16671L4.16671 3.96526C4.1667 3.92073 4.1667 3.87675 4.16672 3.83332ZM5.16671 14.1666H7.50004V12.6666C7.50004 12.3904 7.7239 12.1666 8.00004 12.1666C8.27618 12.1666 8.50004 12.3904 8.50004 12.6666V14.1666H10.8334V3.99992C10.8334 3.35725 10.8323 2.92554 10.789 2.60351C10.7477 2.29587 10.6762 2.16421 10.5893 2.07733C10.5024 1.99045 10.3708 1.91897 10.0631 1.87761C9.74109 1.83432 9.30938 1.83325 8.66671 1.83325H7.33337C6.6907 1.83325 6.25899 1.83432 5.93697 1.87761C5.62933 1.91897 5.49766 1.99045 5.41078 2.07733C5.32391 2.16421 5.25243 2.29587 5.21106 2.60351C5.16777 2.92554 5.16671 3.35725 5.16671 3.99992V14.1666ZM11.8334 5.83325H12.3334C12.6095 5.83325 12.8334 5.6094 12.8334 5.33325C12.8334 5.05711 12.6095 4.83325 12.3334 4.83325H11.8334L11.8334 3.96526C11.8334 3.92073 11.8334 3.87675 11.8334 3.83332C12.2218 3.83375 12.4961 3.83687 12.7115 3.85877C12.9481 3.88284 13.0574 3.92539 13.1297 3.9737C13.2207 4.03449 13.2988 4.11262 13.3596 4.20361C13.4079 4.27591 13.4505 4.38523 13.4745 4.62181C13.4994 4.86674 13.5 5.18803 13.5 5.66659V14.1666H11.8334V9.83325H12.3334C12.6095 9.83325 12.8334 9.6094 12.8334 9.33325C12.8334 9.05711 12.6095 8.83325 12.3334 8.83325H11.8334V7.83325H12.3334C12.6095 7.83325 12.8334 7.6094 12.8334 7.33325C12.8334 7.05711 12.6095 6.83325 12.3334 6.83325H11.8334V5.83325ZM8.00004 3.83325C7.5398 3.83325 7.16671 4.20635 7.16671 4.66659C7.16671 5.12682 7.5398 5.49992 8.00004 5.49992C8.46028 5.49992 8.83337 5.12682 8.83337 4.66659C8.83337 4.20635 8.46028 3.83325 8.00004 3.83325ZM6.16671 4.66659C6.16671 3.65406 6.98752 2.83325 8.00004 2.83325C9.01256 2.83325 9.83337 3.65406 9.83337 4.66659C9.83337 5.67911 9.01256 6.49992 8.00004 6.49992C6.98752 6.49992 6.16671 5.67911 6.16671 4.66659ZM6.16671 7.99992C6.16671 7.72378 6.39056 7.49992 6.66671 7.49992H9.33337C9.60952 7.49992 9.83337 7.72378 9.83337 7.99992C9.83337 8.27606 9.60952 8.49992 9.33337 8.49992H6.66671C6.39056 8.49992 6.16671 8.27606 6.16671 7.99992ZM6.16671 9.99992C6.16671 9.72378 6.39056 9.49992 6.66671 9.49992H9.33337C9.60952 9.49992 9.83337 9.72378 9.83337 9.99992C9.83337 10.2761 9.60952 10.4999 9.33337 10.4999H6.66671C6.39056 10.4999 6.16671 10.2761 6.16671 9.99992ZM6.16671 11.9999C6.16671 11.7238 6.39056 11.4999 6.66671 11.4999H9.33337C9.60952 11.4999 9.83337 11.7238 9.83337 11.9999C9.83337 12.276 9.60952 12.4999 9.33337 12.4999H6.66671C6.39056 12.4999 6.16671 12.276 6.16671 11.9999Z"
+                                  fill="currentColor" />
+                              </svg>
                             </div>
                             <div>
-                              <span class="academy-name-main">Nexus Learning Hub</span>
-                              <p class="academy-code-sub d-none d-md-block">Code: 1006</p>
+                              <strong class="text-navy">Nexus Learning Hub</strong>
+                              <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1006</div>
                             </div>
                           </div>
                         </td>
-                        <td>(202) 555-0143</td>
-                        <td>olivia.johnson@example.com</td>
-                        <td class="text-center">
-                          <span class="badge-exam-custom">8</span>
+                        <td>
+                          <span class="phone-text">(202) 555-0143</span>
                         </td>
-                        <td>12 Students</td>
+                        <td>
+                          <span class="email-text">olivia.johnson@example.com</span>
+                        </td>
+                        <td>
+                          <span class="badge-exam-count">8</span>
+                        </td>
+                        <td>
+                          <span class="students-text">12 Students</span>
+                        </td>
                         <td class="text-center">
-                          <div class="d-flex gap-2 justify-content-center">
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
-                          </div>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                          <a class="btn-action-circle d-inline-flex d-md-none" title="Expand"><i class="bi bi-arrows-angle-expand"></i></a>
                         </td>
                       </tr>
 
@@ -443,27 +1361,37 @@
                         <td>7</td>
                         <td>
                           <div class="d-flex align-items-center">
-                            <div class="academy-logo-circle me-2">
-                              <img src="img/table-icon/table-building.svg" alt="">
+                            <div class="center-logo-circle theme-grey">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M7.29871 0.833253H8.70137C9.30036 0.833233 9.79984 0.833217 10.1964 0.886528C10.6149 0.942797 10.9928 1.06658 11.2964 1.37022C11.6 1.67387 11.7238 2.05174 11.7801 2.47027C11.7953 2.58298 11.8061 2.70401 11.8139 2.83327C12.2067 2.8335 12.5389 2.83606 12.8127 2.86391C13.1283 2.89602 13.4213 2.96583 13.6853 3.14223C13.8854 3.27598 14.0573 3.44786 14.1911 3.64804C14.3675 3.91204 14.4373 4.20495 14.4694 4.5206C14.5001 4.82216 14.5001 5.19465 14.5 5.64104V14.1666H14.6667C14.9428 14.1666 15.1667 14.3904 15.1667 14.6666C15.1667 14.9427 14.9428 15.1666 14.6667 15.1666H1.33337C1.05723 15.1666 0.833374 14.9427 0.833374 14.6666C0.833374 14.3904 1.05723 14.1666 1.33337 14.1666H1.50004L1.50004 5.64102C1.50003 5.19464 1.50002 4.82215 1.5307 4.5206C1.56281 4.20495 1.63262 3.91204 1.80901 3.64804C1.94277 3.44786 2.11465 3.27598 2.31483 3.14223C2.57883 2.96583 2.87174 2.89602 3.18739 2.86391C3.46114 2.83606 3.79334 2.8335 4.18622 2.83327C4.19398 2.70401 4.20483 2.58298 4.21998 2.47027C4.27625 2.05174 4.40003 1.67387 4.70368 1.37022C5.00732 1.06658 5.38519 0.942797 5.80372 0.886528C6.20024 0.833217 6.69972 0.833233 7.29871 0.833253ZM4.16672 3.83332C3.77832 3.83375 3.50395 3.83687 3.28859 3.85877C3.05201 3.88284 2.9427 3.92539 2.8704 3.9737C2.77941 4.03449 2.70128 4.11262 2.64048 4.20361C2.59217 4.27591 2.54963 4.38523 2.52556 4.62181C2.50065 4.86674 2.50004 5.18803 2.50004 5.66659V14.1666H4.16671V9.83325H3.66671C3.39056 9.83325 3.16671 9.6094 3.16671 9.33325C3.16671 9.05711 3.39056 8.83325 3.66671 8.83325H4.16671V7.83325H3.66671C3.39056 7.83325 3.16671 7.6094 3.16671 7.33325C3.16671 7.05711 3.39056 6.83325 3.66671 6.83325H4.16671V5.83325H3.66671C3.39056 5.83325 3.16671 5.6094 3.16671 5.33325C3.16671 5.05711 3.39056 4.83325 3.66671 4.83325H4.16671L4.16671 3.96526C4.1667 3.92073 4.1667 3.87675 4.16672 3.83332ZM5.16671 14.1666H7.50004V12.6666C7.50004 12.3904 7.7239 12.1666 8.00004 12.1666C8.27618 12.1666 8.50004 12.3904 8.50004 12.6666V14.1666H10.8334V3.99992C10.8334 3.35725 10.8323 2.92554 10.789 2.60351C10.7477 2.29587 10.6762 2.16421 10.5893 2.07733C10.5024 1.99045 10.3708 1.91897 10.0631 1.87761C9.74109 1.83432 9.30938 1.83325 8.66671 1.83325H7.33337C6.6907 1.83325 6.25899 1.83432 5.93697 1.87761C5.62933 1.91897 5.49766 1.99045 5.41078 2.07733C5.32391 2.16421 5.25243 2.29587 5.21106 2.60351C5.16777 2.92554 5.16671 3.35725 5.16671 3.99992V14.1666ZM11.8334 5.83325H12.3334C12.6095 5.83325 12.8334 5.6094 12.8334 5.33325C12.8334 5.05711 12.6095 4.83325 12.3334 4.83325H11.8334L11.8334 3.96526C11.8334 3.92073 11.8334 3.87675 11.8334 3.83332C12.2218 3.83375 12.4961 3.83687 12.7115 3.85877C12.9481 3.88284 13.0574 3.92539 13.1297 3.9737C13.2207 4.03449 13.2988 4.11262 13.3596 4.20361C13.4079 4.27591 13.4505 4.38523 13.4745 4.62181C13.4994 4.86674 13.5 5.18803 13.5 5.66659V14.1666H11.8334V9.83325H12.3334C12.6095 9.83325 12.8334 9.6094 12.8334 9.33325C12.8334 9.05711 12.6095 8.83325 12.3334 8.83325H11.8334V7.83325H12.3334C12.6095 7.83325 12.8334 7.6094 12.8334 7.33325C12.8334 7.05711 12.6095 6.83325 12.3334 6.83325H11.8334V5.83325ZM8.00004 3.83325C7.5398 3.83325 7.16671 4.20635 7.16671 4.66659C7.16671 5.12682 7.5398 5.49992 8.00004 5.49992C8.46028 5.49992 8.83337 5.12682 8.83337 4.66659C8.83337 4.20635 8.46028 3.83325 8.00004 3.83325ZM6.16671 4.66659C6.16671 3.65406 6.98752 2.83325 8.00004 2.83325C9.01256 2.83325 9.83337 3.65406 9.83337 4.66659C9.83337 5.67911 9.01256 6.49992 8.00004 6.49992C6.98752 6.49992 6.16671 5.67911 6.16671 4.66659ZM6.16671 7.99992C6.16671 7.72378 6.39056 7.49992 6.66671 7.49992H9.33337C9.60952 7.49992 9.83337 7.72378 9.83337 7.99992C9.83337 8.27606 9.60952 8.49992 9.33337 8.49992H6.66671C6.39056 8.49992 6.16671 8.27606 6.16671 7.99992ZM6.16671 9.99992C6.16671 9.72378 6.39056 9.49992 6.66671 9.49992H9.33337C9.60952 9.49992 9.83337 9.72378 9.83337 9.99992C9.83337 10.2761 9.60952 10.4999 9.33337 10.4999H6.66671C6.39056 10.4999 6.16671 10.2761 6.16671 9.99992ZM6.16671 11.9999C6.16671 11.7238 6.39056 11.4999 6.66671 11.4999H9.33337C9.60952 11.4999 9.83337 11.7238 9.83337 11.9999C9.83337 12.276 9.60952 12.4999 9.33337 12.4999H6.66671C6.39056 12.4999 6.16671 12.276 6.16671 11.9999Z"
+                                  fill="currentColor" />
+                              </svg>
                             </div>
                             <div>
-                              <span class="academy-name-main">Summit Science Centre</span>
-                              <p class="academy-code-sub d-none d-md-block">Code: 1007</p>
+                              <strong class="text-navy">Summit Science Centre</strong>
+                              <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1007</div>
                             </div>
                           </div>
                         </td>
-                        <td>(202) 555-0143</td>
-                        <td>olivia.johnson@example.com</td>
-                        <td class="text-center">
-                          <span class="badge-exam-custom">8</span>
+                        <td>
+                          <span class="phone-text">(202) 555-0143</span>
                         </td>
-                        <td>12 Students</td>
+                        <td>
+                          <span class="email-text">olivia.johnson@example.com</span>
+                        </td>
+                        <td>
+                          <span class="badge-exam-count">8</span>
+                        </td>
+                        <td>
+                          <span class="students-text">12 Students</span>
+                        </td>
                         <td class="text-center">
-                          <div class="d-flex gap-2 justify-content-center">
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
-                          </div>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                          <a class="btn-action-circle d-inline-flex d-md-none" title="Expand"><i class="bi bi-arrows-angle-expand"></i></a>
                         </td>
                       </tr>
 
@@ -472,27 +1400,37 @@
                         <td>8</td>
                         <td>
                           <div class="d-flex align-items-center">
-                            <div class="academy-logo-circle logo-blue me-2">
-                              <img src="img/table-icon/table-building.svg" alt="">
+                            <div class="center-logo-circle theme-blue">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M7.29871 0.833253H8.70137C9.30036 0.833233 9.79984 0.833217 10.1964 0.886528C10.6149 0.942797 10.9928 1.06658 11.2964 1.37022C11.6 1.67387 11.7238 2.05174 11.7801 2.47027C11.7953 2.58298 11.8061 2.70401 11.8139 2.83327C12.2067 2.8335 12.5389 2.83606 12.8127 2.86391C13.1283 2.89602 13.4213 2.96583 13.6853 3.14223C13.8854 3.27598 14.0573 3.44786 14.1911 3.64804C14.3675 3.91204 14.4373 4.20495 14.4694 4.5206C14.5001 4.82216 14.5001 5.19465 14.5 5.64104V14.1666H14.6667C14.9428 14.1666 15.1667 14.3904 15.1667 14.6666C15.1667 14.9427 14.9428 15.1666 14.6667 15.1666H1.33337C1.05723 15.1666 0.833374 14.9427 0.833374 14.6666C0.833374 14.3904 1.05723 14.1666 1.33337 14.1666H1.50004L1.50004 5.64102C1.50003 5.19464 1.50002 4.82215 1.5307 4.5206C1.56281 4.20495 1.63262 3.91204 1.80901 3.64804C1.94277 3.44786 2.11465 3.27598 2.31483 3.14223C2.57883 2.96583 2.87174 2.89602 3.18739 2.86391C3.46114 2.83606 3.79334 2.8335 4.18622 2.83327C4.19398 2.70401 4.20483 2.58298 4.21998 2.47027C4.27625 2.05174 4.40003 1.67387 4.70368 1.37022C5.00732 1.06658 5.38519 0.942797 5.80372 0.886528C6.20024 0.833217 6.69972 0.833233 7.29871 0.833253ZM4.16672 3.83332C3.77832 3.83375 3.50395 3.83687 3.28859 3.85877C3.05201 3.88284 2.9427 3.92539 2.8704 3.9737C2.77941 4.03449 2.70128 4.11262 2.64048 4.20361C2.59217 4.27591 2.54963 4.38523 2.52556 4.62181C2.50065 4.86674 2.50004 5.18803 2.50004 5.66659V14.1666H4.16671V9.83325H3.66671C3.39056 9.83325 3.16671 9.6094 3.16671 9.33325C3.16671 9.05711 3.39056 8.83325 3.66671 8.83325H4.16671V7.83325H3.66671C3.39056 7.83325 3.16671 7.6094 3.16671 7.33325C3.16671 7.05711 3.39056 6.83325 3.66671 6.83325H4.16671V5.83325H3.66671C3.39056 5.83325 3.16671 5.6094 3.16671 5.33325C3.16671 5.05711 3.39056 4.83325 3.66671 4.83325H4.16671L4.16671 3.96526C4.1667 3.92073 4.1667 3.87675 4.16672 3.83332ZM5.16671 14.1666H7.50004V12.6666C7.50004 12.3904 7.7239 12.1666 8.00004 12.1666C8.27618 12.1666 8.50004 12.3904 8.50004 12.6666V14.1666H10.8334V3.99992C10.8334 3.35725 10.8323 2.92554 10.789 2.60351C10.7477 2.29587 10.6762 2.16421 10.5893 2.07733C10.5024 1.99045 10.3708 1.91897 10.0631 1.87761C9.74109 1.83432 9.30938 1.83325 8.66671 1.83325H7.33337C6.6907 1.83325 6.25899 1.83432 5.93697 1.87761C5.62933 1.91897 5.49766 1.99045 5.41078 2.07733C5.32391 2.16421 5.25243 2.29587 5.21106 2.60351C5.16777 2.92554 5.16671 3.35725 5.16671 3.99992V14.1666ZM11.8334 5.83325H12.3334C12.6095 5.83325 12.8334 5.6094 12.8334 5.33325C12.8334 5.05711 12.6095 4.83325 12.3334 4.83325H11.8334L11.8334 3.96526C11.8334 3.92073 11.8334 3.87675 11.8334 3.83332C12.2218 3.83375 12.4961 3.83687 12.7115 3.85877C12.9481 3.88284 13.0574 3.92539 13.1297 3.9737C13.2207 4.03449 13.2988 4.11262 13.3596 4.20361C13.4079 4.27591 13.4505 4.38523 13.4745 4.62181C13.4994 4.86674 13.5 5.18803 13.5 5.66659V14.1666H11.8334V9.83325H12.3334C12.6095 9.83325 12.8334 9.6094 12.8334 9.33325C12.8334 9.05711 12.6095 8.83325 12.3334 8.83325H11.8334V7.83325H12.3334C12.6095 7.83325 12.8334 7.6094 12.8334 7.33325C12.8334 7.05711 12.6095 6.83325 12.3334 6.83325H11.8334V5.83325ZM8.00004 3.83325C7.5398 3.83325 7.16671 4.20635 7.16671 4.66659C7.16671 5.12682 7.5398 5.49992 8.00004 5.49992C8.46028 5.49992 8.83337 5.12682 8.83337 4.66659C8.83337 4.20635 8.46028 3.83325 8.00004 3.83325ZM6.16671 4.66659C6.16671 3.65406 6.98752 2.83325 8.00004 2.83325C9.01256 2.83325 9.83337 3.65406 9.83337 4.66659C9.83337 5.67911 9.01256 6.49992 8.00004 6.49992C6.98752 6.49992 6.16671 5.67911 6.16671 4.66659ZM6.16671 7.99992C6.16671 7.72378 6.39056 7.49992 6.66671 7.49992H9.33337C9.60952 7.49992 9.83337 7.72378 9.83337 7.99992C9.83337 8.27606 9.60952 8.49992 9.33337 8.49992H6.66671C6.39056 8.49992 6.16671 8.27606 6.16671 7.99992ZM6.16671 9.99992C6.16671 9.72378 6.39056 9.49992 6.66671 9.49992H9.33337C9.60952 9.49992 9.83337 9.72378 9.83337 9.99992C9.83337 10.2761 9.60952 10.4999 9.33337 10.4999H6.66671C6.39056 10.4999 6.16671 10.2761 6.16671 9.99992ZM6.16671 11.9999C6.16671 11.7238 6.39056 11.4999 6.66671 11.4999H9.33337C9.60952 11.4999 9.83337 11.7238 9.83337 11.9999C9.83337 12.276 9.60952 12.4999 9.33337 12.4999H6.66671C6.39056 12.4999 6.16671 12.276 6.16671 11.9999ZM6.16671 13.9999C6.16671 13.7238 6.39056 13.4999 6.66671 13.4999H9.33337C9.60952 13.4999 9.83337 13.7238 9.83337 13.9999C9.83337 14.276 9.60952 14.4999 9.33337 14.4999H6.66671C6.39056 14.4999 6.16671 14.276 6.16671 13.9999Z"
+                                  fill="currentColor" />
+                              </svg>
                             </div>
                             <div>
-                              <span class="academy-name-main">Elite Equation Academy</span>
-                              <p class="academy-code-sub d-none d-md-block">Code: 1008</p>
+                              <strong class="text-navy">Elite Equation Academy</strong>
+                              <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1008</div>
                             </div>
                           </div>
                         </td>
-                        <td>(202) 555-0143</td>
-                        <td>olivia.johnson@example.com</td>
-                        <td class="text-center">
-                          <span class="badge-exam-custom">8</span>
+                        <td>
+                          <span class="phone-text">(202) 555-0143</span>
                         </td>
-                        <td>12 Students</td>
+                        <td>
+                          <span class="email-text">olivia.johnson@example.com</span>
+                        </td>
+                        <td>
+                          <span class="badge-exam-count">8</span>
+                        </td>
+                        <td>
+                          <span class="students-text">12 Students</span>
+                        </td>
                         <td class="text-center">
-                          <div class="d-flex gap-2 justify-content-center">
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
-                          </div>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                          <a class="btn-action-circle d-inline-flex d-md-none" title="Expand"><i class="bi bi-arrows-angle-expand"></i></a>
                         </td>
                       </tr>
 
@@ -501,27 +1439,37 @@
                         <td>9</td>
                         <td>
                           <div class="d-flex align-items-center">
-                            <div class="academy-logo-circle me-2">
-                              <img src="img/table-icon/table-building.svg" alt="">
+                            <div class="center-logo-circle theme-grey">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M7.29871 0.833253H8.70137C9.30036 0.833233 9.79984 0.833217 10.1964 0.886528C10.6149 0.942797 10.9928 1.06658 11.2964 1.37022C11.6 1.67387 11.7238 2.05174 11.7801 2.47027C11.7953 2.58298 11.8061 2.70401 11.8139 2.83327C12.2067 2.8335 12.5389 2.83606 12.8127 2.86391C13.1283 2.89602 13.4213 2.96583 13.6853 3.14223C13.8854 3.27598 14.0573 3.44786 14.1911 3.64804C14.3675 3.91204 14.4373 4.20495 14.4694 4.5206C14.5001 4.82216 14.5001 5.19465 14.5 5.64104V14.1666H14.6667C14.9428 14.1666 15.1667 14.3904 15.1667 14.6666C15.1667 14.9427 14.9428 15.1666 14.6667 15.1666H1.33337C1.05723 15.1666 0.833374 14.9427 0.833374 14.6666C0.833374 14.3904 1.05723 14.1666 1.33337 14.1666H1.50004L1.50004 5.64102C1.50003 5.19464 1.50002 4.82215 1.5307 4.5206C1.56281 4.20495 1.63262 3.91204 1.80901 3.64804C1.94277 3.44786 2.11465 3.27598 2.31483 3.14223C2.57883 2.96583 2.87174 2.89602 3.18739 2.86391C3.46114 2.83606 3.79334 2.8335 4.18622 2.83327C4.19398 2.70401 4.20483 2.58298 4.21998 2.47027C4.27625 2.05174 4.40003 1.67387 4.70368 1.37022C5.00732 1.06658 5.38519 0.942797 5.80372 0.886528C6.20024 0.833217 6.69972 0.833233 7.29871 0.833253ZM4.16672 3.83332C3.77832 3.83375 3.50395 3.83687 3.28859 3.85877C3.05201 3.88284 2.9427 3.92539 2.8704 3.9737C2.77941 4.03449 2.70128 4.11262 2.64048 4.20361C2.59217 4.27591 2.54963 4.38523 2.52556 4.62181C2.50065 4.86674 2.50004 5.18803 2.50004 5.66659V14.1666H4.16671V9.83325H3.66671C3.39056 9.83325 3.16671 9.6094 3.16671 9.33325C3.16671 9.05711 3.39056 8.83325 3.66671 8.83325H4.16671V7.83325H3.66671C3.39056 7.83325 3.16671 7.6094 3.16671 7.33325C3.16671 7.05711 3.39056 6.83325 3.66671 6.83325H4.16671V5.83325H3.66671C3.39056 5.83325 3.16671 5.6094 3.16671 5.33325C3.16671 5.05711 3.39056 4.83325 3.66671 4.83325H4.16671L4.16671 3.96526C4.1667 3.92073 4.1667 3.87675 4.16672 3.83332ZM5.16671 14.1666H7.50004V12.6666C7.50004 12.3904 7.7239 12.1666 8.00004 12.1666C8.27618 12.1666 8.50004 12.3904 8.50004 12.6666V14.1666H10.8334V3.99992C10.8334 3.35725 10.8323 2.92554 10.789 2.60351C10.7477 2.29587 10.6762 2.16421 10.5893 2.07733C10.5024 1.99045 10.3708 1.91897 10.0631 1.87761C9.74109 1.83432 9.30938 1.83325 8.66671 1.83325H7.33337C6.6907 1.83325 6.25899 1.83432 5.93697 1.87761C5.62933 1.91897 5.49766 1.99045 5.41078 2.07733C5.32391 2.16421 5.25243 2.29587 5.21106 2.60351C5.16777 2.92554 5.16671 3.35725 5.16671 3.99992V14.1666ZM11.8334 5.83325H12.3334C12.6095 5.83325 12.8334 5.6094 12.8334 5.33325C12.8334 5.05711 12.6095 4.83325 12.3334 4.83325H11.8334L11.8334 3.96526C11.8334 3.92073 11.8334 3.87675 11.8334 3.83332C12.2218 3.83375 12.4961 3.83687 12.7115 3.85877C12.9481 3.88284 13.0574 3.92539 13.1297 3.9737C13.2207 4.03449 13.2988 4.11262 13.3596 4.20361C13.4079 4.27591 13.4505 4.38523 13.4745 4.62181C13.4994 4.86674 13.5 5.18803 13.5 5.66659V14.1666H11.8334V9.83325H12.3334C12.6095 9.83325 12.8334 9.6094 12.8334 9.33325C12.8334 9.05711 12.6095 8.83325 12.3334 8.83325H11.8334V7.83325H12.3334C12.6095 7.83325 12.8334 7.6094 12.8334 7.33325C12.8334 7.05711 12.6095 6.83325 12.3334 6.83325H11.8334V5.83325ZM8.00004 3.83325C7.5398 3.83325 7.16671 4.20635 7.16671 4.66659C7.16671 5.12682 7.5398 5.49992 8.00004 5.49992C8.46028 5.49992 8.83337 5.12682 8.83337 4.66659C8.83337 4.20635 8.46028 3.83325 8.00004 3.83325ZM6.16671 4.66659C6.16671 3.65406 6.98752 2.83325 8.00004 2.83325C9.01256 2.83325 9.83337 3.65406 9.83337 4.66659C9.83337 5.67911 9.01256 6.49992 8.00004 6.49992C6.98752 6.49992 6.16671 5.67911 6.16671 4.66659ZM6.16671 7.99992C6.16671 7.72378 6.39056 7.49992 6.66671 7.49992H9.33337C9.60952 7.49992 9.83337 7.72378 9.83337 7.99992C9.83337 8.27606 9.60952 8.49992 9.33337 8.49992H6.66671C6.39056 8.49992 6.16671 8.27606 6.16671 7.99992ZM6.16671 9.99992C6.16671 9.72378 6.39056 9.49992 6.66671 9.49992H9.33337C9.60952 9.49992 9.83337 9.72378 9.83337 9.99992C9.83337 10.2761 9.60952 10.4999 9.33337 10.4999H6.66671C6.39056 10.4999 6.16671 10.2761 6.16671 9.99992ZM6.16671 11.9999C6.16671 11.7238 6.39056 11.4999 6.66671 11.4999H9.33337C9.60952 11.4999 9.83337 11.7238 9.83337 11.9999C9.83337 12.276 9.60952 12.4999 9.33337 12.4999H6.66671C6.39056 12.4999 6.16671 12.276 6.16671 11.9999ZM6.16671 13.9999C6.16671 13.7238 6.39056 13.4999 6.66671 13.4999H9.33337C9.60952 13.4999 9.83337 13.7238 9.83337 13.9999C9.83337 14.276 9.60952 14.4999 9.33337 14.4999H6.66671C6.39056 14.4999 6.16671 14.276 6.16671 13.9999C6.16671 14.276 6.16671 14.5521 6.16671 14.8282"
+                                  fill="currentColor" />
+                              </svg>
                             </div>
                             <div>
-                              <span class="academy-name-main">Pioneer Physics Lab</span>
-                              <p class="academy-code-sub d-none d-md-block">Code: 1009</p>
+                              <strong class="text-navy">Pioneer Physics Lab</strong>
+                              <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1009</div>
                             </div>
                           </div>
                         </td>
-                        <td>(202) 555-0143</td>
-                        <td>olivia.johnson@example.com</td>
-                        <td class="text-center">
-                          <span class="badge-exam-custom">8</span>
+                        <td>
+                          <span class="phone-text">(202) 555-0143</span>
                         </td>
-                        <td>12 Students</td>
+                        <td>
+                          <span class="email-text">olivia.johnson@example.com</span>
+                        </td>
+                        <td>
+                          <span class="badge-exam-count">8</span>
+                        </td>
+                        <td>
+                          <span class="students-text">12 Students</span>
+                        </td>
                         <td class="text-center">
-                          <div class="d-flex gap-2 justify-content-center">
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
-                          </div>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                          <a class="btn-action-circle d-inline-flex d-md-none" title="Expand"><i class="bi bi-arrows-angle-expand"></i></a>
                         </td>
                       </tr>
 
@@ -530,39 +1478,50 @@
                         <td>10</td>
                         <td>
                           <div class="d-flex align-items-center">
-                            <div class="academy-logo-circle logo-blue me-2">
-                              <img src="img/table-icon/table-building.svg" alt="">
+                            <div class="center-logo-circle theme-blue">
+                              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M7.29871 0.833253H8.70137C9.30036 0.833233 9.79984 0.833217 10.1964 0.886528C10.6149 0.942797 10.9928 1.06658 11.2964 1.37022C11.6 1.67387 11.7238 2.05174 11.7801 2.47027C11.7953 2.58298 11.8061 2.70401 11.8139 2.83327C12.2067 2.8335 12.5389 2.83606 12.8127 2.86391C13.1283 2.89602 13.4213 2.96583 13.6853 3.14223C13.8854 3.27598 14.0573 3.44786 14.1911 3.64804C14.3675 3.91204 14.4373 4.20495 14.4694 4.5206C14.5001 4.82216 14.5001 5.19465 14.5 5.64104V14.1666H14.6667C14.9428 14.1666 15.1667 14.3904 15.1667 14.6666C15.1667 14.9427 14.9428 15.1666 14.6667 15.1666H1.33337C1.05723 15.1666 0.833374 14.9427 0.833374 14.6666C0.833374 14.3904 1.05723 14.1666 1.33337 14.1666H1.50004L1.50004 5.64102C1.50003 5.19464 1.50002 4.82215 1.5307 4.5206C1.56281 4.20495 1.63262 3.91204 1.80901 3.64804C1.94277 3.44786 2.11465 3.27598 2.31483 3.14223C2.57883 2.96583 2.87174 2.89602 3.18739 2.86391C3.46114 2.83606 3.79334 2.8335 4.18622 2.83327C4.19398 2.70401 4.20483 2.58298 4.21998 2.47027C4.27625 2.05174 4.40003 1.67387 4.70368 1.37022C5.00732 1.06658 5.38519 0.942797 5.80372 0.886528C6.20024 0.833217 6.69972 0.833233 7.29871 0.833253ZM4.16672 3.83332C3.77832 3.83375 3.50395 3.83687 3.28859 3.85877C3.05201 3.88284 2.9427 3.92539 2.8704 3.9737C2.77941 4.03449 2.70128 4.11262 2.64048 4.20361C2.59217 4.27591 2.54963 4.38523 2.52556 4.62181C2.50065 4.86674 2.50004 5.18803 2.50004 5.66659V14.1666H4.16671V9.83325H3.66671C3.39056 9.83325 3.16671 9.6094 3.16671 9.33325C3.16671 9.05711 3.39056 8.83325 3.66671 8.83325H4.16671V7.83325H3.66671C3.39056 7.83325 3.16671 7.6094 3.16671 7.33325C3.16671 7.05711 3.39056 6.83325 3.66671 6.83325H4.16671V5.83325H3.66671C3.39056 5.83325 3.16671 5.6094 3.16671 5.33325C3.16671 5.05711 3.39056 4.83325 3.66671 4.83325H4.16671L4.16671 3.96526C4.1667 3.92073 4.1667 3.87675 4.16672 3.83332ZM5.16671 14.1666H7.50004V12.6666C7.50004 12.3904 7.7239 12.1666 8.00004 12.1666C8.27618 12.1666 8.50004 12.3904 8.50004 12.6666V14.1666H10.8334V3.99992C10.8334 3.35725 10.8323 2.92554 10.789 2.60351C10.7477 2.29587 10.6762 2.16421 10.5893 2.07733C10.5024 1.99045 10.3708 1.91897 10.0631 1.87761C9.74109 1.83432 9.30938 1.83325 8.66671 1.83325H7.33337C6.6907 1.83325 6.25899 1.83432 5.93697 1.87761C5.62933 1.91897 5.49766 1.99045 5.41078 2.07733C5.32391 2.16421 5.25243 2.29587 5.21106 2.60351C5.16777 2.92554 5.16671 3.35725 5.16671 3.99992V14.1666ZM11.8334 5.83325H12.3334C12.6095 5.83325 12.8334 5.6094 12.8334 5.33325C12.8334 5.05711 12.6095 4.83325 12.3334 4.83325H11.8334L11.8334 3.96526C11.8334 3.92073 11.8334 3.87675 11.8334 3.83332C12.2218 3.83375 12.4961 3.83687 12.7115 3.85877C12.9481 3.88284 13.0574 3.92539 13.1297 3.9737C13.2207 4.03449 13.2988 4.11262 13.3596 4.20361C13.4079 4.27591 13.4505 4.38523 13.4745 4.62181C13.4994 4.86674 13.5 5.18803 13.5 5.66659V14.1666H11.8334V9.83325H12.3334C12.6095 9.83325 12.8334 9.6094 12.8334 9.33325C12.8334 9.05711 12.6095 8.83325 12.3334 8.83325H11.8334V7.83325H12.3334C12.6095 7.83325 12.8334 7.6094 12.8334 7.33325C12.8334 7.05711 12.6095 6.83325 12.3334 6.83325H11.8334V5.83325ZM8.00004 3.83325C7.5398 3.83325 7.16671 4.20635 7.16671 4.66659C7.16671 5.12682 7.5398 5.49992 8.00004 5.49992C8.46028 5.49992 8.83337 5.12682 8.83337 4.66659C8.83337 4.20635 8.46028 3.83325 8.00004 3.83325ZM6.16671 4.66659C6.16671 3.65406 6.98752 2.83325 8.00004 2.83325C9.01256 2.83325 9.83337 3.65406 9.83337 4.66659C9.83337 5.67911 9.01256 6.49992 8.00004 6.49992C6.98752 6.49992 6.16671 5.67911 6.16671 4.66659ZM6.16671 7.99992C6.16671 7.72378 6.39056 7.49992 6.66671 7.49992H9.33337C9.60952 7.49992 9.83337 7.72378 9.83337 7.99992C9.83337 8.27606 9.60952 8.49992 9.33337 8.49992H6.66671C6.39056 8.49992 6.16671 8.27606 6.16671 7.99992ZM6.16671 9.99992C6.16671 9.72378 6.39056 9.49992 6.66671 9.49992H9.33337C9.60952 9.49992 9.83337 9.72378 9.83337 9.99992C9.83337 10.2761 9.60952 10.4999 9.33337 10.4999H6.66671C6.39056 10.4999 6.16671 10.2761 6.16671 9.99992ZM6.16671 11.9999C6.16671 11.7238 6.39056 11.4999 6.66671 11.4999H9.33337C9.60952 11.4999 9.83337 11.7238 9.83337 11.9999C9.83337 12.276 9.60952 12.4999 9.33337 12.4999H6.66671C6.39056 12.4999 6.16671 12.276 6.16671 11.9999C6.16671 12.276 6.16671 12.5521 6.16671 12.8282"
+                                  fill="currentColor" />
+                              </svg>
                             </div>
                             <div>
-                              <span class="academy-name-main">Horizon Academic Institute</span>
-                              <p class="academy-code-sub d-none d-md-block">Code: 1010</p>
+                              <strong class="text-navy">Horizon Academic Institute</strong>
+                              <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Code: 1010</div>
                             </div>
                           </div>
                         </td>
-                        <td>(202) 555-0143</td>
-                        <td>olivia.johnson@example.com</td>
-                        <td class="text-center">
-                          <span class="badge-exam-custom">8</span>
+                        <td>
+                          <span class="phone-text">(202) 555-0143</span>
                         </td>
-                        <td>12 Students</td>
+                        <td>
+                          <span class="email-text">olivia.johnson@example.com</span>
+                        </td>
+                        <td>
+                          <span class="badge-exam-count">8</span>
+                        </td>
+                        <td>
+                          <span class="students-text">12 Students</span>
+                        </td>
                         <td class="text-center">
-                          <div class="d-flex gap-2 justify-content-center">
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-view.svg" alt="View"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-edit.svg" alt="Edit"></a>
-                            <a class="action-btn-circle" href="#"><img src="img/table-icon/table-more.svg" alt="More"></a>
-                          </div>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="View"><i class="bi bi-eye"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                          <a class="btn-action-circle d-none d-md-inline-flex" title="More"><i class="bi bi-three-dots-vertical"></i></a>
+                          <a class="btn-action-circle d-inline-flex d-md-none" title="Expand"><i class="bi bi-arrows-angle-expand"></i></a>
                         </td>
                       </tr>
+
                     </tbody>
                   </table>
                 </div>
 
-                <!-- Custom Table Footer / Pagination -->
-                <div class="figma-table-footer">
-                  <div class="d-flex align-items-center">
-                    <label class="mb-0 text-muted" style="font-size: 13px; font-weight: 500;">
+                <!-- Footer pagination -->
+                <div class="table-footer-custom">
+                  <div>
+                    <label>
                       Show
-                      <select class="select-page-show mx-1">
+                      <select class="table-show-select mx-1">
                         <option value="10">10</option>
                         <option value="25">25</option>
                         <option value="50">50</option>
@@ -571,23 +1530,19 @@
                       per page
                     </label>
                   </div>
-                  <div class="pagination-wrapper">
-                    <a href="#" class="pagination-arrow-circle disabled"><i class="bi bi-chevron-left"></i></a>
-                    <div class="pagination-pages-list">
-                      <a href="#" class="pagination-page-item active">1</a>
-                      <a href="#" class="pagination-page-item">2</a>
-                      <a href="#" class="pagination-page-item">3</a>
-                      <a href="#" class="pagination-page-item">4</a>
-                      <a href="#" class="pagination-page-item">5</a>
-                    </div>
-                    <a href="#" class="pagination-arrow-circle"><i class="bi bi-chevron-right"></i></a>
-                    <span class="pagination-records-info ms-2">1-10 of 52</span>
+                  <div class="custom-pagination">
+                    <a href="#" class="pagination-btn disabled"><i class="bi bi-chevron-left"></i></a>
+                    <a href="#" class="pagination-btn active">1</a>
+                    <a href="#" class="pagination-btn">2</a>
+                    <a href="#" class="pagination-btn">3</a>
+                    <a href="#" class="pagination-btn">4</a>
+                    <a href="#" class="pagination-btn">5</a>
+                    <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
+                    <span style="font-size: 12px; color: var(--theme-text-gray); margin-left: 12px;">1-10 of 52</span>
                   </div>
                 </div>
               </div>
-            </div><!-- Center's List Table Column end -->
-
-
+            </div><!-- Recent Exam List end -->
 
           </div><!-- Bottom Row end -->
 
@@ -604,21 +1559,184 @@
   <script src="js/popper.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/daterangepicker.js"></script>
+  <script src="js/chart.js"></script>
 
   <!-- Custom JS -->
   <script src="js/main.js"></script>
-
-  <!-- Temporary debug script for mobile DOM inspection -->
   <script>
-    $(document).ready(function() {
-      setTimeout(function() {
-        if (window.matchMedia("(max-width: 767px)").matches) {
-          var tableHtml = $('#academyTable')[0].outerHTML;
-          var debugDiv = $('<pre id="debug-table-dom" style="background:#fff; color:#000; padding:10px; z-index:9999; position:relative; white-space:pre-wrap; border:3px solid red; font-size:10px;"></pre>');
-          debugDiv.text(tableHtml);
-          $('body').prepend(debugDiv);
-        }
-      }, 1500);
+    $(document).ready(function () {
+      $('.chart-container.bar').each(function () {
+        const $container = $(this);
+        const labels = JSON.parse($container.attr('data-labels'));
+        const values = JSON.parse($container.attr('data-values'));
+        const borderColor = $container.attr('data-border-color');
+        const gradientStart = $container.attr('data-gradient-start');
+        const gradientEnd = $container.attr('data-gradient-end');
+
+        const canvas = $container.find('canvas')[0];
+        const ctx = canvas.getContext('2d');
+
+        const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+        gradient.addColorStop(0, gradientStart);
+        gradient.addColorStop(1, gradientEnd);
+
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              data: values,
+              backgroundColor: gradient,
+              borderColor: borderColor,
+              borderWidth: 0,
+              borderRadius: 100,
+              tension: 0.4,
+              fill: true,
+              pointRadius: 5,
+              barThickness: 10,
+              pointHoverRadius: 7
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                enabled: true,
+                backgroundColor: '#fff',
+                titleColor: '#071437',
+                titleFont: { size: 13, weight: 'normal' },
+                bodyColor: '#071437',
+                bodyFont: { size: 15, weight: 'bold' },
+                borderColor: '#F1F1F4',
+                borderWidth: 1,
+                cornerRadius: 8,
+                padding: 12,
+                displayColors: false,
+                caretSize: 8,
+                caretPadding: 5,
+                shadowOffsetX: 4,
+                shadowOffsetY: 4,
+                shadowBlur: 10,
+                shadowColor: 'rgba(0,0,0,0.3)',
+                callbacks: {
+                  title: function (items) {
+                    return `${items[0].label}`;
+                  },
+                  label: function (item) {
+                    return `${item.raw}`;
+                  }
+                }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  stepSize: 5000,
+                  callback: function (value) {
+                    return value === 0 ? '0' : `${value / 1000}k`;
+                  }
+                }
+              },
+              x: {
+                grid: {
+                  display: false
+                }
+              }
+            }
+          }
+        });
+      });
+
+      $('.chart-container.doughnut').each(function () {
+        const $container = $(this);
+        const labels = JSON.parse($container.attr('data-labels'));
+        const values = JSON.parse($container.attr('data-values'));
+        const backgroundColor = JSON.parse($container.attr('data-bg-color'));
+
+        const canvas = $container.find('canvas')[0];
+        const ctx = canvas.getContext('2d');
+
+        new Chart(ctx, {
+          type: 'doughnut',
+          data: {
+            labels: labels,
+            datasets: [{
+              data: values,
+              backgroundColor: backgroundColor,
+              spacing: 10,
+              borderWidth: 0,
+              borderRadius: 10,
+              tension: 0.4,
+              fill: true,
+            }]
+          },
+          options: {
+            responsive: true,
+            cutout: '75%',
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                display: true,
+                position: 'bottom',
+                align: 'center',
+                onClick: null,
+                labels: {
+                  boxWidth: 20,
+                  boxHeight: 20,
+                  color: '#000',
+                  pointStyle: 'rectRounded',
+                  padding: 20,
+                  usePointStyle: true,
+
+                  font: {
+                    size: 14,
+                    family: 'Arial',
+                    style: 'normal',
+                    weight: 'normal',
+                    lineHeight: 1.2
+                  },
+                },
+              },
+              tooltip: {
+                enabled: true,
+                backgroundColor: '#323133',
+                titleColor: '#fff',
+                titleFont: { size: 13, weight: 'normal' },
+                bodyColor: '#fff',
+                bodyFont: { size: 15, weight: 'bold' },
+                borderColor: '#323133',
+                borderWidth: 1,
+                cornerRadius: 8,
+                padding: 12,
+                displayColors: false,
+                caretSize: 8,
+                caretPadding: 5,
+                shadowOffsetX: 4,
+                shadowOffsetY: 4,
+                shadowBlur: 10,
+                shadowColor: 'rgba(0,0,0,0.3)',
+                callbacks: {
+                  title: function (items) {
+                    return `${items[0].label}`;
+                  },
+                  label: function (item) {
+                    return `${item.raw}`;
+                  }
+                }
+              }
+            },
+
+          }
+        });
+      });
+      // Toggler for Month/Week/Day capsule buttons
+      $('.toggle-btn-capsule').on('click', function () {
+        $('.toggle-btn-capsule').removeClass('active').addClass('inactive');
+        $(this).removeClass('inactive').addClass('active');
+      });
     });
   </script>
 

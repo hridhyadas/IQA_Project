@@ -1432,7 +1432,7 @@ body {
 
 .recent-exams-table-container table tbody td {
   border: none !important;
-  padding: 10px 8px !important;
+  padding: 0px 8px !important;
   /* compact padding */
   vertical-align: middle !important;
   color: #21236A !important;
@@ -1593,7 +1593,7 @@ body {
 }
 
 .recent-exams-table-container table tbody td:not(:last-child) {
-  border-right: 1px solid #EEEEEE !important;
+  /* border-right: 1px solid #EEEEEE !important; */
 }
 
 /* Text nowrap utilities */

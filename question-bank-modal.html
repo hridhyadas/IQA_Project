@@ -425,7 +425,7 @@
         flex-wrap: nowrap !important;   /* ← keep all on one line */
         justify-content: flex-end !important;
         align-items: center !important;
-        gap: 0px !important;
+        gap: 2px !important;
         display: flex !important;
       }
 
@@ -562,6 +562,286 @@
         font-size: 16px !important;
       }
     }
+
+    /* ============================================
+       Question Bank Modal Figma Fidelity styles
+       ============================================ */
+    #questionBankModal .modal-content {
+      border-radius: 16px !important;
+      border: none !important;
+      box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.12) !important;
+      padding: 12px !important;
+    }
+    #questionBankModal .modal-body {
+      padding: 24px !important;
+    }
+    .qb-modal-close-btn {
+      position: absolute !important;
+      top: 24px !important;
+      right: 24px !important;
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 50% !important;
+      background-color: #F4F6FA !important;
+      border: none !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      z-index: 10 !important;
+      transition: all 0.2s ease !important;
+    }
+    .qb-modal-close-btn:hover {
+      background-color: #E8ECF4 !important;
+    }
+    .qb-modal-close-btn i {
+      font-size: 16px !important;
+      color: #6F767E !important;
+    }
+    .qb-modal-title {
+      font-size: 22px !important;
+      font-weight: 700 !important;
+      color: #1A1D1F !important;
+      text-align: center !important;
+      margin-bottom: 6px !important;
+    }
+    .qb-modal-subtitle {
+      font-size: 14px !important;
+      color: #6F767E !important;
+      text-align: center !important;
+      margin-bottom: 24px !important;
+    }
+    
+    /* Search and Filters Layout */
+    .qb-search-filter-row {
+      display: flex !important;
+      gap: 16px !important;
+      margin-bottom: 20px !important;
+      align-items: center !important;
+    }
+    .qb-search-container {
+      position: relative !important;
+      flex: 1 !important;
+    }
+    .qb-search-container .search-icon {
+      position: absolute !important;
+      left: 14px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      color: #9A9FA5 !important;
+      font-size: 16px !important;
+      pointer-events: none !important;
+    }
+    .qb-search-input {
+      width: 100% !important;
+      height: 42px !important;
+      padding-left: 42px !important;
+      padding-right: 16px !important;
+      border: 1px solid #D9DFEC !important;
+      border-radius: 8px !important;
+      font-size: 14px !important;
+      color: #1A1D1F !important;
+      outline: none !important;
+      transition: border-color 0.2s ease !important;
+    }
+    .qb-search-input:focus {
+      border-color: #21236A !important;
+    }
+    .qb-filter-dropdowns {
+      display: flex !important;
+      gap: 12px !important;
+    }
+    .qb-filter-btn {
+      height: 42px !important;
+      border: 1px solid #D9DFEC !important;
+      background-color: #ffffff !important;
+      border-radius: 8px !important;
+      color: #1A1D1F !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      padding: 0 16px !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      transition: all 0.2s ease !important;
+    }
+    .qb-filter-btn:hover {
+      background-color: #F8F9FA !important;
+      border-color: #C0C5D0 !important;
+    }
+    .qb-filter-btn::after {
+      display: none !important; /* Hide bootstrap default chevron */
+    }
+    
+    /* Stats & Button Row */
+    .qb-stats-row {
+      text-align: center !important;
+      margin-bottom: 24px !important;
+    }
+    .qb-stats-text {
+      font-size: 14px !important;
+      color: #1A1D1F !important;
+      margin-bottom: 12px !important;
+    }
+    .qb-stats-highlight {
+      color: #21236A !important;
+      font-weight: 700 !important;
+    }
+    .qb-add-btn {
+      background-color: #21236A !important;
+      color: #ffffff !important;
+      border-radius: 8px !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      padding: 10px 24px !important;
+      border: none !important;
+      display: inline-block !important;
+      transition: background-color 0.2s ease !important;
+    }
+    .qb-add-btn:hover {
+      background-color: #15174c !important;
+    }
+    
+    /* Scrollable list container */
+    .qb-questions-list {
+      max-height: 420px !important;
+      overflow-y: auto !important;
+      padding-right: 6px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      margin-bottom: 24px !important;
+    }
+    .qb-questions-list::-webkit-scrollbar {
+      width: 6px !important;
+    }
+    .qb-questions-list::-webkit-scrollbar-track {
+      background: transparent !important;
+    }
+    .qb-questions-list::-webkit-scrollbar-thumb {
+      background: #D9DFEC !important;
+      border-radius: 3px !important;
+    }
+    .qb-questions-list::-webkit-scrollbar-thumb:hover {
+      background: #B0B9C6 !important;
+    }
+    
+    /* Question Card overrides */
+    .card-form-check-2 {
+      display: block !important;
+      margin-bottom: 0 !important;
+    }
+    .card-form-check-2 .card-body {
+      border: 1px solid #E4E7EC !important;
+      background-color: #F9FAFB !important;
+      border-radius: 12px !important;
+      padding: 16px 20px !important;
+      padding-right: 56px !important; /* Space for checked-icon */
+      position: relative !important;
+      transition: all 0.2s ease !important;
+    }
+    .card-form-check-2:hover .card-body {
+      border-color: #D0D5DD !important;
+      background-color: #F3F4F6 !important;
+    }
+    .card-form-check-2 .checked-icon {
+      width: 22px !important;
+      height: 22px !important;
+      background-color: #21236A !important;
+      color: #ffffff !important;
+      border-radius: 50% !important;
+      display: none !important;
+      align-items: center !important;
+      justify-content: center !important;
+      position: absolute !important;
+      right: 20px !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+    }
+    .card-form-check-2 .checked-icon i {
+      font-size: 16px !important;
+      line-height: 1 !important;
+    }
+    
+    /* Select styling */
+    .card-form-check-2 input[type=checkbox] {
+      display: none !important;
+    }
+    .card-form-check-2 input[type=checkbox]:checked + .card-body {
+      border-color: #21236A !important;
+      border-width: 1.5px !important;
+      background-color: #F9FAFB !important; /* Keep original background when checked */
+    }
+    .card-form-check-2 input[type=checkbox]:checked + .card-body .checked-icon {
+      display: flex !important;
+    }
+    
+    /* MCQ Options formatting */
+    .qb-mcq-options {
+      margin-top: 6px !important;
+      font-size: 13px !important;
+      color: #475467 !important;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 6px 12px !important;
+    }
+    .qb-mcq-option-separator {
+      color: #D0D5DD !important;
+    }
+    .qb-mcq-correct {
+      color: #12B76A !important;
+      font-weight: 600 !important;
+    }
+    .qb-short-answer-label {
+      margin-top: 6px !important;
+      font-size: 13px !important;
+      color: #667085 !important;
+    }
+    .qb-view-more-link {
+      color: #21236A !important;
+      font-weight: 600 !important;
+      font-size: 14px !important;
+      text-decoration: none !important;
+      display: inline-block !important;
+      transition: color 0.2s ease !important;
+    }
+    .qb-view-more-link:hover {
+      color: #15174c !important;
+      text-decoration: underline !important;
+    }
+    
+    /* Mobile responsive overrides */
+    @media (max-width: 767px) {
+      .qb-search-filter-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 12px !important;
+      }
+      .qb-filter-dropdowns {
+        display: flex !important;
+        width: 100% !important;
+      }
+      .qb-filter-dropdowns .dropdown {
+        flex: 1 !important;
+      }
+      .qb-filter-btn {
+        width: 100% !important;
+        justify-content: space-between !important;
+      }
+      #questionBankModal .modal-body {
+        padding: 16px !important;
+      }
+      .qb-modal-title {
+        font-size: 18px !important;
+        padding-right: 28px !important;
+      }
+      .qb-modal-subtitle {
+        font-size: 12px !important;
+      }
+      .qb-view-more-link {
+        color: #E21B1B !important; /* Match Red View More in mobile screenshot */
+      }
+    }
   </style>
 
   <title>IQA</title>
@@ -590,7 +870,7 @@
             <ul class="nav">
 
               <!-- Menu item start -->
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
                   <span class="menu-label me-auto">Dashboard</span>
@@ -598,7 +878,7 @@
               </li><!-- Menu item end -->
 
               <!-- Menu item start -->
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown open">
                 <a class="nav-link dropdown-toggle" href="#">
                   <span class="menu-label me-auto">Exam Managment</span>
                 </a>
@@ -628,8 +908,8 @@
                       <span class="badge badge-pending">3 Pending</span>
                     </a>
                   </li>
-                  <li>
-                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#generateQuestionsModal">
+                  <li class="active">
+                    <a class="dropdown-item active" href="#" data-bs-toggle="modal" data-bs-target="#questionBankModal">
                       <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
                       <span class="menu-label">Question Bank</span>
                     </a>
@@ -1601,233 +1881,239 @@
         $('.toggle-btn-capsule').removeClass('active').addClass('inactive');
         $(this).removeClass('inactive').addClass('active');
       });
-    });
-  </script>
 
-  <!-- =========================================================
-       GENERATE QUESTIONS USING AI MODAL STYLES
-  ========================================================== -->
-  <style>
-    /* ---- Backdrop ---- */
-    #generateQuestionsModal .modal-dialog {
-      max-width: 420px;
-    }
+      // Auto-open Question Bank modal on page load
+      var qbModal = new bootstrap.Modal(document.getElementById('questionBankModal'), {});
+      qbModal.show();
 
-    #generateQuestionsModal .modal-content {
-      border-radius: 20px;
-      border: none;
-      padding: 32px 32px 28px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
-      position: relative;
-    }
+      // Dynamically update the selected count text
+      function updateSelectedCount() {
+        var checkedCount = $('.card-form-check-2 input[type="checkbox"]:checked').length;
+        $('.selected-count-text').html(checkedCount + ' Questions are selected');
+      }
+      
+      // Update count on initialization
+      updateSelectedCount();
 
-    /* ---- Close button ---- */
-    #generateQuestionsModal .gq-close-btn {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      width: 32px;
-      height: 32px;
-      border: 1.5px solid #D0D5DD;
-      border-radius: 8px;
-      background: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      color: #667085;
-      font-size: 16px;
-      line-height: 1;
-      transition: background 0.2s;
-      z-index: 10;
-    }
-    #generateQuestionsModal .gq-close-btn:hover {
-      background: #f2f4f7;
-    }
-
-    /* ---- Gradient ring icon ---- */
-    .gq-ai-icon {
-      width: 88px;
-      height: 88px;
-      border-radius: 50%;
-      margin: 0 auto 20px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: conic-gradient(
-        from 0deg,
-        #4FC3F7 0%,
-        #7B61FF 25%,
-        #E040FB 50%,
-        #FF6D6D 65%,
-        #4FC3F7 100%
-      );
-    }
-    .gq-ai-icon::after {
-      content: '';
-      position: absolute;
-      width: 64px;
-      height: 64px;
-      background: #ffffff;
-      border-radius: 50%;
-    }
-
-    /* ---- Title & subtitle ---- */
-    .gq-title {
-      font-size: 20px;
-      font-weight: 700;
-      color: #1A1A2E;
-      text-align: center;
-      margin-bottom: 6px;
-      font-family: 'Inter', sans-serif;
-    }
-    .gq-subtitle {
-      font-size: 13px;
-      color: #8A94A6;
-      text-align: center;
-      line-height: 1.5;
-      margin-bottom: 24px;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* ---- Form labels ---- */
-    .gq-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: #1A1A2E;
-      margin-bottom: 6px;
-      display: block;
-      font-family: 'Inter', sans-serif;
-    }
-
-    /* ---- Inputs ---- */
-    .gq-input {
-      width: 100%;
-      height: 44px;
-      border: 1.5px solid #E5E9F0;
-      border-radius: 10px;
-      padding: 0 14px;
-      font-size: 13px;
-      color: #B0B7C3;
-      background: #fff;
-      outline: none;
-      margin-bottom: 16px;
-      font-family: 'Inter', sans-serif;
-      transition: border-color 0.2s;
-    }
-    .gq-input:focus {
-      border-color: #7B61FF;
-      color: #1A1A2E;
-    }
-    .gq-input::placeholder {
-      color: #B0B7C3;
-    }
-
-    /* ---- Pill toggle buttons ---- */
-    .gq-pill-group {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    .gq-pill {
-      flex: 0 0 auto;
-      padding: 9px 22px;
-      border-radius: 100px;
-      border: 1.5px solid #E5E9F0;
-      background: #fff;
-      font-size: 13px;
-      font-weight: 500;
-      color: #4A5568;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: all 0.2s;
-      user-select: none;
-    }
-    .gq-pill:hover,
-    .gq-pill.active {
-      background: #EEF0FF;
-      border-color: #7B61FF;
-      color: #7B61FF;
-    }
-
-    /* ---- Generate button ---- */
-    .gq-generate-btn {
-      width: 100%;
-      height: 50px;
-      background: #1B2A6B;
-      color: #fff;
-      border: none;
-      border-radius: 12px;
-      font-size: 15px;
-      font-weight: 600;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.1s;
-      letter-spacing: 0.02em;
-    }
-    .gq-generate-btn:hover {
-      background: #14215a;
-    }
-    .gq-generate-btn:active {
-      transform: scale(0.98);
-    }
-  </style>
-
-  <!-- =========================================================
-       GENERATE QUESTIONS USING AI MODAL HTML
-  ========================================================== -->
-  <div class="modal fade" id="generateQuestionsModal" tabindex="-1" aria-labelledby="generateQuestionsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-
-        <!-- Close button -->
-        <button type="button" class="gq-close-btn" data-bs-dismiss="modal" aria-label="Close">&times;</button>
-
-        <!-- Gradient circle icon -->
-        <div class="gq-ai-icon"></div>
-
-        <!-- Title -->
-        <h5 class="gq-title" id="generateQuestionsModalLabel">Generate Questions using AI</h5>
-        <p class="gq-subtitle">Select below options to generate<br>questions and answers</p>
-
-        <!-- Form -->
-        <div>
-          <!-- MCQ -->
-          <label class="gq-label">How may Questions needed (MCQ) ?</label>
-          <input type="number" class="gq-input" placeholder="Enter count here" min="0">
-
-          <!-- Yes/No -->
-          <label class="gq-label">How may Questions needed (Yes/ No) ?</label>
-          <input type="number" class="gq-input" placeholder="Enter count here" min="0">
-
-          <!-- Short answer -->
-          <label class="gq-label">How may Questions Short answer ?</label>
-          <input type="number" class="gq-input" placeholder="Enter count here" min="0">
-
-          <!-- Pill toggle buttons -->
-          <div class="gq-pill-group">
-            <button type="button" class="gq-pill active" id="pillMultiple">Multiple Choice</button>
-            <button type="button" class="gq-pill" id="pillTrueFalse">True/False</button>
-          </div>
-
-          <!-- Generate button -->
-          <button type="button" class="gq-generate-btn">Generate</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Pill toggle behaviour
-    document.querySelectorAll('.gq-pill').forEach(function(pill) {
-      pill.addEventListener('click', function() {
-        document.querySelectorAll('.gq-pill').forEach(function(p) { p.classList.remove('active'); });
-        this.classList.add('active');
+      // Update count when checkboxes are changed
+      $(document).on('change', '.card-form-check-2 input[type="checkbox"]', function () {
+        updateSelectedCount();
       });
     });
   </script>
+
+  <!-- Modal start -->
+  <div class="modal fade" id="questionBankModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content">
+        <button type="button" class="qb-modal-close-btn" data-bs-dismiss="modal" aria-label="Close">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="modal-body">
+          <h5 class="qb-modal-title">Select Question From Question bank</h5>
+          <p class="qb-modal-subtitle">Select below options to create questions and answers</p>
+
+          <!-- Search and filters -->
+          <div class="qb-search-filter-row">
+            <div class="qb-search-container">
+              <i class="bi bi-search search-icon"></i>
+              <input type="text" class="qb-search-input" placeholder="Search">
+            </div>
+            <div class="qb-filter-dropdowns">
+              <div class="dropdown">
+                <button class="qb-filter-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Filter : Course <i class="bi bi-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Course 1</a></li>
+                  <li><a class="dropdown-item" href="#">Course 2</a></li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button class="qb-filter-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Filter : Type <i class="bi bi-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Short Answer</a></li>
+                  <li><a class="dropdown-item" href="#">Multiple Choice</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Selected stats and main button -->
+          <div class="qb-stats-row">
+            <p class="qb-stats-text">Total 200 Questions <span class="qb-stats-highlight selected-count-text">3 Questions are selected</span></p>
+            <button type="button" class="qb-add-btn" data-bs-dismiss="modal">Add Selected Questions</button>
+          </div>
+
+          <!-- Questions List -->
+          <div class="qb-questions-list">
+            
+            <!-- Q1 -->
+            <label class="card-form-check-2">
+              <input type="checkbox" name="select-q" checked>
+              <div class="card-body">
+                <p class="mb-1 text-dark fw-normal">Q1 : What role do transitional phrases play at the end of paragraphs in English academic writing?</p>
+                <p class="qb-short-answer-label mb-0">Short Answer</p>
+                <span class="checked-icon">
+                  <i class="bi bi-check"></i>
+                </span>
+              </div>
+            </label>
+
+            <!-- Q2 -->
+            <label class="card-form-check-2">
+              <input type="checkbox" name="select-q">
+              <div class="card-body">
+                <p class="mb-1 text-dark fw-normal">Q2 : How does rising intonation signal questions at the end of sentences in spoken English?</p>
+                <div class="qb-mcq-options mb-0">
+                  <span>a. I finished</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span>b. the correct</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span>c. relaxation claim</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span class="qb-mcq-correct">d. could drive</span>
+                </div>
+                <span class="checked-icon">
+                  <i class="bi bi-check"></i>
+                </span>
+              </div>
+            </label>
+
+            <!-- Q3 -->
+            <label class="card-form-check-2">
+              <input type="checkbox" name="select-q">
+              <div class="card-body">
+                <p class="mb-1 text-dark fw-normal">Q3 : In what contexts is "though" used casually at the end of English sentences for soft disagreement?</p>
+                <div class="qb-mcq-options mb-0">
+                  <span>a. I finished</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span>b. the correct</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span>c. relaxation claim</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span class="qb-mcq-correct">d. could drive</span>
+                </div>
+                <span class="checked-icon">
+                  <i class="bi bi-check"></i>
+                </span>
+              </div>
+            </label>
+
+            <!-- Q4 -->
+            <label class="card-form-check-2">
+              <input type="checkbox" name="select-q" checked>
+              <div class="card-body">
+                <p class="mb-1 text-dark fw-normal">Q4 : Why do some programming languages influenced by English syntax end code blocks with "end"?</p>
+                <p class="qb-short-answer-label mb-0">Short Answer</p>
+                <span class="checked-icon">
+                  <i class="bi bi-check"></i>
+                </span>
+              </div>
+            </label>
+
+            <!-- Q5 -->
+            <label class="card-form-check-2">
+              <input type="checkbox" name="select-q">
+              <div class="card-body">
+                <p class="mb-1 text-dark fw-normal">Q5 : What distinguishes "end" as a noun versus a verb in English dictionary definitions?</p>
+                <p class="qb-short-answer-label mb-0">Short Answer</p>
+                <span class="checked-icon">
+                  <i class="bi bi-check"></i>
+                </span>
+              </div>
+            </label>
+
+            <!-- Q6 -->
+            <label class="card-form-check-2">
+              <input type="checkbox" name="select-q" checked>
+              <div class="card-body">
+                <p class="mb-1 text-dark fw-normal">Q6 : How does rising intonation signal questions at the end of sentences in spoken English?</p>
+                <div class="qb-mcq-options mb-0">
+                  <span>a. I finished</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span>b. the correct</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span>c. relaxation claim</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span class="qb-mcq-correct">d. could drive</span>
+                </div>
+                <span class="checked-icon">
+                  <i class="bi bi-check"></i>
+                </span>
+              </div>
+            </label>
+
+            <!-- Q7 -->
+            <label class="card-form-check-2">
+              <input type="checkbox" name="select-q">
+              <div class="card-body">
+                <p class="mb-1 text-dark fw-normal">Q7 : What distinguishes "end" as a noun versus a verb in English dictionary definitions?</p>
+                <div class="qb-mcq-options mb-0">
+                  <span>a. Yes</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span class="qb-mcq-correct">b. No</span>
+                </div>
+                <span class="checked-icon">
+                  <i class="bi bi-check"></i>
+                </span>
+              </div>
+            </label>
+
+            <!-- Q9 (Note: Q8 is skipped to match Figma exactly) -->
+            <label class="card-form-check-2">
+              <input type="checkbox" name="select-q">
+              <div class="card-body">
+                <p class="mb-1 text-dark fw-normal">Q9 : How does rising intonation signal questions at the end of sentences in spoken English?</p>
+                <div class="qb-mcq-options mb-0">
+                  <span>a. I finished</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span>b. the correct</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span>c. relaxation claim</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span class="qb-mcq-correct">d. could drive</span>
+                </div>
+                <span class="checked-icon">
+                  <i class="bi bi-check"></i>
+                </span>
+              </div>
+            </label>
+
+            <!-- Q10 -->
+            <label class="card-form-check-2">
+              <input type="checkbox" name="select-q">
+              <div class="card-body">
+                <p class="mb-1 text-dark fw-normal">Q10 : What distinguishes "end" as a noun versus a verb in English dictionary definitions?</p>
+                <div class="qb-mcq-options mb-0">
+                  <span>a. I finished</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span>b. the correct</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span>c. relaxation claim</span>
+                  <span class="qb-mcq-option-separator">|</span>
+                  <span class="qb-mcq-correct">d. could drive</span>
+                </div>
+                <span class="checked-icon">
+                  <i class="bi bi-check"></i>
+                </span>
+              </div>
+            </label>
+
+          </div>
+
+          <!-- View More Link -->
+          <div class="text-center">
+            <a href="#" class="qb-view-more-link">View More</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal end -->
 
 </body>
 

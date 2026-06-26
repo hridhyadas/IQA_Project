@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -629,7 +629,7 @@
                     </a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="question-bank-modal.html">
+                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#generateQuestionsModal">
                       <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
                       <span class="menu-label">Question Bank</span>
                     </a>
@@ -1600,6 +1600,231 @@
       $('.toggle-btn-capsule').on('click', function () {
         $('.toggle-btn-capsule').removeClass('active').addClass('inactive');
         $(this).removeClass('inactive').addClass('active');
+      });
+    });
+  </script>
+
+  <!-- =========================================================
+       GENERATE QUESTIONS USING AI MODAL STYLES
+  ========================================================== -->
+  <style>
+    /* ---- Backdrop ---- */
+    #generateQuestionsModal .modal-dialog {
+      max-width: 420px;
+    }
+
+    #generateQuestionsModal .modal-content {
+      border-radius: 20px;
+      border: none;
+      padding: 32px 32px 28px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+      position: relative;
+    }
+
+    /* ---- Close button ---- */
+    #generateQuestionsModal .gq-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border: 1.5px solid #D0D5DD;
+      border-radius: 8px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #667085;
+      font-size: 16px;
+      line-height: 1;
+      transition: background 0.2s;
+      z-index: 10;
+    }
+    #generateQuestionsModal .gq-close-btn:hover {
+      background: #f2f4f7;
+    }
+
+    /* ---- Gradient ring icon ---- */
+    .gq-ai-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: conic-gradient(
+        from 0deg,
+        #4FC3F7 0%,
+        #7B61FF 25%,
+        #E040FB 50%,
+        #FF6D6D 65%,
+        #4FC3F7 100%
+      );
+    }
+    .gq-ai-icon::after {
+      content: '';
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      background: #ffffff;
+      border-radius: 50%;
+    }
+
+    /* ---- Title & subtitle ---- */
+    .gq-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1A1A2E;
+      text-align: center;
+      margin-bottom: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+    .gq-subtitle {
+      font-size: 13px;
+      color: #8A94A6;
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ---- Form labels ---- */
+    .gq-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1A1A2E;
+      margin-bottom: 6px;
+      display: block;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ---- Inputs ---- */
+    .gq-input {
+      width: 100%;
+      height: 44px;
+      border: 1.5px solid #E5E9F0;
+      border-radius: 10px;
+      padding: 0 14px;
+      font-size: 13px;
+      color: #B0B7C3;
+      background: #fff;
+      outline: none;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s;
+    }
+    .gq-input:focus {
+      border-color: #7B61FF;
+      color: #1A1A2E;
+    }
+    .gq-input::placeholder {
+      color: #B0B7C3;
+    }
+
+    /* ---- Pill toggle buttons ---- */
+    .gq-pill-group {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .gq-pill {
+      flex: 0 0 auto;
+      padding: 9px 22px;
+      border-radius: 100px;
+      border: 1.5px solid #E5E9F0;
+      background: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      color: #4A5568;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.2s;
+      user-select: none;
+    }
+    .gq-pill:hover,
+    .gq-pill.active {
+      background: #EEF0FF;
+      border-color: #7B61FF;
+      color: #7B61FF;
+    }
+
+    /* ---- Generate button ---- */
+    .gq-generate-btn {
+      width: 100%;
+      height: 50px;
+      background: #1B2A6B;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      letter-spacing: 0.02em;
+    }
+    .gq-generate-btn:hover {
+      background: #14215a;
+    }
+    .gq-generate-btn:active {
+      transform: scale(0.98);
+    }
+  </style>
+
+  <!-- =========================================================
+       GENERATE QUESTIONS USING AI MODAL HTML
+  ========================================================== -->
+  <div class="modal fade" id="generateQuestionsModal" tabindex="-1" aria-labelledby="generateQuestionsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+
+        <!-- Close button -->
+        <button type="button" class="gq-close-btn" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+
+        <!-- Gradient circle icon -->
+        <div class="gq-ai-icon"></div>
+
+        <!-- Title -->
+        <h5 class="gq-title" id="generateQuestionsModalLabel">Generate Questions using AI</h5>
+        <p class="gq-subtitle">Select below options to generate<br>questions and answers</p>
+
+        <!-- Form -->
+        <div>
+          <!-- MCQ -->
+          <label class="gq-label">How may Questions needed (MCQ) ?</label>
+          <input type="number" class="gq-input" placeholder="Enter count here" min="0">
+
+          <!-- Yes/No -->
+          <label class="gq-label">How may Questions needed (Yes/ No) ?</label>
+          <input type="number" class="gq-input" placeholder="Enter count here" min="0">
+
+          <!-- Short answer -->
+          <label class="gq-label">How may Questions Short answer ?</label>
+          <input type="number" class="gq-input" placeholder="Enter count here" min="0">
+
+          <!-- Pill toggle buttons -->
+          <div class="gq-pill-group">
+            <button type="button" class="gq-pill active" id="pillMultiple">Multiple Choice</button>
+            <button type="button" class="gq-pill" id="pillTrueFalse">True/False</button>
+          </div>
+
+          <!-- Generate button -->
+          <button type="button" class="gq-generate-btn">Generate</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Pill toggle behaviour
+    document.querySelectorAll('.gq-pill').forEach(function(pill) {
+      pill.addEventListener('click', function() {
+        document.querySelectorAll('.gq-pill').forEach(function(p) { p.classList.remove('active'); });
+        this.classList.add('active');
       });
     });
   </script>

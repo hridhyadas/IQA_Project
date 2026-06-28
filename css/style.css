@@ -3033,7 +3033,7 @@ header .side-bar-close {
   position: relative;
 }
 .progress-wrapper .progress-circle-container svg {
-  width: 100px;
+  width: 80px;
 }
 .progress-wrapper .progress-circle-container .progress--circle {
   stroke-dasharray: 100;
@@ -3058,7 +3058,7 @@ header .side-bar-close {
 .progress-wrapper .text h2 {
   line-height: 1;
   margin-bottom: 0;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: var(--fw-light);
 }
 .progress-wrapper .text p {
@@ -3233,7 +3233,7 @@ header .side-bar-close {
 .list-group-3 .list-group-item {
   border-left: 0;
   border-right: 0;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--bs-dark);
   border: 0;
   border-width: 0 0 1px;
@@ -4258,4 +4258,60 @@ select.form-select {
 .custom-select-end .list {
   right: 0;
   left: inherit;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/* ==========================================================================
+   Responsive Logo Sizing Overrides (Global)
+   ========================================================================== */
+.logo-container img,
+.navbar-brand img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+/* Desktop Header Bar Logo Sizing */
+.logo-container img {
+  max-height: 65px !important;
+}
+
+@media (max-width: 1199.98px) {
+  .logo-container img {
+    max-height: 55px !important;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .logo-container img {
+    max-height: 48px !important;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .logo-container img {
+    max-height: 40px !important;
+  }
+}
+
+/* Centered Mobile Header Bar Logo Sizing */
+.mobile-logo-centered {
+  width: 90px !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+/* Sidebar header logos sizing limits */
+.side-bar-header .large-logo {
+  max-height: 48px !important;
+  max-width: 80% !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+.side-bar-header .small-logo {
+  max-height: 32px !important;
+  width: auto !important;
+  object-fit: contain;
+}
+
+/*# sourceMappingURL=style.css.map */

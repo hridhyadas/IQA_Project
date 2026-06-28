@@ -161,15 +161,15 @@
 
 .daterangepicker .calendar-table {
   border: 1px solid #fff;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: #fff;
 }
 
 .daterangepicker .calendar-table table {
   width: 100%;
   margin: 0;
-  border-spacing: 0;
-  border-collapse: collapse;
+  border-spacing: 4px;
+  border-collapse: separate;
 }
 
 .daterangepicker td.available:hover, .daterangepicker th.available:hover {
@@ -408,3 +408,306 @@
     clear: none !important;
   }
 }
+
+/* ==========================================================================
+   IQA Custom Theme Overrides — Matches Reference Design
+   ========================================================================== */
+
+/* ── 1. Outer container ─────────────────────────────────────────── */
+.daterangepicker {
+  border-radius: 16px !important;
+  border: 1px solid #D9DFEC !important;
+  box-shadow: 0 16px 48px rgba(33, 35, 106, 0.16) !important;
+  font-family: inherit !important;
+  padding: 20px !important;
+  background-color: #ffffff !important;
+  z-index: 999999 !important;
+  overflow: hidden !important;
+  width: auto !important;
+}
+
+/* Remove pointing arrow */
+.daterangepicker:before,
+.daterangepicker:after {
+  display: none !important;
+}
+
+/* Hide sidebar ranges + selected text input */
+.daterangepicker .ranges,
+.daterangepicker .drp-selected {
+  display: none !important;
+}
+
+/* ── 2. Calendar panels ─────────────────────────────────────────── */
+.daterangepicker .drp-calendar {
+  max-width: 320px !important;
+  min-width: 300px !important;
+  border: 1.5px solid #D9DFEC !important;
+  border-radius: 14px !important;
+  overflow: visible !important;
+  padding: 0 !important;
+  background-color: #ffffff !important;
+  float: left !important;
+}
+
+.daterangepicker .drp-calendar.left {
+  margin-right: 16px !important;
+}
+
+.daterangepicker .drp-calendar.right {
+  margin-right: 0 !important;
+}
+
+/* ── 3. Calendar table wrapper ──────────────────────────────────── */
+.daterangepicker .calendar-table {
+  padding: 0 !important;
+  border: none !important;
+  background-color: transparent !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+
+.daterangepicker .calendar-table table {
+  border-spacing: 4px !important;
+  border-collapse: separate !important;
+  width: 100% !important;
+  padding: 8px !important;
+}
+
+/* ── 4. HEADER ROW — dark navy ──────────────────────────────────── */
+.daterangepicker .calendar-table thead tr:first-child {
+  background-color: #21236A !important;
+}
+
+.daterangepicker .calendar-table thead tr:first-child th {
+  color: #ffffff !important;
+  vertical-align: middle !important;
+  padding: 10px 8px !important;
+  border-radius: 0 !important;
+  line-height: 1 !important;
+  background-color: #21236A !important;
+}
+
+/* Month / year title cell */
+.daterangepicker .calendar-table thead th.month {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  text-align: center !important;
+  letter-spacing: 0.3px !important;
+  white-space: nowrap !important;
+  background-color: #21236A !important;
+}
+
+/* Month/year dropdown selects (showDropdowns) */
+.daterangepicker .calendar-table select.monthselect,
+.daterangepicker .calendar-table select.yearselect {
+  background-color: #ffffff !important;
+  border: 1.5px solid #D9DFEC !important;
+  border-radius: 6px !important;
+  color: #21236A !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  height: 28px !important;
+  padding: 0 4px !important;
+  margin: 0 2px !important;
+  outline: none !important;
+  cursor: pointer !important;
+}
+
+/* ── 5. Prev / Next — rounded white-outlined square buttons ─────── */
+.daterangepicker .calendar-table thead th.prev,
+.daterangepicker .calendar-table thead th.next {
+  width: 32px !important;
+  min-width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.45) !important;
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  padding: 0 !important;
+  transition: background-color 0.15s !important;
+}
+
+.daterangepicker .calendar-table thead th.prev:hover,
+.daterangepicker .calendar-table thead th.next:hover {
+  background-color: rgba(255, 255, 255, 0.28) !important;
+}
+
+/* Replace default CSS triangle span with CSS border chevron */
+.daterangepicker .calendar-table thead th.prev span,
+.daterangepicker .calendar-table thead th.next span {
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  border: 0 !important;
+  background: none !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  top: -1px !important;
+}
+
+/* Left chevron ( < ) */
+.daterangepicker .calendar-table thead th.prev span {
+  border-left: 2.5px solid #ffffff !important;
+  border-top: 2.5px solid #ffffff !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  transform: rotate(-45deg) !important;
+}
+
+/* Right chevron ( > ) */
+.daterangepicker .calendar-table thead th.next span {
+  border-right: 2.5px solid #ffffff !important;
+  border-top: 2.5px solid #ffffff !important;
+  border-left: none !important;
+  border-bottom: none !important;
+  transform: rotate(45deg) !important;
+}
+
+/* ── 6. Day-of-week subheader row ───────────────────────────────── */
+.daterangepicker .calendar-table thead tr:nth-child(2) {
+  background-color: #F2F4F9 !important;
+  height: 38px !important;
+}
+
+.daterangepicker .calendar-table thead tr:nth-child(2) th {
+  color: #7880A0 !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  vertical-align: middle !important;
+  text-align: center !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background-color: #F2F4F9 !important;
+}
+
+/* ── 7. DAY CELLS ───────────────────────────────────────────────── */
+
+.daterangepicker td.day {
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  color: #3B4178 !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  border: none !important;
+  text-align: center !important;
+  padding: 0 !important;
+  border-radius: 6px !important;
+  background-color: transparent !important;
+  cursor: pointer !important;
+  transition: background-color 0.12s, color 0.12s !important;
+}
+
+/* Off-month dates */
+.daterangepicker td.off,
+.daterangepicker td.off.in-range,
+.daterangepicker td.off.start-date,
+.daterangepicker td.off.end-date {
+  background-color: transparent !important;
+  color: #C5CAE0 !important;
+  font-weight: 400 !important;
+  border-radius: 6px !important;
+}
+
+/* In-range dates: periwinkle/lavender, border-radius 6 */
+.daterangepicker td.in-range {
+  background-color: rgba(33, 35, 106, 0.13) !important;
+  color: #21236A !important;
+  border-radius: 6px !important;
+}
+
+/* Active / selected start + end: dark navy, border-radius 12 */
+.daterangepicker td.active,
+.daterangepicker td.active:hover,
+.daterangepicker td.start-date,
+.daterangepicker td.end-date,
+.daterangepicker td.start-date.in-range,
+.daterangepicker td.end-date.in-range,
+.daterangepicker td.start-date.end-date {
+  background-color: #21236A !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  border-color: transparent !important;
+}
+
+/* Hover on normal cells */
+.daterangepicker td.day:not(.active):not(.in-range):not(.off):hover {
+  background-color: rgba(33, 35, 106, 0.09) !important;
+  color: #21236A !important;
+  border-radius: 6px !important;
+}
+
+/* ── 8. TIME PICKER — pill style ────────────────────────────────── */
+.daterangepicker .calendar-time {
+  margin: 8px 0 4px 0 !important;
+  padding: 7px 16px !important;
+  background-color: #EFF1F8 !important;
+  border-radius: 30px !important;
+  border: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 2px !important;
+}
+
+.daterangepicker .calendar-time select {
+  border: none !important;
+  background: transparent !important;
+  color: #21236A !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  height: 28px !important;
+  width: auto !important;
+  outline: none !important;
+  padding: 0 4px !important;
+  cursor: pointer !important;
+}
+
+.daterangepicker .calendar-time .separator {
+  color: #21236A !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  padding: 0 2px !important;
+}
+
+/* ── 9. ACTION BUTTONS ──────────────────────────────────────────── */
+.daterangepicker .drp-buttons {
+  border-top: 1px solid #EAECEF !important;
+  padding: 12px 0 0 0 !important;
+  margin-top: 12px !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 8px !important;
+  clear: both !important;
+  float: none !important;
+  width: 100% !important;
+}
+
+.daterangepicker .drp-buttons .btn {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 7px 20px !important;
+  border-radius: 8px !important;
+  line-height: 1.4 !important;
+}
+
+.daterangepicker .drp-buttons .applyBtn,
+.daterangepicker .drp-buttons .btn.btn-primary {
+  background-color: #21236A !important;
+  border-color: #21236A !important;
+  color: #ffffff !important;
+}
+
+.daterangepicker .drp-buttons .cancelBtn,
+.daterangepicker .drp-buttons .btn.btn-default {
+  background-color: #ffffff !important;
+  border: 1.5px solid #D9DFEC !important;
+  color: #78829D !important;
+}
+

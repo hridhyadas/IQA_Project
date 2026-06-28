@@ -282,6 +282,10 @@
   color: #78829D !important;
   font-size: 13px !important;
   font-weight: 500 !important;
+  white-space: nowrap !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
 }
 
 .table-show-select {
@@ -381,7 +385,7 @@
   /* ------------------------------------------------------------------------
      1. Academy List / Center's List Table Mobile Layout
      ------------------------------------------------------------------------ */
-  
+
   .academy-list-page .recent-exams-table-container {
     background-color: #ffffff !important;
     border: 1px solid #D9DFEC !important;
@@ -450,7 +454,7 @@
   }
 
   /* Left section: Search & Membership select side-by-side on mobile */
-  .academy-list-page .filter-bar-custom > div:first-child {
+  .academy-list-page .filter-bar-custom>div:first-child {
     display: flex !important;
     flex-direction: row !important;
     width: 100% !important;
@@ -477,13 +481,13 @@
   }
 
   /* Right section: Export & Add buttons side-by-side on mobile */
-  .academy-list-page .filter-bar-custom > div:last-child {
+  .academy-list-page .filter-bar-custom>div:last-child {
     display: flex !important;
     width: 100% !important;
     gap: 8px !important;
   }
 
-  .academy-list-page .filter-bar-custom > div:last-child button {
+  .academy-list-page .filter-bar-custom>div:last-child button {
     flex: 1 !important;
     justify-content: center !important;
     white-space: nowrap !important;
@@ -538,7 +542,7 @@
     gap: 2px !important;
   }
 
-  .academy-list-page .recent-exams-table-container .table-footer-custom > div {
+  .academy-list-page .recent-exams-table-container .table-footer-custom>div {
     width: auto !important;
     display: flex !important;
     align-items: center !important;
@@ -938,7 +942,7 @@
     border-radius: 5px !important;
   }
 
-  .dashboard-page .recent-exams-table-container .table-footer-custom > div {
+  .dashboard-page .recent-exams-table-container .table-footer-custom>div {
     width: auto !important;
     display: flex !important;
     flex-shrink: 0 !important;
@@ -977,3 +981,4 @@
     flex-shrink: 0 !important;
   }
 }
+

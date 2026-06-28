@@ -1717,360 +1717,363 @@ body {
     margin-top: 20px;
     padding-top: 20px;
   }
-}    /* Badge styling */
-    .side-menu .badge-live {
-      background-color: #E10A1A !important;
-      color: #FFFFFF !important;
-      font-size: 10px !important;
-      font-weight: 700 !important;
-      padding: 3px 6px !important;
-      border-radius: 4px !important;
-      margin-left: auto;
-      line-height: 1;
-    }
+}
 
-    .side-menu .badge-pending {
-      background-color: #D29E1B !important;
-      color: #FFFFFF !important;
-      font-size: 10px !important;
-      font-weight: 700 !important;
-      padding: 3px 6px !important;
-      border-radius: 4px !important;
-      margin-left: auto;
-      line-height: 1;
-    }
+/* Badge styling */
+.side-menu .badge-live {
+  background-color: #E10A1A !important;
+  color: #FFFFFF !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  margin-left: auto;
+  line-height: 1;
+}
 
-    /* Mobile Drawer Styles to support Hamburger trigger opening the sidebar */
-    body.mobile .side-bar-wrapper {
-      position: fixed;
-      top: 0;
-      left: -280px;
-      width: 280px !important;
-      height: 100%;
-      z-index: 1070;
-      transition: left 0.3s ease;
-      padding: 0 !important;
-    }
+.side-menu .badge-pending {
+  background-color: #D29E1B !important;
+  color: #FFFFFF !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  margin-left: auto;
+  line-height: 1;
+}
 
-    body.mobile.open-menu .side-bar-wrapper {
-      left: 0;
-    }
+/* Mobile Drawer Styles to support Hamburger trigger opening the sidebar */
+body.mobile .side-bar-wrapper {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px !important;
+  height: 100%;
+  z-index: 1070;
+  transition: left 0.3s ease;
+  padding: 0 !important;
+}
 
-    body.mobile .side-bar-wrapper .side-bar-close {
-      display: block !important;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
+body.mobile.open-menu .side-bar-wrapper {
+  left: 0;
+}
 
-    /* Hide close button in desktop and tablet view to keep sidebar fixed */
-    @media (min-width: 768px) {
-      .side-bar-header .side-bar-close {
-        display: none !important;
-      }
-    }
+body.mobile .side-bar-wrapper .side-bar-close {
+  display: block !important;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
 
-    /* Mobile hamburger button overrides to clear side-bar-close styles */
-    .mobile-hamburger-btn {
-      position: relative !important;
-      width: 48px !important;
-      height: 48px !important;
-      background-color: #21236A !important;
-      background-image: none !important;
-      border: none !important;
-      border-radius: 12px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      cursor: pointer !important;
-      left: auto !important;
-      top: auto !important;
-      box-shadow: 0px 4px 10px rgba(33, 35, 106, 0.15) !important;
-      margin-right: 0 !important;
-    }
+/* Hide close button in desktop and tablet view to keep sidebar fixed */
+@media (min-width: 768px) {
+  .side-bar-header .side-bar-close {
+    display: none !important;
+  }
+}
 
-    /* Custom Hamburger Icon lines */
-    .custom-hamburger-icon {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 5px !important;
-      align-items: flex-start !important;
-      width: 20px !important;
-    }
+/* Mobile hamburger button overrides to clear side-bar-close styles */
+.mobile-hamburger-btn {
+  position: relative !important;
+  width: 48px !important;
+  height: 48px !important;
+  background-color: #21236A !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  left: auto !important;
+  top: auto !important;
+  box-shadow: 0px 4px 10px rgba(33, 35, 106, 0.15) !important;
+  margin-right: 0 !important;
+}
 
-    .custom-hamburger-icon .line {
-      display: block !important;
-      height: 2px !important;
-      background-color: #FFFFFF !important;
-      border-radius: 2px !important;
-    }
+/* Custom Hamburger Icon lines */
+.custom-hamburger-icon {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  align-items: flex-start !important;
+  width: 20px !important;
+}
 
-    .custom-hamburger-icon .line-1 {
-      width: 20px !important;
-    }
+.custom-hamburger-icon .line {
+  display: block !important;
+  height: 2px !important;
+  background-color: #FFFFFF !important;
+  border-radius: 2px !important;
+}
 
-    .custom-hamburger-icon .line-2 {
-      width: 14px !important;
-    }
+.custom-hamburger-icon .line-1 {
+  width: 20px !important;
+}
 
-    .custom-hamburger-icon .line-3 {
-      width: 8px !important;
-    }
-    /* Mobile Overrides (Viewport < 768px) */
-    @media (max-width: 767px) {
-      .content-wrapper {
-        padding: 20px !important;
-      }
+.custom-hamburger-icon .line-2 {
+  width: 14px !important;
+}
 
-      .figma-card {
-        border-radius: 24px !important;
-      }
+.custom-hamburger-icon .line-3 {
+  width: 8px !important;
+}
 
-      .figma-card-body {
-        padding: 20px !important;
-      }
+/* Mobile Overrides (Viewport < 768px) */
+@media (max-width: 767px) {
+  .content-wrapper {
+    padding: 20px !important;
+  }
 
-      .figma-card-title {
-        font-size: 24px;
-      }
+  .figma-card {
+    border-radius: 24px !important;
+  }
 
-      .figma-table-footer {
-        border-bottom-left-radius: 24px;
-        border-bottom-right-radius: 24px;
-        padding: 16px 20px !important;
-        justify-content: center;
-      }
+  .figma-card-body {
+    padding: 20px !important;
+  }
 
-      /* Force header-top to align left and remove default border/padding on mobile */
-      .header-top {
-        justify-content: flex-start !important;
-        border: none !important;
-        padding: 0 !important;
-        margin-bottom: 24px !important;
-      }
+  .figma-card-title {
+    font-size: 24px;
+  }
 
-      /* Style standard table header to show `#` and `Name` on mobile */
-      .figma-table thead {
-        display: block !important;
-        background-color: #21236A !important;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px;
-        margin-bottom: 12px;
-        overflow: hidden;
-        border: none !important;
-      }
+  .figma-table-footer {
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    padding: 16px 20px !important;
+    justify-content: center;
+  }
 
-      .figma-table thead tr {
-        display: flex !important;
-        width: 100% !important;
-        padding: 12px 16px !important;
-        align-items: center;
-        margin: 0 !important;
-        border: none !important;
-      }
+  /* Force header-top to align left and remove default border/padding on mobile */
+  .header-top {
+    justify-content: flex-start !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 24px !important;
+  }
 
-      /* Hide the dynamically added .thead-tr from main.js on mobile */
-      .figma-table thead tr.thead-tr {
-        display: none !important;
-      }
+  /* Style standard table header to show `#` and `Name` on mobile */
+  .figma-table thead {
+    display: block !important;
+    background-color: #21236A !important;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border: none !important;
+  }
 
-      .figma-table thead th {
-        display: none !important;
-        color: #FFFFFF !important;
-        font-size: 13px !important;
-        font-weight: 600 !important;
-        padding: 0 !important;
-        border: none !important;
-        background-color: transparent !important;
-        position: relative;
-      }
+  .figma-table thead tr {
+    display: flex !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    align-items: center;
+    margin: 0 !important;
+    border: none !important;
+  }
 
-      /* Show only `#` and `Name` columns */
-      .figma-table thead th:nth-child(1) {
-        display: inline-block !important;
-        width: 50px !important;
-        flex-shrink: 0;
-      }
+  /* Hide the dynamically added .thead-tr from main.js on mobile */
+  .figma-table thead tr.thead-tr {
+    display: none !important;
+  }
 
-      .figma-table thead th:nth-child(2) {
-        display: inline-block !important;
-        flex-grow: 1 !important;
-      }
+  .figma-table thead th {
+    display: none !important;
+    color: #FFFFFF !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    padding: 0 !important;
+    border: none !important;
+    background-color: transparent !important;
+    position: relative;
+  }
 
-      /* Align double sort arrows next to header text */
-      .figma-table thead th .sorting-arrow {
-        position: relative !important;
-        display: inline-flex !important;
-        flex-direction: column !important;
-        top: auto !important;
-        vertical-align: middle !important;
-        margin-left: 6px !important;
-      }
+  /* Show only `#` and `Name` columns */
+  .figma-table thead th:nth-child(1) {
+    display: inline-block !important;
+    width: 50px !important;
+    flex-shrink: 0;
+  }
 
-      .figma-table thead th .sorting-arrow .up,
-      .figma-table thead th .sorting-arrow .down {
-        margin-left: 0 !important;
-        display: inline-block !important;
-        width: 8px !important;
-        height: 5px !important;
-      }
+  .figma-table thead th:nth-child(2) {
+    display: inline-block !important;
+    flex-grow: 1 !important;
+  }
 
-      .figma-table,
-      .figma-table tbody {
-        display: block !important;
-        border: none !important;
-      }
+  /* Align double sort arrows next to header text */
+  .figma-table thead th .sorting-arrow {
+    position: relative !important;
+    display: inline-flex !important;
+    flex-direction: column !important;
+    top: auto !important;
+    vertical-align: middle !important;
+    margin-left: 6px !important;
+  }
 
-      /* Each table row acts as a block */
-      .figma-table tbody tr {
-        display: block;
-        /* removed !important to allow jQuery inline styles to take effect */
-        margin-bottom: 12px !important;
-        border: 1.5px solid #EAEAEF !important;
-        border-radius: 16px !important;
-        overflow: hidden !important;
-        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.02) !important;
-      }
+  .figma-table thead th .sorting-arrow .up,
+  .figma-table thead th .sorting-arrow .down {
+    margin-left: 0 !important;
+    display: inline-block !important;
+    width: 8px !important;
+    height: 5px !important;
+  }
 
-      /* Alternating card row header backgrounds */
-      /* Card 2, 4 (indexes 4, 8) are light blue-grey */
-      .figma-table tbody tr.expand-header:nth-child(4n) {
-        background-color: #E9EBF3 !important;
-      }
+  .figma-table,
+  .figma-table tbody {
+    display: block !important;
+    border: none !important;
+  }
 
-      /* Card 1, 3, 5 (indexes 2, 6, 10) are white */
-      .figma-table tbody tr.expand-header:nth-child(4n+2) {
-        background-color: #FFFFFF !important;
-      }
+  /* Each table row acts as a block */
+  .figma-table tbody tr {
+    display: block;
+    /* removed !important to allow jQuery inline styles to take effect */
+    margin-bottom: 12px !important;
+    border: 1.5px solid #EAEAEF !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.02) !important;
+  }
 
-      /* expand-header collapsed row header wrapper */
-      .figma-table tbody tr.expand-header td {
-        padding: 0 !important;
-        border: none !important;
-        display: block !important;
-        width: 100% !important;
-        background-color: transparent !important;
-      }
+  /* Alternating card row header backgrounds */
+  /* Card 2, 4 (indexes 4, 8) are light blue-grey */
+  .figma-table tbody tr.expand-header:nth-child(4n) {
+    background-color: #E9EBF3 !important;
+  }
 
-      .figma-table tbody tr.expand-header .expand-content {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-        min-height: 60px !important;
-        padding: 12px 16px !important;
-      }
+  /* Card 1, 3, 5 (indexes 2, 6, 10) are white */
+  .figma-table tbody tr.expand-header:nth-child(4n+2) {
+    background-color: #FFFFFF !important;
+  }
 
-      /* Format index block */
-      .figma-table tbody tr.expand-header .expand-content>span:first-child {
-        font-weight: 700;
-        color: #7F8498;
-        font-size: 14px;
-        width: 25px;
-        display: inline-block;
-        flex-shrink: 0;
-      }
+  /* expand-header collapsed row header wrapper */
+  .figma-table tbody tr.expand-header td {
+    padding: 0 !important;
+    border: none !important;
+    display: block !important;
+    width: 100% !important;
+    background-color: transparent !important;
+  }
 
-      /* Format Logo + Name block */
-      .figma-table tbody tr.expand-header .expand-content>span:nth-child(2) {
-        flex-grow: 1;
-        display: inline-flex;
-        align-items: center;
-        color: #21236A;
-        font-weight: 700;
-        font-size: 14px;
-      }
+  .figma-table tbody tr.expand-header .expand-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 60px !important;
+    padding: 12px 16px !important;
+  }
 
-      /* Format circular expand button with double diagonal arrows */
-      .figma-table tbody tr.expand-header .expand-content>span.expand-btn {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        border: 1.5px solid #BCBFC5;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        flex-shrink: 0;
-        background-color: #FFFFFF;
-      }
+  /* Format index block */
+  .figma-table tbody tr.expand-header .expand-content>span:first-child {
+    font-weight: 700;
+    color: #7F8498;
+    font-size: 14px;
+    width: 25px;
+    display: inline-block;
+    flex-shrink: 0;
+  }
 
-      /* Diagonal expand icon inside circular button */
-      .figma-table tbody tr.expand-header .expand-content>span.expand-btn::after {
-        content: "\f140" !important;
-        /* Bootstrap Icon bi-arrows-angle-expand */
-        font-family: "bootstrap-icons" !important;
-        color: #21236A !important;
-        font-size: 13px !important;
-        font-weight: 700 !important;
-        background: none !important;
-        display: inline-block !important;
-        transform: none !important;
-        width: auto !important;
-        height: auto !important;
-      }
+  /* Format Logo + Name block */
+  .figma-table tbody tr.expand-header .expand-content>span:nth-child(2) {
+    flex-grow: 1;
+    display: inline-flex;
+    align-items: center;
+    color: #21236A;
+    font-weight: 700;
+    font-size: 14px;
+  }
 
-      /* Hide the collapsed card header row when the card is open/expanded */
-      .figma-table tbody tr.expand-header.open {
-        display: none !important;
-      }
+  /* Format circular expand button with double diagonal arrows */
+  .figma-table tbody tr.expand-header .expand-content>span.expand-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1.5px solid #BCBFC5;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    background-color: #FFFFFF;
+  }
 
-      /* The actual details sheet (visible row when expanded) */
-      .figma-table tbody tr:not(.expand-header) {
-        border-top: 1.5px solid #EAEAEF !important;
-        margin-top: 0 !important;
-        padding: 16px 20px !important;
-      }
+  /* Diagonal expand icon inside circular button */
+  .figma-table tbody tr.expand-header .expand-content>span.expand-btn::after {
+    content: "\f140" !important;
+    /* Bootstrap Icon bi-arrows-angle-expand */
+    font-family: "bootstrap-icons" !important;
+    color: #21236A !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    background: none !important;
+    display: inline-block !important;
+    transform: none !important;
+    width: auto !important;
+    height: auto !important;
+  }
 
-      /* Alternating row details card backgrounds to match their header cards */
-      /* Odd card details (indexes 1, 5) are white */
-      .figma-table tbody tr:not(.expand-header):nth-child(4n+1) {
-        background-color: #FFFFFF !important;
-      }
+  /* Hide the collapsed card header row when the card is open/expanded */
+  .figma-table tbody tr.expand-header.open {
+    display: none !important;
+  }
 
-      /* Even card details (indexes 3, 7) are light blue-grey */
-      .figma-table tbody tr:not(.expand-header):nth-child(4n+3) {
-        background-color: #E9EBF3 !important;
-      }
+  /* The actual details sheet (visible row when expanded) */
+  .figma-table tbody tr:not(.expand-header) {
+    border-top: 1.5px solid #EAEAEF !important;
+    margin-top: 0 !important;
+    padding: 16px 20px !important;
+  }
 
-      .figma-table tbody tr:not(.expand-header) td {
-        display: flex !important;
-        padding: 10px 0 !important;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
-        border-top: none !important;
-        font-size: 14px !important;
-        color: #21236A !important;
-        justify-content: flex-start !important;
-        align-items: center !important;
-      }
+  /* Alternating row details card backgrounds to match their header cards */
+  /* Odd card details (indexes 1, 5) are white */
+  .figma-table tbody tr:not(.expand-header):nth-child(4n+1) {
+    background-color: #FFFFFF !important;
+  }
 
-      .figma-table tbody tr:not(.expand-header) td:last-child {
-        border-bottom: none !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-      }
+  /* Even card details (indexes 3, 7) are light blue-grey */
+  .figma-table tbody tr:not(.expand-header):nth-child(4n+3) {
+    background-color: #E9EBF3 !important;
+  }
 
-      /* Set labels in expand details sheets */
-      .figma-table tbody tr:not(.expand-header) td::before {
-        content: attr(data-label) " :" !important;
-        color: #8E9198 !important;
-        font-weight: 500 !important;
-        width: 120px !important;
-        flex-shrink: 0 !important;
-        font-size: 14px !important;
-        text-align: left !important;
-      }
-    }
-      .highlight-label {
-        font-size: 16px !important;
-      }
+  .figma-table tbody tr:not(.expand-header) td {
+    display: flex !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06) !important;
+    border-top: none !important;
+    font-size: 14px !important;
+    color: #21236A !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
 
-      /* Exams List Card Mobile Adjustments */
-      .exam-summary-item {
-        padding: 10px 0 !important;
-      }
+  .figma-table tbody tr:not(.expand-header) td:last-child {
+    border-bottom: none !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
 
-      .exam-details h5 {
-        font-size: 16px !important;
-      }
-    }
+  /* Set labels in expand details sheets */
+  .figma-table tbody tr:not(.expand-header) td::before {
+    content: attr(data-label) " :" !important;
+    color: #8E9198 !important;
+    font-weight: 500 !important;
+    width: 120px !important;
+    flex-shrink: 0 !important;
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+}
+
+.highlight-label {
+  font-size: 16px !important;
+}
+
+/* Exams List Card Mobile Adjustments */
+.exam-summary-item {
+  padding: 10px 0 !important;
+}
+
+.exam-details h5 {
+  font-size: 16px !important;
+}

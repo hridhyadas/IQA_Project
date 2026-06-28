@@ -2,678 +2,753 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/bootstrap-icons.css">
-  <link rel="stylesheet" href="css/daterangepicker.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/dashboard.css">
-  <link rel="stylesheet" href="css/table.css">
-  <link rel="stylesheet" href="css/side-bar.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/daterangepicker.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/side-bar.css">
 
-  <style>
-    body.desktop .content-wrapper {
-      min-height: calc(100vh - -1520px) !important;
-      height: auto !important;
-    }
-  </style>
+    <style>
+        body.desktop .content-wrapper {
+            min-height: calc(100vh - -1520px) !important;
+            height: auto !important;
+        }
+    </style>
 
-  <title>IQA</title>
+    <title>IQA</title>
 </head>
 
 <body>
 
-  <!-- Preloader start -->
-  <div class="preloader">
-    <div class="loader"></div>
-  </div><!-- Preloader end -->
+    <!-- Preloader start -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div><!-- Preloader end -->
 
-  <div class="wrapper d-flex flex-column">
-    <!-- Side bar start -->
-    <div class="side-bar-wrapper">
-      <div class="side-bar">
-        <div class="side-bar-header">
-          <div class="side-bar-close"></div>
-          <a class="navbar-brand" href="#">
-            <img class="large-logo" src="img/logo2.png" />
-            <img class="small-logo" src="img/small-logo.png" />
-          </a>
-        </div>
-        <div class="side-bar-body">
-          <div class="side-menu">
-            <ul class="nav">
-
-              <!-- Menu item start -->
-              <li class="nav-item active">
-                <a class="nav-link" href="#">
-                  <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
-                  <span class="menu-label me-auto">Dashboard</span>
-                </a>
-              </li><!-- Menu item end -->
-
-              <!-- Menu item start -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#">
-                  <span class="menu-label me-auto">Exam Managment</span>
-                </a>
-                <!-- Dropdown menu start -->
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
-                      <span class="d-flex align-items-center">
-                        <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
-                        <span class="menu-label">Exam List</span>
-                      </span>
-                      <span class="badge badge-live">1 Live</span>
+    <div class="wrapper d-flex flex-column">
+        <!-- Side bar start -->
+        <div class="side-bar-wrapper">
+            <div class="side-bar">
+                <div class="side-bar-header">
+                    <div class="side-bar-close"></div>
+                    <a class="navbar-brand" href="#">
+                        <img class="large-logo" src="img/logo2.png" />
+                        <img class="small-logo" src="img/small-logo.png" />
                     </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
-                      <span class="menu-label">Exam Report</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
-                      <span class="d-flex align-items-center">
-                        <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
-                        <span class="menu-label">Exam Valuation</span>
-                      </span>
-                      <span class="badge badge-pending">3 Pending</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#generateQuestionsModal">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
-                      <span class="menu-label">Question Bank</span>
-                    </a>
-                  </li>
-                </ul><!-- Dropdown menu end -->
-              </li><!-- Menu item end -->
-
-              <!-- Menu item start -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#">
-                  <span class="menu-label me-auto">Student</span>
-                </a>
-                <!-- Dropdown menu start -->
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
-                      <span class="menu-label">Student List</span>
-                    </a>
-                  </li>
-                </ul><!-- Dropdown menu end -->
-              </li><!-- Menu item end -->
-
-              <!-- Menu item start -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#">
-                  <span class="menu-label me-auto">Center’s Management</span>
-                </a>
-                <!-- Dropdown menu start -->
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
-                      <span class="menu-label">Create</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="academy-list.html">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
-                      <span class="menu-label">List</span>
-                    </a>
-                  </li>
-                </ul><!-- Dropdown menu end -->
-              </li><!-- Menu item end -->
-
-              <!-- Menu item start -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#">
-                  <span class="menu-label me-auto">Settings</span>
-                </a>
-                <!-- Dropdown menu start -->
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
-                      <span class="menu-label">Apply for qualification</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span>
-                      <span class="menu-label">Location</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
-                      <span class="menu-label">Courses</span>
-                    </a>
-                  </li>
-                </ul><!-- Dropdown menu end -->
-              </li><!-- Menu item end -->
-
-            </ul>
-          </div>
-
-          <!-- Log Out start -->
-          <div class="side-bar-user">
-            <a href="#" class="nav-link-logout">
-              <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""
-                  style="width: 20px; height: 20px;"></span>
-              <span>Log Out</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div><!-- Side bar end -->
-
-    
-    
-    <!-- Content wrapper start -->
-    <div class="content-wrapper">
-
-      <!-- Mobile Hamburger / Header Area (d-md-none) -->
-      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between position-relative">
-        <div class="side-bar-close mobile-hamburger-btn">
-          <div class="custom-hamburger-icon">
-            <span class="line line-1"></span>
-            <span class="line line-2"></span>
-            <span class="line line-3"></span>
-          </div>
-        </div>
-        <img class="mobile-logo-centered" src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
-      </div>
-
-      <!-- Top Header start -->
-      <div class="container-fluid">
-        <div class="main-header-bar d-none d-md-flex">
-          <div class="logo-container">
-            <img src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
-          </div>
-          <div class="user-profile-header">
-            <img src="img/user.png" alt="User Profile Image" />
-            <div class="user-info">
-              <h5>Name</h5>
-              <p>Super Administrator</p>
-            </div>
-          </div>
-        </div>
-      </div><!-- Top Header end -->
-
-      <!-- Header start -->
-      <header class="light-header mt-3" style="background-color: #eeeeee;">
-        <div class="container-fluid">
-          <!-- Header main start -->
-          <div class="header-main d-md-flex justify-content-between align-items-center">
-            <h4 class="text-white mb-0 fw-normal">Academy List</h4>
-            <nav>
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Academy</a></li>
-                <li class="breadcrumb-item active">Academy List</li>
-              </ol>
-            </nav>
-          </div><!-- Header main end -->
-        </div>
-      </header><!-- Header end -->
-
-      <!-- Content start -->
-      <div class="content">
-        <div class="container-fluid">
-
-          <!-- Academy Name Header Card -->
-          <div class="recent-exams-table-container mb-4" style="background-color: #ffffff; border-radius: 12px; padding: 24px; border: 1px solid #D9DFEC;">
-            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
-              <div>
-                <div class="d-flex align-items-center flex-wrap gap-2 mb-2">
-                  <h3 class="mb-0 fw-bold text-dark" style="font-size: 22px;">Academy Name</h3>
-                  <span class="badge" style="background-color: #E2E6FF; color: #21236A; border: 1px solid #C4CDFF; border-radius: 20px; padding: 4px 12px; font-weight: 600; font-size: 11px;">Membership : Basic</span>
                 </div>
-                <div class="text-secondary" style="font-size: 13px;">
-                  Country <strong class="text-dark">USA</strong> &bull; State <strong class="text-dark">Delaware</strong> &bull; District <strong class="text-dark">Masachuse</strong>
+                <div class="side-bar-body">
+                    <div class="side-menu">
+                        <ul class="nav">
+
+                            <!-- Menu item start -->
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">
+                                    <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
+                                    <span class="menu-label me-auto">Dashboard</span>
+                                </a>
+                            </li><!-- Menu item end -->
+
+                            <!-- Menu item start -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#">
+                                    <span class="menu-label me-auto">Exam Managment</span>
+                                </a>
+                                <!-- Dropdown menu start -->
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                            href="#">
+                                            <span class="d-flex align-items-center">
+                                                <span class="menu-icon"><img src="img/menu-icon/icon-2.svg"
+                                                        alt=""></span>
+                                                <span class="menu-label">Exam List</span>
+                                            </span>
+                                            <span class="badge badge-live">1 Live</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                                            <span class="menu-label">Exam Report</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item d-flex align-items-center justify-content-between"
+                                            href="#">
+                                            <span class="d-flex align-items-center">
+                                                <span class="menu-icon"><img src="img/menu-icon/icon-3.svg"
+                                                        alt=""></span>
+                                                <span class="menu-label">Exam Valuation</span>
+                                            </span>
+                                            <span class="badge badge-pending">3 Pending</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#generateQuestionsModal">
+                                            <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
+                                            <span class="menu-label">Question Bank</span>
+                                        </a>
+                                    </li>
+                                </ul><!-- Dropdown menu end -->
+                            </li><!-- Menu item end -->
+
+                            <!-- Menu item start -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#">
+                                    <span class="menu-label me-auto">Student</span>
+                                </a>
+                                <!-- Dropdown menu start -->
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
+                                            <span class="menu-label">Student List</span>
+                                        </a>
+                                    </li>
+                                </ul><!-- Dropdown menu end -->
+                            </li><!-- Menu item end -->
+
+                            <!-- Menu item start -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#">
+                                    <span class="menu-label me-auto">Center’s Management</span>
+                                </a>
+                                <!-- Dropdown menu start -->
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
+                                            <span class="menu-label">Create</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="academy-list.html">
+                                            <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
+                                            <span class="menu-label">List</span>
+                                        </a>
+                                    </li>
+                                </ul><!-- Dropdown menu end -->
+                            </li><!-- Menu item end -->
+
+                            <!-- Menu item start -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#">
+                                    <span class="menu-label me-auto">Settings</span>
+                                </a>
+                                <!-- Dropdown menu start -->
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                                            <span class="menu-label">Apply for qualification</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span>
+                                            <span class="menu-label">Location</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#">
+                                            <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                                            <span class="menu-label">Courses</span>
+                                        </a>
+                                    </li>
+                                </ul><!-- Dropdown menu end -->
+                            </li><!-- Menu item end -->
+
+                        </ul>
+                    </div>
+
+                    <!-- Log Out start -->
+                    <div class="side-bar-user">
+                        <a href="#" class="nav-link-logout">
+                            <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""
+                                    style="width: 20px; height: 20px;"></span>
+                            <span>Log Out</span>
+                        </a>
+                    </div>
                 </div>
-              </div>
-              <div class="d-flex gap-2">
-                <button class="btn btn-outline-light text-secondary border px-3 py-2 fw-semibold" style="border-radius: 8px; font-size: 13px; background-color: #ffffff;">Close</button>
-                <button class="btn btn-outline-light text-dark border px-3 py-2 fw-semibold" style="border-radius: 8px; font-size: 13px; background-color: #ffffff;">Edit</button>
-              </div>
+
             </div>
-          </div>
+        </div><!-- Side bar end -->
 
-          <!-- Student List Header Strip -->
-          <div class="px-4 py-3 mb-3 d-flex align-items-center" style="background-color: rgba(33, 35, 106, 0.1); border-radius: 12px;">
-            <h6 class="fw-bold mb-0 text-dark" style="font-size: 14px; color: #21236A !important;">Student List</h6>
-          </div>
 
-          <!-- Student List Table Container -->
-          <div class="recent-exams-table-container mb-4">
-            <div class="table-responsive">
-              <table class="table mb-0">
-                <thead>
-                  <tr>
-                    <th style="width: 60px;"># <i class="bi bi-chevron-expand"></i></th>
-                    <th>Name <i class="bi bi-chevron-expand"></i></th>
-                    <th>Email <i class="bi bi-chevron-expand"></i></th>
-                    <th>Certificate <i class="bi bi-chevron-expand"></i></th>
-                    <th class="text-end" style="width: 150px;">Action <i class="bi bi-chevron-expand"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Row 1 -->
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <div class="d-flex align-items-center py-2">
-                        <img src="img/user.png" alt="Avatar" class="rounded-circle me-3" style="width: 36px; height: 36px; border: 1.5px solid #21236A; object-fit: cover;" />
-                        <div>
-                          <div class="fw-bold text-dark" style="font-size: 13px;">Olivia Johnson</div>
-                          <div class="text-muted" style="font-size: 11px;">Course Name</div>
+
+        <!-- Content wrapper start -->
+        <div class="content-wrapper">
+
+            <!-- Mobile Hamburger / Header Area (d-md-none) -->
+            <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between position-relative">
+                <div class="side-bar-close mobile-hamburger-btn">
+                    <div class="custom-hamburger-icon">
+                        <span class="line line-1"></span>
+                        <span class="line line-2"></span>
+                        <span class="line line-3"></span>
+                    </div>
+                </div>
+                <img class="mobile-logo-centered" src="img/logo2.png"
+                    alt="International Qualification Awarding Forum Logo" />
+            </div>
+
+            <!-- Top Header start -->
+            <div class="container-fluid">
+                <div class="main-header-bar d-none d-md-flex">
+                    <div class="logo-container">
+                        <img src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
+                    </div>
+                    <div class="user-profile-header">
+                        <img src="img/user.png" alt="User Profile Image" />
+                        <div class="user-info">
+                            <h5>Name</h5>
+                            <p>Super Administrator</p>
                         </div>
-                      </div>
-                    </td>
-                    <td>olivia.johnson@example.com</td>
-                    <td><a href="#" class="text-danger fw-semibold" style="text-decoration: underline;">Apply</a></td>
-                    <td class="text-end">
-                      <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-trash"></i></a>
-                    </td>
-                  </tr>
-                  <!-- Row 2 -->
-                  <tr>
-                    <td>2</td>
-                    <td>
-                      <div class="d-flex align-items-center py-2">
-                        <img src="img/user.png" alt="Avatar" class="rounded-circle me-3" style="width: 36px; height: 36px; border: 1.5px solid #21236A; object-fit: cover;" />
-                        <div>
-                          <div class="fw-bold text-dark" style="font-size: 13px;">Sophia Brown</div>
-                          <div class="text-muted" style="font-size: 11px;">Course Name</div>
+                    </div>
+                </div>
+            </div><!-- Top Header end -->
+
+            <!-- Header start -->
+            <header class="light-header mt-3" style="background-color: #eeeeee;">
+                <div class="container-fluid">
+                    <!-- Header main start -->
+                    <div class="header-main d-md-flex justify-content-between align-items-center">
+                        <h4 class="text-white mb-0 fw-normal">Academy List</h4>
+                        <nav>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Academy</a></li>
+                                <li class="breadcrumb-item active">Academy List</li>
+                            </ol>
+                        </nav>
+                    </div><!-- Header main end -->
+                </div>
+            </header><!-- Header end -->
+
+            <!-- Content start -->
+            <div class="content">
+                <div class="container-fluid">
+
+                    <!-- Academy Name Header Card -->
+                    <div class="recent-exams-table-container mb-4"
+                        style="background-color: #ffffff; border-radius: 12px; padding: 24px; border: 1px solid #D9DFEC;">
+                        <div
+                            class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+                            <div>
+                                <div class="d-flex align-items-center flex-wrap gap-2 mb-2">
+                                    <h3 class="mb-0 fw-bold text-dark" style="font-size: 22px;">Academy Name</h3>
+                                    <span class="badge"
+                                        style="background-color: #E2E6FF; color: #21236A; border: 1px solid #C4CDFF; border-radius: 20px; padding: 4px 12px; font-weight: 600; font-size: 11px;">Membership
+                                        : Basic</span>
+                                </div>
+                                <div class="text-secondary" style="font-size: 13px;">
+                                    Country <strong class="text-dark">USA</strong> &bull; State <strong
+                                        class="text-dark">Delaware</strong> &bull; District <strong
+                                        class="text-dark">Masachuse</strong>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <button class="btn btn-outline-light text-secondary border px-3 py-2 fw-semibold"
+                                    style="border-radius: 8px; font-size: 13px; background-color: #ffffff;">Close</button>
+                                <button class="btn btn-outline-light text-dark border px-3 py-2 fw-semibold"
+                                    style="border-radius: 8px; font-size: 13px; background-color: #ffffff;">Edit</button>
+                            </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>olivia.johnson@example.com</td>
-                    <td class="text-muted fw-normal">Not Ready</td>
-                    <td class="text-end">
-                      <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-trash"></i></a>
-                    </td>
-                  </tr>
-                  <!-- Row 3 -->
-                  <tr>
-                    <td>3</td>
-                    <td>
-                      <div class="d-flex align-items-center py-2">
-                        <img src="img/user.png" alt="Avatar" class="rounded-circle me-3" style="width: 36px; height: 36px; border: 1.5px solid #21236A; object-fit: cover;" />
-                        <div>
-                          <div class="fw-bold text-dark" style="font-size: 13px;">Urban Flex Knit Low...</div>
-                          <div class="text-muted" style="font-size: 11px;">Course Name</div>
+                    </div>
+
+                    <!-- Student List Header Strip -->
+                    <div class="px-4 py-3 mb-3 d-flex align-items-center"
+                        style="background-color: rgba(33, 35, 106, 0.1); border-radius: 12px;">
+                        <h6 class="fw-bold mb-0 text-dark" style="font-size: 14px; color: #21236A !important;">Student
+                            List</h6>
+                    </div>
+
+                    <!-- Student List Table Container -->
+                    <div class="recent-exams-table-container mb-4">
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 60px;"># <i class="bi bi-chevron-expand"></i></th>
+                                        <th>Name <i class="bi bi-chevron-expand"></i></th>
+                                        <th>Email <i class="bi bi-chevron-expand"></i></th>
+                                        <th>Certificate <i class="bi bi-chevron-expand"></i></th>
+                                        <th class="text-end" style="width: 150px;">Action <i
+                                                class="bi bi-chevron-expand"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Row 1 -->
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <div class="d-flex align-items-center py-2">
+                                                <img src="img/user.png" alt="Avatar" class="rounded-circle me-3"
+                                                    style="width: 36px; height: 36px; border: 1.5px solid #21236A; object-fit: cover;" />
+                                                <div>
+                                                    <div class="fw-bold text-dark" style="font-size: 13px;">Olivia
+                                                        Johnson</div>
+                                                    <div class="text-muted" style="font-size: 11px;">Course Name</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>olivia.johnson@example.com</td>
+                                        <td><a href="#" class="text-danger fw-semibold"
+                                                style="text-decoration: underline;">Apply</a></td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <!-- Row 2 -->
+                                    <tr>
+                                        <td>2</td>
+                                        <td>
+                                            <div class="d-flex align-items-center py-2">
+                                                <img src="img/user.png" alt="Avatar" class="rounded-circle me-3"
+                                                    style="width: 36px; height: 36px; border: 1.5px solid #21236A; object-fit: cover;" />
+                                                <div>
+                                                    <div class="fw-bold text-dark" style="font-size: 13px;">Sophia Brown
+                                                    </div>
+                                                    <div class="text-muted" style="font-size: 11px;">Course Name</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>olivia.johnson@example.com</td>
+                                        <td class="text-muted fw-normal">Not Ready</td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <!-- Row 3 -->
+                                    <tr>
+                                        <td>3</td>
+                                        <td>
+                                            <div class="d-flex align-items-center py-2">
+                                                <img src="img/user.png" alt="Avatar" class="rounded-circle me-3"
+                                                    style="width: 36px; height: 36px; border: 1.5px solid #21236A; object-fit: cover;" />
+                                                <div>
+                                                    <div class="fw-bold text-dark" style="font-size: 13px;">Urban Flex
+                                                        Knit Low...</div>
+                                                    <div class="text-muted" style="font-size: 11px;">Course Name</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>olivia.johnson@example.com</td>
+                                        <td><a href="#" class="text-danger fw-semibold"
+                                                style="text-decoration: underline;">Apply</a></td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <!-- Row 4 -->
+                                    <tr>
+                                        <td>4</td>
+                                        <td>
+                                            <div class="d-flex align-items-center py-2">
+                                                <img src="img/user.png" alt="Avatar" class="rounded-circle me-3"
+                                                    style="width: 36px; height: 36px; border: 1.5px solid #21236A; object-fit: cover;" />
+                                                <div>
+                                                    <div class="fw-bold text-dark" style="font-size: 13px;">Emma Davis
+                                                    </div>
+                                                    <div class="text-muted" style="font-size: 11px;">Course Name</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>olivia.johnson@example.com</td>
+                                        <td><a href="#" class="text-danger fw-semibold"
+                                                style="text-decoration: underline;">Apply</a></td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    <!-- Row 5 -->
+                                    <tr>
+                                        <td>5</td>
+                                        <td>
+                                            <div class="d-flex align-items-center py-2">
+                                                <img src="img/user.png" alt="Avatar" class="rounded-circle me-3"
+                                                    style="width: 36px; height: 36px; border: 1.5px solid #21236A; object-fit: cover;" />
+                                                <div>
+                                                    <div class="fw-bold text-dark" style="font-size: 13px;">Isabella
+                                                        Martinez</div>
+                                                    <div class="text-muted" style="font-size: 11px;">Course Name</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>olivia.johnson@example.com</td>
+                                        <td><a href="#" class="text-danger fw-semibold"
+                                                style="text-decoration: underline;">Apply</a></td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                      </div>
-                    </td>
-                    <td>olivia.johnson@example.com</td>
-                    <td><a href="#" class="text-danger fw-semibold" style="text-decoration: underline;">Apply</a></td>
-                    <td class="text-end">
-                      <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-trash"></i></a>
-                    </td>
-                  </tr>
-                  <!-- Row 4 -->
-                  <tr>
-                    <td>4</td>
-                    <td>
-                      <div class="d-flex align-items-center py-2">
-                        <img src="img/user.png" alt="Avatar" class="rounded-circle me-3" style="width: 36px; height: 36px; border: 1.5px solid #21236A; object-fit: cover;" />
-                        <div>
-                          <div class="fw-bold text-dark" style="font-size: 13px;">Emma Davis</div>
-                          <div class="text-muted" style="font-size: 11px;">Course Name</div>
+
+                        <!-- Table Footer/Pagination -->
+                        <div class="table-footer-custom">
+                            <div>
+                                <label class="d-flex align-items-center gap-2">
+                                    Show
+                                    <select class="table-show-select form-select d-inline-block py-0"
+                                        style="width: auto;">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                    per page
+                                </label>
+                            </div>
+                            <div class="custom-pagination">
+                                <a href="#" class="pagination-btn"><i class="bi bi-chevron-left"></i></a>
+                                <a href="#" class="pagination-btn active">1</a>
+                                <a href="#" class="pagination-btn">2</a>
+                                <a href="#" class="pagination-btn">3</a>
+                                <a href="#" class="pagination-btn">4</a>
+                                <a href="#" class="pagination-btn">5</a>
+                                <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
+                                <span class="text-secondary ms-2" style="font-size: 13px;">1-10 of 52</span>
+                            </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>olivia.johnson@example.com</td>
-                    <td><a href="#" class="text-danger fw-semibold" style="text-decoration: underline;">Apply</a></td>
-                    <td class="text-end">
-                      <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-trash"></i></a>
-                    </td>
-                  </tr>
-                  <!-- Row 5 -->
-                  <tr>
-                    <td>5</td>
-                    <td>
-                      <div class="d-flex align-items-center py-2">
-                        <img src="img/user.png" alt="Avatar" class="rounded-circle me-3" style="width: 36px; height: 36px; border: 1.5px solid #21236A; object-fit: cover;" />
-                        <div>
-                          <div class="fw-bold text-dark" style="font-size: 13px;">Isabella Martinez</div>
-                          <div class="text-muted" style="font-size: 11px;">Course Name</div>
+                    </div>
+
+                    <!-- Filter Bar and Empty Exam Table -->
+                    <div class="table-header-filter-wrapper-custom" style="padding: 12px 20px !important;">
+                        <div
+                            class="d-flex flex-column flex-md-row justify-content-start align-items-stretch align-items-md-center gap-3">
+                            <div class="search-box-custom flex-grow-1 flex-md-grow-0" style="max-width: 320px;">
+                                <span class="search-icon-custom"><i class="bi bi-search"></i></span>
+                                <input type="search" class="form-control search-input-custom" placeholder="Search"
+                                    style="width: 100%;">
+                            </div>
+                            <div>
+                                <select class="membership-select-custom form-select">
+                                    <option>2 June - 9 June</option>
+                                </select>
+                            </div>
+                            <div>
+                                <select class="membership-select-custom form-select">
+                                    <option>Filter : Status</option>
+                                </select>
+                            </div>
                         </div>
-                      </div>
-                    </td>
-                    <td>olivia.johnson@example.com</td>
-                    <td><a href="#" class="text-danger fw-semibold" style="text-decoration: underline;">Apply</a></td>
-                    <td class="text-end">
-                      <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-trash"></i></a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                    </div>
 
-            <!-- Table Footer/Pagination -->
-            <div class="table-footer-custom">
-              <div>
-                <label class="d-flex align-items-center gap-2">
-                  Show 
-                  <select class="table-show-select form-select d-inline-block py-0" style="width: auto;">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                  </select>
-                  per page
-                </label>
-              </div>
-              <div class="custom-pagination">
-                <a href="#" class="pagination-btn"><i class="bi bi-chevron-left"></i></a>
-                <a href="#" class="pagination-btn active">1</a>
-                <a href="#" class="pagination-btn">2</a>
-                <a href="#" class="pagination-btn">3</a>
-                <a href="#" class="pagination-btn">4</a>
-                <a href="#" class="pagination-btn">5</a>
-                <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
-                <span class="text-secondary ms-2" style="font-size: 13px;">1-10 of 52</span>
-              </div>
-            </div>
-          </div>
+                    <div class="recent-exams-table-container mb-4">
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 60px;"># <i class="bi bi-chevron-expand"></i></th>
+                                        <th>Schedule <i class="bi bi-chevron-expand"></i></th>
+                                        <th>Exam Code <i class="bi bi-chevron-expand"></i></th>
+                                        <th>Exam Title <i class="bi bi-chevron-expand"></i></th>
+                                        <th>Status <i class="bi bi-chevron-expand"></i></th>
+                                        <th class="text-end" style="width: 120px;">Action <i
+                                                class="bi bi-chevron-expand"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="6" class="text-center text-secondary fw-semibold"
+                                            style="height: 98px; vertical-align: middle; font-size: 14px; background-color: transparent !important; border-color: transparent !important;">
+                                            No data available</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-          <!-- Filter Bar and Empty Exam Table -->
-          <div class="table-header-filter-wrapper-custom" style="padding: 12px 20px !important;">
-            <div class="d-flex flex-column flex-md-row justify-content-start align-items-stretch align-items-md-center gap-3">
-              <div class="search-box-custom flex-grow-1 flex-md-grow-0" style="max-width: 320px;">
-                <span class="search-icon-custom"><i class="bi bi-search"></i></span>
-                <input type="search" class="form-control search-input-custom" placeholder="Search" style="width: 100%;">
-              </div>
-              <div>
-                <select class="membership-select-custom form-select">
-                  <option>2 June - 9 June</option>
-                </select>
-              </div>
-              <div>
-                <select class="membership-select-custom form-select">
-                  <option>Filter : Status</option>
-                </select>
-              </div>
-            </div>
-          </div>
+                        <!-- Table Footer/Pagination -->
+                        <div class="table-footer-custom">
+                            <div>
+                                <label class="d-flex align-items-center gap-2">
+                                    Show
+                                    <select class="table-show-select form-select d-inline-block py-0"
+                                        style="width: auto;">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                    per page
+                                </label>
+                            </div>
+                            <div class="custom-pagination">
+                                <a href="#" class="pagination-btn"><i class="bi bi-chevron-left"></i></a>
+                                <a href="#" class="pagination-btn active">1</a>
+                                <a href="#" class="pagination-btn">2</a>
+                                <a href="#" class="pagination-btn">3</a>
+                                <a href="#" class="pagination-btn">4</a>
+                                <a href="#" class="pagination-btn">5</a>
+                                <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
+                                <span class="text-secondary ms-2" style="font-size: 13px;">1-10 of 52</span>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="recent-exams-table-container mb-4">
-            <div class="table-responsive">
-              <table class="table mb-0">
-                <thead>
-                  <tr>
-                    <th style="width: 60px;"># <i class="bi bi-chevron-expand"></i></th>
-                    <th>Schedule <i class="bi bi-chevron-expand"></i></th>
-                    <th>Exam Code <i class="bi bi-chevron-expand"></i></th>
-                    <th>Exam Title <i class="bi bi-chevron-expand"></i></th>
-                    <th>Status <i class="bi bi-chevron-expand"></i></th>
-                    <th class="text-end" style="width: 120px;">Action <i class="bi bi-chevron-expand"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td colspan="6" class="text-center text-secondary fw-semibold" style="height: 98px; vertical-align: middle; font-size: 14px; background-color: transparent !important; border-color: transparent !important;">No data available</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                    <!-- Populated Exam List -->
+                    <div class="table-header-filter-wrapper-custom"
+                        style="padding: 20px 24px !important; margin-bottom: 20px !important;">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h6 class="fw-bold mb-0 text-dark" style="font-size: 14px; color: #21236A !important;">Exam
+                                List</h6>
+                            <a href="#" class="text-danger fw-bold"
+                                style="font-size: 13px; text-decoration: underline;">Add New</a>
+                        </div>
+                        <div
+                            class="d-flex flex-column flex-md-row justify-content-start align-items-stretch align-items-md-center gap-3">
+                            <div class="search-box-custom flex-grow-1 flex-md-grow-0" style="max-width: 320px;">
+                                <span class="search-icon-custom"><i class="bi bi-search"></i></span>
+                                <input type="search" class="form-control search-input-custom" placeholder="Search"
+                                    style="width: 100%;">
+                            </div>
+                            <div>
+                                <button type="button"
+                                    class="membership-select-custom text-start d-flex align-items-center justify-content-between"
+                                    id="dateFilterBtn"
+                                    style="min-width: 160px; background-color: #ffffff; cursor: pointer;">
+                                    <span id="dateFilter">2 June - 9 June</span>
+                                    <i class="bi bi-chevron-down text-secondary" style="font-size: 11px;"></i>
+                                </button>
+                            </div>
+                            <div>
+                                <select class="membership-select-custom form-select">
+                                    <option>Filter : Status</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Table Footer/Pagination -->
-            <div class="table-footer-custom">
-              <div>
-                <label class="d-flex align-items-center gap-2">
-                  Show 
-                  <select class="table-show-select form-select d-inline-block py-0" style="width: auto;">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                  </select>
-                  per page
-                </label>
-              </div>
-              <div class="custom-pagination">
-                <a href="#" class="pagination-btn"><i class="bi bi-chevron-left"></i></a>
-                <a href="#" class="pagination-btn active">1</a>
-                <a href="#" class="pagination-btn">2</a>
-                <a href="#" class="pagination-btn">3</a>
-                <a href="#" class="pagination-btn">4</a>
-                <a href="#" class="pagination-btn">5</a>
-                <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
-                <span class="text-secondary ms-2" style="font-size: 13px;">1-10 of 52</span>
-              </div>
-            </div>
-          </div>
+                    <div class="recent-exams-table-container mb-4">
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 60px;"># <i class="bi bi-chevron-expand"></i></th>
+                                        <th>Schedule <i class="bi bi-chevron-expand"></i></th>
+                                        <th>Exam Code <i class="bi bi-chevron-expand"></i></th>
+                                        <th style="width: 276px;">Exam Title <i class="bi bi-chevron-expand"></i></th>
+                                        <th>Status <i class="bi bi-chevron-expand"></i></th>
+                                        <th class="text-center" style="width: 145px;">Action <i
+                                                class="bi bi-chevron-expand"></i></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- Exam Row 1 -->
+                                    <tr>
+                                        <td>1</td>
+                                        <td>
+                                            <div class="py-2">
+                                                <div class="fw-bold text-dark" style="font-size: 13px;">18 Aug, 2025
+                                                </div>
+                                                <div class="text-muted" style="font-size: 11px;">10:00 AM - 02:00 PM |
+                                                    2h</div>
+                                            </div>
+                                        </td>
+                                        <td>(202) 555-0143</td>
+                                        <td>AD102: Mathematics Fundamentals M..</td>
+                                        <td><span class="badge"
+                                                style="background-color: #E2E6FF; color: #21236A; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 11px;">Scheduled</span>
+                                        </td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
+                                            <a href="#" class="btn-action-circle"><i
+                                                    class="bi bi-three-dots-vertical"></i></a>
+                                        </td>
+                                    </tr>
+                                    <!-- Exam Row 2 -->
+                                    <tr>
+                                        <td>2</td>
+                                        <td>
+                                            <div class="py-2">
+                                                <div class="fw-bold text-dark" style="font-size: 13px;">18 Aug, 2025
+                                                </div>
+                                                <div class="text-muted" style="font-size: 11px;">10:00 AM - 02:00 PM |
+                                                    2h</div>
+                                            </div>
+                                        </td>
+                                        <td>(202) 555-0143</td>
+                                        <td>PH201: Physics Mechanics Test</td>
+                                        <td><span class="badge"
+                                                style="background-color: #FFE5E9; color: #D62B4C; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 11px;">Live</span>
+                                        </td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
+                                            <a href="#" class="btn-action-circle"><i
+                                                    class="bi bi-three-dots-vertical"></i></a>
+                                        </td>
+                                    </tr>
+                                    <!-- Exam Row 3 -->
+                                    <tr>
+                                        <td>3</td>
+                                        <td>
+                                            <div class="py-2">
+                                                <div class="fw-bold text-dark" style="font-size: 13px;">18 Aug, 2025
+                                                </div>
+                                                <div class="text-muted" style="font-size: 11px;">10:00 AM - 02:00 PM |
+                                                    2h</div>
+                                            </div>
+                                        </td>
+                                        <td>(202) 555-0143</td>
+                                        <td>SC101: General Science Basics</td>
+                                        <td><span class="badge"
+                                                style="background-color: #E2E6FF; color: #21236A; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 11px;">Scheduled</span>
+                                        </td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
+                                            <a href="#" class="btn-action-circle"><i
+                                                    class="bi bi-three-dots-vertical"></i></a>
+                                        </td>
+                                    </tr>
+                                    <!-- Exam Row 4 -->
+                                    <tr>
+                                        <td>4</td>
+                                        <td>
+                                            <div class="py-2">
+                                                <div class="fw-bold text-dark" style="font-size: 13px;">18 Aug, 2025
+                                                </div>
+                                                <div class="text-muted" style="font-size: 11px;">10:00 AM - 02:00 PM |
+                                                    2h</div>
+                                            </div>
+                                        </td>
+                                        <td>(202) 555-0143</td>
+                                        <td>CH103: Chemistry Elements Quiz</td>
+                                        <td><span class="badge"
+                                                style="background-color: #E2FFE9; color: #20C933; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 11px;">Completed</span>
+                                        </td>
+                                        <td class="text-end">
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
+                                            <a href="#" class="btn-action-circle"><i
+                                                    class="bi bi-three-dots-vertical"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-          <!-- Populated Exam List -->
-          <div class="table-header-filter-wrapper-custom" style="padding: 20px 24px !important; margin-bottom: 20px !important;">
-            <div class="d-flex align-items-center justify-content-between mb-3">
-              <h6 class="fw-bold mb-0 text-dark" style="font-size: 14px; color: #21236A !important;">Exam List</h6>
-              <a href="#" class="text-danger fw-bold" style="font-size: 13px; text-decoration: underline;">Add New</a>
-            </div>
-            <div class="d-flex flex-column flex-md-row justify-content-start align-items-stretch align-items-md-center gap-3">
-              <div class="search-box-custom flex-grow-1 flex-md-grow-0" style="max-width: 320px;">
-                <span class="search-icon-custom"><i class="bi bi-search"></i></span>
-                <input type="search" class="form-control search-input-custom" placeholder="Search" style="width: 100%;">
-              </div>
-              <div>
-                <button type="button" class="membership-select-custom text-start d-flex align-items-center justify-content-between" id="dateFilterBtn" style="min-width: 160px; background-color: #ffffff; cursor: pointer;">
-                  <span id="dateFilter">2 June - 9 June</span>
-                  <i class="bi bi-chevron-down text-secondary" style="font-size: 11px;"></i>
-                </button>
-              </div>
-              <div>
-                <select class="membership-select-custom form-select">
-                  <option>Filter : Status</option>
-                </select>
-              </div>
-            </div>
-          </div>
+                        <!-- Table Footer/Pagination -->
+                        <div class="table-footer-custom">
+                            <div>
+                                <label class="d-flex align-items-center gap-2">
+                                    Show
+                                    <select class="table-show-select form-select d-inline-block py-0"
+                                        style="width: auto;">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                    </select>
+                                    per page
+                                </label>
+                            </div>
+                            <div class="custom-pagination">
+                                <a href="#" class="pagination-btn"><i class="bi bi-chevron-left"></i></a>
+                                <a href="#" class="pagination-btn active">1</a>
+                                <a href="#" class="pagination-btn">2</a>
+                                <a href="#" class="pagination-btn">3</a>
+                                <a href="#" class="pagination-btn">4</a>
+                                <a href="#" class="pagination-btn">5</a>
+                                <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
+                                <span class="text-secondary ms-2" style="font-size: 13px;">1-10 of 52</span>
+                            </div>
+                        </div>
 
-          <div class="recent-exams-table-container mb-4">
-            <div class="table-responsive">
-              <table class="table mb-0">
-                <thead>
-                  <tr>
-                    <th style="width: 60px;"># <i class="bi bi-chevron-expand"></i></th>
-                    <th>Schedule <i class="bi bi-chevron-expand"></i></th>
-                    <th>Exam Code <i class="bi bi-chevron-expand"></i></th>
-                    <th style="width: 276px;">Exam Title <i class="bi bi-chevron-expand"></i></th>
-                    <th>Status <i class="bi bi-chevron-expand"></i></th>
-                    <th class="text-center" style="width: 145px;">Action <i class="bi bi-chevron-expand"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Exam Row 1 -->
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <div class="py-2">
-                        <div class="fw-bold text-dark" style="font-size: 13px;">18 Aug, 2025</div>
-                        <div class="text-muted" style="font-size: 11px;">10:00 AM - 02:00 PM | 2h</div>
-                      </div>
-                    </td>
-                    <td>(202) 555-0143</td>
-                    <td>AD102: Mathematics Fundamentals M..</td>
-                    <td><span class="badge" style="background-color: #E2E6FF; color: #21236A; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 11px;">Scheduled</span></td>
-                    <td class="text-end">
-                      <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-three-dots-vertical"></i></a>
-                    </td>
-                  </tr>
-                  <!-- Exam Row 2 -->
-                  <tr>
-                    <td>2</td>
-                    <td>
-                      <div class="py-2">
-                        <div class="fw-bold text-dark" style="font-size: 13px;">18 Aug, 2025</div>
-                        <div class="text-muted" style="font-size: 11px;">10:00 AM - 02:00 PM | 2h</div>
-                      </div>
-                    </td>
-                    <td>(202) 555-0143</td>
-                    <td>PH201: Physics Mechanics Test</td>
-                    <td><span class="badge" style="background-color: #FFE5E9; color: #D62B4C; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 11px;">Live</span></td>
-                    <td class="text-end">
-                      <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-three-dots-vertical"></i></a>
-                    </td>
-                  </tr>
-                  <!-- Exam Row 3 -->
-                  <tr>
-                    <td>3</td>
-                    <td>
-                      <div class="py-2">
-                        <div class="fw-bold text-dark" style="font-size: 13px;">18 Aug, 2025</div>
-                        <div class="text-muted" style="font-size: 11px;">10:00 AM - 02:00 PM | 2h</div>
-                      </div>
-                    </td>
-                    <td>(202) 555-0143</td>
-                    <td>SC101: General Science Basics</td>
-                    <td><span class="badge" style="background-color: #E2E6FF; color: #21236A; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 11px;">Scheduled</span></td>
-                    <td class="text-end">
-                      <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-three-dots-vertical"></i></a>
-                    </td>
-                  </tr>
-                  <!-- Exam Row 4 -->
-                  <tr>
-                    <td>4</td>
-                    <td>
-                      <div class="py-2">
-                        <div class="fw-bold text-dark" style="font-size: 13px;">18 Aug, 2025</div>
-                        <div class="text-muted" style="font-size: 11px;">10:00 AM - 02:00 PM | 2h</div>
-                      </div>
-                    </td>
-                    <td>(202) 555-0143</td>
-                    <td>CH103: Chemistry Elements Quiz</td>
-                    <td><span class="badge" style="background-color: #E2FFE9; color: #20C933; padding: 4px 10px; border-radius: 6px; font-weight: 600; font-size: 11px;">Completed</span></td>
-                    <td class="text-end">
-                      <a href="#" class="btn-action-circle"><i class="bi bi-eye"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-pencil"></i></a>
-                      <a href="#" class="btn-action-circle"><i class="bi bi-three-dots-vertical"></i></a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+                        <!-- KPIs Section -->
+                        <div class="recent-exams-table-container mt-3 mb-4"
+                            style="background-color: #ffffff; border-radius: 12px; padding: 14px !important; border: 1px solid #D9DFEC;">
+                            <div class="row mb-3">
+                                <div class="col-12 pb-2"
+                                    style="border-bottom: 1px solid #EEEEEE !important; background-color: #F9F9F9;">
+                                    <h6 class="fw-bold mb-0 text-dark"
+                                        style="font-size: 14px; color: #21236A !important;">KPI's</h6>
+                                </div>
+                            </div>
+                            <div class="row text-center text-md-start">
+                                <div class="col-6 col-md-3 mb-3 mb-md-0 border-end border-light">
+                                    <div class="text-secondary" style="font-size: 12px; font-weight: 500;">Total Courses
+                                    </div>
+                                    <div class="h3 fw-bold text-dark mt-1 mb-0" style="font-size: 22px;">10</div>
+                                </div>
+                                <div class="col-6 col-md-3 mb-3 mb-md-0 border-end border-light text-center">
+                                    <div class="text-secondary" style="font-size: 12px; font-weight: 500;">Total
+                                        Students</div>
+                                    <div class="h3 fw-bold text-dark mt-1 mb-0" style="font-size: 22px;">120</div>
+                                </div>
+                                <div class="col-6 col-md-3 border-end border-light text-center">
+                                    <div class="text-secondary" style="font-size: 12px; font-weight: 500;">Total Exams
+                                    </div>
+                                    <div class="h3 fw-bold text-dark mt-1 mb-0" style="font-size: 22px;">8</div>
+                                </div>
+                                <div class="col-6 col-md-3 text-end">
+                                    <div class="text-secondary" style="font-size: 12px; font-weight: 500;">Avg. Pass %
+                                    </div>
+                                    <div class="h3 fw-bold text-dark mt-1 mb-0" style="font-size: 22px;">38%</div>
+                                </div>
+                            </div>
+                        </div>
 
-            <!-- Table Footer/Pagination -->
-            <div class="table-footer-custom">
-              <div>
-                <label class="d-flex align-items-center gap-2">
-                  Show 
-                  <select class="table-show-select form-select d-inline-block py-0" style="width: auto;">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                  </select>
-                  per page
-                </label>
-              </div>
-              <div class="custom-pagination">
-                <a href="#" class="pagination-btn"><i class="bi bi-chevron-left"></i></a>
-                <a href="#" class="pagination-btn active">1</a>
-                <a href="#" class="pagination-btn">2</a>
-                <a href="#" class="pagination-btn">3</a>
-                <a href="#" class="pagination-btn">4</a>
-                <a href="#" class="pagination-btn">5</a>
-                <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
-                <span class="text-secondary ms-2" style="font-size: 13px;">1-10 of 52</span>
-              </div>
-            </div>
-
-            <!-- KPIs Section -->
-          <div class="recent-exams-table-container mt-3 mb-4" style="background-color: #ffffff; border-radius: 12px; padding: 14px !important; border: 1px solid #D9DFEC;">
-            <div class="row mb-3">
-              <div class="col-12 pb-2" style="border-bottom: 1px solid #EEEEEE !important; background-color: #F9F9F9;">
-                <h6 class="fw-bold mb-0 text-dark" style="font-size: 14px; color: #21236A !important;">KPI's</h6>
-              </div>
-            </div>
-            <div class="row text-center text-md-start">
-              <div class="col-6 col-md-3 mb-3 mb-md-0 border-end border-light">
-                <div class="text-secondary" style="font-size: 12px; font-weight: 500;">Total Courses</div>
-                <div class="h3 fw-bold text-dark mt-1 mb-0" style="font-size: 22px;">10</div>
-              </div>
-              <div class="col-6 col-md-3 mb-3 mb-md-0 border-end border-light text-center">
-                <div class="text-secondary" style="font-size: 12px; font-weight: 500;">Total Students</div>
-                <div class="h3 fw-bold text-dark mt-1 mb-0" style="font-size: 22px;">120</div>
-              </div>
-              <div class="col-6 col-md-3 border-end border-light text-center">
-                <div class="text-secondary" style="font-size: 12px; font-weight: 500;">Total Exams</div>
-                <div class="h3 fw-bold text-dark mt-1 mb-0" style="font-size: 22px;">8</div>
-              </div>
-              <div class="col-6 col-md-3 text-end">
-                <div class="text-secondary" style="font-size: 12px; font-weight: 500;">Avg. Pass %</div>
-                <div class="h3 fw-bold text-dark mt-1 mb-0" style="font-size: 22px;">38%</div>
-              </div>
-            </div>
-          </div>
-
-          </div>
-
-          
-
-        </div>
-      </div><!-- Content end -->
-
-    </div><!-- Content wrapper end -->
-  </div>
+                    </div>
 
 
-  <!-- JS -->
-  <script src="js/jquery-2.2.4.min.js"></script>
-  <script src="js/moment.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/daterangepicker.js"></script>
-  <script src="js/chart.js"></script>
 
-  <!-- Custom JS -->
-  <script src="js/main.js"></script>
+                </div>
+            </div><!-- Content end -->
 
-  <script>
-    $(document).ready(function() {
-      $('#dateFilterBtn').daterangepicker({
-        timePicker: true,
-        timePickerIncrement: 15,
-        locale: {
-          format: 'D MMM YYYY, hh:mm A'
-        },
-        startDate: moment().subtract(7, 'days'),
-        endDate: moment(),
-        opens: 'left',
-        cancelClass: 'btn-default',
-        applyButtonClasses: 'btn-primary'
-      }, function(start, end) {
-        $('#dateFilter').text(start.format('D MMM') + ' - ' + end.format('D MMM'));
-      });
-    });
-  </script>
+        </div><!-- Content wrapper end -->
+    </div>
+
+
+    <!-- JS -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/daterangepicker.js"></script>
+    <script src="js/chart.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#dateFilterBtn').daterangepicker({
+                timePicker: true,
+                timePickerIncrement: 15,
+                locale: {
+                    format: 'D MMM YYYY, hh:mm A'
+                },
+                startDate: moment().subtract(7, 'days'),
+                endDate: moment(),
+                opens: 'left',
+                cancelClass: 'btn-default',
+                applyButtonClasses: 'btn-primary'
+            }, function (start, end) {
+                $('#dateFilter').text(start.format('D MMM') + ' - ' + end.format('D MMM'));
+            });
+        });
+    </script>
 
 </body>
 

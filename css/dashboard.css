@@ -27,119 +27,7 @@ body {
 }
 
 /* Hide hamburger close menu button on desktop */
-@media (min-width: 992px) {
-  .side-bar-close {
-    display: none !important;
-  }
-}
 
-/* Sidebar Overrides */
-.side-bar-body {
-  background-color: var(--theme-dark-navy) !important;
-  border-radius: 20px !important;
-  padding: 24px 16px !important;
-}
-
-.side-bar-header {
-  border: none !important;
-  background-color: transparent !important;
-  padding: 0 !important;
-  margin-bottom: 20px;
-}
-
-.side-bar-header .navbar-brand {
-  display: none !important;
-  /* Hide logo inside sidebar in desktop, logo is in main content area */
-}
-
-.side-bar .side-menu {
-  padding: 0 !important;
-}
-
-.side-bar .side-menu .nav-item {
-  margin-bottom: 12px !important;
-}
-
-.side-bar .side-menu a {
-  color: var(--theme-text-gray) !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  padding: 10px 16px !important;
-  border-radius: 30px !important;
-  /* Capsule style */
-  transition: all 0.2s ease;
-  height: auto !important;
-  max-height: none !important;
-}
-
-.side-bar .side-menu a:hover {
-  color: #fff !important;
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  border-color: transparent !important;
-}
-
-/* Active sidebar item (Dashboard) */
-.side-bar .side-menu .nav-item.active>a {
-  background-color: var(--theme-red) !important;
-  border-color: var(--theme-red) !important;
-  color: #fff !important;
-}
-
-/* Dropdowns in Sidebar */
-.side-bar .side-menu .dropdown-toggle::after {
-  filter: brightness(0) invert(1);
-  margin-left: auto;
-  transition: transform 0.2s;
-}
-
-.side-bar .side-menu .dropdown.open .dropdown-toggle::after {
-  transform: rotate(180deg);
-}
-
-.side-bar .side-menu .dropdown-menu {
-  padding-left: 20px !important;
-  margin-top: 5px !important;
-}
-
-.side-bar .side-menu .dropdown-menu .dropdown-item {
-  color: var(--theme-text-gray) !important;
-  padding: 6px 12px !important;
-  font-size: 13px !important;
-  border-radius: 20px !important;
-}
-
-.side-bar .side-menu .dropdown-menu .dropdown-item:hover,
-.side-bar .side-menu .dropdown-menu .dropdown-item.active {
-  color: #fff !important;
-  background-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-/* Log Out block at bottom of sidebar */
-.side-bar-user {
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-  padding: 16px 8px 8px 8px !important;
-  margin-top: auto !important;
-}
-
-.side-bar-user .nav-link-logout {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--theme-text-gray);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  transition: color 0.2s;
-}
-
-.side-bar-user .nav-link-logout:hover {
-  color: #fff;
-}
-
-.side-bar-user .nav-link-logout svg {
-  width: 20px;
-  height: 20px;
-}
 
 /* Top Header Bar */
 .main-header-bar {
@@ -1995,7 +1883,8 @@ body {
     padding: 8px 10px !important;
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap;  /* ← single row, no wrapping */
+    flex-wrap: nowrap;
+    /* ← single row, no wrapping */
     justify-content: space-between;
     align-items: center;
     gap: 6px;
@@ -2014,4 +1903,23 @@ body {
     margin-top: 20px;
     padding-top: 20px;
   }
+}
+
+/* ==========================================================================
+   Basic Details Card & Student List Custom Overrides
+   ========================================================================== */
+.card-header-navy {
+  background-color: #1C2260 !important;
+  color: #ffffff !important;
+  border-bottom: none !important;
+}
+
+.card-header-navy .card-title {
+  color: #ffffff !important;
+}
+
+/* Remove bottom borders from the basic details list items to match screenshot */
+.card-item-1 .card-body .list-group-5 .list-group-item {
+  border-bottom: none !important;
+  padding: 10px 0 !important;
 }

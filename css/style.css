@@ -168,7 +168,7 @@ p {
 }
 
 .border-primary {
-  border-color: var(--bs-primary) !important;
+  border-color: #21236A !important;
 }
 
 .border-secondary {
@@ -2728,7 +2728,7 @@ header .side-bar-close {
 
 .bg-img-2 {
   background-repeat: no-repeat;
-  background-size: inherit;
+  background-size: cover;
   background-position: center;
 }
 

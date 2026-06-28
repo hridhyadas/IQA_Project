@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/side-bar.css">
+
+
+  <title>IQA</title>
+</head>
+
+<body class="dashboard-page">
+
+  <!-- Preloader start -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div><!-- Preloader end -->
+
+  <div class="wrapper d-flex flex-column">
+    <!-- Side bar start -->
+    <div class="side-bar-wrapper">
+      <div class="side-bar">
+        <div class="side-bar-header">
+          <div class="side-bar-close"></div>
+          <a class="navbar-brand" href="#">
+            <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" />
+          </a>
+        </div>
+        <div class="side-bar-body">
+          <div class="side-menu">
+            <ul class="nav">
+
+              <!-- Menu item start -->
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
+                  <span class="menu-label me-auto">Dashboard</span>
+                </a>
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Exam Managment</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                      <span class="d-flex align-items-center">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
+                        <span class="menu-label">Exam List</span>
+                      </span>
+                      <span class="badge badge-live">1 Live</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Report</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                      <span class="d-flex align-items-center">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                        <span class="menu-label">Exam Valuation</span>
+                      </span>
+                      <span class="badge badge-pending">3 Pending</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#generateQuestionsModal">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
+                      <span class="menu-label">Question Bank</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Student</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
+                      <span class="menu-label">Student List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Center’s Management</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
+                      <span class="menu-label">Create</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="academy-list.html">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
+                      <span class="menu-label">List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Settings</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                      <span class="menu-label">Apply for qualification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span>
+                      <span class="menu-label">Location</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                      <span class="menu-label">Courses</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+            </ul>
+          </div>
+
+          <!-- Log Out start -->
+          <div class="side-bar-user">
+            <a href="#" class="nav-link-logout">
+              <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""
+                  style="width: 20px; height: 20px;"></span>
+              <span>Log Out</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- Side bar end -->
+
+    <!-- Content wrapper start -->
+    <div class="content-wrapper">
+
+      <!-- Mobile Hamburger / Header Area (d-md-none) -->
+      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between position-relative">
+        <div class="side-bar-close mobile-hamburger-btn">
+          <div class="custom-hamburger-icon">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </div>
+        </div>
+        <img class="mobile-logo-centered" src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
+      </div>
+
+      <!-- Top Header start -->
+      <div class="container-fluid">
+        <div class="main-header-bar d-none d-md-flex">
+          <div class="logo-container">
+            <img src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
+          </div>
+          <div class="user-profile-header">
+            <img src="img/user.png" alt="User Profile Image" />
+            <div class="user-info">
+              <h5>Name</h5>
+              <p>Super Administrator</p>
+            </div>
+          </div>
+        </div>
+      </div><!-- Top Header end -->
+
+      <!-- Header start -->
+      <header class="light-header" style="background-color: rgba(255, 255, 255, 0);">
+        <div class="container-fluid">
+          <!-- Header main start -->
+          <div class="header-main d-md-flex justify-content-between align-items-center mt-3">
+            <div class="d-flex justify-content-between align-items-center w-100 d-md-none">
+              <h4 class="text-white mb-0 fw-normal">Student Detail</h4>
+              <div class="user-profile-header-mobile" style="margin-bottom: 0px;">
+                <img src="img/user.png" alt="User Profile Image"
+                  style="width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);" />
+              </div>
+            </div>
+
+            <h4 class="text-white mb-0 fw-normal d-none d-md-block">Student Detail</h4>
+
+            <nav class="mt-2 mt-md-0">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Student</a></li>
+                <li class="breadcrumb-item active">Student Detail</li>
+              </ol>
+            </nav>
+          </div><!-- Header main end -->
+        </div>
+      </header><!-- Header end -->
+
+      <!-- Content start -->
+      <div class="content">
+        <div class="container-fluid">
+
+          <div class="text-center bg-img-2 rounded-3"
+            style="background-image: url(img/grid-bg.png); min-height: 200px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+            <img class="rounded-circle border border-2 border-primary mb-2"
+              style="width: 100px; height: 100px; object-fit: cover;" src="img/avatar-icon.jpg" alt="">
+            <h5 class="fw-semibold">Jenny Klabber <img src="img/verify-icon.svg"
+                style="width: 16px; height: 16px; margin-left: 2px;"></h5>
+            <p class="d-flex justify-content-center gap-2 gap-md-4 flex-column flex-md-row"
+              style="color: #8A99AD; font-size: 13.5px; margin-top: 10px; margin-bottom: 0;">
+              <span>Contact: +1 7867 123 234</span>
+              <span>DOB: 25 Aug 2020</span>
+              <span>Email: Kendada@gmail.com</span>
+            </p>
+          </div>
+
+          <!-- White card wrapper start -->
+          <div class="custom-table-container recent-exams-table-container mb-4">
+
+            <div class="card-item-1 mb-4">
+              <div class="card-header card-header-navy justify-content-center">
+                <h5 class="card-title text-white">Basic Details</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-5">
+                  <li class="list-group-item">
+                    <span class="list-label">Name</span>
+                    <span class="list-content">Keen Adams</span>
+                  </li>
+                  <li class="list-group-item">
+                    <span class="list-label">Academy</span>
+                    <span class="list-content">Academy name</span>
+                  </li>
+                  <li class="list-group-item">
+                    <span class="list-label">Course</span>
+                    <span class="list-content">Course name | Course Code</span>
+                  </li>
+                  <li class="list-group-item">
+                    <span class="list-label">Contact</span>
+                    <span class="list-content">+1 9876 543 123</span>
+                  </li>
+                  <li class="list-group-item">
+                    <span class="list-label">Email</span>
+                    <span class="list-content">kenadams@gmail.com</span>
+                  </li>
+                  <li class="list-group-item">
+                    <span class="list-label">Certificate Status</span>
+                    <span class="list-content">Not Ready</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Filter Bar -->
+            <div class="filter-bar-custom mb-3"
+              style="background-color: rgba(33, 35, 106, 0.1); padding: 12px 16px; border-radius: 6px;">
+              <div class="d-flex align-items-center gap-2 flex-wrap">
+                <div class="search-box-custom position-relative">
+                  <i class="bi bi-search search-icon-custom"></i>
+                  <input type="text" class="form-control search-input-custom" placeholder="Search">
+                </div>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table responsive-applied">
+                <thead>
+                  <tr>
+                    <th class="sort-header">Exam ID <i class="bi bi-chevron-expand"></i></th>
+                    <th class="sort-header">Exam Date <i class="bi bi-chevron-expand"></i></th>
+                    <th class="sort-header">Enroll ID <i class="bi bi-chevron-expand"></i></th>
+                    <th class="sort-header">Exam Title <i class="bi bi-chevron-expand"></i></th>
+                    <th class="sort-header">Exam Score <i class="bi bi-chevron-expand"></i></th>
+                    <th class="sort-header">Ex. Status <i class="bi bi-chevron-expand"></i></th>
+                    <th class="sort-header">Certificate <i class="bi bi-chevron-expand"></i></th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>IQA12335</td>
+                    <td>18 Aug, 2025</td>
+                    <td>IQA123676</td>
+                    <td>
+                      <strong>Facebook Ads Fundamentals – Level 1</strong>
+                      <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Course : Digital Marketing</div>
+                    </td>
+                    <td><span class="custom-badge-capsule">20/100</span></td>
+                    <td><span class="badge-custom-danger">Fail</span></td>
+                    <td>Not Ready</td>
+                    <td>
+                      <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
+                      <a class="btn-action-circle" title="Download"><i class="bi bi-download"></i></a>
+                      <a class="btn-action-circle" title="Mail"><i class="bi bi-envelope"></i></a>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>IQA12335</td>
+                    <td>18 Aug, 2025</td>
+                    <td>IQA123676</td>
+                    <td>
+                      <strong>Facebook Ads Fundamentals – Level 1</strong>
+                      <div class="text-muted" style="font-size: 11px; margin-top: 2px;">Course : Digital Marketing</div>
+                    </td>
+                    <td><span class="custom-badge-capsule">30/100</span></td>
+                    <td><span class="badge-custom-success">Pass</span></td>
+                    <td>
+                      <a href="#" class="text-danger" style="text-decoration: underline; font-weight: 500;">Apply</a>
+                    </td>
+                    <td>
+                      <a class="btn-action-circle" title="View"><i class="bi bi-eye"></i></a>
+                      <a class="btn-action-circle" title="Download"><i class="bi bi-download"></i></a>
+                      <a class="btn-action-circle" title="Mail"><i class="bi bi-envelope"></i></a>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Custom Pagination Footer -->
+            <div class="table-footer-custom">
+              <div class="my-auto">
+                <label>
+                  Show
+                  <select class="form-select table-show-select">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                  per page
+                </label>
+              </div>
+              <div class="custom-pagination">
+                <a href="#" class="pagination-btn disabled"><i class="bi bi-chevron-left"></i></a>
+                <a href="#" class="pagination-btn active">1</a>
+                <a href="#" class="pagination-btn">2</a>
+                <a href="#" class="pagination-btn">3</a>
+                <a href="#" class="pagination-btn hide-mobile">4</a>
+                <a href="#" class="pagination-btn hide-mobile">5</a>
+                <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
+                <span style="font-size: 12px; color: var(--theme-text-gray); margin-left: 12px;">1-10 of 52</span>
+              </div>
+            </div>
+
+          </div><!-- White card wrapper end -->
+
+        </div>
+      </div><!-- Content end -->
+
+    </div><!-- Content wrapper end -->
+  </div>
+
+
+  <!-- JS -->
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/daterangepicker.js"></script>
+  <script src="js/chart.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>

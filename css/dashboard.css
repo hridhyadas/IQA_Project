@@ -1480,9 +1480,6 @@ body {
   border-right: 1px solid #EEEEEE !important;
 }
 
-.recent-exams-table-container table tbody td:not(:last-child) {
-  /* border-right: 1px solid #EEEEEE !important; */
-}
 
 /* Text nowrap utilities */
 .recent-exams-table-container .nowrap {

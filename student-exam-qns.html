@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/side-bar.css">
+
+  <title>IQA</title>
+</head>
+
+<body>
+
+  <!-- Preloader start -->
+  <div class="preloader">
+    <div class="loader"></div>
+  </div><!-- Preloader end -->
+
+  <div class="wrapper d-flex flex-column">
+
+    <!-- Content wrapper start -->
+    <div class="content-wrapper w-100 ms-0">
+
+      <!-- Side bar start -->
+      <div class="side-bar-wrapper">
+        <div class="side-bar">
+          <div class="side-bar-header">
+            <div class="side-bar-close"></div>
+            <a class="navbar-brand" href="#">
+              <img class="large-logo" src="img/logo2.png" />
+              <img class="small-logo" src="img/small-logo.png" />
+            </a>
+          </div>
+          <div class="side-bar-body">
+            <div class="side-menu">
+              <ul class="nav">
+
+                <!-- Menu item start -->
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">
+                    <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
+                    <span class="menu-label me-auto">Dashboard</span>
+                  </a>
+                </li><!-- Menu item end -->
+
+                <!-- Menu item start -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#">
+                    <span class="menu-label me-auto">Exam Managment</span>
+                  </a>
+                  <!-- Dropdown menu start -->
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                        <span class="d-flex align-items-center">
+                          <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
+                          <span class="menu-label">Exam List</span>
+                        </span>
+                        <span class="badge badge-live">1 Live</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                        <span class="menu-label">Exam Report</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                        <span class="d-flex align-items-center">
+                          <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                          <span class="menu-label">Exam Valuation</span>
+                        </span>
+                        <span class="badge badge-pending">3 Pending</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#generateQuestionsModal">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
+                        <span class="menu-label">Question Bank</span>
+                      </a>
+                    </li>
+                  </ul><!-- Dropdown menu end -->
+                </li><!-- Menu item end -->
+
+                <!-- Menu item start -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#">
+                    <span class="menu-label me-auto">Student</span>
+                  </a>
+                  <!-- Dropdown menu start -->
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
+                        <span class="menu-label">Student List</span>
+                      </a>
+                    </li>
+                  </ul><!-- Dropdown menu end -->
+                </li><!-- Menu item end -->
+
+                <!-- Menu item start -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#">
+                    <span class="menu-label me-auto">Center’s Management</span>
+                  </a>
+                  <!-- Dropdown menu start -->
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
+                        <span class="menu-label">Create</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="academy-list.html">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
+                        <span class="menu-label">List</span>
+                      </a>
+                    </li>
+                  </ul><!-- Dropdown menu end -->
+                </li><!-- Menu item end -->
+
+                <!-- Menu item start -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#">
+                    <span class="menu-label me-auto">Settings</span>
+                  </a>
+                  <!-- Dropdown menu start -->
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                        <span class="menu-label">Apply for qualification</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span>
+                        <span class="menu-label">Location</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                        <span class="menu-label">Courses</span>
+                      </a>
+                    </li>
+                  </ul><!-- Dropdown menu end -->
+                </li><!-- Menu item end -->
+
+              </ul>
+            </div>
+
+            <!-- Log Out start -->
+            <div class="side-bar-user">
+              <a href="#" class="nav-link-logout">
+                <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""
+                    style="width: 20px; height: 20px;"></span>
+                <span>Log Out</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div><!-- Side bar end -->
+
+      <!-- Mobile Hamburger / Header Area (d-md-none) -->
+      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between position-relative">
+        <div class="side-bar-close mobile-hamburger-btn">
+          <div class="custom-hamburger-icon">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </div>
+        </div>
+        <img class="mobile-logo-centered" src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
+      </div>
+
+      <!-- Top Header start -->
+      <div class="container-fluid">
+        <div class="main-header-bar d-none d-md-flex">
+          <div class="logo-container">
+            <img src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
+          </div>
+          <div class="user-profile-header">
+            <img src="img/user.png" alt="User Profile Image" />
+            <div class="user-info">
+              <h5>Name</h5>
+              <p>Super Administrator</p>
+            </div>
+          </div>
+        </div>
+      </div><!-- Top Header end -->
+
+      <!-- Header start -->
+      <header class="light-header" style="background-color: #EEEEEE;">
+        <div class="container-fluid">
+          <!-- Header main start -->
+          <div class="header-main d-md-flex justify-content-between align-items-center mt-3">
+            <div class="d-flex justify-content-between align-items-center w-100 d-md-none">
+              <h4 class="text-white mb-0 fw-normal">EXAM-3827462</h4>
+              <div class="user-profile-header-mobile" style="margin-bottom: 0px;">
+                <img src="img/user.png" alt="User Profile Image"
+                  style="width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);" />
+              </div>
+            </div>
+            <h4 class="text-white mb-0 fw-normal d-none d-md-block">EXAM-3827462 | Facebook Ads Fundamentals – Lev...</h4>
+            <p class="text-white mb-0 text-large mt-2 mt-md-0">Time Now 11 : 30 : 12 AM</p>
+          </div><!-- Header main end -->
+        </div>
+      </header><!-- Header end -->      <!-- Content start -->
+      <div class="content">
+        <div class="container-fluid">
+          <div class="recent-exams-table-container">
+
+            <!-- Student Info and Timer Row -->
+            <div class="row mb-4 g-3">
+              <div class="col-lg-9">
+                <div class="h-100 d-flex align-items-center gap-3 px-3 py-2 border border-2 rounded-4" style="border-color: #D9DFEC !important; background-color: #fff;">
+                  <div class="flex-shrink-0">
+                    <img class="rounded-circle" style="width: 60px; height: 60px; object-fit: cover;" src="img/john-snow.png" alt="Student Avatar">
+                  </div>
+                  <div>
+                    <h5 class="mb-1 fw-bold text-dark">Jhon Snow</h5>
+                    <ul class="d-flex align-items-center mb-0 flex-wrap flex-md-nowrap" style="list-style: none; padding: 0; margin: 0; gap: 0.5rem;">
+                      <li style="white-space: nowrap;">
+                        <span style="font-size: 12px; color: #8E9198;">Email :</span>
+                        <span class="text-dark" style="font-size: 13px; font-weight: 500;">username@gmail.com</span>
+                      </li>
+                      <li style="color: #CBCED3; font-size: 12px;">•</li>
+                      <li style="white-space: nowrap;">
+                        <span style="font-size: 12px; color: #8E9198;">Phone :</span>
+                        <span class="text-dark" style="font-size: 13px; font-weight: 500;">+1 9876 123 456</span>
+                      </li>
+                      <li style="color: #CBCED3; font-size: 12px;">•</li>
+                      <li style="white-space: nowrap;">
+                        <span style="font-size: 12px; color: #8E9198;">DOB :</span>
+                        <span class="text-dark" style="font-size: 13px; font-weight: 500;">19 Aug 2020</span>
+                      </li>
+                      <li style="color: #CBCED3; font-size: 12px;">•</li>
+                      <li style="white-space: nowrap;">
+                        <span style="font-size: 12px; color: #8E9198;">Enrol Id :</span>
+                        <span class="text-dark" style="font-size: 13px; font-weight: 500;">IQA128765</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="h-100 px-3 py-2 border border-2 rounded-4 border-primary d-flex align-items-center" style="background-color: #F8F9FA;">
+                  <div class="progress-wrapper me-3 flex-shrink-0">
+                    <div class="progress-circle-container">
+                      <svg viewBox="0 0 100 100" style="width: 80px;">
+                        <circle stroke="#EAEAEA" stroke-width="6" cx="50" cy="50" r="45" fill="none" />
+                        <circle class="progress--circle" stroke="#21236A" stroke-width="6" cx="50" cy="50" r="45"
+                          fill="none" pathLength="100" style="stroke-dashoffset: 26;" />
+                      </svg>
+                    </div>
+                    <div class="text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                      <h2 style="font-size: 25px; font-weight: 600; margin-bottom: 0; line-height: 1;">90</h2>
+                      <p style="font-size: 9px; margin-bottom: 0;">Minutes</p>
+                    </div>
+                  </div>
+                  <div>
+                    <h5 class="fw-semibold mb-1 text-dark" style="white-space: nowrap; font-size: 16px;">90 Minutes Left</h5>
+                    <h6 class="mb-0 text-dark" style="white-space: nowrap; font-size: 14px;">11 : 30 : 00 AM</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Exam Header Info Block -->
+            <div class="d-flex align-items-center mb-1 flex-wrap gap-2">
+              <h3 class="mb-0 fw-bold text-dark" style="font-size: 24px;">EXAM-3827462</h3>
+              <span class="badge" style="background-color: #FFEAEF; color: #D62B4C; font-weight: 500; font-size: 12px; border-radius: 3px; padding: 4px 10px;">Exam Started</span>
+            </div>
+            <p class="text-muted mb-4" style="font-size: 13px;">
+              Title : <strong class="text-dark fw-semibold">Facebook Ads Fundamentals – Level 1</strong> &nbsp;&nbsp;•&nbsp;&nbsp;
+              Start at : <strong class="text-dark fw-semibold">12 Aug 2025 10 : 00 AM to 12 :00 PM</strong> &nbsp;&nbsp;•&nbsp;&nbsp;
+              Duration : <strong class="text-dark fw-semibold">2 Hour</strong>
+            </p>
+
+            <!-- Exam Stats Summary Wrapper Block Box -->
+            <div style="background-color: #F9F9F9 !important; border: 1px solid #21236A !important; padding: 6px; border-radius: 6px; max-width: 550px;" class="mb-4">
+              <div class="border rounded-0 p-3 bg-white" style="border-color: #D9DFEC !important;">
+                <div class="row text-center">
+                  <div class="col-4 border-end" style="border-color: #EAECEF !important;">
+                    <h3 class="mb-0 fw-bold text-dark" style="font-size: 24px;">01</h3>
+                    <p class="text-muted mb-0" style="font-size: 12px;">Score Per Question</p>
+                  </div>
+                  <div class="col-4 border-end" style="border-color: #EAECEF !important;">
+                    <h3 class="mb-0 fw-bold text-dark" style="font-size: 24px;">0.5</h3>
+                    <p class="text-muted mb-0" style="font-size: 12px;">Negative Score</p>
+                  </div>
+                  <div class="col-4">
+                    <h3 class="mb-0 fw-bold text-dark" style="font-size: 24px;">20</h3>
+                    <p class="text-muted mb-0" style="font-size: 12px;">Total Questions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <!-- Left Column: Questions List -->
+              <div class="col-lg-9">
+
+                <!-- Question 1 -->
+                <div class="card border-0 mb-4 bg-white" style="border: 1px solid #EAECEF !important; border-radius: 12px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                  <div class="card-header bg-transparent pt-3 px-4 pb-3" style="border-bottom: 1px solid #EEEEEE !important;">
+                    <h5 class="fw-bold text-dark mb-0" style="font-size: 16px;">Question 01/20</h5>
+                  </div>
+                  <div class="card-body px-4 pt-3 pb-4">
+                    <h6 class="fw-bold mb-2" style="font-size: 14px;">Q1:</h6>
+                    <p class="text-dark mb-4" style="font-size: 14px; line-height: 1.6;">Now that I’m done thoroughly mangling that vague metaphor, let’s get down to business. You know you need to start blogging to grow your business, but you don’t know how. In this post, I’ll show you how to write a great blog post in five simple steps that people will actually want to read ?</p>
+                    
+                    <h6 class="fw-bold mb-3" style="font-size: 13px; color: #21236A;">Options:</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Lingo Kids</span>
+                      <span class="px-3 py-2 border rounded-3 text-danger d-flex align-items-center gap-2" style="font-size: 13px; cursor: pointer; border-color: #FFB3C1 !important; background-color: #FFE5E9; font-weight: 500;">
+                        <img src="img/lingo.svg" alt="" style="width: 16px; height: 16px;" /> Lingo Express
+                      </span>
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Fun Learning</span>
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Lingo Espanol</span>
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Speaking Mastery</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="card border-0 mb-4 bg-white" style="border: 1px solid #EAECEF !important; border-radius: 12px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                  <div class="card-header bg-transparent pt-3 px-4 pb-3" style="border-bottom: 1px solid #EEEEEE !important;">
+                    <h5 class="fw-bold text-dark mb-0" style="font-size: 16px;">Question 02/20</h5>
+                  </div>
+                  <div class="card-body px-4 pt-3 pb-4">
+                    <h6 class="fw-bold mb-2" style="font-size: 14px;">Q2:</h6>
+                    <p class="text-dark mb-4" style="font-size: 14px; line-height: 1.6;">Now that I’m done thoroughly mangling that vague metaphor, let’s get down to business. You know you need to start blogging to grow your business, but you don’t know how. In this post, I’ll show you how to write a great blog post in five simple steps that people will actually want to read ?</p>
+                    
+                    <h6 class="fw-bold mb-3" style="font-size: 13px; color: #21236A;">Options:</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Lingo Kids</span>
+                      <span class="px-3 py-2 border rounded-3 text-danger d-flex align-items-center gap-2" style="font-size: 13px; cursor: pointer; border-color: #FFB3C1 !important; background-color: #FFE5E9; font-weight: 500;">
+                        <img src="img/lingo.svg" alt="" style="width: 16px; height: 16px;" /> Lingo Express
+                      </span>
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Fun Learning</span>
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Lingo Espanol</span>
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Speaking Mastery</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="card border-0 mb-4 bg-white" style="border: 1px solid #EAECEF !important; border-radius: 12px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                  <div class="card-header bg-transparent pt-3 px-4 pb-3" style="border-bottom: 1px solid #EEEEEE !important;">
+                    <h5 class="fw-bold text-dark mb-0" style="font-size: 16px;">Question 03/20</h5>
+                  </div>
+                  <div class="card-body px-4 pt-3 pb-4">
+                    <h6 class="fw-bold mb-2" style="font-size: 14px;">Q3:</h6>
+                    <p class="text-dark mb-4" style="font-size: 14px; line-height: 1.6;">Now that I’m done thoroughly mangling that vague metaphor, let’s get down to business. You know you need to start blogging to grow your business, but you don’t know how. In this post, I’ll show you how to write a great blog post in five simple steps that people will actually want to read ?</p>
+                    
+                    <h6 class="fw-bold mb-3" style="font-size: 13px; color: #21236A;">Options:</h6>
+                    <div class="d-flex flex-wrap gap-2">
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Lingo Kids</span>
+                      <span class="px-3 py-2 border rounded-3 text-danger d-flex align-items-center gap-2" style="font-size: 13px; cursor: pointer; border-color: #FFB3C1 !important; background-color: #FFE5E9; font-weight: 500;">
+                        <img src="img/lingo.svg" alt="" style="width: 16px; height: 16px;" /> Lingo Express
+                      </span>
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Fun Learning</span>
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Lingo Espanol</span>
+                      <span class="px-3 py-2 border rounded-3 text-secondary bg-white" style="font-size: 13px; cursor: pointer; border-color: #D9DFEC !important;">Speaking Mastery</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="card border-0 mb-4 bg-white" style="border: 1px solid #EAECEF !important; border-radius: 12px !important; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                  <div class="card-header bg-transparent pt-3 px-4 pb-3" style="border-bottom: 1px solid #EEEEEE !important;">
+                    <h5 class="fw-bold text-dark mb-0" style="font-size: 16px;">Question 04/20</h5>
+                  </div>
+                  <div class="card-body px-4 pt-3 pb-4">
+                    <h6 class="fw-bold mb-2" style="font-size: 14px;">Q3:</h6>
+                    <p class="text-dark mb-4" style="font-size: 14px; line-height: 1.6;">Now that I’m done thoroughly mangling that vague metaphor, let’s get down to business. You know you need to start blogging to grow your business, but you don’t know how. In this post, I’ll show you how to write a great blog post in five simple steps that people will actually want to read ?</p>
+                    
+                    <h6 class="fw-bold mb-2" style="font-size: 13px; color: #21236A;">Fill the Answer: (Max 60 words)</h6>
+                    <textarea class="form-control border rounded-3 p-3 bg-white" rows="4" placeholder="Enter answer here" style="border-color: #D9DFEC !important; font-size: 14px; color: #313336;"></textarea>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Right Column: Sidebar Quiz Navigation -->
+              <div class="col-lg-3">
+                <div class="p-3 rounded-4 bg-white border" style="border-color: #EAECEF !important; background-color: #F8F9FA !important;">
+                  
+                  <!-- Questions Circle Grid: 3 columns layout -->
+                  <div class="d-grid gap-3 mb-4" style="grid-template-columns: repeat(3, 1fr); justify-items: center;">
+                    
+                    <!-- Q1: Current question state (solid navy) -->
+                    <div class="d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #21236A; color: #fff; border: 1.5px solid #21236A; font-size: 12px; cursor: pointer;">Q 01</div>
+                    
+                    <!-- Q2: Attended (navy outline) -->
+                    <div class="d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #21236A; border: 1.5px solid #21236A; font-size: 12px; cursor: pointer;">Q 02</div>
+                    
+                    <!-- Q3: Attended (navy outline) -->
+                    <div class="d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #21236A; border: 1.5px solid #21236A; font-size: 12px; cursor: pointer;">Q 03</div>
+                    
+                    <!-- Q4: Attended (navy outline) -->
+                    <div class="d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #21236A; border: 1.5px solid #21236A; font-size: 12px; cursor: pointer;">Q 04</div>
+                    
+                    <!-- Q5: Unattended (gray outline) -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 05</div>
+                    
+                    <!-- Q6: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 06</div>
+                    
+                    <!-- Q7: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 07</div>
+                    
+                    <!-- Q8: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 08</div>
+                    
+                    <!-- Q9: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 09</div>
+                    
+                    <!-- Q10: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 10</div>
+                    
+                    <!-- Q11: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 11</div>
+                    
+                    <!-- Q12: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 12</div>
+                    
+                    <!-- Q13: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 13</div>
+                    
+                    <!-- Q14: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 14</div>
+                    
+                    <!-- Q15: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 15</div>
+                    
+                    <!-- Q16: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 16</div>
+                    
+                    <!-- Q17: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 17</div>
+                    
+                    <!-- Q18: Attended (navy outline) -->
+                    <div class="d-flex align-items-center justify-content-center fw-bold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #21236A; border: 1.5px solid #21236A; font-size: 12px; cursor: pointer;">Q 18</div>
+                    
+                    <!-- Q19: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 19</div>
+                    
+                    <!-- Q20: Unattended -->
+                    <div class="d-flex align-items-center justify-content-center fw-semibold" style="width: 44px; height: 44px; border-radius: 50%; background-color: #fff; color: #676A72; border: 1px solid #D9DFEC; font-size: 12px; cursor: pointer;">Q 20</div>
+  
+                  </div>
+  
+                  <!-- Legend section -->
+                  <div class="mt-4 pt-3 border-top" style="border-color: #EAECEF !important; font-size: 12.5px; color: #4A4D54;">
+                    <div class="d-flex align-items-center mb-2">
+                      <span class="d-inline-block rounded-circle me-2" style="width: 14px; height: 14px; background-color: #21236A;"></span>
+                      <span>Current question</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                      <span class="d-inline-block rounded-circle me-2" style="width: 14px; height: 14px; border: 1.5px solid #21236A; background-color: #fff;"></span>
+                      <span>Attended question</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-4">
+                      <span class="d-inline-block rounded-circle me-2" style="width: 14px; height: 14px; border: 1px solid #D9DFEC; background-color: #fff;"></span>
+                      <span>Un attended question</span>
+                    </div>
+                  </div>
+  
+                  <!-- Submit Button -->
+                  <button type="button" class="btn btn-primary w-100 py-2 fw-semibold" style="background-color: #21236A; border-color: #21236A; border-radius: 8px; font-size: 14px;">Submit Exam</button>
+  
+                </div>
+              </div>
+            </div>
+
+          </div><!-- White wrapper end -->
+        </div><!-- container-fluid end -->
+      </div><!-- content end -->
+    </div><!-- content-wrapper end -->
+  </div><!-- wrapper end -->
+
+
+    <!-- JS -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/daterangepicker.js"></script>
+    <script src="js/chart.js"></script>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

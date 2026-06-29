@@ -522,7 +522,7 @@ $(document).ready(function () {
 	});
 
 	function tableResponsive() {
-		$('.table').each(function () {
+		$('.table:not(.no-responsive)').each(function () {
 			const $table = $(this);
 
 			if (window.matchMedia("(max-width: 767px)").matches) {

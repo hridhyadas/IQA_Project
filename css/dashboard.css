@@ -27,119 +27,7 @@ body {
 }
 
 /* Hide hamburger close menu button on desktop */
-@media (min-width: 992px) {
-  .side-bar-close {
-    display: none !important;
-  }
-}
 
-/* Sidebar Overrides */
-.side-bar-body {
-  background-color: var(--theme-dark-navy) !important;
-  border-radius: 20px !important;
-  padding: 24px 16px !important;
-}
-
-.side-bar-header {
-  border: none !important;
-  background-color: transparent !important;
-  padding: 0 !important;
-  margin-bottom: 20px;
-}
-
-.side-bar-header .navbar-brand {
-  display: none !important;
-  /* Hide logo inside sidebar in desktop, logo is in main content area */
-}
-
-.side-bar .side-menu {
-  padding: 0 !important;
-}
-
-.side-bar .side-menu .nav-item {
-  margin-bottom: 12px !important;
-}
-
-.side-bar .side-menu a {
-  color: var(--theme-text-gray) !important;
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  padding: 10px 16px !important;
-  border-radius: 30px !important;
-  /* Capsule style */
-  transition: all 0.2s ease;
-  height: auto !important;
-  max-height: none !important;
-}
-
-.side-bar .side-menu a:hover {
-  color: #fff !important;
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  border-color: transparent !important;
-}
-
-/* Active sidebar item (Dashboard) */
-.side-bar .side-menu .nav-item.active>a {
-  background-color: var(--theme-red) !important;
-  border-color: var(--theme-red) !important;
-  color: #fff !important;
-}
-
-/* Dropdowns in Sidebar */
-.side-bar .side-menu .dropdown-toggle::after {
-  filter: brightness(0) invert(1);
-  margin-left: auto;
-  transition: transform 0.2s;
-}
-
-.side-bar .side-menu .dropdown.open .dropdown-toggle::after {
-  transform: rotate(180deg);
-}
-
-.side-bar .side-menu .dropdown-menu {
-  padding-left: 20px !important;
-  margin-top: 5px !important;
-}
-
-.side-bar .side-menu .dropdown-menu .dropdown-item {
-  color: var(--theme-text-gray) !important;
-  padding: 6px 12px !important;
-  font-size: 13px !important;
-  border-radius: 20px !important;
-}
-
-.side-bar .side-menu .dropdown-menu .dropdown-item:hover,
-.side-bar .side-menu .dropdown-menu .dropdown-item.active {
-  color: #fff !important;
-  background-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-/* Log Out block at bottom of sidebar */
-.side-bar-user {
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-  padding: 16px 8px 8px 8px !important;
-  margin-top: auto !important;
-}
-
-.side-bar-user .nav-link-logout {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--theme-text-gray);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  transition: color 0.2s;
-}
-
-.side-bar-user .nav-link-logout:hover {
-  color: #fff;
-}
-
-.side-bar-user .nav-link-logout svg {
-  width: 20px;
-  height: 20px;
-}
 
 /* Top Header Bar */
 .main-header-bar {
@@ -1995,7 +1883,8 @@ body {
     padding: 8px 10px !important;
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap;  /* ← single row, no wrapping */
+    flex-wrap: nowrap;
+    /* ← single row, no wrapping */
     justify-content: space-between;
     align-items: center;
     gap: 6px;
@@ -2015,3 +1904,453 @@ body {
     padding-top: 20px;
   }
 }
+
+/* ==========================================================================
+   Basic Details Card & Student List Custom Overrides
+   ========================================================================== */
+.card-header-navy {
+  background-color: #1C2260 !important;
+  color: #ffffff !important;
+  border-bottom: none !important;
+}
+
+.card-header-navy .card-title {
+  color: #ffffff !important;
+}
+
+/* Remove bottom borders from the basic details list items to match screenshot */
+.card-item-1 .card-body .list-group-5 .list-group-item {
+  border-bottom: none !important;
+  padding: 10px 0 !important;
+}
+
+/* ==========================================================================
+   Academy Detail Pages – Mobile Table Fix
+   Scoped to .academy-detail-1-page and .academy-detail-page
+   These rules MUST be at the end of this file so they win over all the
+   !important card-layout transforms defined above.
+   ========================================================================== */
+@media (max-width: 991.98px) {
+
+  /* ── Reset all card-layout transforms for these pages ── */
+  .academy-detail-1-page .recent-exams-table-container,
+  .academy-detail-page .recent-exams-table-container {
+    background: #ffffff !important;
+    border: 1px solid #D9DFEC !important;
+    box-shadow: none !important;
+  }
+
+  .academy-detail-1-page .recent-exams-table-container .table-responsive,
+  .academy-detail-page .recent-exams-table-container .table-responsive {
+    overflow-x: visible !important;
+  }
+
+  /* Force proper HTML table block structure for spacing cards */
+  .academy-detail-1-page .recent-exams-table-container table,
+  .academy-detail-page .recent-exams-table-container table {
+    display: block !important;
+    width: 100% !important;
+    border: none !important;
+  }
+
+  .academy-detail-1-page .recent-exams-table-container thead,
+  .academy-detail-page .recent-exams-table-container thead {
+    display: block !important;
+  }
+
+  .academy-detail-1-page .recent-exams-table-container tbody,
+  .academy-detail-page .recent-exams-table-container tbody {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Header row formatting on mobile */
+  .academy-detail-1-page .recent-exams-table-container thead tr,
+  .academy-detail-page .recent-exams-table-container thead tr {
+    display: flex !important;
+    background-color: #21236A !important;
+    border-radius: 12px !important;
+    padding: 4px 16px !important;
+    margin-bottom: 8px !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: auto !important;
+  }
+
+  .academy-detail-1-page .recent-exams-table-container thead th,
+  .academy-detail-page .recent-exams-table-container thead th {
+    display: block !important;
+    border: none !important;
+    background: transparent !important;
+    padding: 8px 0 !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #ffffff !important;
+    width: auto !important;
+  }
+
+  .academy-detail-1-page .recent-exams-table-container thead th.mobile-hide,
+  .academy-detail-page .recent-exams-table-container thead th.mobile-hide {
+    display: none !important;
+  }
+
+  /* Original rows when visible (expanded state) */
+  .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header),
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header) {
+    display: flex !important;
+    flex-direction: column !important;
+    border: 1px solid #EAEAEF !important;
+    border-radius: 12px 12px 0 0 !important;
+    border-bottom: none !important;
+    padding: 8px 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Force hidden rows to display: none !important so jQuery slide toggle works */
+  .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header)[style*="display: none"],
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header)[style*="display: none"],
+  .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header)[style*="display:none"],
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header)[style*="display:none"] {
+    display: none !important;
+  }
+
+  /* Alternate background colors for original rows and expand-headers */
+  .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header):nth-child(4n+1),
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header):nth-child(4n+1) {
+    background-color: #F3F4F4 !important;
+  }
+  .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header):nth-child(4n+3),
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header):nth-child(4n+3) {
+    background-color: rgba(33, 35, 106, 0.1) !important;
+  }
+
+  /* Cells inside original rows (vertical detail items) */
+  .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header) td,
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header) td {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 8px 24px !important;
+    border: none !important;
+    background: transparent !important;
+    font-size: 13px !important;
+    color: #21236A !important;
+    font-weight: 500 !important;
+    white-space: normal !important;
+  }
+
+  /* Label generator using data-label */
+  .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header) td::before,
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header) td::before {
+    content: attr(data-label) " : ";
+    display: inline-block !important;
+    width: 120px !important;
+    color: #78829D !important;
+    font-weight: 500 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Specific label overrides */
+  .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header) td:first-child::before,
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header) td:first-child::before {
+    content: "Sl : " !important;
+  }
+
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header) td:nth-child(3)::before {
+    content: "Email code : " !important;
+  }
+
+  /* Hide the action's data-label on mobile */
+  .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header) td.action-col::before,
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header) td.action-col::before {
+    content: "Action : " !important;
+  }
+
+  /* Style action buttons in expanded view */
+  .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header) td.action-col a,
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header) td.action-col a {
+    display: inline-flex !important;
+    margin-right: 8px !important;
+  }
+  .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header) td.action-col a[title="Expand"],
+  .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header) td.action-col a[title="Expand"] {
+    display: none !important;
+  }
+
+  /* ── Collapsed header card rows ── */
+  .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header,
+  .academy-detail-page .recent-exams-table-container tbody tr.expand-header {
+    display: flex !important;
+    flex-direction: column !important;
+    border: 1px solid #EAEAEF !important;
+    border-radius: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header td,
+  .academy-detail-page .recent-exams-table-container tbody tr.expand-header td {
+    display: block !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    width: 100% !important;
+  }
+
+  /* Alternate background colors for collapsed expand-headers */
+  .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header:nth-child(4n+2),
+  .academy-detail-page .recent-exams-table-container tbody tr.expand-header:nth-child(4n+2) {
+    background-color: #F3F4F4 !important;
+  }
+  .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header:nth-child(4n+4),
+  .academy-detail-page .recent-exams-table-container tbody tr.expand-header:nth-child(4n+4) {
+    background-color: rgba(33, 35, 106, 0.1) !important;
+  }
+
+  /* Collapsed content container */
+  .academy-detail-1-page .recent-exams-table-container .expand-content,
+  .academy-detail-page .recent-exams-table-container .expand-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 8px 16px !important;
+    width: 100% !important;
+  }
+
+  /* Collapsed column 1 (#) */
+  .academy-detail-1-page .recent-exams-table-container .expand-content > span:first-child,
+  .academy-detail-page .recent-exams-table-container .expand-content > span:first-child {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    color: #21236A !important;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    border-right: none !important;
+    padding: 0 !important;
+    min-height: unset !important;
+  }
+
+  /* Collapsed column 2 (Name / Schedule) */
+  .academy-detail-1-page .recent-exams-table-container .expand-content > span:nth-child(2),
+  .academy-detail-page .recent-exams-table-container .expand-content > span:nth-child(2) {
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-grow: 1 !important;
+    border-right: none !important;
+    padding: 0 12px !important;
+    min-height: unset !important;
+    width: auto !important;
+  }
+
+  /* Collapsed expand button on the right */
+  .academy-detail-1-page .recent-exams-table-container .expand-content > span.expand-btn,
+  .academy-detail-page .recent-exams-table-container .expand-content > span.expand-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    border: 1px solid #D9DFEC !important;
+    cursor: pointer !important;
+    min-height: unset !important;
+    padding: 0 !important;
+    border-right: none !important;
+  }
+  .academy-detail-1-page .recent-exams-table-container .expand-content > span.expand-btn::after,
+  .academy-detail-page .recent-exams-table-container .expand-content > span.expand-btn::after {
+    content: "" !important;
+    width: 14px !important;
+    height: 14px !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2378829D' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707zm4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707z'/%3E%3C/svg%3E") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+  }
+
+  /* ── Styling of expand-headers when open ── */
+  .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header.open,
+  .academy-detail-page .recent-exams-table-container tbody tr.expand-header.open {
+    margin-top: -12px !important;
+    border-radius: 0 0 12px 12px !important;
+    border-top: none !important;
+    padding-bottom: 12px !important;
+  }
+
+  /* Sync open background color with original row color */
+  .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header.open:nth-child(4n+2),
+  .academy-detail-page .recent-exams-table-container tbody tr.expand-header.open:nth-child(4n+2) {
+    background-color: #F3F4F4 !important;
+  }
+  .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header.open:nth-child(4n+4),
+  .academy-detail-page .recent-exams-table-container tbody tr.expand-header.open:nth-child(4n+4) {
+    background-color: rgba(33, 35, 106, 0.1) !important;
+  }
+
+  .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header.open .expand-content,
+  .academy-detail-page .recent-exams-table-container tbody tr.expand-header.open .expand-content {
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header.open span:not(.expand-btn),
+  .academy-detail-page .recent-exams-table-container tbody tr.expand-header.open span:not(.expand-btn) {
+    display: none !important;
+  }
+
+  .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header.open span.expand-btn,
+  .academy-detail-page .recent-exams-table-container tbody tr.expand-header.open span.expand-btn {
+    display: inline-flex !important;
+    width: auto !important;
+    height: auto !important;
+    background-color: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    min-height: unset !important;
+    cursor: pointer !important;
+  }
+
+  .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header.open span.expand-btn::after,
+  .academy-detail-page .recent-exams-table-container tbody tr.expand-header.open span.expand-btn::after {
+    content: "Collapse Table" !important;
+    color: #950323 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    background-image: none !important;
+    width: auto !important;
+    height: auto !important;
+    text-decoration: none !important;
+  }
+
+  /* ── Hide columns that shouldn't show on mobile ── */
+  .academy-detail-1-page .recent-exams-table-container .mobile-hide,
+  .academy-detail-page .recent-exams-table-container .mobile-hide,
+  .academy-detail-1-page .recent-exams-table-container th.mobile-hide,
+  .academy-detail-page .recent-exams-table-container th.mobile-hide,
+  .academy-detail-1-page .recent-exams-table-container td.mobile-hide,
+  .academy-detail-page .recent-exams-table-container td.mobile-hide {
+    display: none !important;
+  }
+
+  /* ── Action column: only show Expand circle button on collapsed state ── */
+  .academy-detail-1-page .btn-action-circle.mobile-hide-action,
+  .academy-detail-page .btn-action-circle.mobile-hide-action {
+    display: none !important;
+  }
+
+  /* ── Footer single-row fix ── */
+  .academy-detail-1-page .table-footer-custom,
+  .academy-detail-page .table-footer-custom {
+    background-color: #EEF1F6 !important;
+    border-radius: 10px !important;
+    border: none !important;
+    padding: 6px 10px !important;
+    margin-top: 12px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 4px !important;
+    overflow: hidden !important;
+  }
+
+  .academy-detail-1-page .table-footer-custom label,
+  .academy-detail-page .table-footer-custom label {
+    font-size: 10px !important;
+    white-space: nowrap !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 0 !important;
+    color: #78829D !important;
+    gap: 3px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .academy-detail-1-page .table-show-select,
+  .academy-detail-page .table-show-select {
+    height: 22px !important;
+    font-size: 10px !important;
+    padding: 0 16px 0 4px !important;
+    margin: 0 !important;
+    border-radius: 5px !important;
+    width: 44px !important;
+    min-width: 0 !important;
+  }
+
+  .academy-detail-1-page .custom-pagination,
+  .academy-detail-page .custom-pagination {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1px !important;
+    flex-wrap: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  .academy-detail-1-page .custom-pagination .pagination-btn,
+  .academy-detail-page .custom-pagination .pagination-btn {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    border-radius: 50% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 10px !important;
+    font-weight: 600 !important;
+    color: #78829D !important;
+    text-decoration: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    border: none !important;
+    flex-shrink: 0 !important;
+  }
+
+  .academy-detail-1-page .custom-pagination .pagination-btn i,
+  .academy-detail-page .custom-pagination .pagination-btn i {
+    font-size: 8px !important;
+  }
+
+  .academy-detail-1-page .custom-pagination .pagination-btn.active,
+  .academy-detail-page .custom-pagination .pagination-btn.active {
+    background-color: #21236A !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(33,35,106,0.18) !important;
+  }
+
+  .academy-detail-1-page .custom-pagination .pagination-btn.hide-mobile,
+  .academy-detail-page .custom-pagination .pagination-btn.hide-mobile {
+    display: none !important;
+  }
+
+  .academy-detail-1-page .custom-pagination a.pagination-btn:first-of-type,
+  .academy-detail-1-page .custom-pagination a.pagination-btn:last-of-type,
+  .academy-detail-page .custom-pagination a.pagination-btn:first-of-type,
+  .academy-detail-page .custom-pagination a.pagination-btn:last-of-type {
+    border-radius: 5px !important;
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    color: #21236A !important;
+    border: 1px solid #21236A !important;
+  }
+
+  .academy-detail-1-page .custom-pagination span,
+  .academy-detail-page .custom-pagination span {
+    font-size: 9px !important;
+    margin-left: 2px !important;
+    white-space: nowrap !important;
+    color: #78829D !important;
+    flex-shrink: 0 !important;
+  }
+}

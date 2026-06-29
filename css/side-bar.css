@@ -1,0 +1,227 @@
+/* ==========================================================================
+   Desktop Sidebar Layout & Menu Styles
+   ========================================================================== */
+
+/* Sidebar Overrides */
+.side-bar-body {
+  background-color: var(--theme-dark-navy) !important;
+  border-radius: 20px !important;
+  padding: 24px 16px !important;
+}
+
+.side-bar-header {
+  border: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin-bottom: 20px;
+}
+
+.side-bar-header .navbar-brand {
+  display: none !important;
+  /* Hide logo inside sidebar in desktop, logo is in main content area */
+}
+
+.side-bar .side-menu {
+  padding: 0 !important;
+}
+
+.side-bar .side-menu .nav-item {
+  margin-bottom: 12px !important;
+}
+
+.side-bar .side-menu a {
+  color: var(--theme-text-gray) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  padding: 10px 16px !important;
+  border-radius: 30px !important;
+  /* Capsule style */
+  transition: all 0.2s ease;
+  height: auto !important;
+  max-height: none !important;
+}
+
+.side-bar .side-menu a:hover {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: transparent !important;
+}
+
+/* Active sidebar item (Dashboard) */
+.side-bar .side-menu .nav-item.active>a {
+  background-color: var(--theme-red) !important;
+  border-color: var(--theme-red) !important;
+  color: #fff !important;
+}
+
+/* Dropdowns in Sidebar */
+.side-bar .side-menu .dropdown-toggle::after {
+  filter: brightness(0) invert(1);
+  margin-left: auto;
+  transition: transform 0.2s;
+}
+
+.side-bar .side-menu .dropdown.open .dropdown-toggle::after {
+  transform: rotate(180deg);
+}
+
+.side-bar .side-menu .dropdown-menu {
+  padding-left: 20px !important;
+  margin-top: 5px !important;
+}
+
+.side-bar .side-menu .dropdown-menu .dropdown-item {
+  color: var(--theme-text-gray) !important;
+  padding: 6px 12px !important;
+  font-size: 13px !important;
+  border-radius: 20px !important;
+}
+
+.side-bar .side-menu .dropdown-menu .dropdown-item:hover {
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.side-bar .side-menu .dropdown-menu .dropdown-item.active {
+  color: #fff !important;
+  background-color: var(--theme-red) !important;
+}
+
+/* Log Out block at bottom of sidebar */
+.side-bar-user {
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 16px 8px 8px 8px !important;
+  margin-top: auto !important;
+}
+
+.side-bar-user .nav-link-logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--theme-text-gray);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.side-bar-user .nav-link-logout:hover {
+  color: #fff;
+}
+
+.side-bar-user .nav-link-logout svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* ==========================================================================
+   Shared Badge & Mobile Drawer Navigation Styles
+   ========================================================================== */
+
+/* Badge styling */
+.side-menu .badge-live {
+  background-color: #E10A1A !important;
+  color: #FFFFFF !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  margin-left: auto;
+  line-height: 1;
+}
+
+.side-menu .badge-pending {
+  background-color: #D29E1B !important;
+  color: #FFFFFF !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  margin-left: auto;
+  line-height: 1;
+}
+
+/* Hide close button on desktop */
+@media (min-width: 992px) {
+  .side-bar-close {
+    display: none !important;
+  }
+}
+
+/* Mobile Drawer Styles to support Hamburger trigger opening the sidebar */
+body.mobile .side-bar-wrapper {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px !important;
+  height: 100%;
+  z-index: 1070;
+  transition: left 0.3s ease;
+  padding: 0 !important;
+}
+
+body.mobile.open-menu .side-bar-wrapper {
+  left: 0;
+}
+
+body.mobile .side-bar-wrapper .side-bar-close {
+  display: block !important;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Hide close button in desktop and tablet view to keep sidebar fixed */
+@media (min-width: 768px) {
+  .side-bar-header .side-bar-close {
+    display: none !important;
+  }
+}
+
+/* Mobile hamburger button overrides to clear side-bar-close styles */
+.mobile-hamburger-btn {
+  position: relative !important;
+  width: 48px !important;
+  height: 48px !important;
+  background-color: #21236A !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  left: auto !important;
+  top: auto !important;
+  box-shadow: 0px 4px 10px rgba(33, 35, 106, 0.15) !important;
+  margin-right: 0 !important;
+}
+
+/* Custom Hamburger Icon lines */
+.custom-hamburger-icon {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 5px !important;
+  align-items: flex-start !important;
+  width: 20px !important;
+}
+
+.custom-hamburger-icon .line {
+  display: block !important;
+  height: 2px !important;
+  background-color: #FFFFFF !important;
+  border-radius: 2px !important;
+}
+
+.custom-hamburger-icon .line-1 {
+  width: 20px !important;
+}
+
+.custom-hamburger-icon .line-2 {
+  width: 14px !important;
+}
+
+.custom-hamburger-icon .line-3 {
+  width: 8px !important;
+}

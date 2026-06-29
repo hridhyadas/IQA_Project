@@ -54,13 +54,16 @@ body.tablet .side-bar {
 .side-bar-body::-webkit-scrollbar {
   width: 5px;
 }
+
 .side-bar-body::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .side-bar-body::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
+
 .side-bar-body::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
 }
@@ -2045,6 +2048,7 @@ body.tablet:not(.open-menu) .side-bar-close::before {
     left: 40px;
     top: 30px;
   }
+
   .verification-logo {
     width: 180px;
   }
@@ -2362,6 +2366,7 @@ body.tablet:not(.open-menu) .side-bar-close::before {
     left: 40px;
     top: 30px;
   }
+
   .student-img-ver-logo {
     width: 180px;
   }
@@ -2577,7 +2582,8 @@ body.tablet:not(.open-menu) .side-bar-close::before {
    8. Responsive Academy List Screen (Center's List) Overrides
    ========================================================================== */
 .custom-table-footer {
-  background-color: #E9EBF3 !important; /* light grayish purple/blue from the screenshot */
+  background-color: #E9EBF3 !important;
+  /* light grayish purple/blue from the screenshot */
   padding: 16px 30px !important;
   display: flex;
   justify-content: space-between;
@@ -2634,7 +2640,8 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   font-weight: 600;
   text-decoration: none;
   transition: all 0.2s ease;
-  padding: 0 !important; /* reset default padding */
+  padding: 0 !important;
+  /* reset default padding */
 }
 
 .custom-pagination-pages a.active {
@@ -2733,15 +2740,18 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   .custom-table-card {
     border-radius: 20px !important;
   }
+
   .custom-table-footer {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     padding: 16px 20px !important;
     justify-content: center;
   }
+
   .table tbody .expand-header span {
     border-right: none !important;
   }
+
   .table tbody td::before,
   .table tbody th::before {
     content: attr(data-label) " :" !important;
@@ -2752,7 +2762,7 @@ body.tablet:not(.open-menu) .side-bar-close::before {
 }
 
 /* Figma-exact Sidebar Redesign Overrides */
-.side-menu .nav-item.dropdown > .dropdown-toggle {
+.side-menu .nav-item.dropdown>.dropdown-toggle {
   color: rgba(255, 255, 255, 0.7) !important;
   font-size: 13px !important;
   font-weight: 500 !important;
@@ -2769,7 +2779,7 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   white-space: nowrap;
 }
 
-.side-menu .nav-item.dropdown > .dropdown-toggle:hover {
+.side-menu .nav-item.dropdown>.dropdown-toggle:hover {
   color: #FFFFFF !important;
   background-color: rgba(255, 255, 255, 0.05) !important;
 }
@@ -2787,7 +2797,7 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   line-height: 1;
 }
 
-.side-menu .nav-item.dropdown > .dropdown-toggle:hover .toggle-chevron {
+.side-menu .nav-item.dropdown>.dropdown-toggle:hover .toggle-chevron {
   color: #FFFFFF;
 }
 
@@ -2804,7 +2814,8 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   padding: 0 !important;
   margin: 0 !important;
   position: static !important;
-  display: block !important; /* jQuery controls show/hide via slideUp/slideDown */
+  display: block !important;
+  /* jQuery controls show/hide via slideUp/slideDown */
   width: auto !important;
   box-shadow: none !important;
   float: none !important;
@@ -2820,7 +2831,8 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   color: rgba(255, 255, 255, 0.8) !important;
   font-size: 13px !important;
   font-weight: 500 !important;
-  padding: 10px 16px 10px 28px !important; /* Indent slightly under header */
+  padding: 10px 16px 10px 28px !important;
+  /* Indent slightly under header */
   display: flex !important;
   align-items: center;
   border-radius: 8px !important;
@@ -2836,14 +2848,14 @@ body.tablet:not(.open-menu) .side-bar-close::before {
 }
 
 /* Active nested item highlight styling */
-.side-bar .dropdown-menu li.active > .dropdown-item,
+.side-bar .dropdown-menu li.active>.dropdown-item,
 .side-bar .dropdown-menu .dropdown-item.active {
   background-color: #DF001B !important;
   color: #FFFFFF !important;
   font-weight: 600 !important;
 }
 
-.side-bar .dropdown-menu li.active > .dropdown-item .menu-icon img,
+.side-bar .dropdown-menu li.active>.dropdown-item .menu-icon img,
 .side-bar .dropdown-menu .dropdown-item.active .menu-icon img {
   filter: brightness(0) invert(1);
 }

@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="css/daterangepicker.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/dashboard.css">
-  <title>Exam Details - IQA</title>
+  <title>Exam Question Overview - IQA</title>
   <style>
     .side-menu .badge-live{background-color:#E10A1A!important;color:#fff!important;font-size:10px!important;font-weight:700!important;padding:3px 6px!important;border-radius:4px!important;margin-left:auto;line-height:1;}
     .side-menu .badge-pending{background-color:#D29E1B!important;color:#fff!important;font-size:10px!important;font-weight:700!important;padding:3px 6px!important;border-radius:4px!important;margin-left:auto;line-height:1;}
@@ -22,6 +22,7 @@
     .custom-hamburger-icon{display:flex!important;flex-direction:column!important;gap:5px!important;align-items:flex-start!important;width:20px!important;}
     .custom-hamburger-icon .line{display:block!important;height:2px!important;background-color:#fff!important;border-radius:2px!important;}
     .custom-hamburger-icon .line-1{width:20px!important;}.custom-hamburger-icon .line-2{width:14px!important;}.custom-hamburger-icon .line-3{width:8px!important;}
+    
     .exam-details-page{background:#F4F5F8;min-height:100vh;padding-bottom:48px;}
     .ed-header-bar{background:#1B2A6B;border-radius:12px;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:8px;}
     .ed-header-bar h4{color:#fff;font-size:18px;font-weight:600;margin:0;font-family:'Inter',sans-serif;}
@@ -29,6 +30,7 @@
     .ed-breadcrumb a{color:rgba(255,255,255,.7);text-decoration:none;}
     .ed-breadcrumb a:hover{color:#fff;}
     .ed-breadcrumb .current{color:#fff;font-weight:500;}
+    
     .ed-card{background:#fff;border-radius:14px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
     .ed-tabs{display:flex;align-items:center;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
     .ed-tab{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:500;color:#6B7280;cursor:pointer;border:none;background:transparent;font-family:'Inter',sans-serif;transition:all .2s;white-space:nowrap;}
@@ -36,51 +38,193 @@
     .ed-tab:hover:not(.active){background:#F0F1FB;color:#1B2A6B;}
     .ed-edit-btn{margin-left:auto;padding:7px 22px;border:1.5px solid #D0D5DD;border-radius:8px;background:#fff;color:#344054;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s;white-space:nowrap;}
     .ed-edit-btn:hover{background:#F9FAFB;border-color:#98A2B3;}
+    
     .ed-exam-id{font-size:20px;font-weight:700;color:#1A1A2E;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;}
-    .ed-badge-scheduled{background:#E9F5E9;color:#2E7D32;border:1px solid #A5D6A7;border-radius:20px;font-size:12px;font-weight:600;padding:3px 12px;font-family:'Inter',sans-serif;}
-    .ed-meta{font-size:13px;color:#78829D;margin-bottom:4px;font-family:'Inter',sans-serif;display:flex;flex-wrap:wrap;gap:4px;align-items:center;}
+    .ed-badge-draft{background:#F3F4F6;color:#4B5563;border:1px solid #E5E7EB;border-radius:20px;font-size:12px;font-weight:600;padding:3px 12px;font-family:'Inter',sans-serif;}
+    
+    .ed-meta{font-size:13px;color:#78829D;margin-bottom:24px;font-family:'Inter',sans-serif;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;}
     .ed-meta .val{color:#344054;}
     .ed-meta a{color:#1B2A6B;text-decoration:underline;word-break:break-all;}
     .ed-meta .dot{color:#D0D5DD;margin:0 4px;}
-    .ed-stats-row{display:flex;border:1.5px solid #E5E9F0;border-radius:12px;overflow:hidden;margin:20px 0 24px;}
-    .ed-stat-item{flex:1;padding:16px 20px;border-right:1.5px solid #E5E9F0;}
-    .ed-stat-item:last-child{border-right:none;}
-    .ed-stat-val{font-size:26px;font-weight:700;color:#1A1A2E;font-family:'Inter',sans-serif;line-height:1.2;}
-    .ed-stat-lbl{font-size:12px;color:#6A7FA8;font-family:'Inter',sans-serif;margin-top:2px;}
-    .ed-section-heading{background:#1B2A6B;border-radius:8px;padding:10px 18px;color:#fff;font-size:14px;font-weight:600;font-family:'Inter',sans-serif;margin-bottom:18px;}
-    .ed-info-icon-row{display:flex;align-items:flex-start;gap:10px;}
-    .ed-info-icon{width:34px;height:34px;background:#F4F5FB;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;}
-    .ed-info-icon svg{width:16px;height:16px;}
-    .ed-info-field-label{font-size:12px;color:#1B2A6B;font-weight:600;font-family:'Inter',sans-serif;margin-bottom:3px;}
-    .ed-info-field-val{font-size:13px;color:#344054;font-family:'Inter',sans-serif;line-height:1.5;}
-    .ed-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;margin-bottom:18px;}
-    .ed-info-block{margin-bottom:20px;}
-    .ed-divider{border:none;border-top:1px solid #EAECF0;margin:20px 0;}
-    .ed-score-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:18px;}
-    .ed-checkbox-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
-    .ed-checkbox-item{display:flex;align-items:center;gap:8px;font-size:13px;color:#344054;font-family:'Inter',sans-serif;}
-    .ed-checkbox-icon{width:20px;height:20px;background:#1B2A6B;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-    .ed-checkbox-icon svg{width:12px;height:12px;}
-    .ed-view-all-btn{border:1.5px solid #1B2A6B;border-radius:8px;padding:9px 22px;font-size:13px;font-weight:600;color:#1B2A6B;background:#fff;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;white-space:nowrap;}
-    .ed-view-all-btn:hover{background:#F0F2FB;}
-    @media(max-width:767px){
-      .header-top{justify-content:flex-start!important;border:none!important;padding:0!important;margin-bottom:16px!important;}
-      .ed-header-bar{border-radius:10px;padding:12px 16px;flex-direction:column;align-items:flex-start;}
-      .ed-header-bar h4{font-size:16px;}
-      .ed-card{padding:16px;}
-      .ed-tab{padding:7px 14px;font-size:12px;}
-      .ed-edit-btn{margin-left:0;width:100%;}
-      .ed-exam-id{font-size:17px;}
-      .ed-stats-row{flex-direction:column;border-radius:10px;}
-      .ed-stat-item{border-right:none;border-bottom:1.5px solid #E5E9F0;padding:12px 16px;}
-      .ed-stat-item:last-child{border-bottom:none;}
-      .ed-info-grid{grid-template-columns:1fr;gap:14px;}
-      .ed-score-grid{grid-template-columns:1fr 1fr;gap:12px;}
-      .ed-checkbox-row{gap:12px;}
-      .ed-bottom-row{flex-direction:column!important;align-items:flex-start!important;gap:12px!important;}
-      .ed-view-all-btn{width:100%;text-align:center;}
+
+    /* Custom Stats Row side-by-side */
+    .eq-stats-row {
+      display: flex;
+      border: 1.5px solid #E5E9F0;
+      border-radius: 12px;
+      background: #fff;
+      margin: 20px 0 24px;
+      text-align: center;
+      overflow: hidden;
     }
-    @media(min-width:768px) and (max-width:991px){.ed-score-grid{grid-template-columns:1fr 1fr;}}
+    .eq-stat-item {
+      flex: 1;
+      padding: 16px 12px;
+      border-right: 1.5px solid #E5E9F0;
+    }
+    .eq-stat-item:last-child {
+      border-right: none;
+    }
+    .eq-stat-val {
+      font-size: 24px;
+      font-weight: 700;
+      color: #1A1A2E;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.2;
+    }
+    .eq-stat-lbl {
+      font-size: 11px;
+      color: #78829D;
+      font-weight: 500;
+      margin-top: 4px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Content two-column layout */
+    .eq-content-layout {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+    .eq-questions-column {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .eq-sidebar-column {
+      width: 260px;
+      flex-shrink: 0;
+    }
+
+    /* Badges card style */
+    .eq-badges-card {
+      background: #fff;
+      border: 1.5px solid #E5E9F0;
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .eq-badges-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .eq-badge-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1.5px solid #E5E9F0;
+      background: #fff;
+      color: #344054;
+    }
+    .eq-badge-btn.active {
+      background: #1B2A6B !important;
+      border-color: #1B2A6B !important;
+      color: #fff !important;
+    }
+    .eq-badge-btn:hover:not(.active) {
+      background: #F0F2FB;
+      border-color: #1B2A6B;
+      color: #1B2A6B;
+    }
+
+    /* Question card style */
+    .eq-question-card {
+      background: #fff;
+      border: 1.5px solid #E5E9F0;
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .eq-question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 1.5px solid #EAECF0;
+      margin-bottom: 16px;
+    }
+    .eq-question-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #1A1A2E;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+    }
+    .eq-question-score {
+      font-size: 13px;
+      font-weight: 600;
+      color: #E10A1A;
+      font-family: 'Inter', sans-serif;
+    }
+    .eq-question-body {
+      margin-top: 12px;
+    }
+    .eq-q-num {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A1A2E;
+      margin-bottom: 8px;
+      font-family: 'Inter', sans-serif;
+    }
+    .eq-q-text {
+      font-size: 13.5px;
+      color: #4B5563;
+      line-height: 1.65;
+      margin-bottom: 20px;
+      font-family: 'Inter', sans-serif;
+    }
+    .eq-answers-lbl {
+      font-size: 13px;
+      font-weight: 700;
+      color: #1A1A2E;
+      margin-bottom: 12px;
+      font-family: 'Inter', sans-serif;
+    }
+    .eq-answers-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+    }
+    .eq-answer-pill {
+      font-size: 12.5px;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: #F3F4F6;
+      color: #4B5563;
+      font-family: 'Inter', sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1.5px solid transparent;
+    }
+    .eq-answer-pill.correct {
+      background: #EBFEDF !important;
+      border-color: #34A853 !important;
+      color: #137333 !important;
+      font-weight: 600;
+    }
+    .eq-answer-pill.correct i {
+      font-size: 14px;
+      color: #137333;
+    }
+    .eq-short-answer-lbl {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #1A1A2E;
+      margin-top: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Modal Styling */
     #generateQuestionsModal .modal-dialog{max-width:420px;}
     #generateQuestionsModal .modal-content{border-radius:20px;border:none;padding:32px 32px 28px;box-shadow:0 24px 60px rgba(0,0,0,.18);position:relative;}
     #generateQuestionsModal .gq-close-btn{position:absolute;top:16px;right:16px;width:32px;height:32px;border:1.5px solid #D0D5DD;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#667085;font-size:16px;line-height:1;transition:background .2s;z-index:10;}
@@ -97,6 +241,50 @@
     .gq-pill:hover,.gq-pill.active{background:#EEF0FF;border-color:#7B61FF;color:#7B61FF;}
     .gq-generate-btn{width:100%;height:50px;background:#1B2A6B;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:background .2s,transform .1s;letter-spacing:.02em;}
     .gq-generate-btn:hover{background:#14215a;}.gq-generate-btn:active{transform:scale(.98);}
+
+    @media(max-width:767px){
+      .header-top{justify-content:flex-start!important;border:none!important;padding:0!important;margin-bottom:16px!important;}
+      .ed-header-bar{border-radius:10px;padding:12px 16px;flex-direction:column;align-items:flex-start;}
+      .ed-header-bar h4{font-size:16px;}
+      .ed-card{padding:16px;}
+      .ed-tab{padding:7px 14px;font-size:12px;}
+      .ed-edit-btn{margin-left:0;width:100%;}
+      .ed-exam-id{font-size:17px;}
+      .ed-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 20px;
+      }
+      .ed-meta .dot {
+        display: none;
+      }
+
+      /* Stack columns in reverse: badges grid first, then questions */
+      .eq-content-layout {
+        flex-direction: column-reverse;
+        gap: 20px;
+      }
+      .eq-sidebar-column {
+        width: 100% !important;
+      }
+      .eq-badges-card {
+        padding: 16px;
+      }
+      .eq-badges-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        justify-items: center;
+      }
+      .eq-badge-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+      }
+      .eq-question-card {
+        padding: 16px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -121,7 +309,7 @@
                 <a class="nav-link dropdown-toggle" href="#"><span class="menu-label me-auto">Exam Managment</span></a>
                 <ul class="dropdown-menu" style="display:block;">
                   <li>
-                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                    <a class="dropdown-item d-flex align-items-center justify-content-between active" href="#">
                       <span class="d-flex align-items-center"><span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span><span class="menu-label">Exam List</span></span>
                       <span class="badge badge-live">1 Live</span>
                     </a>
@@ -198,99 +386,135 @@
           </div>
           <div class="ed-card">
             <div class="ed-tabs">
-              <button class="ed-tab active">Overview</button>
-              <button class="ed-tab">Questions</button>
+              <a href="exam-details.html" class="ed-tab" style="text-decoration:none; display:inline-block;">Overview</a>
+              <button class="ed-tab active">Questions</button>
               <button class="ed-tab">Valuation</button>
               <button class="ed-tab">Students</button>
               <button class="ed-edit-btn">Edit</button>
             </div>
-            <div class="ed-exam-id">EXAM-3827462 <span class="ed-badge-scheduled">Scheduled</span></div>
+            
+            <div class="ed-exam-id">EXAM-3827462 <span class="ed-badge-draft">Draft</span></div>
             <div class="ed-meta">
-              <span>Title :</span><span class="val">Facebook Ads Fundamentals &ndash; Level 1</span>
-              <span class="dot">&bull;</span><span>Created at : 12 Dec 2025</span>
-              <span class="dot">&bull;</span><span>Exam Link :</span>
-              <a href="https://devaluate.com/exam-esawe123" target="_blank">https://devaluate.com/exam-esawe123</a>
+              <span>Title : <span class="val">Facebook Ads Fundamentals &ndash; Level 1</span></span>
+              <span class="dot">&bull;</span>
+              <span>Created at : <span class="val">12 Aug 2025</span></span>
+              <span class="dot">&bull;</span>
+              <span>Exam Link : <a href="https://devaluate.com/exam-esawe123" target="_blank">https://devaluate.com/exam-esawe123</a></span>
             </div>
-            <div class="ed-stats-row">
-              <div class="ed-stat-item"><div class="ed-stat-val">20</div><div class="ed-stat-lbl">Total Questions</div></div>
-              <div class="ed-stat-item"><div class="ed-stat-val">20</div><div class="ed-stat-lbl">Student Pass Score</div></div>
-              <div class="ed-stat-item"><div class="ed-stat-val">100</div><div class="ed-stat-lbl">Total Score</div></div>
-            </div>
-            <div class="ed-section-heading">Exam Info</div>
-            <div class="ed-info-block">
-              <div class="ed-info-icon-row">
-                <div class="ed-info-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <div><div class="ed-info-field-label">Exam Title</div><div class="ed-info-field-val">Facebook Ads Fundamentals &ndash; Level 1</div></div>
+
+            <!-- Stats card -->
+            <div class="eq-stats-row">
+              <div class="eq-stat-item">
+                <div class="eq-stat-val">01</div>
+                <div class="eq-stat-lbl">Score Per Question</div>
               </div>
-            </div>
-            <div class="ed-info-block">
-              <div class="ed-info-field-label" style="color:#1B2A6B;font-size:13px;margin-bottom:6px;">Exam Description</div>
-              <div class="ed-info-field-val" style="color:#4B5563;line-height:1.6;">This exam evaluates the candidate's basic understanding of Facebook Ads Manager, campaign objectives, budgeting, and audience targeting for performance marketing.</div>
-            </div>
-            <div class="ed-info-grid">
-              <div class="ed-info-icon-row">
-                <div class="ed-info-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="9 22 9 12 15 12 15 22" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <div><div class="ed-info-field-label">Academy name</div><div class="ed-info-field-val">TILS-The Institute of Languages and Skills...</div></div>
+              <div class="eq-stat-item">
+                <div class="eq-stat-val">0.5</div>
+                <div class="eq-stat-lbl">Negative Score</div>
               </div>
-              <div class="ed-info-icon-row">
-                <div class="ed-info-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#1B2A6B" stroke-width="1.8"/><line x1="8" y1="21" x2="16" y2="21" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round"/><line x1="12" y1="17" x2="12" y2="21" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-                <div><div class="ed-info-field-label">Course</div><div class="ed-info-field-val">Digital Marketing</div></div>
+              <div class="eq-stat-item">
+                <div class="eq-stat-val">20</div>
+                <div class="eq-stat-lbl">Total Questions</div>
               </div>
             </div>
-            <div class="ed-info-grid">
-              <div class="ed-info-icon-row">
-                <div class="ed-info-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#1B2A6B" stroke-width="1.8"/><line x1="16" y1="2" x2="16" y2="6" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round"/><line x1="8" y1="2" x2="8" y2="6" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round"/><line x1="3" y1="10" x2="21" y2="10" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-                <div><div class="ed-info-field-label">Exam Schedule</div><div class="ed-info-field-val">20 Dec 2025 10:00 AM to 12:00 PM</div></div>
-              </div>
-              <div class="ed-info-icon-row">
-                <div class="ed-info-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B2A6B" stroke-width="1.8"/><polyline points="12 7 12 12 15 15" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <div><div class="ed-info-field-label">Duration</div><div class="ed-info-field-val">3 Hour</div></div>
-              </div>
-            </div>
-            <hr class="ed-divider">
-            <div class="ed-section-heading">Exam Info</div>
-            <div class="ed-info-grid" style="margin-bottom:16px;">
-              <div class="ed-info-icon-row">
-                <div class="ed-info-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B2A6B" stroke-width="1.8"/><path d="M12 16v-4" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8.5" r="0.8" fill="#1B2A6B"/></svg></div>
-                <div><div class="ed-info-field-label">Total Questions</div><div class="ed-info-field-val">20</div></div>
-              </div>
-              <div class="ed-info-icon-row">
-                <div class="ed-info-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B2A6B" stroke-width="1.8"/><path d="M12 16v-4" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="8.5" r="0.8" fill="#1B2A6B"/></svg></div>
-                <div><div class="ed-info-field-label">Question Type</div><div class="ed-info-field-val">Both</div></div>
-              </div>
-            </div>
-            <div class="ed-score-grid">
-              <div class="ed-info-icon-row">
-                <div class="ed-info-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B2A6B" stroke-width="1.8"/><path d="M8 12l3 3 5-5" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <div><div class="ed-info-field-label">Score (MCQ)</div><div class="ed-info-field-val">1/ Question</div></div>
-              </div>
-              <div class="ed-info-icon-row">
-                <div class="ed-info-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B2A6B" stroke-width="1.8"/><path d="M8 12l3 3 5-5" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                <div><div class="ed-info-field-label">Score (Short Answer)</div><div class="ed-info-field-val">2/ Question</div></div>
-              </div>
-              <div class="ed-info-icon-row">
-                <div class="ed-info-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1B2A6B" stroke-width="1.8"/><line x1="9" y1="9" x2="15" y2="15" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round"/><line x1="15" y1="9" x2="9" y2="15" stroke="#1B2A6B" stroke-width="1.8" stroke-linecap="round"/></svg></div>
-                <div><div class="ed-info-field-label">Negative score</div><div class="ed-info-field-val">0.5 /Question</div></div>
-              </div>
-            </div>
-            <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 ed-bottom-row">
-              <div class="ed-checkbox-row">
-                <div class="ed-checkbox-item">
-                  <div class="ed-checkbox-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                  Randomise Question Poll MCQ
+
+            <!-- Main responsive layout -->
+            <div class="eq-content-layout">
+              <div class="eq-questions-column">
+                
+                <!-- Question 1 -->
+                <div class="eq-question-card">
+                  <div class="eq-question-header">
+                    <span class="eq-question-title">Question 01/20</span>
+                    <span class="eq-question-score" style="color: #7B61FF;">Score:01</span>
+                  </div>
+                  <div class="eq-question-body">
+                    <div class="eq-q-num">Q1:</div>
+                    <div class="eq-q-text">
+                      Now that I'm done thoroughly mangling that vague metaphor, let's get down to business. You know you need to start blogging to grow your business, but you don't know how. In this post, I'll show you how to write a great blog post in five simple steps that people will actually want to read ?
+                    </div>
+                    <div class="eq-answers-lbl">Answers:</div>
+                    <div class="eq-answers-row">
+                      <span class="eq-answer-pill">Lingo Kids</span>
+                      <span class="eq-answer-pill correct"><i class="bi bi-check-circle-fill"></i> Lingo Express</span>
+                      <span class="eq-answer-pill">Fun Learning</span>
+                      <span class="eq-answer-pill">Lingo Espanol</span>
+                      <span class="eq-answer-pill">Speaking Mastery</span>
+                    </div>
+                  </div>
                 </div>
-                <div class="ed-checkbox-item">
-                  <div class="ed-checkbox-icon"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                  Randomise Answer Poll MCQ
+
+                <!-- Question 2 -->
+                <div class="eq-question-card">
+                  <div class="eq-question-header">
+                    <span class="eq-question-title">Question 02/20</span>
+                    <span class="eq-question-score" style="color: #7B61FF;">Score:01</span>
+                  </div>
+                  <div class="eq-question-body">
+                    <div class="eq-q-num">Q2:</div>
+                    <div class="eq-q-text">
+                      Now that I'm done thoroughly mangling that vague metaphor, let's get down to business. You know you need to start blogging to grow your business, but you don't know how. In this post, I'll show you how to write a great blog post in five simple steps that people will actually want to read ?
+                    </div>
+                    <div class="eq-answers-lbl">Answers:</div>
+                    <div class="eq-answers-row">
+                      <span class="eq-answer-pill">Yes</span>
+                      <span class="eq-answer-pill correct"><i class="bi bi-check-circle-fill"></i> No</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="eq-question-card">
+                  <div class="eq-question-header">
+                    <span class="eq-question-title">Question 03/20</span>
+                    <span class="eq-question-score" style="color: #7B61FF;">Score:02</span>
+                  </div>
+                  <div class="eq-question-body">
+                    <div class="eq-q-num">Q3:</div>
+                    <div class="eq-q-text">
+                      Now that I'm done thoroughly mangling that vague metaphor, let's get down to business. You know you need to start blogging to grow your business, but you don't know how. In this post, I'll show you how to write a great blog post in five simple steps that people will actually want to read ?
+                    </div>
+                    <div class="eq-short-answer-lbl">Short Answers</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Question Selection grid sidebar -->
+              <div class="eq-sidebar-column">
+                <div class="eq-badges-card">
+                  <div class="eq-badges-grid">
+                    <span class="eq-badge-btn active">Q 01</span>
+                    <span class="eq-badge-btn">Q 02</span>
+                    <span class="eq-badge-btn">Q 03</span>
+                    <span class="eq-badge-btn">Q 04</span>
+                    <span class="eq-badge-btn">Q 05</span>
+                    <span class="eq-badge-btn">Q 06</span>
+                    <span class="eq-badge-btn">Q 07</span>
+                    <span class="eq-badge-btn">Q 08</span>
+                    <span class="eq-badge-btn">Q 09</span>
+                    <span class="eq-badge-btn">Q 10</span>
+                    <span class="eq-badge-btn">Q 11</span>
+                    <span class="eq-badge-btn">Q 12</span>
+                    <span class="eq-badge-btn">Q 13</span>
+                    <span class="eq-badge-btn">Q 14</span>
+                    <span class="eq-badge-btn">Q 15</span>
+                    <span class="eq-badge-btn">Q 16</span>
+                    <span class="eq-badge-btn">Q 17</span>
+                    <span class="eq-badge-btn">Q 18</span>
+                    <span class="eq-badge-btn">Q 19</span>
+                    <span class="eq-badge-btn">Q 20</span>
+                  </div>
                 </div>
               </div>
-              <button class="ed-view-all-btn">View All Questions</button>
             </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <div class="modal fade" id="generateQuestionsModal" tabindex="-1" aria-labelledby="generateQuestionsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
@@ -314,6 +538,7 @@
       </div>
     </div>
   </div>
+
   <script src="js/jquery-2.2.4.min.js"></script>
   <script src="js/moment.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -322,8 +547,14 @@
   <script src="js/main.js"></script>
   <script>
     (function(){var b=document.body;if(window.innerWidth<768)b.classList.add('mobile');window.addEventListener('resize',function(){if(window.innerWidth<768)b.classList.add('mobile');else{b.classList.remove('mobile');b.classList.remove('open-menu');}});document.querySelectorAll('.side-bar-close').forEach(function(btn){btn.addEventListener('click',function(){b.classList.toggle('open-menu');});});})();
-    document.querySelectorAll('.ed-tab').forEach(function(t){t.addEventListener('click',function(){document.querySelectorAll('.ed-tab').forEach(function(x){x.classList.remove('active');});this.classList.add('active');});});
-    document.querySelectorAll('.gq-pill').forEach(function(p){p.addEventListener('click',function(){document.querySelectorAll('.gq-pill').forEach(function(x){x.classList.remove('active');});this.classList.add('active');});});
+    
+    // Add interactive click behavior to badge buttons to match desktop sidebar layout
+    document.querySelectorAll('.eq-badge-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.eq-badge-btn').forEach(function(x) { x.classList.remove('active'); });
+        this.classList.add('active');
+      });
+    });
   </script>
 </body>
 </html>

@@ -21,6 +21,91 @@
       min-height: calc(100vh - -1520px) !important;
       height: auto !important;
     }
+
+    /* Refined table footer layout to force single horizontal row on all viewports */
+    .table-footer-custom {
+      background-color: #EEF1F6 !important;
+      border-radius: 10px !important;
+      border: none !important;
+      padding: 10px 16px !important;
+      margin-top: 24px !important;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      flex-wrap: nowrap !important;
+      gap: 12px !important;
+    }
+    .table-footer-left {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .table-footer-left select {
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 13px;
+      background-color: #FFFFFF;
+      color: #1E293B;
+      outline: none;
+    }
+    .table-footer-middle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .table-footer-middle .pagination-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      border: 1px solid #E2E8F0;
+      background-color: #FFFFFF;
+      color: #64748B;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .table-footer-middle .pagination-btn.active {
+      background-color: #1B2A6B;
+      color: #FFFFFF;
+      border-color: #1B2A6B;
+    }
+    .table-footer-middle .pagination-btn.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .table-footer-right {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 767px) {
+      .table-footer-custom {
+        padding: 8px 10px !important;
+        gap: 6px !important;
+      }
+      .table-footer-left,
+      .table-footer-right {
+        font-size: 11px !important;
+      }
+      .table-footer-left select {
+        padding: 2px 4px !important;
+        font-size: 11px !important;
+      }
+      .table-footer-middle .pagination-btn {
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 11px !important;
+      }
+    }
   </style>
 
   <title>IQA</title>
@@ -389,26 +474,26 @@
 
             <!-- Table Footer/Pagination -->
             <div class="table-footer-custom">
-              <div>
-                <label class="d-flex align-items-center gap-2">
-                  Show
-                  <select class="table-show-select form-select d-inline-block py-0" style="width: auto;">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                  </select>
-                  per page
-                </label>
+              <div class="table-footer-left">
+                Show
+                <select class="mx-1">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                </select>
+                per page
               </div>
-              <div class="custom-pagination">
-                <a href="#" class="pagination-btn"><i class="bi bi-chevron-left"></i></a>
+              <div class="table-footer-middle">
+                <a href="#" class="pagination-btn disabled"><i class="bi bi-chevron-left"></i></a>
                 <a href="#" class="pagination-btn active">1</a>
                 <a href="#" class="pagination-btn">2</a>
                 <a href="#" class="pagination-btn">3</a>
                 <a href="#" class="pagination-btn">4</a>
                 <a href="#" class="pagination-btn">5</a>
                 <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
-                <span class="text-secondary ms-2" style="font-size: 13px;">1-10 of 52</span>
+              </div>
+              <div class="table-footer-right">
+                1-10 of 52
               </div>
             </div>
           </div>
@@ -459,26 +544,26 @@
 
             <!-- Table Footer/Pagination -->
             <div class="table-footer-custom">
-              <div>
-                <label class="d-flex align-items-center gap-2">
-                  Show
-                  <select class="table-show-select form-select d-inline-block py-0" style="width: auto;">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                  </select>
-                  per page
-                </label>
+              <div class="table-footer-left">
+                Show
+                <select class="mx-1">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                </select>
+                per page
               </div>
-              <div class="custom-pagination">
-                <a href="#" class="pagination-btn"><i class="bi bi-chevron-left"></i></a>
+              <div class="table-footer-middle">
+                <a href="#" class="pagination-btn disabled"><i class="bi bi-chevron-left"></i></a>
                 <a href="#" class="pagination-btn active">1</a>
                 <a href="#" class="pagination-btn">2</a>
                 <a href="#" class="pagination-btn">3</a>
                 <a href="#" class="pagination-btn">4</a>
                 <a href="#" class="pagination-btn">5</a>
                 <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
-                <span class="text-secondary ms-2" style="font-size: 13px;">1-10 of 52</span>
+              </div>
+              <div class="table-footer-right">
+                1-10 of 52
               </div>
             </div>
           </div>
@@ -609,26 +694,26 @@
 
             <!-- Table Footer/Pagination -->
             <div class="table-footer-custom">
-              <div>
-                <label class="d-flex align-items-center gap-2">
-                  Show
-                  <select class="table-show-select form-select d-inline-block py-0" style="width: auto;">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                  </select>
-                  per page
-                </label>
+              <div class="table-footer-left">
+                Show
+                <select class="mx-1">
+                  <option value="10">10</option>
+                  <option value="25">25</option>
+                  <option value="50">50</option>
+                </select>
+                per page
               </div>
-              <div class="custom-pagination">
-                <a href="#" class="pagination-btn"><i class="bi bi-chevron-left"></i></a>
+              <div class="table-footer-middle">
+                <a href="#" class="pagination-btn disabled"><i class="bi bi-chevron-left"></i></a>
                 <a href="#" class="pagination-btn active">1</a>
                 <a href="#" class="pagination-btn">2</a>
                 <a href="#" class="pagination-btn">3</a>
                 <a href="#" class="pagination-btn">4</a>
                 <a href="#" class="pagination-btn">5</a>
                 <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
-                <span class="text-secondary ms-2" style="font-size: 13px;">1-10 of 52</span>
+              </div>
+              <div class="table-footer-right">
+                1-10 of 52
               </div>
             </div>
 

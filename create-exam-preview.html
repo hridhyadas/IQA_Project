@@ -1,0 +1,999 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/daterangepicker.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <title>Question Preview - IQA</title>
+  <style>
+    /* Badge styling */
+    .side-menu .badge-live {
+      background-color: #E10A1A !important;
+      color: #FFFFFF !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      padding: 3px 6px !important;
+      border-radius: 4px !important;
+      margin-left: auto;
+      line-height: 1;
+    }
+    .side-menu .badge-pending {
+      background-color: #D29E1B !important;
+      color: #FFFFFF !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      padding: 3px 6px !important;
+      border-radius: 4px !important;
+      margin-left: auto;
+      line-height: 1;
+    }
+
+    /* Mobile Drawer Styles to support Hamburger trigger opening the sidebar */
+    body.mobile .side-bar-wrapper {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 280px !important;
+      height: 100%;
+      z-index: 1070;
+      transition: left 0.3s ease;
+      padding: 0 !important;
+    }
+    body.mobile.open-menu .side-bar-wrapper {
+      left: 0;
+    }
+    body.mobile .side-bar-wrapper .side-bar-close {
+      display: block !important;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    /* Hide close button in desktop and tablet view to keep sidebar fixed */
+    @media (min-width: 768px) {
+      .side-bar-header .side-bar-close {
+        display: none !important;
+      }
+    }
+
+    /* Mobile hamburger button overrides to clear side-bar-close styles */
+    .mobile-hamburger-btn {
+      position: relative !important;
+      width: 48px !important;
+      height: 48px !important;
+      background-color: #21236A !important;
+      background-image: none !important;
+      border: none !important;
+      border-radius: 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      left: auto !important;
+      top: auto !important;
+      box-shadow: 0px 4px 10px rgba(33, 35, 106, 0.15) !important;
+      margin-right: 0 !important;
+    }
+
+    /* Custom Hamburger Icon lines */
+    .custom-hamburger-icon {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 5px !important;
+      align-items: flex-start !important;
+      width: 20px !important;
+    }
+    .custom-hamburger-icon .line {
+      display: block !important;
+      height: 2px !important;
+      background-color: #FFFFFF !important;
+      border-radius: 2px !important;
+    }
+    .custom-hamburger-icon .line-1 { width: 20px !important; }
+    .custom-hamburger-icon .line-2 { width: 14px !important; }
+    .custom-hamburger-icon .line-3 { width: 8px !important; }
+
+    /* Layout Content Styling */
+    .exam-details-page {
+      background: #F4F5F8;
+      min-height: 100vh;
+      padding-bottom: 48px;
+    }
+    .ed-header-bar {
+      background: #1B2A6B;
+      border-radius: 12px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .ed-header-bar h4 {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+    .ed-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.7);
+      font-family: 'Inter', sans-serif;
+    }
+    .ed-breadcrumb a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+    }
+    .ed-breadcrumb a:hover {
+      color: #fff;
+    }
+    .ed-breadcrumb .current {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* Steps card styling */
+    .steps-card {
+      background: #FFFFFF;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      margin-bottom: 24px;
+    }
+    .steps-container {
+      width: 100%;
+      max-width: 600px;
+    }
+    .steps-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      width: 100%;
+    }
+    .step-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .step-col .step-bar {
+      height: 6px;
+      background-color: #F1F3F9;
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+    .step-col.completed .step-bar {
+      background-color: #0BC33F;
+    }
+    .step-col.active .step-bar {
+      background-color: #F1F3F9;
+    }
+    .step-col.active .step-bar::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 35%;
+      background-color: #0BC33F;
+      border-radius: 4px;
+    }
+    .step-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #9CA3AF;
+      white-space: nowrap;
+    }
+    .step-col.completed .step-label,
+    .step-col.active .step-label {
+      color: #0BC33F;
+      font-weight: 600;
+    }
+    .step-col.completed .step-label i,
+    .step-col.active .step-label i {
+      color: #0BC33F;
+      font-size: 16px;
+    }
+    .step-col.pending .step-label i {
+      color: #D1D5DB;
+      font-size: 16px;
+    }
+
+    /* Control buttons styling */
+    .btn-steps-cancel {
+      color: #6B7280;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .btn-steps-cancel:hover {
+      color: #1F2937;
+    }
+    .btn-steps-back {
+      background: #FFFFFF;
+      border: 1.5px solid #D0D5DD;
+      border-radius: 8px;
+      color: #344054;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 20px;
+      transition: all 0.2s;
+    }
+    .btn-steps-back:hover {
+      background: #F9FAFB;
+      border-color: #98A2B3;
+    }
+    .btn-steps-next {
+      background: #1B2A6B;
+      border: none;
+      border-radius: 8px;
+      color: #FFFFFF;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 24px;
+      transition: background 0.2s;
+    }
+    .btn-steps-next:hover {
+      background: #142055;
+    }
+
+    /* Question Preview card */
+    .qp-card {
+      background: #FFFFFF;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .qp-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .qp-title-block h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1A1A2E;
+      margin-bottom: 4px;
+    }
+    .qp-summary-info {
+      font-size: 13px;
+      color: #78829D;
+      font-weight: 500;
+    }
+    .qp-total-score {
+      font-size: 13px;
+      color: #78829D;
+      font-weight: 600;
+    }
+
+    /* Question item card */
+    .qp-item-card {
+      background: #FFFFFF;
+      border: 1px solid #EAECF0;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .qp-item-card:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+    .qp-item-content {
+      flex: 1;
+    }
+    .qp-item-question {
+      font-size: 14px;
+      font-weight: 600;
+      color: #1D2465;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .qp-item-answer {
+      font-size: 13px;
+      color: #6B7280;
+      font-weight: 500;
+      margin-top: 4px;
+    }
+    .qp-item-choices {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      font-size: 13px;
+      color: #6B7280;
+      margin-top: 8px;
+    }
+    .qp-choice-item.correct {
+      color: #0BC33F !important;
+      font-weight: 600;
+    }
+    .qp-item-delete {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1.5px solid #FCA5A5;
+      background-color: #FFF1F2;
+      color: #EF4444;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      margin-left: 16px;
+      transition: all 0.2s;
+    }
+    .qp-item-delete:hover {
+      background-color: #FFE4E6;
+      border-color: #EF4444;
+    }
+
+    /* Circular Pagination styling */
+    .qp-pagination-card {
+      background: #FFFFFF;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      height: 100%;
+    }
+    .qp-pagination-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .qp-page-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50% !important; /* Circular! */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1.5px solid #E5E9F0;
+      background: #FFFFFF;
+      color: #1B2A6B;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .qp-page-btn:hover {
+      background: #F9FAFB;
+      border-color: #98A2B3;
+    }
+    .qp-page-btn.active {
+      background: #1B2A6B;
+      color: #FFFFFF;
+      border-color: #1B2A6B;
+    }
+
+    /* Inline mobile circular pagination */
+    .qp-pagination-mobile {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 20px 0;
+      width: 100%;
+    }
+    .qp-pagination-mobile .qp-page-btn {
+      flex: 1;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      width: auto;
+    }
+
+    /* Add Moe Questions button styling */
+    .btn-add-moe {
+      background: #FFFFFF;
+      border: 1.5px solid #1B2A6B;
+      border-radius: 8px;
+      color: #1B2A6B;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px 24px;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-block;
+      margin: 24px 0;
+      text-align: center;
+      text-decoration: none;
+    }
+    .btn-add-moe:hover {
+      background: #F0F2FB;
+      color: #1B2A6B;
+    }
+
+    /* Refined table footer layout */
+    .table-footer-custom {
+      background-color: #EEF1F6 !important;
+      border-radius: 10px !important;
+      border: none !important;
+      padding: 10px 16px !important;
+      margin-top: 24px !important;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      flex-wrap: nowrap !important;
+      gap: 12px !important;
+    }
+    .table-footer-left {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .table-footer-left select {
+      border: 1px solid #CBD5E1;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 13px;
+      background-color: #FFFFFF;
+      color: #1E293B;
+      outline: none;
+    }
+    .table-footer-middle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .table-footer-middle .pagination-btn {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      border: 1px solid #E2E8F0;
+      background-color: #FFFFFF;
+      color: #64748B;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .table-footer-middle .pagination-btn.active {
+      background-color: #1B2A6B;
+      color: #FFFFFF;
+      border-color: #1B2A6B;
+    }
+    .table-footer-middle .pagination-btn.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    .table-footer-right {
+      font-size: 13px;
+      color: #64748B;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* Responsive styling updates */
+    @media (max-width: 767px) {
+      .steps-card {
+        padding: 16px;
+      }
+      .steps-card .d-flex {
+        flex-direction: column;
+        gap: 16px !important;
+      }
+      .steps-container {
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .steps-row {
+        gap: 8px;
+        width: 100%;
+      }
+      .step-label {
+        font-size: 10px !important;
+        gap: 4px !important;
+      }
+      .steps-card .d-flex.align-items-center.justify-content-between.justify-content-md-end {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        margin-top: 10px;
+      }
+      .qp-card {
+        padding: 16px;
+      }
+      .qp-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .qp-total-score {
+        margin-top: 4px;
+      }
+      .qp-item-card {
+        gap: 8px !important;
+      }
+      .btn-add-moe {
+        display: block !important;
+        margin: 24px auto !important; /* Center on mobile! */
+      }
+      .table-footer-custom {
+        padding: 8px 10px !important;
+        gap: 6px !important;
+      }
+      .table-footer-left,
+      .table-footer-right {
+        font-size: 11px !important;
+      }
+      .table-footer-left select {
+        padding: 2px 4px !important;
+        font-size: 11px !important;
+      }
+      .table-footer-middle .pagination-btn {
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 11px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="preloader"><div class="loader"></div></div>
+  
+  <div class="wrapper d-flex flex-column">
+    <!-- Side bar start -->
+    <div class="side-bar-wrapper">
+      <div class="side-bar">
+        <div class="side-bar-header">
+          <div class="side-bar-close"></div>
+          <a class="navbar-brand" href="#">
+            <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" />
+          </a>
+        </div>
+        <div class="side-bar-body">
+          <div class="side-menu">
+            <ul class="nav">
+
+              <!-- Menu item start -->
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
+                  <span class="menu-label me-auto">Dashboard</span>
+                </a>
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Exam Managment</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                      <span class="d-flex align-items-center">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
+                        <span class="menu-label">Exam List</span>
+                      </span>
+                      <span class="badge badge-live">1 Live</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Report</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
+                      <span class="d-flex align-items-center">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                        <span class="menu-label">Exam Valuation</span>
+                      </span>
+                      <span class="badge badge-pending">3 Pending</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#generateQuestionsModal">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
+                      <span class="menu-label">Question Bank</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Student</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
+                      <span class="menu-label">Student List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Center’s Management</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
+                      <span class="menu-label">Create</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="academy-list.html">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
+                      <span class="menu-label">List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Settings</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                      <span class="menu-label">Apply for qualification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span>
+                      <span class="menu-label">Location</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                      <span class="menu-label">Courses</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+            </ul>
+          </div>
+
+          <!-- Log Out start -->
+          <div class="side-bar-user">
+            <a href="#" class="nav-link-logout">
+              <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""
+                  style="width: 20px; height: 20px;"></span>
+              <span>Log Out</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div><!-- Side bar end -->
+
+    <!-- Content wrapper start -->
+    <div class="content-wrapper">
+
+      <!-- Mobile Hamburger / Header Area (d-md-none) -->
+      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between">
+        <div class="side-bar-close mobile-hamburger-btn">
+          <div class="custom-hamburger-icon">
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </div>
+        </div>
+        <div class="header-logo-centered mx-auto">
+          <img src="img/logo2.png" alt="Logo" style="height: 38px; object-fit: contain;" />
+        </div>
+        <div style="width: 48px;"></div>
+      </div>
+
+      <!-- Top Header start -->
+      <div class="container-fluid">
+        <div class="main-header-bar d-none d-md-flex">
+          <div class="logo-container">
+            <img src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
+          </div>
+          <div class="user-profile-header">
+            <img src="img/user.png" alt="User Profile Image" />
+            <div class="user-info">
+              <h5>Name</h5>
+              <p>Super Administrator</p>
+            </div>
+          </div>
+        </div>
+      </div><!-- Top Header end -->
+
+      <div class="content exam-details-page p-0">
+        <div class="container-fluid p-0">
+          
+          <!-- Banner Header start -->
+          <div class="ed-header-bar d-flex align-items-center justify-content-between">
+            <div>
+              <h4>Create Exam</h4>
+              <nav class="ed-breadcrumb">
+                <a href="dashboard.html">Home</a><span>&rsaquo;</span>
+                <a href="#">Exam</a><span>&rsaquo;</span>
+                <a href="create-exam.html">Exam List</a><span>&rsaquo;</span>
+                <span class="current">Create</span>
+              </nav>
+            </div>
+            <div class="user-profile-avatar-banner d-md-none">
+              <img src="img/user.png" alt="User" style="width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.08);" />
+            </div>
+          </div>
+          <!-- Banner Header end -->
+
+          <!-- Card 1: Steps progress card start -->
+          <div class="steps-card">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-4">
+              <div class="steps-container flex-grow-1">
+                <div class="steps-row">
+                  <div class="step-col completed">
+                    <div class="step-bar"></div>
+                    <div class="step-label">
+                      <i class="bi bi-check-circle-fill"></i> Basic Details
+                    </div>
+                  </div>
+                  <div class="step-col active">
+                    <div class="step-bar"></div>
+                    <div class="step-label">
+                      <i class="bi bi-check-circle-fill"></i> Questions
+                    </div>
+                  </div>
+                  <div class="step-col pending">
+                    <div class="step-bar"></div>
+                    <div class="step-label">
+                      <i class="bi bi-circle"></i> Review
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-center justify-content-between justify-content-md-end gap-3 flex-grow-0 w-100-mobile">
+                <a href="#" class="btn-steps-cancel">Cancel</a>
+                <button type="button" class="btn-steps-back" onclick="window.location.href='create-exam.html?state=edit'">Back</button>
+                <button type="button" class="btn-steps-next" onclick="alert('Moving to step 3: Review!')">Next</button>
+              </div>
+            </div>
+          </div>
+          <!-- Card 1: Steps progress card end -->
+
+          <!-- Question Manager Grid Section -->
+          <div class="row g-4">
+            <!-- Left Column: Question Preview Cards List -->
+            <div class="col-md-9">
+              <div class="qp-card">
+                
+                <!-- Preview Header Summary -->
+                <div class="qp-header-row flex-wrap">
+                  <div class="qp-title-block">
+                    <h4>Question Preview</h4>
+                    <div class="qp-summary-info">Total 5 Question : 1 Short Answer | 2 Yes or No | 4 MCQ</div>
+                  </div>
+                  <div class="qp-total-score mt-2 mt-md-0">Total Score : 100</div>
+                </div>
+
+                <!-- Mobile Circular Pagination (visible on mobile only) -->
+                <div class="qp-pagination-mobile d-flex d-md-none justify-content-between mb-4">
+                  <button type="button" class="qp-page-btn">Q 01</button>
+                  <button type="button" class="qp-page-btn">Q 02</button>
+                  <button type="button" class="qp-page-btn">Q 03</button>
+                  <button type="button" class="qp-page-btn">Q 04</button>
+                  <button type="button" class="qp-page-btn active">Q 05</button>
+                </div>
+
+                <!-- Questions list -->
+                <div class="qp-questions-list" id="qp-questions-container">
+                  <!-- Q1 -->
+                  <div class="qp-item-card" data-id="1">
+                    <div class="qp-item-content">
+                      <div class="qp-item-question">Q1 : What distinguishes "end" as a noun versus a verb in English dictionary definitions?</div>
+                      <div class="qp-item-answer">Answer: Descriptive</div>
+                    </div>
+                    <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
+                  </div>
+
+                  <!-- Q2 -->
+                  <div class="qp-item-card" data-id="2">
+                    <div class="qp-item-content">
+                      <div class="qp-item-question">Q2 : In what contexts is "though" used casually at the end of English sentences for soft disagreement?</div>
+                      <div class="qp-item-answer">Answer: Descriptive</div>
+                    </div>
+                    <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
+                  </div>
+
+                  <!-- Q3 -->
+                  <div class="qp-item-card" data-id="3">
+                    <div class="qp-item-content">
+                      <div class="qp-item-question">Q3 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
+                      <div class="qp-item-choices">
+                        <span class="qp-choice-item">a. True</span>
+                        <span class="qp-choice-item correct">| b. False</span>
+                      </div>
+                    </div>
+                    <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
+                  </div>
+
+                  <!-- Q4 -->
+                  <div class="qp-item-card" data-id="4">
+                    <div class="qp-item-content">
+                      <div class="qp-item-question">Q4 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
+                      <div class="qp-item-choices">
+                        <span class="qp-choice-item">a. I finished</span>
+                        <span class="qp-choice-item">| b. the correct</span>
+                        <span class="qp-choice-item">| c. relaxation claim</span>
+                        <span class="qp-choice-item correct">| d. could drive</span>
+                      </div>
+                    </div>
+                    <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
+                  </div>
+
+                  <!-- Q5 -->
+                  <div class="qp-item-card" data-id="5">
+                    <div class="qp-item-content">
+                      <div class="qp-item-question">Q5 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
+                      <div class="qp-item-choices">
+                        <span class="qp-choice-item">a. I finished</span>
+                        <span class="qp-choice-item">| b. the correct</span>
+                        <span class="qp-choice-item">| c. relaxation claim</span>
+                        <span class="qp-choice-item correct">| d. could drive</span>
+                      </div>
+                    </div>
+                    <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
+                  </div>
+
+                  <!-- Q6 -->
+                  <div class="qp-item-card" data-id="6">
+                    <div class="qp-item-content">
+                      <div class="qp-item-question">Q6 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
+                      <div class="qp-item-choices">
+                        <span class="qp-choice-item">a. I finished</span>
+                        <span class="qp-choice-item">| b. the correct</span>
+                        <span class="qp-choice-item">| c. relaxation claim</span>
+                        <span class="qp-choice-item correct">| d. could drive</span>
+                      </div>
+                    </div>
+                    <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
+                  </div>
+
+                  <!-- Q7 -->
+                  <div class="qp-item-card" data-id="7">
+                    <div class="qp-item-content">
+                      <div class="qp-item-question">Q7 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
+                      <div class="qp-item-choices">
+                        <span class="qp-choice-item">a. I finished</span>
+                        <span class="qp-choice-item">| b. the correct</span>
+                        <span class="qp-choice-item">| c. relaxation claim</span>
+                        <span class="qp-choice-item correct">| d. could drive</span>
+                      </div>
+                    </div>
+                    <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
+                  </div>
+                </div>
+
+                <!-- Action Add More button -->
+                <a href="create-exam.html?state=edit" class="btn-add-moe">Add Moe Questions</a>
+
+                <!-- Footer pagination -->
+                <div class="table-footer-custom">
+                  <div class="table-footer-left">
+                    Show
+                    <select class="mx-1">
+                      <option value="10" selected>10</option>
+                      <option value="25">25</option>
+                      <option value="50">50</option>
+                      <option value="100">100</option>
+                    </select>
+                    per page
+                  </div>
+                  <div class="table-footer-middle">
+                    <a href="#" class="pagination-btn disabled"><i class="bi bi-chevron-left"></i></a>
+                    <a href="#" class="pagination-btn active">1</a>
+                    <a href="#" class="pagination-btn">2</a>
+                    <a href="#" class="pagination-btn">3</a>
+                    <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
+                  </div>
+                  <div class="table-footer-right">
+                    1-10 of 52
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Right Column: Circular Pagination Grid (Desktop only) -->
+            <div class="col-md-3 d-none d-md-block">
+              <div class="qp-pagination-card">
+                <div class="qp-pagination-grid">
+                  <button type="button" class="qp-page-btn">Q 01</button>
+                  <button type="button" class="qp-page-btn">Q 02</button>
+                  <button type="button" class="qp-page-btn">Q 03</button>
+                  <button type="button" class="qp-page-btn">Q 04</button>
+                  <button type="button" class="qp-page-btn active">Q 05</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Standard JS Dependencies -->
+  <script src="js/jquery-2.2.4.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/daterangepicker.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function() {
+      // Sidebar Mobile setup
+      (function(){
+        var b = document.body;
+        if(window.innerWidth < 768) b.classList.add('mobile');
+        window.addEventListener('resize', function(){
+          if(window.innerWidth < 768) b.classList.add('mobile');
+          else {
+            b.classList.remove('mobile');
+            b.classList.remove('open-menu');
+          }
+        });
+        document.querySelectorAll('.side-bar-close').forEach(function(btn){
+          btn.addEventListener('click', function(){
+            b.classList.toggle('open-menu');
+          });
+        });
+      })();
+
+      // pagination active button sync
+      $(document).on('click', '.qp-page-btn', function() {
+        var text = $(this).text().trim();
+        $('.qp-page-btn').removeClass('active');
+        $('.qp-page-btn').filter(function() {
+          return $(this).text().trim() === text;
+        }).addClass('active');
+      });
+
+      // question deletion handler
+      $(document).on('click', '.qp-item-delete', function() {
+        if(confirm('Are you sure you want to delete this question?')) {
+          $(this).closest('.qp-item-card').fadeOut(300, function() {
+            $(this).remove();
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

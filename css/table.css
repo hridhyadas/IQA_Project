@@ -789,7 +789,6 @@
     max-width: 100% !important;
     text-align: left !important;
     overflow: hidden !important;
-    vertical-align: middle !important;
   }
 
   .dashboard-page .recent-exams-table-container table.table tbody tr td::before,

@@ -24,7 +24,7 @@
         justify-content: flex-start !important;
         border: none !important;
         padding: 0 !important;
-        margin-bottom: 24px !important;
+        margin-bottom: 16px !important;
       }
 
       /* KPI Cards mobile adjustments */
@@ -328,11 +328,12 @@
         <div class="container-fluid">
 
           <!-- Top Row: Stat Cards & Question Diagram -->
-          <div class="row g-4 mb-4">
+          <div class="row g-4 mb-4 r2-layout">
 
             <!-- Stat Cards Left Side -->
+
             <div class="col-md-8">
-              <div class="row g-4">
+              <div class="row g-4 kpi-grid-container">
 
                 <!-- Card 1: Academics -->
                 <div class="col-6">
@@ -403,8 +404,8 @@
 
             <!-- Question type cross diagram card right side -->
             <div class="col-md-4">
-              <div class="card border-0 position-relative d-flex align-items-center justify-content-center"
-                style="min-height: 350px; height: calc(100% - 30px); margin-top: 30px; background-color: #fff; border-radius: 16px !important; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08) !important;">
+              <div
+                class="card border-0 position-relative d-flex align-items-center justify-content-center quadrant-card">
                 <!-- SVG Cross diagram -->
                 <svg class="chart-cross" viewBox="0 0 200 200"
                   style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none;">
@@ -428,8 +429,7 @@
                   <!-- Top Left (AI Generated) -->
                   <div class="d-flex flex-column align-items-center justify-content-end"
                     style="padding: 10px; padding-bottom: 15px;">
-                    <div
-                      style="font-size: 19px; font-weight: 500; color: var(--theme-navy-blue); margin-bottom: 0px; font-family: var(--primary-font); text-align: center; line-height: 3.2;">
+                    <div class="quadrant-label">
                       AI Generated
                     </div>
                     <span class="custom-badge-capsule">116</span>
@@ -438,8 +438,7 @@
                   <!-- Top Right (MCQ) -->
                   <div class="d-flex flex-column align-items-center justify-content-end"
                     style="padding: 10px; padding-bottom: 15px;">
-                    <div
-                      style="font-size: 19px; font-weight: 500; color: var(--theme-navy-blue); margin-bottom: 0px; font-family: var(--primary-font); text-align: center; line-height: 3.2;">
+                    <div class="quadrant-label">
                       MCQ
                     </div>
                     <span class="custom-badge-capsule">100</span>
@@ -448,8 +447,7 @@
                   <!-- Bottom Left (Yes/No) -->
                   <div class="d-flex flex-column align-items-center justify-content-start"
                     style="padding: 10px; padding-top: 15px;">
-                    <div
-                      style="font-size: 19px; font-weight: 500; color: var(--theme-navy-blue); margin-bottom: 0px; font-family: var(--primary-font); text-align: center; line-height: 3.2;">
+                    <div class="quadrant-label">
                       Yes/No
                     </div>
                     <span class="custom-badge-capsule">120</span>
@@ -458,8 +456,7 @@
                   <!-- Bottom Right (Short Answer) -->
                   <div class="d-flex flex-column align-items-center justify-content-start"
                     style="padding: 10px; padding-top: 15px;">
-                    <div
-                      style="font-size: 19px; font-weight: 500; color: var(--theme-navy-blue); margin-bottom: 0px; font-family: var(--primary-font); text-align: center; line-height: 3.2;">
+                    <div class="quadrant-label">
                       Short Answer
                     </div>
                     <span class="custom-badge-capsule">99</span>
@@ -472,7 +469,7 @@
           </div><!-- Top Row end -->
 
           <!-- Middle Row: Recent Exam List Table & Top Academies -->
-          <div class="row g-4 mb-4">
+          <div class="row g-4 mb-4 r3-layout">
 
             <!-- Recent Exam List Table Column -->
             <div class="col-md-8">
@@ -487,11 +484,11 @@
                   <table class="table responsive-applied">
                     <thead>
                       <tr>
-                        <th style="width: 9%;"># <i class="bi bi-chevron-expand"></i></th>
-                        <th class="sort-header" style="width: 38%;">Name <i class="bi bi-chevron-expand"></i></th>
+                        <th style="width: 8%;"># <i class="bi bi-chevron-expand"></i></th>
+                        <th class="sort-header" style="width: 35%;">Name <i class="bi bi-chevron-expand"></i></th>
                         <th class="sort-header" style="width: 24%;">Schedule <i class="bi bi-chevron-expand"></i></th>
                         <th class="sort-header" style="width: 15%;">Status <i class="bi bi-chevron-expand"></i></th>
-                        <th class="sort-header text-center" style="width: 21%;">Action <i
+                        <th class="sort-header text-center" style="width: 18%;">Action <i
                             class="bi bi-chevron-expand"></i></th>
                       </tr>
                     </thead>
@@ -538,7 +535,7 @@
                         </td>
                       </tr>
 
-                      <!-- <tr>
+                      <tr>
                         <td>3</td>
                         <td>
                           <strong>Skill Proficiency Test (SPT)</strong>
@@ -599,7 +596,7 @@
                           <a class="btn-action-circle" title="Edit"><i class="bi bi-pencil-square"></i></a>
                           <a class="btn-action-circle" title="More"><i class="bi bi-three-dots-vertical"></i></a>
                         </td>
-                      </tr> -->
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -623,8 +620,8 @@
                     <a href="#" class="pagination-btn active">1</a>
                     <a href="#" class="pagination-btn">2</a>
                     <a href="#" class="pagination-btn">3</a>
-                    <a href="#" class="pagination-btn">4</a>
-                    <a href="#" class="pagination-btn">5</a>
+                    <a href="#" class="pagination-btn mobile-hide-page">4</a>
+                    <a href="#" class="pagination-btn mobile-hide-page">5</a>
                     <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
                     <span style="font-size: 12px; color: var(--theme-text-gray); margin-left: 12px;">1-10 of 52</span>
                   </div>
@@ -718,7 +715,7 @@
           </div><!-- Middle Row end -->
 
           <!-- Bottom Row: Student Added custom stacked pill bar chart & Exams panel -->
-          <div class="row g-4 mb-4">
+          <div class="row g-4 mb-4 r4-layout">
 
             <!-- Student Added Stacked Pill Bar Chart Column -->
             <div class="col-md-9">
@@ -920,21 +917,21 @@
             </div><!-- Student Added end -->
 
             <!-- Exams Summary Column -->
-            <div class="col-md-3 top-academies-column">
+            <div class="col-md-3">
               <!-- Header Row -->
               <div class="top-academies-title-card">
                 <h5>Exams</h5>
               </div>
 
               <!-- Content Card -->
-              <div class="top-academies-card">
+              <div class="top-academies-card exams-overview-card">
                 <div class="exam-list">
                   <div class="exam-summary-item">
                     <span class="exam-color-bar bg-exam-red"></span>
-                    <div class="exam-icon-circle ms-3">
+                    <div class="exam-icon-circle">
                       <img src="img/e1.svg" alt="Calendar Icon">
                     </div>
-                    <div class="exam-details ms-3">
+                    <div class="exam-details">
                       <h3>10</h3>
                       <p>Scheduled</p>
                     </div>
@@ -942,10 +939,10 @@
 
                   <div class="exam-summary-item">
                     <span class="exam-color-bar bg-exam-navy"></span>
-                    <div class="exam-icon-circle ms-3">
+                    <div class="exam-icon-circle">
                       <img src="img/e2.svg" alt="Broadcast Icon">
                     </div>
-                    <div class="exam-details ms-3">
+                    <div class="exam-details">
                       <h3>06</h3>
                       <p>Live Exam</p>
                     </div>
@@ -953,10 +950,10 @@
 
                   <div class="exam-summary-item">
                     <span class="exam-color-bar bg-exam-dark"></span>
-                    <div class="exam-icon-circle ms-3">
+                    <div class="exam-icon-circle">
                       <img src="img/e3.svg" alt="Clipboard Icon">
                     </div>
-                    <div class="exam-details ms-3">
+                    <div class="exam-details">
                       <h3>20</h3>
                       <p>Exam Completed</p>
                     </div>
@@ -964,10 +961,10 @@
 
                   <div class="exam-summary-item">
                     <span class="exam-color-bar bg-exam-blue"></span>
-                    <div class="exam-icon-circle ms-3">
+                    <div class="exam-icon-circle">
                       <img src="img/e4.svg" alt="Repeat Icon">
                     </div>
-                    <div class="exam-details ms-3">
+                    <div class="exam-details">
                       <h3>12</h3>
                       <p>Valuation Pending</p>
                     </div>
@@ -1211,6 +1208,7 @@
       transition: background 0.2s;
       z-index: 10;
     }
+
     #generateQuestionsModal .gq-close-btn:hover {
       background: #f2f4f7;
     }
@@ -1225,15 +1223,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: conic-gradient(
-        from 0deg,
-        #4FC3F7 0%,
-        #7B61FF 25%,
-        #E040FB 50%,
-        #FF6D6D 65%,
-        #4FC3F7 100%
-      );
+      background: conic-gradient(from 0deg,
+          #4FC3F7 0%,
+          #7B61FF 25%,
+          #E040FB 50%,
+          #FF6D6D 65%,
+          #4FC3F7 100%);
     }
+
     .gq-ai-icon::after {
       content: '';
       position: absolute;
@@ -1252,6 +1249,7 @@
       margin-bottom: 6px;
       font-family: 'Inter', sans-serif;
     }
+
     .gq-subtitle {
       font-size: 13px;
       color: #8A94A6;
@@ -1286,10 +1284,12 @@
       font-family: 'Inter', sans-serif;
       transition: border-color 0.2s;
     }
+
     .gq-input:focus {
       border-color: #7B61FF;
       color: #1A1A2E;
     }
+
     .gq-input::placeholder {
       color: #B0B7C3;
     }
@@ -1300,6 +1300,7 @@
       gap: 12px;
       margin-bottom: 24px;
     }
+
     .gq-pill {
       flex: 0 0 auto;
       padding: 9px 22px;
@@ -1314,6 +1315,7 @@
       transition: all 0.2s;
       user-select: none;
     }
+
     .gq-pill:hover,
     .gq-pill.active {
       background: #EEF0FF;
@@ -1336,9 +1338,11 @@
       transition: background 0.2s, transform 0.1s;
       letter-spacing: 0.02em;
     }
+
     .gq-generate-btn:hover {
       background: #14215a;
     }
+
     .gq-generate-btn:active {
       transform: scale(0.98);
     }
@@ -1347,7 +1351,8 @@
   <!-- =========================================================
        GENERATE QUESTIONS USING AI MODAL HTML
   ========================================================== -->
-  <div class="modal fade" id="generateQuestionsModal" tabindex="-1" aria-labelledby="generateQuestionsModalLabel" aria-hidden="true">
+  <div class="modal fade" id="generateQuestionsModal" tabindex="-1" aria-labelledby="generateQuestionsModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
 
@@ -1391,9 +1396,9 @@
 
   <script>
     // Pill toggle behaviour
-    document.querySelectorAll('.gq-pill').forEach(function(pill) {
-      pill.addEventListener('click', function() {
-        document.querySelectorAll('.gq-pill').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.gq-pill').forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        document.querySelectorAll('.gq-pill').forEach(function (p) { p.classList.remove('active'); });
         this.classList.add('active');
       });
     });

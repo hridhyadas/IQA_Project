@@ -254,10 +254,10 @@ body {
   border-top: none !important;
 }
 
-/* Badge variants */
+/* Badge variants — unified colors matching Figma spec */
 .badge-custom-success {
-  background-color: #E2FFE9;
-  color: #20C933;
+  background-color: #E2F5EA;
+  color: #17B26A;
   font-size: 11px;
   font-weight: 700;
   padding: 4px 12px;
@@ -265,7 +265,7 @@ body {
 }
 
 .badge-custom-danger {
-  background-color: #FEE2E2;
+  background-color: #FEE4E2;
   color: #DF001B;
   font-size: 11px;
   font-weight: 700;
@@ -936,22 +936,16 @@ body {
 
 :root {
   --academics-color: #6C7FD8;
-  --enrolled-color: #1f2a5a;
+  --enrolled-color: #21236A;
   --conducted-color: #13193F;
   --courses-color: #DF001B;
-  --theme-navy-blue: #1f2a5a;
+  --theme-navy-blue: #21236A;
   --theme-dark-navy: #13193F;
   --theme-red: #DF001B;
   --primary-font: 'Inter', sans-serif;
 }
 
-body {
-  background-color: #ffffff !important;
-}
-
-.wrapper {
-  background-color: #ffffff !important;
-}
+/* Body and wrapper background inherited from custom.css (#F0F1F1) — no override here */
 
 /* Floating Sidebar & Content Panels on Desktop */
 @media (min-width: 1200px) {
@@ -962,7 +956,7 @@ body {
 
   body.desktop .side-bar-body {
     background-color: var(--theme-navy-blue) !important;
-    border-radius: 25px 0 0 25px !important;
+    border-radius: 24px 0 0 24px !important;
     padding: 24px 16px !important;
     height: 100% !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
@@ -973,7 +967,7 @@ body {
     border-radius: 24px 24px 24px 24px !important;
     margin: 20px 20px 20px 0;
     padding: 24px;
-    min-height: calc(100vh - -1020px);
+    min-height: calc(100vh - 40px);
     width: calc(100% - var(--menu-open) - 20px) !important;
     margin-left: var(--menu-open) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
@@ -1028,11 +1022,11 @@ body {
   body.mobile .content-wrapper {
     background-color: #f5f6fa !important;
     border-radius: 12px;
-    margin: 10px;
-    padding: 16px;
-    min-height: calc(100vh - 20px);
-    width: calc(100% - 20px) !important;
-    margin-left: 10px !important;
+    margin: 6px;
+    padding: 10px 10px 16px 10px;
+    min-height: calc(100vh - 12px);
+    width: calc(100% - 12px) !important;
+    margin-left: 6px !important;
   }
 }
 
@@ -1081,7 +1075,7 @@ body {
 
 .stat-card-number {
   font-size: 44px !important;
-  font-weight: 750 !important;
+  font-weight: 800 !important;
   color: var(--theme-dark-navy) !important;
   margin-top: 8px !important;
   margin-bottom: 14px !important;
@@ -1245,6 +1239,27 @@ body {
   }
 }
 
+/* Quadrant Card Default Style */
+.quadrant-card {
+  min-height: 350px;
+  height: calc(100% - 30px);
+  margin-top: 30px;
+  background-color: #ffffff !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+  border: none !important;
+}
+
+.quadrant-label {
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--theme-navy-blue);
+  margin-bottom: 8px;
+  font-family: var(--primary-font);
+  text-align: center;
+  line-height: 1.2;
+}
+
 /* Recent Exam List Redesign to Match Mockup precisely */
 .recent-exams-table-container {
   background-color: transparent !important;
@@ -1320,8 +1335,8 @@ body {
 
 .recent-exams-table-container table tbody td {
   border: none !important;
-  padding: 0px 8px !important;
-  /* compact padding */
+  padding: 12px 8px !important;
+  /* Figma row height: 12px top/bottom for readable rows */
   vertical-align: middle !important;
   color: #21236A !important;
   font-size: 13px !important;
@@ -1681,47 +1696,89 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
-  /* Exams list table card layout */
+  /* ============================================================
+     BOOTSTRAP GUTTER FIX — Remove col padding so table fills width
+     container-fluid: 12px each side  +  col-md-8: 12px each side
+     Together = 24px wasted per side. Zero them all out on mobile.
+     ============================================================ */
+
+  /* Zero container-fluid horizontal padding */
+  .content-wrapper .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Zero the row gutter (drives column padding via CSS var) */
+  .r2-layout,
+  .r3-layout,
+  .r4-layout {
+    --bs-gutter-x: 0px !important;
+    --bs-gutter-y: 16px;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Explicitly zero column padding (belt-and-suspenders) */
+  .r2-layout > [class*="col"],
+  .r3-layout > [class*="col"],
+  .r4-layout > [class*="col"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* ============================================================
+     RECENT EXAM LIST — MOBILE CARD LAYOUT (Pixel-Perfect Figma)
+     ============================================================ */
+
+  /* Strip the default table-container card look */
   .recent-exams-table-container {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
   }
 
-  .panel-header-custom {
-    background-color: #E2E4E9 !important;
+  /* Title header block */
+  .recent-exams-table-container .panel-header-custom {
+    background-color: #E8EAF0 !important;
     border-radius: 12px !important;
-    margin-bottom: 16px;
-    padding: 16px 20px !important;
+    margin-bottom: 12px;
+    padding: 14px 18px !important;
   }
 
-  .panel-header-custom h5 {
-    color: var(--theme-dark-navy) !important;
-    font-weight: 700;
+  .recent-exams-table-container .panel-header-custom h5 {
+    color: #13193F !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
   }
 
+  /* Make table elements block-level for card layout */
   .recent-exams-table-container .table-responsive {
     overflow: visible !important;
   }
 
   .recent-exams-table-container table {
     display: block;
+    border-spacing: 0 !important;
   }
 
+  /* Hide the desktop <thead> completely */
   .recent-exams-table-container thead {
     display: none;
   }
 
+  /* tbody becomes a white rounded card container */
   .recent-exams-table-container tbody {
     display: flex;
     flex-direction: column;
     gap: 0;
     background: #fff;
-    border-radius: 12px;
-    border: 1px solid #E2E4E9;
+    border-radius: 14px;
+    border: 1px solid #E2E4EA;
     overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   }
 
+  /* Each row becomes a 2-column, 2-row grid card */
   .recent-exams-table-container tr {
     display: grid !important;
     grid-template-columns: 1fr auto;
@@ -1729,10 +1786,10 @@ body {
     grid-template-areas:
       "date badge"
       "title actions";
-    gap: 16px 12px;
+    column-gap: 8px;
+    row-gap: 8px;
     background: transparent;
-    border-radius: 0;
-    padding: 20px 16px;
+    padding: 14px 12px 14px 16px;  /* left 16px for the accent bar */
     position: relative;
     border: none;
     border-bottom: 1px solid #EEF1F6;
@@ -1743,17 +1800,18 @@ body {
     border-bottom: none;
   }
 
-  /* Show only the first 2 data rows */
-  .recent-exams-table-container tbody tr:nth-child(n+5) {
+  /* Show only first 2 data rows on mobile to match Figma */
+  .recent-exams-table-container tbody tr:nth-child(n+3) {
     display: none !important;
   }
 
-  /* Hide expand headers created by JS */
+  /* Hide JS-generated helper rows */
   .recent-exams-table-container tr.expand-header,
   .recent-exams-table-container tr.thead-tr {
     display: none !important;
   }
 
+  /* Left accent bar — 3px, full-height, Figma spec */
   .recent-exams-table-container tr::before {
     content: '';
     position: absolute;
@@ -1761,23 +1819,29 @@ body {
     top: 0;
     bottom: 0;
     width: 3px;
+    border-radius: 0;
   }
 
   .recent-exams-table-container tr:has(.badge-custom-success)::before {
-    background-color: var(--theme-navy-blue);
+    background-color: #1C2260; /* navy for Scheduled */
   }
 
   .recent-exams-table-container tr:has(.badge-custom-danger)::before {
-    background-color: var(--theme-red);
+    background-color: #DF001B; /* red for Live */
   }
 
+  /* Base td reset */
   .recent-exams-table-container td {
     padding: 0 !important;
     border: none !important;
     display: block;
     background: transparent !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
   }
 
+  /* Suppress any pseudo-content injected by table.css */
   .recent-exams-table-container table.table tbody tr td::before,
   .recent-exams-table-container table.table tbody tr td::after,
   .recent-exams-table-container table.table tbody tr th::before,
@@ -1786,106 +1850,232 @@ body {
     display: none !important;
   }
 
-  /* # column */
+  /* ── Column 1 (#) — hidden on mobile ── */
   .recent-exams-table-container td:nth-child(1) {
-    display: none;
+    display: none !important;
   }
 
-  /* Date & Time */
+  /* ── Column 3 (Date & Time) — placed in grid-area "date" ── */
   .recent-exams-table-container td:nth-child(3) {
     grid-area: date;
-    display: flex;
+    display: flex !important;
+    flex-direction: row;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    min-width: 0;
   }
 
+  /* Date text (e.g. "18, Aug 2026") — inline, no bold */
   .recent-exams-table-container td:nth-child(3) strong {
     font-weight: 400 !important;
-    color: #5C6A8E;
+    color: #5C6A8E !important;
     font-size: 11px !important;
+    white-space: nowrap;
+    display: inline !important;
+    max-width: none !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
   }
 
+  /* Bullet separator between date and time */
   .recent-exams-table-container td:nth-child(3) strong::after {
     content: ' \2022 ';
-    margin: 0 6px;
     color: #5C6A8E;
+    white-space: pre;
   }
 
-  .recent-exams-table-container td:nth-child(3) div {
+  /* Time text ("10.00 AM to 12.00 AM | 2h") — inline after bullet */
+  .recent-exams-table-container td:nth-child(3) .text-muted {
     font-size: 11px !important;
     color: #5C6A8E !important;
     margin-top: 0 !important;
+    white-space: nowrap;
+    display: inline !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  /* Status Badge */
+  /* ── Column 4 (Status Badge) — placed in grid-area "badge" ── */
   .recent-exams-table-container td:nth-child(4) {
     grid-area: badge;
     justify-self: end;
     align-self: start;
-    margin-top: -2px;
-    /* Slight visual bump to align text baselines perfectly */
+    display: flex !important;
+    align-items: flex-start;
   }
 
-  /* Badge variants inside cards */
+  /* Badge styling matching Figma spec */
   .recent-exams-table-container .badge-custom-success {
-    background-color: #E2F5EA !important;
+    background-color: #E6F9EF !important;
     color: #17B26A !important;
-    padding: 4px 10px !important;
-    border-radius: 4px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 3px 10px !important;
+    border-radius: 5px !important;
+    white-space: nowrap;
   }
 
   .recent-exams-table-container .badge-custom-danger {
     background-color: #FEE4E2 !important;
-    color: #F04438 !important;
-    padding: 4px 10px !important;
-    border-radius: 4px !important;
+    color: #DF001B !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    padding: 3px 10px !important;
+    border-radius: 5px !important;
+    white-space: nowrap;
   }
 
-  /* Exam name & Code */
+  /* ── Column 2 (Exam name & Code) — placed in grid-area "title" ── */
   .recent-exams-table-container td:nth-child(2) {
     grid-area: title;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
     justify-content: center;
-    gap: 6px;
+    gap: 4px;
+    min-width: 0;
   }
 
   .recent-exams-table-container td:nth-child(2) strong {
-    font-size: 13.5px !important;
-    font-weight: 600 !important;
-    color: var(--theme-dark-navy) !important;
-    line-height: 1.2 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #13193F !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    max-width: 100% !important;
+    display: block !important;
   }
 
-  .recent-exams-table-container td:nth-child(2) div {
+  .recent-exams-table-container td:nth-child(2) .text-muted {
     font-size: 11px !important;
     color: #8A99AD !important;
     margin-top: 0 !important;
+    font-weight: 400 !important;
   }
 
-  /* Actions */
+  /* ── Column 5 (Actions) — placed in grid-area "actions" ── */
   .recent-exams-table-container td:nth-child(5) {
     grid-area: actions;
     justify-self: end;
     align-self: end;
-    display: flex;
+    display: flex !important;
+    flex-direction: row;
     gap: 6px;
+    align-items: center;
   }
 
-  /* Footer */
+  /* Action circle button sizing for mobile */
+  .recent-exams-table-container td:nth-child(5) .btn-action-circle {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  /* ============================================================
+     MOBILE FOOTER — compact single-row, matching Figma exactly
+     ============================================================ */
   .recent-exams-table-container .table-footer-custom {
-    background-color: #E2E4E9 !important;
+    background-color: #E8EAF0 !important;
     border-radius: 10px !important;
-    margin-top: 12px;
-    padding: 8px 10px !important;
+    margin-top: 10px;
+    padding: 8px 12px !important;
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap;
-    /* ← single row, no wrapping */
+    flex-wrap: nowrap !important;
     justify-content: space-between;
     align-items: center;
-    gap: 6px;
+    gap: 0;
     border: none !important;
+    overflow: hidden;
+  }
+
+  /* "Show 10 per page" label — compact font */
+  .recent-exams-table-container .table-footer-custom label {
+    font-size: 11px !important;
+    color: #5C6A8E !important;
+    font-weight: 500 !important;
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 0 !important;
+    white-space: nowrap;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  /* "per page" select dropdown */
+  .recent-exams-table-container .table-show-select {
+    height: 24px !important;
+    font-size: 11px !important;
+    padding: 0 18px 0 6px !important;
+    margin: 0 4px !important;
+    border-radius: 5px !important;
+    border: 1px solid #C8CDD9 !important;
+    background-color: #fff !important;
+    width: auto !important;
+    min-width: 0 !important;
+    color: #13193F !important;
+    background-size: 8px !important;
+    background-position: right 6px center !important;
+  }
+
+  /* Pagination wrapper */
+  .recent-exams-table-container .custom-pagination {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    flex-shrink: 0;
+  }
+
+  /* Pagination buttons — small circles */
+  .recent-exams-table-container .pagination-btn {
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    border-radius: 50% !important;
+    border: none !important;
+    background-color: transparent !important;
+    color: #5C6A8E !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-decoration: none !important;
+  }
+
+  /* Active page — navy filled circle */
+  .recent-exams-table-container .pagination-btn.active {
+    background-color: #1C2260 !important;
+    color: #fff !important;
+    box-shadow: none !important;
+  }
+
+  /* Chevron nav buttons — small rounded square outline */
+  .recent-exams-table-container .custom-pagination a.pagination-btn:first-of-type,
+  .recent-exams-table-container .custom-pagination a.pagination-btn:last-of-type {
+    border: 1.5px solid #C8CDD9 !important;
+    border-radius: 4px !important;
+    color: #5C6A8E !important;
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 10px !important;
+  }
+
+  .recent-exams-table-container .custom-pagination a.pagination-btn:first-of-type {
+    opacity: 0.4;
+  }
+
+  /* Hide pages 4 & 5 on mobile */
+  .recent-exams-table-container .pagination-btn.mobile-hide-page {
+    display: none !important;
+  }
+
+  /* "1-10 of 52" count text */
+  .recent-exams-table-container .custom-pagination span {
+    font-size: 10px !important;
+    color: #5C6A8E !important;
+    margin-left: 6px !important;
+    white-space: nowrap;
   }
 }
 

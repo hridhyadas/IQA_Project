@@ -1518,26 +1518,35 @@ body.tablet:not(.open-menu) .side-bar-close::before {
 @media (min-width: 1550px) {
 
   /* Restrict dashboard main panel size to Figma content width */
-  .dashboard-main-panel {
-    max-width: 1174px !important;
-    width: 1174px !important;
+  .content {
+    max-width: 1254px !important;
+    width: 1254px !important;
     margin: 0 auto !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+
+  .main-header-bar {
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    margin-bottom: 20px !important; /* Figma spacing between rows */
   }
 
   /* Row 2 layout overrides */
   .r2-layout {
     display: flex !important;
     gap: 0 !important;
+    margin-bottom: 20px !important; /* Figma spacing between rows */
   }
 
-  .r2-layout>.col-lg-7 {
+  .r2-layout>.col-md-8 {
     width: 635px !important;
     flex: 0 0 635px !important;
     max-width: 635px !important;
     padding-right: 0 !important;
   }
 
-  .r2-layout>.col-lg-5 {
+  .r2-layout>.col-md-4 {
     width: 475px !important;
     flex: 0 0 475px !important;
     max-width: 475px !important;
@@ -1556,36 +1565,37 @@ body.tablet:not(.open-menu) .side-bar-close::before {
     height: auto !important;
   }
 
-  .kpi-card {
+  .custom-stat-card {
     width: 299px !important;
     height: 205px !important;
     padding-top: 40px !important;
-  }
-
-  .kpi-card-body {
-    height: 165px !important;
   }
 
   /* Quadrant Card override */
   .quadrant-card {
     width: 475px !important;
     height: 475px !important;
+    background-color: #ffffff !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+    margin-top: 0 !important;
   }
 
   /* Row 3 layout overrides */
   .r3-layout {
     display: flex !important;
     gap: 0 !important;
+    margin-bottom: 20px !important; /* Figma spacing between rows */
   }
 
-  .r3-layout>.col-lg-8 {
+  .r3-layout>.col-md-8 {
     width: 849px !important;
     flex: 0 0 849px !important;
     max-width: 849px !important;
     padding-right: 0 !important;
   }
 
-  .r3-layout>.col-lg-4 {
+  .r3-layout>.col-md-4 {
     width: 305px !important;
     flex: 0 0 305px !important;
     max-width: 305px !important;
@@ -1605,14 +1615,14 @@ body.tablet:not(.open-menu) .side-bar-close::before {
     gap: 0 !important;
   }
 
-  .r4-layout>.col-lg-9 {
+  .r4-layout>.col-md-9 {
     width: 948px !important;
     flex: 0 0 948px !important;
     max-width: 948px !important;
     padding-right: 0 !important;
   }
 
-  .r4-layout>.col-lg-3 {
+  .r4-layout>.col-md-3 {
     width: 206px !important;
     flex: 0 0 206px !important;
     max-width: 206px !important;

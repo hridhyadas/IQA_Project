@@ -46,7 +46,9 @@ body.tablet .side-bar {
   background-color: #21236A !important;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
+  flex: 1;
+  min-height: 0;
   border-radius: 0 !important;
   overflow-y: auto;
 }
@@ -75,7 +77,7 @@ body.tablet .side-bar {
   border-radius: 8px;
   margin: 2px 24px;
   /* Align horizontally inside menu */
-  padding: 10px 16px !important;
+  padding: 6px 16px !important;
   display: flex !important;
   align-items: center;
   white-space: nowrap;
@@ -2824,7 +2826,7 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   padding: 0 !important;
   margin: 0 !important;
   position: static !important;
-  display: block !important;
+  display: block;
   /* jQuery controls show/hide via slideUp/slideDown */
   width: auto !important;
   box-shadow: none !important;
@@ -2833,7 +2835,7 @@ body.tablet:not(.open-menu) .side-bar-close::before {
 
 /* Submenu Link container items */
 .side-bar .dropdown-menu li {
-  margin: 2px 24px !important;
+  margin: 1px 24px !important;
 }
 
 /* Nested Submenu links */
@@ -2841,7 +2843,7 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   color: rgba(255, 255, 255, 0.8) !important;
   font-size: 13px !important;
   font-weight: 500 !important;
-  padding: 10px 16px 10px 28px !important;
+  padding: 6px 16px 6px 28px !important;
   /* Indent slightly under header */
   display: flex !important;
   align-items: center;

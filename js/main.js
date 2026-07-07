@@ -92,8 +92,6 @@ $(document).ready(function () {
 
 			const $menu = $(this).next('.dropdown-menu');
 			const $parent = $(this).closest('.dropdown');
-			$('.side-bar .dropdown-menu').not($menu).slideUp(300).removeClass('show');
-			$('.side-bar .nav-item.dropdown').not($parent).removeClass('open');
 			if ($menu.hasClass('show')) {
 				$menu
 					.slideUp(300)
@@ -107,10 +105,9 @@ $(document).ready(function () {
 			$parent.toggleClass('open');
 		});
 
-
-		$('.dropdown-menu li.active').each(function () {
-			$(this).closest('.dropdown .dropdown-menu').css('display', 'block');
-		});
+		// Open all sidebar dropdowns by default on page load
+		$('.side-bar .nav-item.dropdown').addClass('open');
+		$('.side-bar .dropdown-menu').addClass('show').show();
 
 
 	});

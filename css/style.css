@@ -1886,17 +1886,28 @@ input[type=checkbox]:checked + label:after {
   border-radius: 25px;
   padding: 0 16px;
   min-height: 300px;
+  overflow-y: auto;
+}
+.side-bar .side-bar-body::-webkit-scrollbar {
+  width: 5px;
+}
+.side-bar .side-bar-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.side-bar .side-bar-body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+}
+.side-bar .side-bar-body::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
 }
 .side-bar .side-menu {
   padding: 36px 20px;
   -webkit-overflow-scrolling: touch;
-  overflow-y: auto;
+  overflow-y: visible;
   overflow-x: hidden;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.side-bar .side-menu::-webkit-scrollbar {
-  display: none;
+  height: auto;
+  margin-bottom: 30px !important;
 }
 .side-bar .side-menu .nav-item {
   margin-bottom: 20px;

@@ -516,70 +516,149 @@
 <body>
   <div class="preloader"><div class="loader"></div></div>
   <div class="wrapper d-flex flex-column">
+        <!-- Side bar start -->
     <div class="side-bar-wrapper">
       <div class="side-bar">
         <div class="side-bar-header">
           <div class="side-bar-close"></div>
-          <a class="navbar-brand" href="#"><img class="large-logo" src="img/logo2.png" /><img class="small-logo" src="img/small-logo.png" /></a>
+          <a class="navbar-brand" href="#">
+            <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" />
+          </a>
         </div>
         <div class="side-bar-body">
           <div class="side-menu">
             <ul class="nav">
-              <li class="nav-item">
+
+              <!-- Menu item start -->
+              <li class="nav-item ">
                 <a class="nav-link" href="dashboard.html">
                   <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
                   <span class="menu-label me-auto">Dashboard</span>
                 </a>
-              </li>
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
               <li class="nav-item dropdown open">
-                <a class="nav-link dropdown-toggle" href="#"><span class="menu-label me-auto">Exam Managment</span></a>
-                <ul class="dropdown-menu" style="display:block;">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Exam Managment</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu" style="display: block;">
                   <li>
-                    <a class="dropdown-item d-flex align-items-center justify-content-between active" href="#">
-                      <span class="d-flex align-items-center"><span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span><span class="menu-label">Exam List</span></span>
+                    <a class="dropdown-item " href="exam-details.html">
+                      <span class="d-flex align-items-center">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
+                        <span class="menu-label">Exam List</span>
+                      </span>
                       <span class="badge badge-live">1 Live</span>
                     </a>
                   </li>
-                  <li><a class="dropdown-item" href="#"><span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span><span class="menu-label">Exam Report</span></a></li>
                   <li>
-                    <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">
-                      <span class="d-flex align-items-center"><span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span><span class="menu-label">Exam Valuation</span></span>
+                    <a class="dropdown-item " href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                      <span class="menu-label">Exam Report</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item active" href="exam-valuation-overview.html">
+                      <span class="d-flex align-items-center">
+                        <span class="menu-icon"><img src="img/menu-icon/icon-3.svg" alt=""></span>
+                        <span class="menu-label">Exam Valuation</span>
+                      </span>
                       <span class="badge badge-pending">3 Pending</span>
                     </a>
                   </li>
-                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#generateQuestionsModal"><span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span><span class="menu-label">Question Bank</span></a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#"><span class="menu-label me-auto">Student</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#"><span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span><span class="menu-label">Student List</span></a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#"><span class="menu-label me-auto">Center's Management</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#"><span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span><span class="menu-label">Create</span></a></li>
-                  <li><a class="dropdown-item" href="academy-list.html"><span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span><span class="menu-label">List</span></a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#"><span class="menu-label me-auto">Settings</span></a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#"><span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span><span class="menu-label">Apply for qualification</span></a></li>
-                  <li><a class="dropdown-item" href="#"><span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span><span class="menu-label">Location</span></a></li>
-                  <li><a class="dropdown-item" href="#"><span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span><span class="menu-label">Courses</span></a></li>
-                </ul>
-              </li>
+                  <li>
+                    <a class="dropdown-item " href="#" data-bs-toggle="modal" data-bs-target="#generateQuestionsModal">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-4.svg" alt=""></span>
+                      <span class="menu-label">Question Bank</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Student</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu" >
+                  <li>
+                    <a class="dropdown-item " href="student-detail.html">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
+                      <span class="menu-label">Student List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Center’s Management</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu" >
+                  <li>
+                    <a class="dropdown-item " href="create-exam.html">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
+                      <span class="menu-label">Create</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item " href="academy-list.html">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-7.svg" alt=""></span>
+                      <span class="menu-label">List</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
+              <!-- Menu item start -->
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#">
+                  <span class="menu-label me-auto">Settings</span>
+                </a>
+                <!-- Dropdown menu start -->
+                <ul class="dropdown-menu" >
+                  <li>
+                    <a class="dropdown-item " href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                      <span class="menu-label">Apply for qualification</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item " href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-9.svg" alt=""></span>
+                      <span class="menu-label">Location</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item " href="#">
+                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                      <span class="menu-label">Courses</span>
+                    </a>
+                  </li>
+                </ul><!-- Dropdown menu end -->
+              </li><!-- Menu item end -->
+
             </ul>
           </div>
+
+          <!-- Log Out start -->
           <div class="side-bar-user">
             <a href="#" class="nav-link-logout">
-              <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt="" style="width:20px;height:20px;"></span>
+              <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""
+                  style="width: 20px; height: 20px;"></span>
               <span>Log Out</span>
             </a>
           </div>
         </div>
+
+      </div>
+    </div><!-- Side bar end -->
       </div>
     </div>
     <div class="content-wrapper">

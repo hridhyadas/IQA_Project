@@ -1164,6 +1164,7 @@ body {
   height: 12px;
   border-radius: 6px;
   flex-shrink: 0;
+  margin-right: 16px !important;
 }
 
 .exam-icon-circle {
@@ -1178,6 +1179,7 @@ body {
   font-size: 20px;
   flex-shrink: 0;
   background-color: transparent !important;
+  margin-right: 12px !important;
 }
 
 .exam-icon-circle svg,
@@ -2543,5 +2545,69 @@ body {
     white-space: nowrap !important;
     color: #78829D !important;
     flex-shrink: 0 !important;
+  }
+}
+
+/* Dashboard Bug Fixes - Appended at End */
+
+/* Row 5: Quadrant Card height matching on desktop view */
+@media (min-width: 1200px) {
+  .r2-layout > .col-md-4 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .quadrant-card {
+    height: 100% !important;
+    min-height: 475px !important;
+    flex: 1 1 auto !important;
+  }
+}
+
+/* Row 10: Month/Week/Day buttons spacing on mobile */
+@media (max-width: 767.98px) {
+  .toggle-group-capsule {
+    width: auto !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+  }
+  .toggle-btn-capsule {
+    width: auto !important;
+    padding: 6px 16px !important;
+  }
+}
+
+/* Row 11: Live Exam Counts Outside Graph on Mobile */
+@media (max-width: 767.98px) {
+  /* Remove dark background and padding from the main card container */
+  .student-added-card {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  
+  /* Apply the dark blue background styling directly to the chart column wrapper */
+  .student-chart-col {
+    background-color: #1D2465 !important;
+    border-radius: 20px !important;
+    padding: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    margin-bottom: 20px;
+  }
+  
+  /* Style highlight panel to be outside, on white background with dark labels */
+  .chart-highlight-panel {
+    background-color: transparent !important;
+    padding: 10px 0 !important;
+  }
+  
+  .chart-highlight-panel .highlight-number {
+    color: #DF001B !important; /* Keep Red 55 */
+    margin-bottom: 4px !important;
+  }
+  
+  .chart-highlight-panel .highlight-label {
+    color: var(--theme-dark-navy) !important; /* Dark text on white bg */
+    font-weight: 700 !important;
   }
 }

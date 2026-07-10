@@ -160,7 +160,6 @@
   }
 }
 
-/* Mobile Drawer Styles to support Hamburger trigger opening the sidebar */
 body.mobile .side-bar-wrapper {
   position: fixed;
   top: 0;
@@ -170,6 +169,20 @@ body.mobile .side-bar-wrapper {
   z-index: 1070;
   transition: left 0.3s ease;
   padding: 0 !important;
+  background-color: #21236A !important;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+body.mobile .side-bar {
+  background-color: #21236A !important;
+  border: none !important;
+  height: 100% !important;
+}
+
+body.mobile .side-bar-body {
+  background-color: #21236A !important;
+  border-radius: 0px !important;
+  height: 100% !important;
 }
 
 body.mobile.open-menu .side-bar-wrapper {
@@ -236,3 +249,4 @@ body.mobile .side-bar-wrapper .side-bar-close {
 .custom-hamburger-icon .line-3 {
   width: 8px !important;
 }
+

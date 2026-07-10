@@ -2826,7 +2826,7 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   padding: 0 !important;
   margin: 0 !important;
   position: static !important;
-  display: block;
+  display: none;
   /* jQuery controls show/hide via slideUp/slideDown */
   width: auto !important;
   box-shadow: none !important;

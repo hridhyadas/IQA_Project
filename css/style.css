@@ -4300,14 +4300,14 @@ select.form-select {
 
 @media (max-width: 767.98px) {
   .logo-container img {
-    max-height: 40px !important;
+    max-height: 58px !important;
   }
 }
 
 /* Centered Mobile Header Bar Logo Sizing */
 .mobile-logo-centered {
-  width: 90px !important;
-  height: auto !important;
+  width: auto !important;
+  height: 58px !important;
   object-fit: contain;
 }
 

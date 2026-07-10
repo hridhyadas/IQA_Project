@@ -12,12 +12,12 @@
 
 /* Base resets & styles */
 body {
-  background-color: var(--theme-body-bg) !important;
+  background-color: #ffffff !important;
   color: var(--theme-dark-navy);
 }
 
 .content-wrapper {
-  background-color: var(--theme-body-bg) !important;
+  background-color: #F0F1F1 !important;
 }
 
 @media (max-width: 991.98px) {
@@ -1004,7 +1004,7 @@ body {
   }
 
   body.tablet .content-wrapper {
-    background-color: #f5f6fa !important;
+    background-color: #F0F1F1 !important;
     border-radius: 0 16px 16px 0 !important;
     margin: 20px 20px 20px 0;
     padding: 24px;
@@ -1024,7 +1024,7 @@ body {
 /* Mobile Support */
 @media (max-width: 767.98px) {
   body.mobile .content-wrapper {
-    background-color: #f5f6fa !important;
+    background-color: #F0F1F1 !important;
     border-radius: 12px;
     margin: 6px;
     padding: 10px 10px 16px 10px;
@@ -1641,8 +1641,37 @@ body {
 @media (max-width: 767.98px) {
 
   /* Header adjustments */
+  .header-top {
+    height: 80px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: relative !important;
+    padding: 10px 16px !important;
+    background-color: transparent !important;
+    border-bottom: none !important;
+  }
+
+  .mobile-logo-centered {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    height: 58px !important;
+    max-height: 70px !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+
+  .logo-container-mobile img {
+    height: 58px !important;
+    max-height: 58px !important;
+    width: auto !important;
+  }
+
   .logo-container img {
-    height: 40px !important;
+    height: 58px !important;
+    max-height: 58px !important;
   }
 
   .user-profile-header .user-info {
@@ -1725,9 +1754,9 @@ body {
   }
 
   /* Explicitly zero column padding (belt-and-suspenders) */
-  .r2-layout > [class*="col"],
-  .r3-layout > [class*="col"],
-  .r4-layout > [class*="col"] {
+  .r2-layout>[class*="col"],
+  .r3-layout>[class*="col"],
+  .r4-layout>[class*="col"] {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
@@ -1795,7 +1824,8 @@ body {
     column-gap: 8px;
     row-gap: 8px;
     background: transparent;
-    padding: 14px 12px 14px 16px;  /* left 16px for the accent bar */
+    padding: 14px 12px 14px 16px;
+    /* left 16px for the accent bar */
     position: relative;
     border: none;
     border-bottom: 1px solid #EEF1F6;
@@ -1829,11 +1859,13 @@ body {
   }
 
   .recent-exams-table-container tr:has(.badge-custom-success)::before {
-    background-color: #1C2260; /* navy for Scheduled */
+    background-color: #1C2260;
+    /* navy for Scheduled */
   }
 
   .recent-exams-table-container tr:has(.badge-custom-danger)::before {
-    background-color: #DF001B; /* red for Live */
+    background-color: #DF001B;
+    /* red for Live */
   }
 
   /* Base td reset */
@@ -2217,6 +2249,7 @@ body {
   .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header):nth-child(4n+1) {
     background-color: #F3F4F4 !important;
   }
+
   .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header):nth-child(4n+3),
   .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header):nth-child(4n+3) {
     background-color: rgba(33, 35, 106, 0.1) !important;
@@ -2270,6 +2303,7 @@ body {
     display: inline-flex !important;
     margin-right: 8px !important;
   }
+
   .academy-detail-1-page .recent-exams-table-container tbody tr:not(.expand-header) td.action-col a[title="Expand"],
   .academy-detail-page .recent-exams-table-container tbody tr:not(.expand-header) td.action-col a[title="Expand"] {
     display: none !important;
@@ -2300,6 +2334,7 @@ body {
   .academy-detail-page .recent-exams-table-container tbody tr.expand-header:nth-child(4n+2) {
     background-color: #F3F4F4 !important;
   }
+
   .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header:nth-child(4n+4),
   .academy-detail-page .recent-exams-table-container tbody tr.expand-header:nth-child(4n+4) {
     background-color: rgba(33, 35, 106, 0.1) !important;
@@ -2316,8 +2351,8 @@ body {
   }
 
   /* Collapsed column 1 (#) */
-  .academy-detail-1-page .recent-exams-table-container .expand-content > span:first-child,
-  .academy-detail-page .recent-exams-table-container .expand-content > span:first-child {
+  .academy-detail-1-page .recent-exams-table-container .expand-content>span:first-child,
+  .academy-detail-page .recent-exams-table-container .expand-content>span:first-child {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -2331,8 +2366,8 @@ body {
   }
 
   /* Collapsed column 2 (Name / Schedule) */
-  .academy-detail-1-page .recent-exams-table-container .expand-content > span:nth-child(2),
-  .academy-detail-page .recent-exams-table-container .expand-content > span:nth-child(2) {
+  .academy-detail-1-page .recent-exams-table-container .expand-content>span:nth-child(2),
+  .academy-detail-page .recent-exams-table-container .expand-content>span:nth-child(2) {
     display: inline-flex !important;
     align-items: center !important;
     flex-grow: 1 !important;
@@ -2343,8 +2378,8 @@ body {
   }
 
   /* Collapsed expand button on the right */
-  .academy-detail-1-page .recent-exams-table-container .expand-content > span.expand-btn,
-  .academy-detail-page .recent-exams-table-container .expand-content > span.expand-btn {
+  .academy-detail-1-page .recent-exams-table-container .expand-content>span.expand-btn,
+  .academy-detail-page .recent-exams-table-container .expand-content>span.expand-btn {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -2358,8 +2393,9 @@ body {
     padding: 0 !important;
     border-right: none !important;
   }
-  .academy-detail-1-page .recent-exams-table-container .expand-content > span.expand-btn::after,
-  .academy-detail-page .recent-exams-table-container .expand-content > span.expand-btn::after {
+
+  .academy-detail-1-page .recent-exams-table-container .expand-content>span.expand-btn::after,
+  .academy-detail-page .recent-exams-table-container .expand-content>span.expand-btn::after {
     content: "" !important;
     width: 14px !important;
     height: 14px !important;
@@ -2383,6 +2419,7 @@ body {
   .academy-detail-page .recent-exams-table-container tbody tr.expand-header.open:nth-child(4n+2) {
     background-color: #F3F4F4 !important;
   }
+
   .academy-detail-1-page .recent-exams-table-container tbody tr.expand-header.open:nth-child(4n+4),
   .academy-detail-page .recent-exams-table-container tbody tr.expand-header.open:nth-child(4n+4) {
     background-color: rgba(33, 35, 106, 0.1) !important;
@@ -2518,7 +2555,7 @@ body {
   .academy-detail-page .custom-pagination .pagination-btn.active {
     background-color: #21236A !important;
     color: #ffffff !important;
-    box-shadow: 0 0 0 3px rgba(33,35,106,0.18) !important;
+    box-shadow: 0 0 0 3px rgba(33, 35, 106, 0.18) !important;
   }
 
   .academy-detail-1-page .custom-pagination .pagination-btn.hide-mobile,
@@ -2552,11 +2589,12 @@ body {
 
 /* Row 5: Quadrant Card height matching on desktop view */
 @media (min-width: 1200px) {
-  .r2-layout > .col-md-4 {
+  .r2-layout>.col-md-4 {
     display: flex !important;
     flex-direction: column !important;
     align-items: stretch !important;
   }
+
   .quadrant-card {
     height: 100% !important;
     min-height: 475px !important;
@@ -2571,43 +2609,97 @@ body {
     justify-content: flex-start !important;
     gap: 8px !important;
   }
+
   .toggle-btn-capsule {
     width: auto !important;
     padding: 6px 16px !important;
   }
 }
 
-/* Row 11: Live Exam Counts Outside Graph on Mobile */
+/* Row 11: Clean Mobile Card Layout for Student Status */
+
+/* Card Height Alignment and Spacing Adjustments */
+@media (min-width: 992px) {
+
+  /* Make the quadrant card stretch to fill the height */
+  .quadrant-card {
+    height: 100% !important;
+  }
+
+  /* Make top academies card stretch to fill the height */
+  .top-academies-column .top-academies-card {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .top-academies-column .top-academies-card .academy-list {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    /* Space academies evenly */
+  }
+
+  /* Make exams overview card stretch to fill the height */
+  .exams-overview-card {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .exams-overview-card .exam-list {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    /* Space exams evenly */
+  }
+}
+
+/* Ensure background color is fully filled vertically and is never cut off */
+html,
+body {
+  height: auto !important;
+  min-height: 100% !important;
+}
+
+.wrapper {
+  height: auto !important;
+  min-height: 100vh !important;
+}
+
+body.desktop .content-wrapper,
+body.tablet .content-wrapper,
+body.mobile .content-wrapper,
+.content-wrapper {
+  background-color: #F0F1F1 !important;
+  height: auto !important;
+  min-height: calc(100vh - 40px) !important;
+}
+
+/* Reduce vertical space between the top row (stat cards) and the middle row (table) */
+.r2-layout {
+  margin-bottom: 12px !important;
+}
+
+.r3-layout {
+  margin-bottom: 16px !important;
+}
+
+/* Exams Summary Card Padding Adjustment on Mobile View */
 @media (max-width: 767.98px) {
-  /* Remove dark background and padding from the main card container */
-  .student-added-card {
-    background-color: transparent !important;
-    box-shadow: none !important;
+  .exams-overview-card {
+    padding: 24px !important;
+  }
+
+  .exams-overview-card .exam-list {
     padding: 0 !important;
   }
-  
-  /* Apply the dark blue background styling directly to the chart column wrapper */
-  .student-chart-col {
-    background-color: #1D2465 !important;
-    border-radius: 20px !important;
-    padding: 20px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
-    margin-bottom: 20px;
-  }
-  
-  /* Style highlight panel to be outside, on white background with dark labels */
-  .chart-highlight-panel {
-    background-color: transparent !important;
-    padding: 10px 0 !important;
-  }
-  
-  .chart-highlight-panel .highlight-number {
-    color: #DF001B !important; /* Keep Red 55 */
-    margin-bottom: 4px !important;
-  }
-  
-  .chart-highlight-panel .highlight-label {
-    color: var(--theme-dark-navy) !important; /* Dark text on white bg */
-    font-weight: 700 !important;
+
+  .exams-overview-card .exam-summary-item {
+    padding: 12px 0 !important;
   }
 }

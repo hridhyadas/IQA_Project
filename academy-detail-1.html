@@ -610,7 +610,10 @@
         <div class="content-wrapper">
 
             <!-- Mobile Hamburger / Header Area (d-md-none) -->
-            <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between position-relative">
+            <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between w-100" style="padding: 16px 20px !important;">
+                <div class="logo-container-mobile">
+                    <img src="img/logo2.png" alt="Logo" style="height: 38px;">
+                </div>
                 <div class="side-bar-close mobile-hamburger-btn">
                     <div class="custom-hamburger-icon">
                         <span class="line line-1"></span>
@@ -618,8 +621,6 @@
                         <span class="line line-3"></span>
                     </div>
                 </div>
-                <img class="mobile-logo-centered" src="img/logo2.png"
-                    alt="International Qualification Awarding Forum Logo" />
             </div>
 
             <!-- Top Header start -->
@@ -639,7 +640,7 @@
             </div><!-- Top Header end -->
 
             <!-- Header start -->
-            <header class="light-header mt-3" style="background-color: #eeeeee;">
+            <header class="light-header mt-3">
                 <div class="container-fluid">
                     <!-- Header main start -->
                     <div class="header-main d-flex justify-content-between align-items-center">
@@ -649,7 +650,7 @@
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                                     <li class="breadcrumb-item"><a href="#">Academy</a></li>
-                                    <li class="breadcrumb-item active">Academy List</li>
+                                    <li class="breadcrumb-item active">Academy Detail</li>
                                 </ol>
                             </nav>
                         </div>
@@ -883,84 +884,7 @@
                         </div>
                     </div>
 
-                    <!-- Filter Bar and Exam List Header -->
-                    <div class="table-header-filter-wrapper-custom d-none d-md-block"
-                        style="padding: 12px 20px !important;">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <h6 class="fw-bold mb-0 text-dark" style="font-size: 14px; color: #21236A !important;">Exam
-                                List</h6>
-                            <a href="#" class="text-danger fw-bold"
-                                style="font-size: 13px; text-decoration: underline;">Add New</a>
-                        </div>
-                        <div
-                            class="filter-flex d-flex flex-column flex-md-row justify-content-start align-items-stretch align-items-md-center gap-3">
-                            <div class="search-box-custom flex-grow-1 flex-md-grow-0" style="max-width: 320px;">
-                                <span class="search-icon-custom"><i class="bi bi-search"></i></span>
-                                <input type="search" class="form-control search-input-custom" placeholder="Search"
-                                    style="width: 100%;">
-                            </div>
-                            <div>
-                                <select class="membership-select-custom form-select">
-                                    <option>2 June - 9 June</option>
-                                </select>
-                            </div>
-                            <div>
-                                <select class="membership-select-custom form-select">
-                                    <option>Filter : Status</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="recent-exams-table-container mb-4 d-none d-md-block">
-                        <div class="table-responsive">
-                            <table class="table mb-0">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 50px;"># <i class="bi bi-chevron-expand"></i></th>
-                                        <th>Schedule <i class="bi bi-chevron-expand"></i></th>
-                                        <th class="mobile-hide">Exam Code <i class="bi bi-chevron-expand"></i></th>
-                                        <th class="mobile-hide">Exam Title <i class="bi bi-chevron-expand"></i></th>
-                                        <th class="mobile-hide">Status <i class="bi bi-chevron-expand"></i></th>
-                                        <th class="text-end action-col">Action <i class="bi bi-chevron-expand"></i></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="6" class="text-center text-secondary fw-semibold"
-                                            style="height: 98px; vertical-align: middle; font-size: 14px; background-color: transparent !important; border-color: transparent !important;">
-                                            No data available</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <!-- Table Footer/Pagination -->
-                        <div class="table-footer-custom">
-                            <div>
-                                <label class="d-flex align-items-center gap-2">
-                                    Show
-                                    <select class="table-show-select form-select d-inline-block py-0"
-                                        style="width: auto;">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                    </select>
-                                    per page
-                                </label>
-                            </div>
-                            <div class="custom-pagination">
-                                <a href="#" class="pagination-btn"><i class="bi bi-chevron-left"></i></a>
-                                <a href="#" class="pagination-btn active">1</a>
-                                <a href="#" class="pagination-btn">2</a>
-                                <a href="#" class="pagination-btn">3</a>
-                                <a href="#" class="pagination-btn hide-mobile">4</a>
-                                <a href="#" class="pagination-btn hide-mobile">5</a>
-                                <a href="#" class="pagination-btn"><i class="bi bi-chevron-right"></i></a>
-                                <span class="text-secondary ms-2" style="font-size: 13px;">1-10 of 52</span>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Populated Exam List -->
                     <div class="table-header-filter-wrapper-custom"

@@ -265,7 +265,10 @@
     <div class="content-wrapper">
 
       <!-- Mobile Hamburger / Header Area (d-md-none) -->
-      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between position-relative">
+      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between w-100" style="padding: 16px 20px !important;">
+        <div class="logo-container-mobile">
+          <img src="img/logo2.png" alt="Logo" style="height: 38px;">
+        </div>
         <div class="side-bar-close mobile-hamburger-btn">
           <div class="custom-hamburger-icon">
             <span class="line line-1"></span>
@@ -273,7 +276,6 @@
             <span class="line line-3"></span>
           </div>
         </div>
-        <img class="mobile-logo-centered" src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
       </div>
 
       <!-- Top Header start -->
@@ -302,10 +304,8 @@
           </div>
           <!-- Header main start -->
           <div class="header-main d-flex justify-content-between align-items-center mt-3">
-            <div>
-              <h4 class="text-white mb-0 fw-normal">Academy Details</h4>
-            </div>
-            <div class="d-flex align-items-center gap-3">
+            <div class="d-flex flex-column">
+              <h4 class="text-white mb-0 fw-normal">Center's List</h4>
               <nav>
                 <ol class="breadcrumb mb-0">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -313,10 +313,10 @@
                   <li class="breadcrumb-item active">Academy List</li>
                 </ol>
               </nav>
-              <div class="user-profile-header-mobile d-md-none" style="margin-bottom: 0px;">
-                <img src="img/user.png" alt="User Profile Image"
-                  style="width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);" />
-              </div>
+            </div>
+            <div class="user-profile-header-mobile d-md-none" style="margin-bottom: 0px;">
+              <img src="img/user.png" alt="User Profile Image"
+                style="width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);" />
             </div>
           </div><!-- Header main end -->
         </div>
@@ -337,7 +337,7 @@
                   <div class="my-auto d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
                     <div>
                       <h4 class="page-title">Center’s List</h4>
-                      <p class="page-sub-title">1424 Center’s found. 10 of are showing.</p>
+                      <p class="page-sub-title">52 Centers found. 10 are showing.</p>
                     </div>
                   </div>
 
@@ -1082,7 +1082,7 @@
           <td colspan="7" class="p-0 border-0" style="background-color: transparent !important; background: transparent !important;">
             <div class="expanded-card">
               <div class="card-detail-row">
-                <span class="detail-label">SI</span>
+                <span class="detail-label">S.No.</span>
                 <span class="detail-colon">:</span>
                 <span class="detail-val">${sl}</span>
               </div>

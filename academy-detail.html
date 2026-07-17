@@ -269,7 +269,10 @@
     <div class="content-wrapper">
 
       <!-- Mobile Hamburger / Header Area (d-md-none) -->
-      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between position-relative">
+      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between w-100" style="padding: 16px 20px !important;">
+        <div class="logo-container-mobile">
+          <img src="img/logo2.png" alt="Logo" style="height: 38px;">
+        </div>
         <div class="side-bar-close mobile-hamburger-btn">
           <div class="custom-hamburger-icon">
             <span class="line line-1"></span>
@@ -277,7 +280,6 @@
             <span class="line line-3"></span>
           </div>
         </div>
-        <img class="mobile-logo-centered" src="img/logo2.png" alt="International Qualification Awarding Forum Logo" />
       </div>
 
       <!-- Top Header start -->
@@ -297,18 +299,23 @@
       </div><!-- Top Header end -->
 
       <!-- Header start -->
-      <header class="light-header mt-3" style="background-color: #eeeeee;">
+      <header class="light-header mt-3">
         <div class="container-fluid">
           <!-- Header main start -->
-          <div class="header-main d-md-flex justify-content-between align-items-center">
-            <h4 class="text-white mb-0 fw-normal">Academy List</h4>
-            <nav>
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item"><a href="#">Academy</a></li>
-                <li class="breadcrumb-item active">Academy List</li>
-              </ol>
-            </nav>
+          <div class="header-main d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-column">
+              <h4 class="text-white mb-0 fw-normal">Academy Details</h4>
+              <nav>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item"><a href="#">Academy</a></li>
+                  <li class="breadcrumb-item active">Academy Detail</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="user-profile-header d-md-none">
+              <img src="img/user.png" alt="User Profile Image" class="rounded-circle" style="width: 44px; height: 44px; border: 2px solid rgba(255,255,255,0.2); object-fit: cover;" />
+            </div>
           </div><!-- Header main end -->
         </div>
       </header><!-- Header end -->

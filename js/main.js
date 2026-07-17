@@ -106,8 +106,8 @@ $(document).ready(function () {
 		});
 
 		// Open all sidebar dropdowns by default on page load
-		$('.side-bar .nav-item.dropdown').addClass('open');
-		$('.side-bar .dropdown-menu').addClass('show').show();
+		// $('.side-bar .nav-item.dropdown').addClass('open');
+		// $('.side-bar .dropdown-menu').addClass('show').show();
 
 
 	});

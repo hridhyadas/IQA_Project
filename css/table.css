@@ -791,7 +791,7 @@
     column-gap: 10px !important;
     background: #ffffff !important;
     border: none !important;
-    border-left: 4px solid #1C2260 !important;
+    /* border-left: 4px solid #1C2260 !important; */
     border-bottom: 1px solid #EAEAEF !important;
     padding: 14px 14px 14px 12px !important;
     margin-bottom: 0 !important;
@@ -1010,4 +1010,3 @@
     flex-shrink: 0 !important;
   }
 }
-

@@ -284,16 +284,24 @@
       font-weight: 600;
     }
 
+    /* Question item row */
+    .qp-question-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 16px;
+      width: 100%;
+    }
+
     /* Question item card */
     .qp-item-card {
       background: #FFFFFF;
       border: 1px solid #EAECF0;
       border-radius: 12px;
       padding: 16px;
-      margin-bottom: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+      flex-grow: 1;
+      width: 100%;
       transition: box-shadow 0.2s;
     }
     .qp-item-card:hover {
@@ -328,23 +336,20 @@
       font-weight: 600;
     }
     .qp-item-delete {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      border: 1.5px solid #FCA5A5;
-      background-color: #FFF1F2;
       color: #EF4444;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      font-size: 18px;
       cursor: pointer;
       flex-shrink: 0;
-      margin-left: 16px;
-      transition: all 0.2s;
+      padding: 0 8px;
+      background: transparent;
+      border: none;
+      transition: color 0.2s;
+      outline: none;
     }
     .qp-item-delete:hover {
-      background-color: #FFE4E6;
-      border-color: #EF4444;
+      color: #DC2626;
+      background: transparent;
+      border: none;
     }
 
     /* Circular Pagination styling */
@@ -492,8 +497,8 @@
         padding: 16px;
       }
       .steps-card .d-flex {
-        flex-direction: column;
-        gap: 16px !important;
+        flex-direction: row;
+        gap: 8px !important;
       }
       .steps-container {
         width: 100% !important;
@@ -506,12 +511,6 @@
       .step-label {
         font-size: 10px !important;
         gap: 4px !important;
-      }
-      .steps-card .d-flex.align-items-center.justify-content-between.justify-content-md-end {
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-        margin-top: 10px;
       }
       .qp-card {
         padding: 16px;
@@ -547,6 +546,21 @@
         height: 24px !important;
         font-size: 11px !important;
       }
+      .page-footer-actions {
+        flex-direction: column-reverse !important;
+        align-items: stretch !important;
+        gap: 16px !important;
+      }
+      .page-footer-actions .d-flex {
+        width: 100% !important;
+        justify-content: space-between !important;
+      }
+      .page-footer-actions .d-flex button {
+        flex: 1 !important;
+      }
+      .page-footer-actions .btn-publish {
+        width: 100% !important;
+      }
     }
   </style>
 </head>
@@ -557,19 +571,19 @@
         <!-- Side bar start -->
     <div class="side-bar-wrapper">
       <div class="side-bar">
-        <div class="side-bar-header">
+        <!-- <div class="side-bar-header">
           <div class="side-bar-close"></div>
-          <a class="navbar-brand" href="#">
-            <img class="large-logo" src="img/logo2.png" />
-            <img class="small-logo" src="img/small-logo.png" />
-          </a>
-        </div>
-        <div class="side-bar-body">
+          <a class="navbar-brand" href="#"> -->
+        <!-- <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" /> -->
+        <!-- </a>
+        </div> -->
+        <div class="side-bar-body mt-5">
           <div class="side-menu">
             <ul class="nav">
 
               <!-- Menu item start -->
-              <li class="nav-item ">
+              <li class="nav-item active">
                 <a class="nav-link" href="dashboard.html">
                   <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
                   <span class="menu-label me-auto">Dashboard</span>
@@ -582,7 +596,7 @@
                   <span class="menu-label me-auto">Exam Managment</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="exam-details.html">
                       <span class="d-flex align-items-center">
@@ -622,7 +636,7 @@
                   <span class="menu-label me-auto">Student</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="student-detail.html">
                       <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
@@ -633,14 +647,14 @@
               </li><!-- Menu item end -->
 
               <!-- Menu item start -->
-              <li class="nav-item dropdown open">
+              <li class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle" href="#">
                   <span class="menu-label me-auto">Center’s Management</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" style="display: block;">
+                <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item active" href="create-exam.html">
+                    <a class="dropdown-item " href="create-exam.html">
                       <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
                       <span class="menu-label">Create</span>
                     </a>
@@ -660,10 +674,10 @@
                   <span class="menu-label me-auto">Settings</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                      <span class="menu-icon"><img src="img/wallet-icon.svg" alt=""></span>
                       <span class="menu-label">Apply for qualification</span>
                     </a>
                   </li>
@@ -675,7 +689,7 @@
                   </li>
                   <li>
                     <a class="dropdown-item " href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                      <span class="menu-icon"><img src="img/courses-icon.svg" alt=""></span>
                       <span class="menu-label">Courses</span>
                     </a>
                   </li>
@@ -688,8 +702,7 @@
           <!-- Log Out start -->
           <div class="side-bar-user">
             <a href="#" class="nav-link-logout">
-              <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""
-                  style="width: 20px; height: 20px;"></span>
+              <span class="menu-icon"><img src="img/sign-out-icon.svg" alt="" style="width: 20px; height: 20px;"></span>
               <span>Log Out</span>
             </a>
           </div>
@@ -741,9 +754,8 @@
               <h4>Create Exam</h4>
               <nav class="ed-breadcrumb">
                 <a href="dashboard.html">Home</a><span>&rsaquo;</span>
-                <a href="#">Exam</a><span>&rsaquo;</span>
-                <a href="create-exam.html">Exam List</a><span>&rsaquo;</span>
-                <span class="current">Create</span>
+                <a href="#">Exam Management</a><span>&rsaquo;</span>
+                <span class="current">Question Preview</span>
               </nav>
             </div>
             <div class="user-profile-avatar-banner d-md-none">
@@ -777,12 +789,6 @@
                   </div>
                 </div>
               </div>
-
-              <div class="d-flex align-items-center justify-content-between justify-content-md-end gap-3 flex-grow-0 w-100-mobile">
-                <a href="#" class="btn-steps-cancel">Cancel</a>
-                <button type="button" class="btn-steps-back" onclick="window.location.href='create-exam.html?state=edit'">Back</button>
-                <button type="button" class="btn-steps-next" onclick="alert('Moving to step 3: Review!')">Next</button>
-              </div>
             </div>
           </div>
           <!-- Card 1: Steps progress card end -->
@@ -814,86 +820,100 @@
                 <!-- Questions list -->
                 <div class="qp-questions-list" id="qp-questions-container">
                   <!-- Q1 -->
-                  <div class="qp-item-card" data-id="1">
-                    <div class="qp-item-content">
-                      <div class="qp-item-question">Q1 : What distinguishes "end" as a noun versus a verb in English dictionary definitions?</div>
-                      <div class="qp-item-answer">Answer: Descriptive</div>
+                  <div class="qp-question-row">
+                    <div class="qp-item-card" data-id="1">
+                      <div class="qp-item-content">
+                        <div class="qp-item-question">Q1 : What distinguishes "end" as a noun versus a verb in English dictionary definitions?</div>
+                        <div class="qp-item-answer">Answer: Descriptive</div>
+                      </div>
                     </div>
                     <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
                   </div>
 
                   <!-- Q2 -->
-                  <div class="qp-item-card" data-id="2">
-                    <div class="qp-item-content">
-                      <div class="qp-item-question">Q2 : In what contexts is "though" used casually at the end of English sentences for soft disagreement?</div>
-                      <div class="qp-item-answer">Answer: Descriptive</div>
+                  <div class="qp-question-row">
+                    <div class="qp-item-card" data-id="2">
+                      <div class="qp-item-content">
+                        <div class="qp-item-question">Q2 : In what contexts is "though" used casually at the end of English sentences for soft disagreement?</div>
+                        <div class="qp-item-answer">Answer: Descriptive</div>
+                      </div>
                     </div>
                     <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
                   </div>
 
                   <!-- Q3 -->
-                  <div class="qp-item-card" data-id="3">
-                    <div class="qp-item-content">
-                      <div class="qp-item-question">Q3 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
-                      <div class="qp-item-choices">
-                        <span class="qp-choice-item">a. True</span>
-                        <span class="qp-choice-item correct">| b. False</span>
+                  <div class="qp-question-row">
+                    <div class="qp-item-card" data-id="3">
+                      <div class="qp-item-content">
+                        <div class="qp-item-question">Q3 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
+                        <div class="qp-item-choices">
+                          <span class="qp-choice-item">a. True</span>
+                          <span class="qp-choice-item correct">| b. False</span>
+                        </div>
                       </div>
                     </div>
                     <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
                   </div>
 
                   <!-- Q4 -->
-                  <div class="qp-item-card" data-id="4">
-                    <div class="qp-item-content">
-                      <div class="qp-item-question">Q4 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
-                      <div class="qp-item-choices">
-                        <span class="qp-choice-item">a. I finished</span>
-                        <span class="qp-choice-item">| b. the correct</span>
-                        <span class="qp-choice-item">| c. relaxation claim</span>
-                        <span class="qp-choice-item correct">| d. could drive</span>
+                  <div class="qp-question-row">
+                    <div class="qp-item-card" data-id="4">
+                      <div class="qp-item-content">
+                        <div class="qp-item-question">Q4 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
+                        <div class="qp-item-choices">
+                          <span class="qp-choice-item">a. I finished</span>
+                          <span class="qp-choice-item">| b. the correct</span>
+                          <span class="qp-choice-item">| c. relaxation claim</span>
+                          <span class="qp-choice-item correct">| d. could drive</span>
+                        </div>
                       </div>
                     </div>
                     <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
                   </div>
 
                   <!-- Q5 -->
-                  <div class="qp-item-card" data-id="5">
-                    <div class="qp-item-content">
-                      <div class="qp-item-question">Q5 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
-                      <div class="qp-item-choices">
-                        <span class="qp-choice-item">a. I finished</span>
-                        <span class="qp-choice-item">| b. the correct</span>
-                        <span class="qp-choice-item">| c. relaxation claim</span>
-                        <span class="qp-choice-item correct">| d. could drive</span>
+                  <div class="qp-question-row">
+                    <div class="qp-item-card" data-id="5">
+                      <div class="qp-item-content">
+                        <div class="qp-item-question">Q5 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
+                        <div class="qp-item-choices">
+                          <span class="qp-choice-item">a. I finished</span>
+                          <span class="qp-choice-item">| b. the correct</span>
+                          <span class="qp-choice-item">| c. relaxation claim</span>
+                          <span class="qp-choice-item correct">| d. could drive</span>
+                        </div>
                       </div>
                     </div>
                     <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
                   </div>
 
                   <!-- Q6 -->
-                  <div class="qp-item-card" data-id="6">
-                    <div class="qp-item-content">
-                      <div class="qp-item-question">Q6 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
-                      <div class="qp-item-choices">
-                        <span class="qp-choice-item">a. I finished</span>
-                        <span class="qp-choice-item">| b. the correct</span>
-                        <span class="qp-choice-item">| c. relaxation claim</span>
-                        <span class="qp-choice-item correct">| d. could drive</span>
+                  <div class="qp-question-row">
+                    <div class="qp-item-card" data-id="6">
+                      <div class="qp-item-content">
+                        <div class="qp-item-question">Q6 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
+                        <div class="qp-item-choices">
+                          <span class="qp-choice-item">a. I finished</span>
+                          <span class="qp-choice-item">| b. the correct</span>
+                          <span class="qp-choice-item">| c. relaxation claim</span>
+                          <span class="qp-choice-item correct">| d. could drive</span>
+                        </div>
                       </div>
                     </div>
                     <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
                   </div>
 
                   <!-- Q7 -->
-                  <div class="qp-item-card" data-id="7">
-                    <div class="qp-item-content">
-                      <div class="qp-item-question">Q7 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
-                      <div class="qp-item-choices">
-                        <span class="qp-choice-item">a. I finished</span>
-                        <span class="qp-choice-item">| b. the correct</span>
-                        <span class="qp-choice-item">| c. relaxation claim</span>
-                        <span class="qp-choice-item correct">| d. could drive</span>
+                  <div class="qp-question-row">
+                    <div class="qp-item-card" data-id="7">
+                      <div class="qp-item-content">
+                        <div class="qp-item-question">Q7 : How does rising intonation signal questions at the end of sentences in spoken English?</div>
+                        <div class="qp-item-choices">
+                          <span class="qp-choice-item">a. I finished</span>
+                          <span class="qp-choice-item">| b. the correct</span>
+                          <span class="qp-choice-item">| c. relaxation claim</span>
+                          <span class="qp-choice-item correct">| d. could drive</span>
+                        </div>
                       </div>
                     </div>
                     <div class="qp-item-delete"><i class="bi bi-trash"></i></div>
@@ -945,6 +965,15 @@
 
           </div>
 
+          <!-- Page Level Navigation Footer Actions -->
+          <div class="page-footer-actions d-flex align-items-center justify-content-between mt-5 mb-4 pt-4" style="border-top: 1.5px solid #E5E9F0;">
+            <button type="button" class="btn btn-link btn-cancel-text" style="color: #6B7280; font-weight: 500; text-decoration: none; font-size: 14px; padding: 0; border: none; background: transparent;" onclick="window.location.href='exam-details.html'">Cancel</button>
+            <div class="d-flex align-items-center gap-3">
+              <button type="button" class="btn btn-outline-back" style="background: #FFF; border: 1.5px solid #D0D5DD; border-radius: 8px; color: #344054; font-size: 14px; font-weight: 500; padding: 10px 24px; transition: all 0.2s;" onclick="window.location.href='create-exam.html?state=edit'">Back</button>
+              <button type="button" class="btn btn-publish" style="background: #21236A; border: none; border-radius: 8px; color: #FFFFFF; font-size: 14px; font-weight: 500; padding: 10px 28px; transition: all 0.2s;" id="btn-publish-exam">Publish Exam</button>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -989,10 +1018,16 @@
       // question deletion handler
       $(document).on('click', '.qp-item-delete', function() {
         if(confirm('Are you sure you want to delete this question?')) {
-          $(this).closest('.qp-item-card').fadeOut(300, function() {
+          $(this).closest('.qp-question-row').fadeOut(300, function() {
             $(this).remove();
           });
         }
+      });
+
+      // publish exam handler
+      $('#btn-publish-exam').on('click', function() {
+        alert('Exam published successfully!');
+        window.location.href = 'exam-details.html';
       });
     });
   </script>

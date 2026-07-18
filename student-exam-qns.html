@@ -17,6 +17,30 @@
   <link rel="stylesheet" href="css/side-bar.css">
 
   <title>IQA</title>
+  <style>
+    /* Row 39 - Fix text overflow in mobile header */
+    @media (max-width: 767px) {
+      .header-main h4 { font-size: 14px !important; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: calc(100% - 60px); }
+      .header-main { flex-direction: column !important; gap: 4px; }
+      .header-main p.text-large { font-size: 12px !important; }
+
+      /* Row 38 - Fix student info + timer stacking on mobile */
+      .row.mb-4.g-3 > .col-lg-9,
+      .row.mb-4.g-3 > .col-lg-3 { width: 100% !important; flex: 0 0 100% !important; max-width: 100% !important; }
+      .row.mb-4.g-3 > .col-lg-9 .h-100 { flex-direction: row !important; gap: 12px !important; padding: 12px !important; }
+      .row.mb-4.g-3 > .col-lg-3 .h-100 { flex-direction: row !important; padding: 12px !important; gap: 12px !important; }
+
+      /* Row 40 - Fix question sidebar columns on mobile - make full width and scrollable grid */
+      .col-lg-9, .col-lg-3 { width: 100% !important; max-width: 100% !important; }
+      /* Make the question grid use 6 columns on mobile like valuation page */
+      .d-grid[style*="grid-template-columns: repeat(3"] { grid-template-columns: repeat(6, 1fr) !important; gap: 8px !important; }
+      /* Make exam info title text not overflow */
+      h3.fw-bold { font-size: 18px !important; }
+      p.text-muted.mb-4 { font-size: 12px !important; }
+    }
+    /* Ensure question grid is properly displayed */
+    .d-grid { display: grid !important; }
+  </style>
 </head>
 
 <body>
@@ -34,14 +58,14 @@
           <!-- Side bar start -->
     <div class="side-bar-wrapper">
       <div class="side-bar">
-        <div class="side-bar-header">
+        <!-- <div class="side-bar-header">
           <div class="side-bar-close"></div>
-          <a class="navbar-brand" href="#">
-            <img class="large-logo" src="img/logo2.png" />
-            <img class="small-logo" src="img/small-logo.png" />
-          </a>
-        </div>
-        <div class="side-bar-body">
+          <a class="navbar-brand" href="#"> -->
+        <!-- <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" /> -->
+        <!-- </a>
+        </div> -->
+        <div class="side-bar-body mt-5">
           <div class="side-menu">
             <ul class="nav">
 
@@ -59,7 +83,7 @@
                   <span class="menu-label me-auto">Exam Managment</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="exam-details.html">
                       <span class="d-flex align-items-center">
@@ -99,7 +123,7 @@
                   <span class="menu-label me-auto">Student</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="student-detail.html">
                       <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
@@ -115,7 +139,7 @@
                   <span class="menu-label me-auto">Center’s Management</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="create-exam.html">
                       <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
@@ -137,10 +161,10 @@
                   <span class="menu-label me-auto">Settings</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                      <span class="menu-icon"><img src="img/wallet-icon.svg" alt=""></span>
                       <span class="menu-label">Apply for qualification</span>
                     </a>
                   </li>
@@ -152,7 +176,7 @@
                   </li>
                   <li>
                     <a class="dropdown-item " href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                      <span class="menu-icon"><img src="img/courses-icon.svg" alt=""></span>
                       <span class="menu-label">Courses</span>
                     </a>
                   </li>
@@ -165,8 +189,7 @@
           <!-- Log Out start -->
           <div class="side-bar-user">
             <a href="#" class="nav-link-logout">
-              <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""
-                  style="width: 20px; height: 20px;"></span>
+              <span class="menu-icon"><img src="img/sign-out-icon.svg" alt="" style="width: 20px; height: 20px;"></span>
               <span>Log Out</span>
             </a>
           </div>

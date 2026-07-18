@@ -134,19 +134,19 @@ body {
 
 /* Stat Card Colors */
 .bg-academics-blue {
-  background-color: var(--theme-blue) !important;
+  background-color: #7986CB !important;
 }
 
 .bg-enrolled-navy {
-  background-color: var(--theme-navy-blue) !important;
+  background-color: #3F51B5 !important;
 }
 
 .bg-conducted-dark {
-  background-color: var(--theme-dark-navy) !important;
+  background-color: #1A237E !important;
 }
 
 .bg-courses-red {
-  background-color: var(--theme-red) !important;
+  background-color: #D32F2F !important;
 }
 
 /* Custom Badge Capsule */
@@ -1099,19 +1099,19 @@ body {
 
 /* Colors matching mockup precisely */
 .bg-academics-blue {
-  background-color: var(--academics-color) !important;
+  background-color: #7986CB !important;
 }
 
 .bg-enrolled-navy {
-  background-color: var(--theme-navy-blue) !important;
+  background-color: #3F51B5 !important;
 }
 
 .bg-conducted-dark {
-  background-color: var(--conducted-color) !important;
+  background-color: #1A237E !important;
 }
 
 .bg-courses-red {
-  background-color: var(--courses-color) !important;
+  background-color: #D32F2F !important;
 }
 
 /* Redundant toggle capsule styling overrides removed to match design */

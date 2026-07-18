@@ -145,17 +145,17 @@
   </div><!-- Preloader end -->
 
   <div class="wrapper d-flex flex-column">
-        <!-- Side bar start -->
+    <!-- Side bar start -->
     <div class="side-bar-wrapper">
       <div class="side-bar">
-        <div class="side-bar-header">
+        <!-- <div class="side-bar-header">
           <div class="side-bar-close"></div>
-          <a class="navbar-brand" href="#">
-            <img class="large-logo" src="img/logo2.png" />
-            <img class="small-logo" src="img/small-logo.png" />
-          </a>
-        </div>
-        <div class="side-bar-body">
+          <a class="navbar-brand" href="#"> -->
+        <!-- <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" /> -->
+        <!-- </a>
+        </div> -->
+        <div class="side-bar-body mt-5">
           <div class="side-menu">
             <ul class="nav">
 
@@ -173,7 +173,7 @@
                   <span class="menu-label me-auto">Exam Managment</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="exam-details.html">
                       <span class="d-flex align-items-center">
@@ -213,7 +213,7 @@
                   <span class="menu-label me-auto">Student</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="student-detail.html">
                       <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
@@ -229,7 +229,7 @@
                   <span class="menu-label me-auto">Center’s Management</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="create-exam.html">
                       <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
@@ -251,7 +251,7 @@
                   <span class="menu-label me-auto">Settings</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="#">
                       <span class="menu-icon"><img src="img/wallet-icon.svg" alt=""></span>
@@ -279,8 +279,7 @@
           <!-- Log Out start -->
           <div class="side-bar-user">
             <a href="#" class="nav-link-logout">
-              <span class="menu-icon"><img src="img/sign-out-icon.svg" alt=""
-                  style="width: 20px; height: 20px;"></span>
+              <span class="menu-icon"><img src="img/sign-out-icon.svg" alt="" style="width: 20px; height: 20px;"></span>
               <span>Log Out</span>
             </a>
           </div>
@@ -293,16 +292,18 @@
     <div class="content-wrapper">
 
       <!-- Mobile Hamburger / Header Area (d-md-none) -->
-      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between w-100" style="padding: 16px 20px !important;">
-        <div class="logo-container-mobile">
-          <img src="img/logo2.png" alt="Logo" style="height: 38px;">
-        </div>
+      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between w-100"
+        style="padding: 16px 20px !important;">
+        
         <div class="side-bar-close mobile-hamburger-btn">
           <div class="custom-hamburger-icon">
             <span class="line line-1"></span>
             <span class="line line-2"></span>
             <span class="line line-3"></span>
           </div>
+        </div>
+        <div class="logo-container-mobile">
+          <img src="img/logo2.png" alt="Logo" style="height: 38px;">
         </div>
       </div>
 
@@ -320,7 +321,9 @@
             </div>
           </div>
         </div>
-      </div><!-- Top Header end -->
+      </div>
+
+      <!-- Top Header end -->
 
       <!-- Content block start -->
       <div class="content">
@@ -332,10 +335,10 @@
             <!-- Stat Cards Left Side -->
 
             <div class="col-md-8">
-              <div class="row g-4 kpi-grid-container">
+              <div class="row g-4 kpi-grid-container ">
 
                 <!-- Card 1: Academics -->
-                <div class="col-6">
+                <div class="col-6 ">
                   <div class="custom-stat-card">
                     <div class="stat-card-icon bg-academics-blue">
                       <svg width="24" height="24" viewBox="0 0 16 16" fill="white">
@@ -366,7 +369,7 @@
                 </div>
 
                 <!-- Card 3: Exam Conducted -->
-                <div class="col-6">
+                <div class="col-6 mt-5">
                   <div class="custom-stat-card">
                     <div class="stat-card-icon bg-conducted-dark">
                       <svg width="24" height="24" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -381,7 +384,7 @@
                 </div>
 
                 <!-- Card 4: Courses -->
-                <div class="col-6">
+                <div class="col-6 mt-5">
                   <div class="custom-stat-card">
                     <div class="stat-card-icon bg-courses-red">
                       <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -507,8 +510,10 @@
                           <span class="badge-custom-success">Scheduled</span>
                         </td>
                         <td class="text-center">
-                          <a class="btn-action-circle" title="Edit"><img src="img/table-icon/table-edit.svg" alt="Edit" style="width: 14px; height: 14px;"></a>
-                          <a class="btn-action-circle" title="Delete"><img src="img/table-icon/table-delete.svg" alt="Delete" style="width: 14px; height: 14px;"></a>
+                          <a class="btn-action-circle" title="Edit"><img src="img/table-icon/table-edit.svg" alt="Edit"
+                              style="width: 14px; height: 14px;"></a>
+                          <a class="btn-action-circle" title="Delete"><img src="img/table-icon/table-delete.svg"
+                              alt="Delete" style="width: 14px; height: 14px;"></a>
                         </td>
                       </tr>
 
@@ -527,8 +532,10 @@
                           <span class="badge-custom-danger">Live</span>
                         </td>
                         <td class="text-center">
-                          <a class="btn-action-circle" title="Edit"><img src="img/table-icon/table-edit.svg" alt="Edit" style="width: 14px; height: 14px;"></a>
-                          <a class="btn-action-circle" title="Delete"><img src="img/table-icon/table-delete.svg" alt="Delete" style="width: 14px; height: 14px;"></a>
+                          <a class="btn-action-circle" title="Edit"><img src="img/table-icon/table-edit.svg" alt="Edit"
+                              style="width: 14px; height: 14px;"></a>
+                          <a class="btn-action-circle" title="Delete"><img src="img/table-icon/table-delete.svg"
+                              alt="Delete" style="width: 14px; height: 14px;"></a>
                         </td>
                       </tr>
 
@@ -547,8 +554,10 @@
                           <span class="badge-custom-success">Scheduled</span>
                         </td>
                         <td class="text-center">
-                          <a class="btn-action-circle" title="Edit"><img src="img/table-icon/table-edit.svg" alt="Edit" style="width: 14px; height: 14px;"></a>
-                          <a class="btn-action-circle" title="Delete"><img src="img/table-icon/table-delete.svg" alt="Delete" style="width: 14px; height: 14px;"></a>
+                          <a class="btn-action-circle" title="Edit"><img src="img/table-icon/table-edit.svg" alt="Edit"
+                              style="width: 14px; height: 14px;"></a>
+                          <a class="btn-action-circle" title="Delete"><img src="img/table-icon/table-delete.svg"
+                              alt="Delete" style="width: 14px; height: 14px;"></a>
                         </td>
                       </tr>
 
@@ -567,8 +576,10 @@
                           <span class="badge-custom-success">Scheduled</span>
                         </td>
                         <td class="text-center">
-                          <a class="btn-action-circle" title="Edit"><img src="img/table-icon/table-edit.svg" alt="Edit" style="width: 14px; height: 14px;"></a>
-                          <a class="btn-action-circle" title="Delete"><img src="img/table-icon/table-delete.svg" alt="Delete" style="width: 14px; height: 14px;"></a>
+                          <a class="btn-action-circle" title="Edit"><img src="img/table-icon/table-edit.svg" alt="Edit"
+                              style="width: 14px; height: 14px;"></a>
+                          <a class="btn-action-circle" title="Delete"><img src="img/table-icon/table-delete.svg"
+                              alt="Delete" style="width: 14px; height: 14px;"></a>
                         </td>
                       </tr>
 
@@ -587,8 +598,10 @@
                           <span class="badge-custom-success">Scheduled</span>
                         </td>
                         <td class="text-center">
-                          <a class="btn-action-circle" title="Edit"><img src="img/table-icon/table-edit.svg" alt="Edit" style="width: 14px; height: 14px;"></a>
-                          <a class="btn-action-circle" title="Delete"><img src="img/table-icon/table-delete.svg" alt="Delete" style="width: 14px; height: 14px;"></a>
+                          <a class="btn-action-circle" title="Edit"><img src="img/table-icon/table-edit.svg" alt="Edit"
+                              style="width: 14px; height: 14px;"></a>
+                          <a class="btn-action-circle" title="Delete"><img src="img/table-icon/table-delete.svg"
+                              alt="Delete" style="width: 14px; height: 14px;"></a>
                         </td>
                       </tr>
                     </tbody>
@@ -718,7 +731,7 @@
                   <!-- Custom Stacked Bar Chart -->
                   <div class="col-md-9 pe-4 student-chart-col">
                     <div class="chart-header-custom">
-                      <h5>Average Student Performance</h5>
+                      <h5>Student Added</h5>
                       <div class="toggle-group-capsule">
                         <button class="toggle-btn-capsule active">Month</button>
                         <button class="toggle-btn-capsule inactive">Week</button>
@@ -745,9 +758,15 @@
                           <div class="chart-line"></div>
                         </div>
 
-                        <!-- Jan: 4 red -->
+                        <!-- Jan -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
@@ -756,7 +775,7 @@
                           <span class="bar-label">Jan</span>
                         </div>
 
-                        <!-- Feb: 7 white -->
+                        <!-- Feb -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
                             <div class="pill-segment bg-white-stack"></div>
@@ -765,14 +784,23 @@
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Feb</span>
                         </div>
 
-                        <!-- Mar: 4 red -->
+                        <!-- Mar -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
@@ -781,7 +809,7 @@
                           <span class="bar-label">Mar</span>
                         </div>
 
-                        <!-- Apr: 7 white -->
+                        <!-- Apr -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
                             <div class="pill-segment bg-white-stack"></div>
@@ -790,14 +818,23 @@
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Apr</span>
                         </div>
 
-                        <!-- May: 4 red -->
+                        <!-- May -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
@@ -806,7 +843,7 @@
                           <span class="bar-label">May</span>
                         </div>
 
-                        <!-- Jun: 7 white -->
+                        <!-- Jun -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
                             <div class="pill-segment bg-white-stack"></div>
@@ -815,14 +852,23 @@
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Jun</span>
                         </div>
 
-                        <!-- Jul: 4 red -->
+                        <!-- Jul -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
@@ -831,7 +877,7 @@
                           <span class="bar-label">Jul</span>
                         </div>
 
-                        <!-- Aug: 7 white -->
+                        <!-- Aug -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
                             <div class="pill-segment bg-white-stack"></div>
@@ -840,14 +886,23 @@
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Aug</span>
                         </div>
 
-                        <!-- Sep: 4 red -->
+                        <!-- Sep -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
@@ -856,7 +911,7 @@
                           <span class="bar-label">Sep</span>
                         </div>
 
-                        <!-- Oct: 7 white -->
+                        <!-- Oct -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
                             <div class="pill-segment bg-white-stack"></div>
@@ -865,14 +920,23 @@
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Oct</span>
                         </div>
 
-                        <!-- Nov: 4 red -->
+                        <!-- Nov -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
                             <div class="pill-segment active-red"></div>
@@ -881,7 +945,7 @@
                           <span class="bar-label">Nov</span>
                         </div>
 
-                        <!-- Dec: 7 white -->
+                        <!-- Dec -->
                         <div class="custom-bar-col">
                           <div class="pill-segment-stack">
                             <div class="pill-segment bg-white-stack"></div>
@@ -890,7 +954,10 @@
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
                             <div class="pill-segment bg-white-stack"></div>
-                            <div class="pill-segment bg-white-stack"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
+                            <div class="pill-segment active-red"></div>
                           </div>
                           <span class="bar-label">Dec</span>
                         </div>

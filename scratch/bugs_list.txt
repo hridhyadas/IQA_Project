@@ -1,0 +1,46 @@
+Sheet Title: OVERALL
+Max Row: 42
+Max Col: 26
+
+Row 1: BUG REPORT
+Row 2: FIGMA, DESIGN, DESCRIPTION, PRIORITY, STATUS
+Row 3: Screenshot by Lightshot, Screenshot by Lightshot, SPACING ISSUES, MEDIUM, NEW
+Row 4: Screenshot by Lightshot, Screenshot by Lightshot, COLOUR CHANGE, MEDIUM, NEW
+Row 5: Screenshot by Lightshot, Screenshot by Lightshot, SIZE OF THE QUESTIONS BOX IS SMALLER WHEN COMPARED TO FIGMA, MEDIUM, NEW
+Row 6: Screenshot by Lightshot, Screenshot by Lightshot, ICON WRONG, HIGH, NEW
+Row 7: Screenshot by Lightshot, Screenshot by Lightshot, SPACING ISSUES, MEDIUM, NEW
+Row 8: Screenshot by Lightshot, Screenshot by Lightshot, POSITION OF MONTH,WEEK,DAY NEED TO BE LITTLE ADJUSTED, MEDIUM, NEW
+Row 9: Screenshot by Lightshot, Screenshot by Lightshot, IN MOBILE VIEW THE HEADER PORTION IS NOT AS PER REQUIREMENTS, HIGH, NEW
+Row 10: Screenshot by Lightshot, Screenshot by Lightshot, SPACING ISSUES, MEDIUM, NEW
+Row 11: Screenshot by Lightshot, Screenshot by Lightshot, LIVE EXAM COUNTS SHOULD DISPLAY OUTSIDE THE GRAPH , HIGH, NEW
+Row 12: Screenshot by Lightshot, Screenshot by Lightshot, ACADEMY DETAIL - Completely differ from the figma design(web and mobilw view), HIGH, NEW
+Row 13: Screenshot by Lightshot, Screenshot by Lightshot, --, HIGH, NEW
+Row 14: Screenshot by Lightshot, Screenshot by Lightshot, ACADEMY LIST - Spacing issues in the academy list page and differ from figma(web), HIGH, NEW
+Row 15: Screenshot by Lightshot, Screenshot by Lightshot, ACADEMY LIST - Alignment issues and unwanted text in mobile view, HIGH, NEW
+Row 16: Screenshot by Lightshot, Screenshot by Lightshot, CREATE EXAM QUESTION - Design ui issues in create exam question page(web and mobile), HIGH, NEW
+Row 17: Screenshot by Lightshot, Screenshot by Lightshot, QUESTION PREVIEW - Design issues(web and mobile), HIGH, NEW
+Row 18: Screenshot by Lightshot, Screenshot by Lightshot, QUESTION PREVIEW - Each question should be arranged on individual box and the delete icon should be aranged outside of the box(web and mobile), MEDIUM, NEW
+Row 19: Screenshot by Lightshot, Screenshot by Lightshot, DASHBOARD - Color difference issue and space issue on web and mobile, HIGH, NEW
+Row 20: Screenshot by Lightshot, Screenshot by Lightshot, Dashboard spacing issues, MEDIUM, NEW
+Row 21: Screenshot by Lightshot, Screenshot by Lightshot, --, MEDIUM, NEW
+Row 22: Screenshot by Lightshot, Screenshot by Lightshot, Table broken issue(dashboard mob view), HIGH, NEW
+Row 23: Screenshot by Lightshot, Screenshot by Lightshot, EXAM DETAILS OVERVIEW - Content position is wrong as per the figma, HIGH, NEW
+Row 24: Screenshot by Lightshot, Screenshot by Lightshot, EXAM DETAILS OVERVIEW -  Color change issue, HIGH, NEW
+Row 25: Screenshot by Lightshot, Screenshot by Lightshot, Icon missmatch issue, HIGH, NEW
+Row 26: Screenshot by Lightshot, Screenshot by Lightshot, EXAM DETAILS OVERVIEW - Logo is missing in the mobile view (same issue also in exam question overview page and valuation overview page), HIGH, NEW
+Row 27: Screenshot by Lightshot, Screenshot by Lightshot, Profile icon positioning was wrong in mobile view (same issue also in exam question overview page and valuation overview page), HIGH, NEW
+Row 28: Screenshot by Lightshot, Screenshot by Lightshot, Overall page arrangement was arong when compare to figma in mobile view (same issue in exam question overview page and valuation overview page), HIGH, NEW
+Row 29: Screenshot by Lightshot, EXAM DETAILS QUESTIONS & EXAM VALUATION OVERVIEW - Unwanted white space in the exam details question overview page , HIGH, NEW
+Row 30: Screenshot by Lightshot, Screenshot by Lightshot, Position missmatch and draft text box shape change and exam link color and position chage, HIGH, NEW
+Row 31: Screenshot by Lightshot, Screenshot by Lightshot, Content arrangement is wrong as per the figma and the Score color should be in red color, HIGH, NEW
+Row 32: Screenshot by Lightshot, Screenshot by Lightshot, EXAM VALUATION OVERVIEW - Wrong arrangement of header section and student details and screenshots, HIGH, NEW
+Row 33: Screenshot by Lightshot, Screenshot by Lightshot, Spacing issue and wrong arrangement, HIGH, NEW
+Row 34: Screenshot by Lightshot, Screenshot by Lightshot, Add score , score and wrong answer should be placed on center, HIGH, NEW
+Row 35: Screenshot by Lightshot, Screenshot by Lightshot, LOGIN - Wrong positioning of the login credentials details field, HIGH, NEW
+Row 36: Screenshot by Lightshot, Screenshot by Lightshot, QUESTION BANK - Overall page was differ from the design, HIGH, NEW
+Row 37: Screenshot by Lightshot, Screenshot by Lightshot, STUDENT DETAIL - Spacing issue, HIGH, NEW
+Row 38: Screenshot by Lightshot, Screenshot by Lightshot, Content arrangment issue in the mobile view, HIGH, NEW
+Row 39: Screenshot by Lightshot, Screenshot by Lightshot, STUDENT EXAM - Text overflow issue , Content arrangemt issue and spacing issue, HIGH, NEW
+Row 40: Screenshot by Lightshot, Screenshot by Lightshot, Content arrangement issue in mobile view, HIGH, NEW
+Row 41: Screenshot by Lightshot, Screenshot by Lightshot, STUDENT VERIFICATION 1 - Content position change, HIGH, NEW
+Row 42: Screenshot by Lightshot, Screenshot by Lightshot, STUDENT VERIFICATION 2 - Content position change, HIGH, NEW

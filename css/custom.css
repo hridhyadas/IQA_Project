@@ -1517,11 +1517,11 @@ body.tablet:not(.open-menu) .side-bar-close::before {
 
 @media (min-width: 1550px) {
 
-  /* Restrict dashboard main panel size to Figma content width */
+  /* Allow dashboard main panel to stretch to fill screen width responsively */
   .content {
-    max-width: 1254px !important;
-    width: 1254px !important;
-    margin: 0 auto !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
     padding-left: 40px !important;
     padding-right: 40px !important;
   }
@@ -1540,9 +1540,9 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   }
 
   .r2-layout>.col-md-8 {
-    width: 635px !important;
-    flex: 0 0 635px !important;
-    max-width: 635px !important;
+    width: calc(100% - 475px - 64px) !important;
+    flex: 0 0 calc(100% - 475px - 64px) !important;
+    max-width: calc(100% - 475px - 64px) !important;
     padding-right: 0 !important;
   }
 
@@ -1589,9 +1589,9 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   }
 
   .r3-layout>.col-md-8 {
-    width: 849px !important;
-    flex: 0 0 849px !important;
-    max-width: 849px !important;
+    width: calc(100% - 305px - 20px) !important;
+    flex: 0 0 calc(100% - 305px - 20px) !important;
+    max-width: calc(100% - 305px - 20px) !important;
     padding-right: 0 !important;
   }
 
@@ -1616,9 +1616,9 @@ body.tablet:not(.open-menu) .side-bar-close::before {
   }
 
   .r4-layout>.col-md-9 {
-    width: 948px !important;
-    flex: 0 0 948px !important;
-    max-width: 948px !important;
+    width: calc(100% - 206px - 20px) !important;
+    flex: 0 0 calc(100% - 206px - 20px) !important;
+    max-width: calc(100% - 206px - 20px) !important;
     padding-right: 0 !important;
   }
 
@@ -1742,15 +1742,18 @@ body.tablet:not(.open-menu) .side-bar-close::before {
 
 @media (min-width: 1200px) {
   .login-form-container {
-    align-self: flex-start;
-    margin-left: 357px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @media (min-width: 1400px) {
   .login-form-container {
-    align-self: flex-start;
-    margin-left: 542px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 360px;
   }
 }
 
@@ -2089,15 +2092,18 @@ body.tablet:not(.open-menu) .side-bar-close::before {
 
 @media (min-width: 1200px) {
   .verification-form-container {
-    align-self: flex-start;
-    margin-left: 357px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @media (min-width: 1400px) {
   .verification-form-container {
-    align-self: flex-start;
-    margin-left: 542px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 440px;
   }
 }
 

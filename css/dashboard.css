@@ -40,7 +40,7 @@ body {
 }
 
 body.desktop .main-header-bar .logo-container {
-  display: none !important;
+  display: flex !important;
 }
 
 .logo-container {
@@ -60,8 +60,8 @@ body.desktop .main-header-bar .logo-container {
 }
 
 .user-profile-header img {
-  width: 46px;
-  height: 46px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #fff;
@@ -138,19 +138,19 @@ body.desktop .main-header-bar .logo-container {
 
 /* Stat Card Colors */
 .bg-academics-blue {
-  background-color: var(--theme-blue) !important;
+  background-color: #7986CB !important;
 }
 
 .bg-enrolled-navy {
-  background-color: var(--theme-navy-blue) !important;
+  background-color: #3C4689 !important;
 }
 
 .bg-conducted-dark {
-  background-color: var(--theme-dark-navy) !important;
+  background-color: #1D2465 !important;
 }
 
 .bg-courses-red {
-  background-color: var(--theme-red) !important;
+  background-color: #DF001B !important;
 }
 
 /* Custom Badge Capsule */
@@ -962,8 +962,8 @@ body.desktop .main-header-bar .logo-container {
     background-color: var(--theme-navy-blue) !important;
     border-radius: 24px 0 0 24px !important;
     padding: 24px 16px !important;
-    height: auto !important;
-    flex: 1 !important;
+    height: 870px !important;
+    /* flex: 1 !important; */
     min-height: 0 !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
   }
@@ -1097,19 +1097,19 @@ body.desktop .main-header-bar .logo-container {
 
 /* Colors matching mockup precisely */
 .bg-academics-blue {
-  background-color: var(--academics-color) !important;
+  background-color: #7986CB !important;
 }
 
 .bg-enrolled-navy {
-  background-color: var(--theme-navy-blue) !important;
+  background-color: #3C4689 !important;
 }
 
 .bg-conducted-dark {
-  background-color: var(--conducted-color) !important;
+  background-color: #1D2465 !important;
 }
 
 .bg-courses-red {
-  background-color: var(--courses-color) !important;
+  background-color: #DF001B !important;
 }
 
 /* Redundant toggle capsule styling overrides removed to match design */
@@ -1513,6 +1513,7 @@ body.desktop .main-header-bar .logo-container {
 
 /* Standalone Title Row for Top Academies (matching Recent Exam List Title) */
 .top-academies-title-card {
+
   background-color: rgba(33, 35, 106, 0.1) !important;
   /* #21236A at 10% */
   border-radius: 12px !important;
@@ -1668,9 +1669,11 @@ body.desktop .main-header-bar .logo-container {
   }
 
   .logo-container-mobile img {
+    margin-left: 150px;
     height: 58px !important;
     max-height: 58px !important;
     width: auto !important;
+
   }
 
   .logo-container img {
@@ -1683,8 +1686,8 @@ body.desktop .main-header-bar .logo-container {
   }
 
   .user-profile-header img {
-    width: 36px !important;
-    height: 36px !important;
+    width: 80px !important;
+    height: 80px !important;
   }
 
   /* Stat Cards */
@@ -1828,7 +1831,7 @@ body.desktop .main-header-bar .logo-container {
     column-gap: 8px;
     row-gap: 8px;
     background: transparent;
-    padding: 14px 12px 14px 16px;
+    padding: 10px 12px 10px 16px;
     /* left 16px for the accent bar */
     position: relative;
     border: none;
@@ -1851,15 +1854,15 @@ body.desktop .main-header-bar .logo-container {
     display: none !important;
   }
 
-  /* Left accent bar — 3px, full-height, Figma spec */
+  /* Left accent bar — 3px, vertically centered, Figma spec */
   .recent-exams-table-container tr::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 0;
-    bottom: 0;
+    top: 10px;
+    bottom: 10px;
     width: 3px;
-    border-radius: 0;
+    border-radius: 2px;
   }
 
   .recent-exams-table-container tr:has(.badge-custom-success)::before {
@@ -1932,10 +1935,10 @@ body.desktop .main-header-bar .logo-container {
     font-size: 11px !important;
     color: #5C6A8E !important;
     margin-top: 0 !important;
-    white-space: nowrap;
+    white-space: normal !important;
     display: inline !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    overflow: visible !important;
+    text-overflow: clip !important;
   }
 
   /* ── Column 4 (Status Badge) — placed in grid-area "badge" ── */

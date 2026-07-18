@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,40 +14,277 @@
   <link rel="stylesheet" href="css/side-bar.css">
   <title>Exam Question Overview - IQA</title>
   <style>
-    .side-menu .badge-live{background-color:#E10A1A!important;color:#fff!important;font-size:10px!important;font-weight:700!important;padding:3px 6px!important;border-radius:4px!important;margin-left:auto;line-height:1;}
-    .side-menu .badge-pending{background-color:#D29E1B!important;color:#fff!important;font-size:10px!important;font-weight:700!important;padding:3px 6px!important;border-radius:4px!important;margin-left:auto;line-height:1;}
-    body.mobile .side-bar-wrapper{position:fixed;top:0;left:-280px;width:280px!important;height:100%;z-index:1070;transition:left .3s ease;padding:0!important;}
-    body.mobile.open-menu .side-bar-wrapper{left:0;}
-    body.mobile .side-bar-wrapper .side-bar-close{display:block!important;position:absolute;top:20px;right:20px;}
-    @media(min-width:768px){.side-bar-header .side-bar-close{display:none!important;}}
-    .mobile-hamburger-btn{position:relative!important;width:48px!important;height:48px!important;background-color:#21236A!important;background-image:none!important;border:none!important;border-radius:12px!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer!important;left:auto!important;top:auto!important;box-shadow:0 4px 10px rgba(33,35,106,.15)!important;margin-right:0!important;}
-    .custom-hamburger-icon{display:flex!important;flex-direction:column!important;gap:5px!important;align-items:flex-start!important;width:20px!important;}
-    .custom-hamburger-icon .line{display:block!important;height:2px!important;background-color:#fff!important;border-radius:2px!important;}
-    .custom-hamburger-icon .line-1{width:20px!important;}.custom-hamburger-icon .line-2{width:14px!important;}.custom-hamburger-icon .line-3{width:8px!important;}
-    
-    .exam-details-page{background:#F4F5F8;min-height:100vh;padding-bottom:48px;}
-    .ed-header-bar{background:#1B2A6B;border-radius:12px;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;flex-wrap:wrap;gap:8px;}
-    .ed-header-bar h4{color:#fff;font-size:18px;font-weight:600;margin:0;font-family:'Inter',sans-serif;}
-    .ed-breadcrumb{display:flex;align-items:center;gap:6px;font-size:13px;color:rgba(255,255,255,.7);font-family:'Inter',sans-serif;}
-    .ed-breadcrumb a{color:rgba(255,255,255,.7);text-decoration:none;}
-    .ed-breadcrumb a:hover{color:#fff;}
-    .ed-breadcrumb .current{color:#fff;font-weight:500;}
-    
-    .ed-card{background:#fff;border-radius:14px;padding:24px;box-shadow:0 2px 12px rgba(0,0,0,.06);}
-    .ed-tabs{display:flex;align-items:center;gap:8px;margin-bottom:24px;flex-wrap:wrap;}
-    .ed-tab{padding:8px 20px;border-radius:8px;font-size:14px;font-weight:500;color:#6B7280;cursor:pointer;border:none;background:transparent;font-family:'Inter',sans-serif;transition:all .2s;white-space:nowrap;}
-    .ed-tab.active{background:#1B2A6B;color:#fff;}
-    .ed-tab:hover:not(.active){background:#F0F1FB;color:#1B2A6B;}
-    .ed-edit-btn{margin-left:auto;padding:7px 22px;border:1.5px solid #D0D5DD;border-radius:8px;background:#fff;color:#344054;font-size:13px;font-weight:500;font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s;white-space:nowrap;}
-    .ed-edit-btn:hover{background:#F9FAFB;border-color:#98A2B3;}
-    
-    .ed-exam-id{font-size:20px;font-weight:700;color:#1A1A2E;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;}
-    .ed-badge-draft{background:#F3F4F6;color:#4B5563;border:1px solid #E5E7EB;border-radius:20px;font-size:12px;font-weight:600;padding:3px 12px;font-family:'Inter',sans-serif;}
-    
-    .ed-meta{font-size:13px;color:#78829D;margin-bottom:24px;font-family:'Inter',sans-serif;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;}
-    .ed-meta .val{color:#344054;}
-    .ed-meta a{color:#1B2A6B;text-decoration:underline;word-break:break-all;}
-    .ed-meta .dot{color:#D0D5DD;margin:0 4px;}
+    .side-menu .badge-live {
+      background-color: #E10A1A !important;
+      color: #fff !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      padding: 3px 6px !important;
+      border-radius: 4px !important;
+      margin-left: auto;
+      line-height: 1;
+    }
+
+    .side-menu .badge-pending {
+      background-color: #D29E1B !important;
+      color: #fff !important;
+      font-size: 10px !important;
+      font-weight: 700 !important;
+      padding: 3px 6px !important;
+      border-radius: 4px !important;
+      margin-left: auto;
+      line-height: 1;
+    }
+
+    body.mobile .side-bar-wrapper {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 280px !important;
+      height: 100%;
+      z-index: 1070;
+      transition: left .3s ease;
+      padding: 0 !important;
+    }
+
+    body.mobile.open-menu .side-bar-wrapper {
+      left: 0;
+    }
+
+    body.mobile .side-bar-wrapper .side-bar-close {
+      display: block !important;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    @media(min-width:768px) {
+      .side-bar-header .side-bar-close {
+        display: none !important;
+      }
+    }
+
+    .mobile-hamburger-btn {
+      position: relative !important;
+      width: 48px !important;
+      height: 48px !important;
+      background-color: #21236A !important;
+      background-image: none !important;
+      border: none !important;
+      border-radius: 12px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      left: auto !important;
+      top: auto !important;
+      box-shadow: 0 4px 10px rgba(33, 35, 106, .15) !important;
+      margin-right: 0 !important;
+    }
+
+    .custom-hamburger-icon {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 5px !important;
+      align-items: flex-start !important;
+      width: 20px !important;
+    }
+
+    .custom-hamburger-icon .line {
+      display: block !important;
+      height: 2px !important;
+      background-color: #fff !important;
+      border-radius: 2px !important;
+    }
+
+    .custom-hamburger-icon .line-1 {
+      width: 20px !important;
+    }
+
+    .custom-hamburger-icon .line-2 {
+      width: 14px !important;
+    }
+
+    .custom-hamburger-icon .line-3 {
+      width: 8px !important;
+    }
+
+    .exam-details-page {
+      background: #F4F5F8;
+      min-height: 100vh;
+      padding-bottom: 48px;
+    }
+
+    .ed-header-bar {
+      background: #1B2A6B;
+      border-radius: 12px;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .ed-header-bar h4 {
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ed-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, .7);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ed-breadcrumb a {
+      color: rgba(255, 255, 255, .7);
+      text-decoration: none;
+    }
+
+    .ed-breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .ed-breadcrumb .current {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .ed-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, .06);
+    }
+
+    .ed-tabs {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 24px;
+      width: 100%;
+    }
+
+    .ed-tabs-list {
+      display: flex;
+      gap: 8px;
+      flex: 1;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .ed-tabs-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .ed-tab {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      height: 38px !important;
+      padding: 0 20px !important;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #6B7280;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      font-family: 'Inter', sans-serif;
+      transition: all .2s;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .ed-tab.active {
+      background: #1B2A6B;
+      color: #fff;
+    }
+
+    .ed-tab:hover:not(.active) {
+      background: #F0F1FB;
+      color: #1B2A6B;
+    }
+
+    .ed-edit-btn {
+      flex-shrink: 0;
+      margin-left: auto;
+      padding: 7px 22px;
+      border: 1.5px solid #D0D5DD;
+      border-radius: 8px;
+      background: #fff;
+      color: #344054;
+      font-size: 13px;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+
+    .ed-edit-btn:hover {
+      background: #F9FAFB;
+      border-color: #98A2B3;
+    }
+
+    .ed-exam-id {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1A1A2E;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .ed-badge-draft {
+      background: #F3F4F6;
+      color: #4B5563;
+      border: 1px solid #D1D5DB;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3px 12px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .ed-meta {
+      font-size: 13px;
+      color: #78829D;
+      margin-bottom: 8px;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 8px;
+      align-items: center;
+      line-height: 1.8;
+    }
+
+    .ed-meta .val {
+      color: #344054;
+    }
+
+    .ed-meta a {
+      color: #00A3FF !important;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+
+    .ed-meta .dot {
+      color: #D0D5DD;
+      margin: 0 2px;
+    }
 
     /* Custom Stats Row side-by-side */
     .eq-stats-row {
@@ -54,18 +292,21 @@
       border: 1.5px solid #E5E9F0;
       border-radius: 12px;
       background: #fff;
-      margin: 20px 0 24px;
+      margin: 12px 0 20px;
       text-align: center;
       overflow: hidden;
     }
+
     .eq-stat-item {
       flex: 1;
       padding: 16px 12px;
       border-right: 1.5px solid #E5E9F0;
     }
+
     .eq-stat-item:last-child {
       border-right: none;
     }
+
     .eq-stat-val {
       font-size: 24px;
       font-weight: 700;
@@ -73,6 +314,7 @@
       font-family: 'Inter', sans-serif;
       line-height: 1.2;
     }
+
     .eq-stat-lbl {
       font-size: 11px;
       color: #78829D;
@@ -87,12 +329,14 @@
       gap: 24px;
       align-items: flex-start;
     }
+
     .eq-questions-column {
       flex: 1;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
+
     .eq-sidebar-column {
       width: 260px;
       flex-shrink: 0;
@@ -105,11 +349,13 @@
       border-radius: 14px;
       padding: 24px;
     }
+
     .eq-badges-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
+
     .eq-badge-btn {
       width: 44px;
       height: 44px;
@@ -126,11 +372,13 @@
       background: #fff;
       color: #344054;
     }
+
     .eq-badge-btn.active {
       background: #1B2A6B !important;
       border-color: #1B2A6B !important;
       color: #fff !important;
     }
+
     .eq-badge-btn:hover:not(.active) {
       background: #F0F2FB;
       border-color: #1B2A6B;
@@ -144,6 +392,7 @@
       border-radius: 14px;
       padding: 24px;
     }
+
     .eq-question-header {
       display: flex;
       justify-content: space-between;
@@ -152,6 +401,7 @@
       border-bottom: 1.5px solid #EAECF0;
       margin-bottom: 16px;
     }
+
     .eq-question-title {
       font-size: 15px;
       font-weight: 700;
@@ -159,15 +409,22 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
     }
+
     .eq-question-score {
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
       color: #E10A1A;
       font-family: 'Inter', sans-serif;
+      background: #FFF0F0;
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid #FECACA;
     }
+
     .eq-question-body {
       margin-top: 12px;
     }
+
     .eq-q-num {
       font-size: 14px;
       font-weight: 700;
@@ -175,6 +432,7 @@
       margin-bottom: 8px;
       font-family: 'Inter', sans-serif;
     }
+
     .eq-q-text {
       font-size: 13.5px;
       color: #4B5563;
@@ -182,6 +440,7 @@
       margin-bottom: 20px;
       font-family: 'Inter', sans-serif;
     }
+
     .eq-answers-lbl {
       font-size: 13px;
       font-weight: 700;
@@ -189,11 +448,13 @@
       margin-bottom: 12px;
       font-family: 'Inter', sans-serif;
     }
+
     .eq-answers-row {
       display: flex;
       flex-wrap: wrap;
       gap: 8px 12px;
     }
+
     .eq-answer-pill {
       font-size: 12.5px;
       font-weight: 500;
@@ -207,16 +468,19 @@
       gap: 6px;
       border: 1.5px solid transparent;
     }
+
     .eq-answer-pill.correct {
       background: #EBFEDF !important;
       border-color: #34A853 !important;
       color: #137333 !important;
       font-weight: 600;
     }
+
     .eq-answer-pill.correct i {
       font-size: 14px;
       color: #137333;
     }
+
     .eq-short-answer-lbl {
       font-size: 13.5px;
       font-weight: 700;
@@ -226,39 +490,237 @@
     }
 
     /* Modal Styling */
-    #generateQuestionsModal .modal-dialog{max-width:420px;}
-    #generateQuestionsModal .modal-content{border-radius:20px;border:none;padding:32px 32px 28px;box-shadow:0 24px 60px rgba(0,0,0,.18);position:relative;}
-    #generateQuestionsModal .gq-close-btn{position:absolute;top:16px;right:16px;width:32px;height:32px;border:1.5px solid #D0D5DD;border-radius:8px;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#667085;font-size:16px;line-height:1;transition:background .2s;z-index:10;}
-    #generateQuestionsModal .gq-close-btn:hover{background:#f2f4f7;}
-    .gq-ai-icon{width:88px;height:88px;border-radius:50%;margin:0 auto 20px;position:relative;display:flex;align-items:center;justify-content:center;background:conic-gradient(from 0deg,#4FC3F7 0%,#7B61FF 25%,#E040FB 50%,#FF6D6D 65%,#4FC3F7 100%);}
-    .gq-ai-icon::after{content:'';position:absolute;width:64px;height:64px;background:#fff;border-radius:50%;}
-    .gq-title{font-size:20px;font-weight:700;color:#1A1A2E;text-align:center;margin-bottom:6px;font-family:'Inter',sans-serif;}
-    .gq-subtitle{font-size:13px;color:#8A94A6;text-align:center;line-height:1.5;margin-bottom:24px;font-family:'Inter',sans-serif;}
-    .gq-label{font-size:13px;font-weight:600;color:#1A1A2E;margin-bottom:6px;display:block;font-family:'Inter',sans-serif;}
-    .gq-input{width:100%;height:44px;border:1.5px solid #E5E9F0;border-radius:10px;padding:0 14px;font-size:13px;color:#B0B7C3;background:#fff;outline:none;margin-bottom:16px;font-family:'Inter',sans-serif;transition:border-color .2s;}
-    .gq-input:focus{border-color:#7B61FF;color:#1A1A2E;}.gq-input::placeholder{color:#B0B7C3;}
-    .gq-pill-group{display:flex;gap:12px;margin-bottom:24px;}
-    .gq-pill{padding:9px 22px;border-radius:100px;border:1.5px solid #E5E9F0;background:#fff;font-size:13px;font-weight:500;color:#4A5568;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;user-select:none;}
-    .gq-pill:hover,.gq-pill.active{background:#EEF0FF;border-color:#7B61FF;color:#7B61FF;}
-    .gq-generate-btn{width:100%;height:50px;background:#1B2A6B;color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;transition:background .2s,transform .1s;letter-spacing:.02em;}
-    .gq-generate-btn:hover{background:#14215a;}.gq-generate-btn:active{transform:scale(.98);}
+    #generateQuestionsModal .modal-dialog {
+      max-width: 420px;
+    }
 
-    @media(max-width:767px){
-      .header-top{justify-content:flex-start!important;border:none!important;padding:0!important;margin-bottom:16px!important;}
-      .ed-header-bar{border-radius:10px;padding:12px 16px;flex-direction:column;align-items:flex-start;}
-      .ed-header-bar h4{font-size:16px;}
-      .ed-card{padding:16px;}
-      .ed-tab{padding:7px 14px;font-size:12px;}
-      .ed-edit-btn{margin-left:0;width:100%;}
-      .ed-exam-id{font-size:17px;}
+    #generateQuestionsModal .modal-content {
+      border-radius: 20px;
+      border: none;
+      padding: 32px 32px 28px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .18);
+      position: relative;
+    }
+
+    #generateQuestionsModal .gq-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 32px;
+      height: 32px;
+      border: 1.5px solid #D0D5DD;
+      border-radius: 8px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: #667085;
+      font-size: 16px;
+      line-height: 1;
+      transition: background .2s;
+      z-index: 10;
+    }
+
+    #generateQuestionsModal .gq-close-btn:hover {
+      background: #f2f4f7;
+    }
+
+    .gq-ai-icon {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: conic-gradient(from 0deg, #4FC3F7 0%, #7B61FF 25%, #E040FB 50%, #FF6D6D 65%, #4FC3F7 100%);
+    }
+
+    .gq-ai-icon::after {
+      content: '';
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .gq-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1A1A2E;
+      text-align: center;
+      margin-bottom: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .gq-subtitle {
+      font-size: 13px;
+      color: #8A94A6;
+      text-align: center;
+      line-height: 1.5;
+      margin-bottom: 24px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .gq-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1A1A2E;
+      margin-bottom: 6px;
+      display: block;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .gq-input {
+      width: 100%;
+      height: 44px;
+      border: 1.5px solid #E5E9F0;
+      border-radius: 10px;
+      padding: 0 14px;
+      font-size: 13px;
+      color: #B0B7C3;
+      background: #fff;
+      outline: none;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+      transition: border-color .2s;
+    }
+
+    .gq-input:focus {
+      border-color: #7B61FF;
+      color: #1A1A2E;
+    }
+
+    .gq-input::placeholder {
+      color: #B0B7C3;
+    }
+
+    .gq-pill-group {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .gq-pill {
+      padding: 9px 22px;
+      border-radius: 100px;
+      border: 1.5px solid #E5E9F0;
+      background: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      color: #4A5568;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: all .2s;
+      user-select: none;
+    }
+
+    .gq-pill:hover,
+    .gq-pill.active {
+      background: #EEF0FF;
+      border-color: #7B61FF;
+      color: #7B61FF;
+    }
+
+    .gq-generate-btn {
+      width: 100%;
+      height: 50px;
+      background: #1B2A6B;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: background .2s, transform .1s;
+      letter-spacing: .02em;
+    }
+
+    .gq-generate-btn:hover {
+      background: #14215a;
+    }
+
+    .gq-generate-btn:active {
+      transform: scale(.98);
+    }
+
+    @media(max-width:767px) {
+      .header-top {
+        justify-content: space-between !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 16px !important;
+      }
+
+      .ed-header-bar {
+        border-radius: 10px;
+        padding: 12px 16px;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+      }
+
+      .ed-header-bar h4 {
+        font-size: 16px;
+      }
+
+      .ed-card {
+        padding: 16px;
+      }
+
+      .ed-tab {
+        height: 34px !important;
+        padding: 0 12px !important;
+        font-size: 12px;
+      }
+
+      .ed-edit-btn {
+        margin-left: auto !important;
+        width: auto !important;
+        padding: 6px 14px !important;
+        font-size: 12px !important;
+      }
+
+      .ed-exam-id {
+        font-size: 17px;
+      }
+
       .ed-meta {
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
         margin-bottom: 20px;
       }
+
       .ed-meta .dot {
         display: none;
+      }
+
+      .eq-stats-row {
+        flex-direction: row !important;
+      }
+
+      .eq-stat-item {
+        border-right: 1.5px solid #E5E9F0 !important;
+        border-bottom: none !important;
+        padding: 8px 4px !important;
+        text-align: center;
+      }
+
+      .eq-stat-item:last-child {
+        border-right: none !important;
+      }
+
+      .eq-stat-val {
+        font-size: 18px !important;
+      }
+
+      .eq-stat-lbl {
+        font-size: 10px !important;
       }
 
       /* Stack columns in reverse: badges grid first, then questions */
@@ -266,47 +728,55 @@
         flex-direction: column-reverse;
         gap: 20px;
       }
+
       .eq-sidebar-column {
         width: 100% !important;
       }
+
       .eq-badges-card {
         padding: 16px;
       }
+
       .eq-badges-grid {
         grid-template-columns: repeat(6, 1fr);
         gap: 10px;
         justify-items: center;
       }
+
       .eq-badge-btn {
         width: 40px;
         height: 40px;
         font-size: 12px;
       }
+
       .eq-question-card {
         padding: 16px;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="preloader"><div class="loader"></div></div>
+  <div class="preloader">
+    <div class="loader"></div>
+  </div>
   <div class="wrapper d-flex flex-column">
-        <!-- Side bar start -->
+    <!-- Side bar start -->
     <div class="side-bar-wrapper">
       <div class="side-bar">
-        <div class="side-bar-header">
+        <!-- <div class="side-bar-header">
           <div class="side-bar-close"></div>
-          <a class="navbar-brand" href="#">
-            <img class="large-logo" src="img/logo2.png" />
-            <img class="small-logo" src="img/small-logo.png" />
-          </a>
-        </div>
-        <div class="side-bar-body">
+          <a class="navbar-brand" href="#"> -->
+        <!-- <img class="large-logo" src="img/logo2.png" />
+            <img class="small-logo" src="img/small-logo.png" /> -->
+        <!-- </a>
+        </div> -->
+        <div class="side-bar-body mt-5">
           <div class="side-menu">
             <ul class="nav">
 
               <!-- Menu item start -->
-              <li class="nav-item ">
+              <li class="nav-item active">
                 <a class="nav-link" href="dashboard.html">
                   <span class="menu-icon"><img src="img/menu-icon/icon-1.svg" alt=""></span>
                   <span class="menu-label me-auto">Dashboard</span>
@@ -314,14 +784,14 @@
               </li><!-- Menu item end -->
 
               <!-- Menu item start -->
-              <li class="nav-item dropdown open">
+              <li class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle" href="#">
                   <span class="menu-label me-auto">Exam Managment</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" style="display: block;">
+                <ul class="dropdown-menu">
                   <li>
-                    <a class="dropdown-item active" href="exam-details.html">
+                    <a class="dropdown-item " href="exam-details.html">
                       <span class="d-flex align-items-center">
                         <span class="menu-icon"><img src="img/menu-icon/icon-2.svg" alt=""></span>
                         <span class="menu-label">Exam List</span>
@@ -359,7 +829,7 @@
                   <span class="menu-label me-auto">Student</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="student-detail.html">
                       <span class="menu-icon"><img src="img/menu-icon/icon-5.svg" alt=""></span>
@@ -375,7 +845,7 @@
                   <span class="menu-label me-auto">Center’s Management</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="create-exam.html">
                       <span class="menu-icon"><img src="img/menu-icon/icon-6.svg" alt=""></span>
@@ -397,10 +867,10 @@
                   <span class="menu-label me-auto">Settings</span>
                 </a>
                 <!-- Dropdown menu start -->
-                <ul class="dropdown-menu" >
+                <ul class="dropdown-menu">
                   <li>
                     <a class="dropdown-item " href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-8.svg" alt=""></span>
+                      <span class="menu-icon"><img src="img/wallet-icon.svg" alt=""></span>
                       <span class="menu-label">Apply for qualification</span>
                     </a>
                   </li>
@@ -412,7 +882,7 @@
                   </li>
                   <li>
                     <a class="dropdown-item " href="#">
-                      <span class="menu-icon"><img src="img/menu-icon/icon-10.svg" alt=""></span>
+                      <span class="menu-icon"><img src="img/courses-icon.svg" alt=""></span>
                       <span class="menu-label">Courses</span>
                     </a>
                   </li>
@@ -425,38 +895,40 @@
           <!-- Log Out start -->
           <div class="side-bar-user">
             <a href="#" class="nav-link-logout">
-              <span class="menu-icon"><img src="img/menu-icon/icon-11.svg" alt=""
-                  style="width: 20px; height: 20px;"></span>
+              <span class="menu-icon"><img src="img/sign-out-icon.svg" alt="" style="width: 20px; height: 20px;"></span>
               <span>Log Out</span>
             </a>
           </div>
         </div>
-
+        
       </div>
     </div><!-- Side bar end -->
+    <div class="content-wrapper">
+    <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between">
+      <div class="side-bar-close mobile-hamburger-btn">
+        <div class="custom-hamburger-icon"><span class="line line-1"></span><span class="line line-2"></span><span
+            class="line line-3"></span></div>
+      </div>
+      <div class="logo-container-mobile">
+        <img src="img/logo2.png" alt="IQA Logo" style="height: 30px; object-fit: contain;" />
       </div>
     </div>
-    <div class="content-wrapper">
-      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between">
-        <div class="side-bar-close mobile-hamburger-btn">
-          <div class="custom-hamburger-icon"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></div>
-        </div>
-        <div class="user-profile-header-mobile">
-          <img src="img/user.png" alt="User" style="width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.08);" />
-        </div>
-      </div>
-      <div class="container-fluid">
-        <div class="main-header-bar d-none d-md-flex">
-          <div class="logo-container"><img src="img/logo2.png" alt="IQA Logo" /></div>
-          <div class="user-profile-header">
-            <img src="img/user.png" alt="User" />
-            <div class="user-info"><h5>Name</h5><p>Super Administrator</p></div>
+    <div class="container-fluid">
+      <div class="main-header-bar d-none d-md-flex">
+        <div class="logo-container"><img src="img/logo2.png" alt="IQA Logo" /></div>
+        <div class="user-profile-header">
+          <img src="img/user.png" alt="User" />
+          <div class="user-info">
+            <h5>Name</h5>
+            <p>Super Administrator</p>
           </div>
         </div>
       </div>
-      <div class="content exam-details-page">
-        <div class="container-fluid">
-          <div class="ed-header-bar">
+    </div>
+    <div class="content exam-details-page">
+      <div class="container-fluid">
+        <div class="ed-header-bar d-flex align-items-center justify-content-between w-100">
+          <div>
             <h4>Exam Details</h4>
             <nav class="ed-breadcrumb">
               <a href="dashboard.html">Home</a><span>&rsaquo;</span>
@@ -464,138 +936,153 @@
               <span class="current">Exam Details</span>
             </nav>
           </div>
-          <div class="ed-card">
-            <div class="ed-tabs">
-              <a href="exam-details.html" class="ed-tab" style="text-decoration:none; display:inline-block;">Overview</a>
-              <button class="ed-tab active">Questions</button>
-              <button class="ed-tab">Valuation</button>
-              <button class="ed-tab">Students</button>
-              <button class="ed-edit-btn">Edit</button>
-            </div>
-            
-            <div class="ed-exam-id">EXAM-3827462 <span class="ed-badge-draft">Draft</span></div>
-            <div class="ed-meta">
-              <span>Title : <span class="val">Facebook Ads Fundamentals &ndash; Level 1</span></span>
-              <span class="dot">&bull;</span>
-              <span>Created at : <span class="val">12 Aug 2025</span></span>
-              <span class="dot">&bull;</span>
-              <span>Exam Link : <a href="https://devaluate.com/exam-esawe123" target="_blank">https://devaluate.com/exam-esawe123</a></span>
-            </div>
-
-            <!-- Stats card -->
-            <div class="eq-stats-row">
-              <div class="eq-stat-item">
-                <div class="eq-stat-val">01</div>
-                <div class="eq-stat-lbl">Score Per Question</div>
-              </div>
-              <div class="eq-stat-item">
-                <div class="eq-stat-val">0.5</div>
-                <div class="eq-stat-lbl">Negative Score</div>
-              </div>
-              <div class="eq-stat-item">
-                <div class="eq-stat-val">20</div>
-                <div class="eq-stat-lbl">Total Questions</div>
-              </div>
-            </div>
-
-            <!-- Main responsive layout -->
-            <div class="eq-content-layout">
-              <div class="eq-questions-column">
-                
-                <!-- Question 1 -->
-                <div class="eq-question-card">
-                  <div class="eq-question-header">
-                    <span class="eq-question-title">Question 01/20</span>
-                    <span class="eq-question-score" style="color: #7B61FF;">Score:01</span>
-                  </div>
-                  <div class="eq-question-body">
-                    <div class="eq-q-num">Q1:</div>
-                    <div class="eq-q-text">
-                      Now that I'm done thoroughly mangling that vague metaphor, let's get down to business. You know you need to start blogging to grow your business, but you don't know how. In this post, I'll show you how to write a great blog post in five simple steps that people will actually want to read ?
-                    </div>
-                    <div class="eq-answers-lbl">Answers:</div>
-                    <div class="eq-answers-row">
-                      <span class="eq-answer-pill">Lingo Kids</span>
-                      <span class="eq-answer-pill correct"><i class="bi bi-check-circle-fill"></i> Lingo Express</span>
-                      <span class="eq-answer-pill">Fun Learning</span>
-                      <span class="eq-answer-pill">Lingo Espanol</span>
-                      <span class="eq-answer-pill">Speaking Mastery</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Question 2 -->
-                <div class="eq-question-card">
-                  <div class="eq-question-header">
-                    <span class="eq-question-title">Question 02/20</span>
-                    <span class="eq-question-score" style="color: #7B61FF;">Score:01</span>
-                  </div>
-                  <div class="eq-question-body">
-                    <div class="eq-q-num">Q2:</div>
-                    <div class="eq-q-text">
-                      Now that I'm done thoroughly mangling that vague metaphor, let's get down to business. You know you need to start blogging to grow your business, but you don't know how. In this post, I'll show you how to write a great blog post in five simple steps that people will actually want to read ?
-                    </div>
-                    <div class="eq-answers-lbl">Answers:</div>
-                    <div class="eq-answers-row">
-                      <span class="eq-answer-pill">Yes</span>
-                      <span class="eq-answer-pill correct"><i class="bi bi-check-circle-fill"></i> No</span>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Question 3 -->
-                <div class="eq-question-card">
-                  <div class="eq-question-header">
-                    <span class="eq-question-title">Question 03/20</span>
-                    <span class="eq-question-score" style="color: #7B61FF;">Score:02</span>
-                  </div>
-                  <div class="eq-question-body">
-                    <div class="eq-q-num">Q3:</div>
-                    <div class="eq-q-text">
-                      Now that I'm done thoroughly mangling that vague metaphor, let's get down to business. You know you need to start blogging to grow your business, but you don't know how. In this post, I'll show you how to write a great blog post in five simple steps that people will actually want to read ?
-                    </div>
-                    <div class="eq-short-answer-lbl">Short Answers</div>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Question Selection grid sidebar -->
-              <div class="eq-sidebar-column">
-                <div class="eq-badges-card">
-                  <div class="eq-badges-grid">
-                    <span class="eq-badge-btn active">Q 01</span>
-                    <span class="eq-badge-btn">Q 02</span>
-                    <span class="eq-badge-btn">Q 03</span>
-                    <span class="eq-badge-btn">Q 04</span>
-                    <span class="eq-badge-btn">Q 05</span>
-                    <span class="eq-badge-btn">Q 06</span>
-                    <span class="eq-badge-btn">Q 07</span>
-                    <span class="eq-badge-btn">Q 08</span>
-                    <span class="eq-badge-btn">Q 09</span>
-                    <span class="eq-badge-btn">Q 10</span>
-                    <span class="eq-badge-btn">Q 11</span>
-                    <span class="eq-badge-btn">Q 12</span>
-                    <span class="eq-badge-btn">Q 13</span>
-                    <span class="eq-badge-btn">Q 14</span>
-                    <span class="eq-badge-btn">Q 15</span>
-                    <span class="eq-badge-btn">Q 16</span>
-                    <span class="eq-badge-btn">Q 17</span>
-                    <span class="eq-badge-btn">Q 18</span>
-                    <span class="eq-badge-btn">Q 19</span>
-                    <span class="eq-badge-btn">Q 20</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+          <div class="user-profile-header-mobile-card d-md-none">
+            <img src="img/user.png" alt="User"
+              style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.2);" />
           </div>
+        </div>
+        <div class="ed-card">
+          <div class="ed-tabs">
+            <div class="ed-tabs-list">
+              <a href="exam-details.html" class="ed-tab">Overview</a>
+              <a href="exam-question-overview.html" class="ed-tab active">Questions</a>
+              <a href="exam-valuation-overview.html" class="ed-tab">Valuation</a>
+              <a href="#" class="ed-tab">Students</a>
+            </div>
+            <button class="ed-edit-btn">Edit</button>
+          </div>
+
+          <div class="ed-exam-id">EXAM-3827462 <span class="ed-badge-draft">Draft</span></div>
+          <div class="ed-meta">
+            <span>Title : <span class="val">Facebook Ads Fundamentals &ndash; Level 1</span></span>
+            <span class="dot">&bull;</span>
+            <span>Created at : <span class="val">12 Aug 2025</span></span>
+            <span class="dot">&bull;</span>
+            <span>Exam Link : <a href="https://devaluate.com/exam-esawe123"
+                target="_blank">https://devaluate.com/exam-esawe123</a></span>
+          </div>
+
+          <!-- Stats card -->
+          <div class="eq-stats-row">
+            <div class="eq-stat-item">
+              <div class="eq-stat-val">01</div>
+              <div class="eq-stat-lbl">Score Per Question</div>
+            </div>
+            <div class="eq-stat-item">
+              <div class="eq-stat-val">0.5</div>
+              <div class="eq-stat-lbl">Negative Score</div>
+            </div>
+            <div class="eq-stat-item">
+              <div class="eq-stat-val">20</div>
+              <div class="eq-stat-lbl">Total Questions</div>
+            </div>
+          </div>
+
+          <!-- Main responsive layout -->
+          <div class="eq-content-layout">
+            <div class="eq-questions-column">
+
+              <!-- Question 1 -->
+              <div class="eq-question-card">
+                <div class="eq-question-header">
+                  <span class="eq-question-title">Question 01/20</span>
+                  <span class="eq-question-score">Score: 01</span>
+                </div>
+                <div class="eq-question-body">
+                  <div class="eq-q-num">Q1:</div>
+                  <div class="eq-q-text">
+                    Now that I'm done thoroughly mangling that vague metaphor, let's get down to business. You know you
+                    need to start blogging to grow your business, but you don't know how. In this post, I'll show you
+                    how to write a great blog post in five simple steps that people will actually want to read ?
+                  </div>
+                  <div class="eq-answers-lbl">Answers:</div>
+                  <div class="eq-answers-row">
+                    <span class="eq-answer-pill">Lingo Kids</span>
+                    <span class="eq-answer-pill correct"><i class="bi bi-check-circle-fill"></i> Lingo Express</span>
+                    <span class="eq-answer-pill">Fun Learning</span>
+                    <span class="eq-answer-pill">Lingo Espanol</span>
+                    <span class="eq-answer-pill">Speaking Mastery</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 2 -->
+              <div class="eq-question-card">
+                <div class="eq-question-header">
+                  <span class="eq-question-title">Question 02/20</span>
+                  <span class="eq-question-score">Score: 01</span>
+                </div>
+                <div class="eq-question-body">
+                  <div class="eq-q-num">Q2:</div>
+                  <div class="eq-q-text">
+                    Now that I'm done thoroughly mangling that vague metaphor, let's get down to business. You know you
+                    need to start blogging to grow your business, but you don't know how. In this post, I'll show you
+                    how to write a great blog post in five simple steps that people will actually want to read ?
+                  </div>
+                  <div class="eq-answers-lbl">Answers:</div>
+                  <div class="eq-answers-row">
+                    <span class="eq-answer-pill">Yes</span>
+                    <span class="eq-answer-pill correct"><i class="bi bi-check-circle-fill"></i> No</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Question 3 -->
+              <div class="eq-question-card">
+                <div class="eq-question-header">
+                  <span class="eq-question-title">Question 03/20</span>
+                  <span class="eq-question-score">Score: 02</span>
+                </div>
+                <div class="eq-question-body">
+                  <div class="eq-q-num">Q3:</div>
+                  <div class="eq-q-text">
+                    Now that I'm done thoroughly mangling that vague metaphor, let's get down to business. You know you
+                    need to start blogging to grow your business, but you don't know how. In this post, I'll show you
+                    how to write a great blog post in five simple steps that people will actually want to read ?
+                  </div>
+                  <div class="eq-short-answer-lbl">Short Answers</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Question Selection grid sidebar -->
+            <div class="eq-sidebar-column">
+              <div class="eq-badges-card">
+                <div class="eq-badges-grid">
+                  <span class="eq-badge-btn active">Q 01</span>
+                  <span class="eq-badge-btn">Q 02</span>
+                  <span class="eq-badge-btn">Q 03</span>
+                  <span class="eq-badge-btn">Q 04</span>
+                  <span class="eq-badge-btn">Q 05</span>
+                  <span class="eq-badge-btn">Q 06</span>
+                  <span class="eq-badge-btn">Q 07</span>
+                  <span class="eq-badge-btn">Q 08</span>
+                  <span class="eq-badge-btn">Q 09</span>
+                  <span class="eq-badge-btn">Q 10</span>
+                  <span class="eq-badge-btn">Q 11</span>
+                  <span class="eq-badge-btn">Q 12</span>
+                  <span class="eq-badge-btn">Q 13</span>
+                  <span class="eq-badge-btn">Q 14</span>
+                  <span class="eq-badge-btn">Q 15</span>
+                  <span class="eq-badge-btn">Q 16</span>
+                  <span class="eq-badge-btn">Q 17</span>
+                  <span class="eq-badge-btn">Q 18</span>
+                  <span class="eq-badge-btn">Q 19</span>
+                  <span class="eq-badge-btn">Q 20</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
   </div>
+  </div>
 
-  <div class="modal fade" id="generateQuestionsModal" tabindex="-1" aria-labelledby="generateQuestionsModalLabel" aria-hidden="true">
+  <div class="modal fade" id="generateQuestionsModal" tabindex="-1" aria-labelledby="generateQuestionsModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <button type="button" class="gq-close-btn" data-bs-dismiss="modal" aria-label="Close">&times;</button>
@@ -626,15 +1113,16 @@
   <script src="js/daterangepicker.js"></script>
   <script src="js/main.js"></script>
   <script>
-    (function(){var b=document.body;if(window.innerWidth<768)b.classList.add('mobile');window.addEventListener('resize',function(){if(window.innerWidth<768)b.classList.add('mobile');else{b.classList.remove('mobile');b.classList.remove('open-menu');}});document.querySelectorAll('.side-bar-close').forEach(function(btn){btn.addEventListener('click',function(){b.classList.toggle('open-menu');});});})();
-    
+    (function () { var b = document.body; if (window.innerWidth < 768) b.classList.add('mobile'); window.addEventListener('resize', function () { if (window.innerWidth < 768) b.classList.add('mobile'); else { b.classList.remove('mobile'); b.classList.remove('open-menu'); } }); document.querySelectorAll('.side-bar-close').forEach(function (btn) { btn.addEventListener('click', function () { b.classList.toggle('open-menu'); }); }); })();
+
     // Add interactive click behavior to badge buttons to match desktop sidebar layout
-    document.querySelectorAll('.eq-badge-btn').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        document.querySelectorAll('.eq-badge-btn').forEach(function(x) { x.classList.remove('active'); });
+    document.querySelectorAll('.eq-badge-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.querySelectorAll('.eq-badge-btn').forEach(function (x) { x.classList.remove('active'); });
         this.classList.add('active');
       });
     });
   </script>
 </body>
+
 </html>

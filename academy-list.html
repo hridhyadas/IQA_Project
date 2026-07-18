@@ -66,17 +66,21 @@
         padding: 24px !important;
         overflow: visible !important;
       }
+
       .academy-list-page .recent-exams-table-container table.table {
         display: table !important;
         table-layout: auto !important;
         border-spacing: 0 10px !important;
       }
+
       .academy-list-page .recent-exams-table-container table.table thead {
         display: table-header-group !important;
       }
+
       .academy-list-page .recent-exams-table-container table.table thead tr {
         display: table-row !important;
       }
+
       /* Restore all hidden header columns on desktop */
       .academy-list-page .recent-exams-table-container table.table thead th {
         display: table-cell !important;
@@ -88,13 +92,16 @@
         border: none !important;
         white-space: nowrap !important;
       }
+
       .academy-list-page .recent-exams-table-container table.table tbody {
         display: table-row-group !important;
       }
+
       .academy-list-page .recent-exams-table-container table.table tbody tr {
         display: table-row !important;
         padding: 0 !important;
       }
+
       .academy-list-page .recent-exams-table-container table.table tbody tr td {
         display: table-cell !important;
         padding: 0px 16px !important;
@@ -117,7 +124,7 @@
   </div><!-- Preloader end -->
 
   <div class="wrapper d-flex flex-column">
-        <!-- Side bar start -->
+    <!-- Side bar start -->
     <div class="side-bar-wrapper">
       <div class="side-bar">
         <!-- <div class="side-bar-header">
@@ -264,16 +271,18 @@
     <div class="content-wrapper">
 
       <!-- Mobile Hamburger / Header Area (d-md-none) -->
-      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between w-100" style="padding: 16px 20px !important;">
-        <div class="logo-container-mobile">
-          <img src="img/logo2.png" alt="Logo" style="height: 38px;">
-        </div>
+      <div class="header-top d-md-none mb-3 d-flex align-items-center justify-content-between w-100"
+        style="padding: 16px 20px !important;">
+
         <div class="side-bar-close mobile-hamburger-btn">
           <div class="custom-hamburger-icon">
             <span class="line line-1"></span>
             <span class="line line-2"></span>
             <span class="line line-3"></span>
           </div>
+        </div>
+        <div class="logo-container-mobile">
+          <img src="img/logo2.png" alt="Logo" style="height: 38px;">
         </div>
       </div>
 
@@ -1050,7 +1059,7 @@
         e.preventDefault();
         const $btn = $(this);
         const $row = $btn.closest('tr');
-        
+
         // Extract values from original row columns
         const sl = $row.find('td:nth-child(1)').text().trim();
         const nameHtml = $row.find('td:nth-child(2)').html();
@@ -1058,7 +1067,7 @@
         const email = $row.find('td:nth-child(4)').text().trim();
         const examHtml = $row.find('td:nth-child(5)').html();
         const students = $row.find('td:nth-child(6)').text().trim();
-        
+
         // Clone action buttons and clean them up for mobile detail card view
         const $actionsClone = $row.find('td:nth-child(7)').clone();
         $actionsClone.find('.btn-action-circle').each(function () {
@@ -1070,12 +1079,12 @@
           }
         });
         const actionsHtml = $actionsClone.html();
-        
+
         // Save original row content to restore when collapsed
         if (!$row.data('original-content')) {
           $row.data('original-content', $row.html());
         }
-        
+
         // Render detailed card layout matching user mockup exactly
         const expandedRowHtml = `
           <td colspan="7" class="p-0 border-0" style="background-color: transparent !important; background: transparent !important;">
@@ -1123,16 +1132,16 @@
             </div>
           </td>
         `;
-        
+
         $row.addClass('expanded-row-mode');
         $row.html(expandedRowHtml);
       });
-      
+
       // Collapse row back to original table row
       $(document).on('click', '.collapse-table-link', function (e) {
         e.preventDefault();
         const $row = $(this).closest('tr');
-        
+
         if ($row.data('original-content')) {
           $row.html($row.data('original-content'));
           $row.removeClass('expanded-row-mode');

@@ -1472,7 +1472,7 @@ body.desktop .main-header-bar .logo-container {
 .recent-exams-table-container .custom-pagination a.pagination-btn:first-of-type {
   border: 2px solid #21236a27 !important;
   border-radius: 5px !important;
-  color: #21236a2b !important;
+  color: rgb(33 35 106 / 70%) !important;
   font-size: 13px !important;
   width: 22px !important;
   height: 22px !important;
